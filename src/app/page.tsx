@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
+import SiteFooter from "@/components/site-footer";
 
 const scriptureCards = [
   {
@@ -187,28 +188,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="web-footer">
-        <div className="web-footer__inner">
-          <span className="web-footer__brand">One In Him</span>
-          <nav className="web-footer__links" aria-label="Footer navigation">
-            <Link href="/library">Library</Link>
-            <Link href="/library/prayer-forum">Prayer Forum</Link>
-            <Link href="/donate">Support</Link>
-            <Link href="/privacy">Privacy</Link>
-            <a
-              href="https://bible-study-virid.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Mobile App
-            </a>
-          </nav>
-          <p className="web-footer__copy">
-            © {new Date().getFullYear()} One In Him. All content from public domain and freely redistributable sources.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
