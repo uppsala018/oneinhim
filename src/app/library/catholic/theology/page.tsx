@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Catholic Theology — Creed, Trinity & Doctrine",
+  description: "Study Catholic theology including the Apostles' Creed, the Holy Trinity, and core Catholic doctrine. Free theological study resources.",
+  keywords: "Catholic theology, Apostles Creed, Holy Trinity, Catholic doctrine, christian theology, bible study",
+  path: "/library/catholic/theology",
+});
 
 const theologySections = [
   {

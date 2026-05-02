@@ -1,12 +1,25 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import { councilsLibrary, getCouncilTopic } from "@/lib/content";
 
 export function generateStaticParams() {
-  return councilsLibrary.map((council) => ({
-    slug: council.slug,
-  }));
+  return councilsLibrary.map((council) => ({ slug: council.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const council = getCouncilTopic(slug);
+  if (!council) return buildMeta({ title: "Council Not Found", description: "Council not found." });
+  const desc = `Study the ${council.title} (${council.year ?? ""}). ${(council.summary ?? "Ecumenical council study guide.").slice(0, 90)}`.slice(0, 155);
+  return buildMeta({
+    title: council.title,
+    description: desc,
+    keywords: `${council.title}, ecumenical councils, church councils, church history, early church`,
+    path: `/library/councils/${slug}`,
+  });
 }
 
 export default async function CouncilDetailPage({

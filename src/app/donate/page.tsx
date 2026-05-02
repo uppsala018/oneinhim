@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Support One In Him Bible Study",
+  description: "Support One In Him — a free Bible study and church history app built for everyone. Your contribution helps keep all resources free and accessible.",
+  path: "/donate",
+});
 
 export default function DonatePage() {
   return (

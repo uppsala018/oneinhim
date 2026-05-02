@@ -1,12 +1,24 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
 import { getProtestantFigure, protestantFigures } from "@/lib/content";
 
 export function generateStaticParams() {
-  return protestantFigures.map((figure) => ({
-    slug: figure.slug,
-  }));
+  return protestantFigures.map((figure) => ({ slug: figure.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const figure = getProtestantFigure(slug);
+  if (!figure) return buildMeta({ title: "Figure Not Found", description: "Figure not found." });
+  return buildMeta({
+    title: figure.name,
+    description: `Study the life and theology of ${figure.name} — Protestant Reformer and key figure in the history of Protestant Christianity and the Reformation.`.slice(0, 155),
+    keywords: `${figure.name}, Protestant reformation, reformers, Protestant theology, reformation history, church history`,
+    path: `/library/protestant/figures/${slug}`,
+  });
 }
 
 export default async function ProtestantFigurePage({

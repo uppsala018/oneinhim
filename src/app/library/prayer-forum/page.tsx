@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import PrayerForumBoard from "@/components/prayer-forum-board";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Christian Prayer Forum — Requests & Community",
+  description: "Share prayer requests, give praise, and ask questions in the One In Him prayer forum. A respectful space for the body of Christ.",
+  keywords: "christian prayer forum, prayer requests, christian community, bible study community, prayer",
+  path: "/library/prayer-forum",
+});
 
 export default function PrayerForumPage() {
   return (

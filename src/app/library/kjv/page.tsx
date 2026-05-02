@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import StudyWorkspace from "@/components/study-workspace";
+
+export const metadata: Metadata = buildMeta({
+  title: "KJV Bible with Strong's Concordance",
+  description: "Read the King James Version Bible with full Strong's concordance. Click any word for original Hebrew and Greek definitions and biblical study tools.",
+  keywords: "KJV bible, King James Version, Strong's concordance, biblical Greek, biblical Hebrew, bible study",
+  path: "/library/kjv",
+});
 import { getBookCatalog } from "@/lib/server/full-kjv";
 
 type BookMeta = Awaited<ReturnType<typeof getBookCatalog>>[number];

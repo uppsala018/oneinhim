@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Scripture & Study Library",
+  description: "Browse the complete One In Him library — KJV Bible, Church Fathers, Ecumenical Councils, and Christian traditions from Catholic to Protestant.",
+  keywords: "bible study, christian resources, church history, early church, scripture library",
+  path: "/library",
+});
 
 const modules = [
   {

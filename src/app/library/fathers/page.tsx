@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import FathersMobileLibrary from "@/components/fathers-mobile-library";
 import SectionHeading from "@/components/section-heading";
 import { fathersLibrary } from "@/lib/content";
+
+export const metadata: Metadata = buildMeta({
+  title: "Church Fathers — Patristic Writings Library",
+  description: "Read the early church fathers — Ignatius of Antioch, Justin Martyr, Origen, Augustine, Chrysostom and more. Free patristic writings from every era.",
+  keywords: "church fathers, patristic writings, early church fathers, Augustine, Chrysostom, Ignatius of Antioch, christian history",
+  path: "/library/fathers",
+});
 
 export default function FathersPage() {
   return (

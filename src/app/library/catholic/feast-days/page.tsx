@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Catholic Liturgical Calendar & Feast Days",
+  description: "Explore the Catholic liturgical year and feast days — Advent, Christmas, Lent, Easter, and the feasts of saints throughout the year.",
+  keywords: "Catholic feast days, liturgical calendar, Catholic saints feast, liturgical year, Catholic church",
+  path: "/library/catholic/feast-days",
+});
 
 const feastSections = [
   {

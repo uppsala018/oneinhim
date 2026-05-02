@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SectionHeading from "@/components/section-heading";
 import { getFathersForTrack } from "@/lib/content";
+
+export const metadata: Metadata = buildMeta({
+  title: "Orthodox Bible Study & Theology",
+  description: "Study Eastern Orthodox Christianity — the Septuagint, Divine Liturgy, Orthodox saints, feast days, and the rich Eastern theological tradition.",
+  keywords: "Orthodox bible study, Eastern Orthodox, Orthodox theology, Septuagint, Orthodox church, early church",
+  path: "/library/orthodox",
+});
 
 const orthodoxMobileSections = [
   {

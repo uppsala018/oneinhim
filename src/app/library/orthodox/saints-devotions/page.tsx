@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Orthodox Saints & Devotional Traditions",
+  description: "Explore the lives of Orthodox saints and Eastern Christian devotional practices, including saints shared with the Catholic and early church traditions.",
+  keywords: "Orthodox saints, Eastern saints, Orthodox devotions, Eastern Christian saints, early church",
+  path: "/library/orthodox/saints-devotions",
+});
 
 const saintGroups = [
   {

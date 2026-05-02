@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Catholic Saints & Devotional Practices",
+  description: "Study the lives of Catholic and Eastern saints, including ancient saints shared across traditions, and learn about Catholic devotional practices.",
+  keywords: "Catholic saints, Christian saints, saints devotions, ancient church saints, early church",
+  path: "/library/catholic/saints-devotions",
+});
 
 const saintGroups = [
   {

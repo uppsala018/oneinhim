@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Orthodox Liturgical Calendar & Feast Days",
+  description: "The Eastern Orthodox liturgical calendar — Great Feasts, Pascha, fasts, and commemorations of saints throughout the Orthodox church year.",
+  keywords: "Orthodox feast days, Orthodox calendar, Pascha, Great Feasts, Orthodox liturgical year, Eastern Orthodox",
+  path: "/library/orthodox/feast-days",
+});
 
 const feastSections = [
   {

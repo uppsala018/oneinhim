@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
@@ -5,9 +7,20 @@ import { fathersLibrary, getFatherProfile } from "@/lib/content";
 import { getFatherStudyGuide } from "@/lib/father-study-guides";
 
 export function generateStaticParams() {
-  return fathersLibrary.map((father) => ({
-    slug: father.slug,
-  }));
+  return fathersLibrary.map((father) => ({ slug: father.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const father = getFatherProfile(slug);
+  if (!father) return buildMeta({ title: "Father Not Found", description: "Church father not found." });
+  const desc = `Study the life and writings of ${father.name} (${father.era}). ${(father.summary ?? "Early church father and patristic writer.").slice(0, 90)}`.slice(0, 155);
+  return buildMeta({
+    title: father.name,
+    description: desc,
+    keywords: `${father.name}, church fathers, patristic writings, early church fathers, christian history`,
+    path: `/library/fathers/${slug}`,
+  });
 }
 
 export default async function FatherDetailPage({

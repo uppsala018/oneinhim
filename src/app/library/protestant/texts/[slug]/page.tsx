@@ -1,12 +1,24 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
 import { getProtestantWork, protestantWorks } from "@/lib/content";
 
 export function generateStaticParams() {
-  return protestantWorks.map((work) => ({
-    slug: work.slug,
-  }));
+  return protestantWorks.map((work) => ({ slug: work.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const work = getProtestantWork(slug);
+  if (!work) return buildMeta({ title: "Text Not Found", description: "Text not found." });
+  return buildMeta({
+    title: work.title,
+    description: `Read ${work.title} — a foundational Protestant confession and Reformation-era document. Free full text for Bible study and theological research.`.slice(0, 155),
+    keywords: `${work.title}, Protestant confessions, reformation documents, Protestant theology, Reformed Christianity`,
+    path: `/library/protestant/texts/${slug}`,
+  });
 }
 
 export default async function ProtestantWorkPage({

@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
@@ -112,6 +114,19 @@ const protestantBranches = [
 
 export function generateStaticParams() {
   return [...historyLibrary.map((topic) => ({ slug: topic.slug })), { slug: "timeline" }];
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const topic = getHistoryTopic(slug);
+  if (!topic) return buildMeta({ title: "Church History", description: "Explore 2000 years of Christian history." });
+  const desc = ((topic.summary ?? `Study ${topic.title} in the complete church history timeline.`).slice(0, 155));
+  return buildMeta({
+    title: topic.title,
+    description: desc,
+    keywords: `${topic.title}, church history, Christian history, early church history, reformation, church history timeline`,
+    path: `/library/history/${slug}`,
+  });
 }
 
 function HistoryTabs({ activeSlug }: { activeSlug: string }) {

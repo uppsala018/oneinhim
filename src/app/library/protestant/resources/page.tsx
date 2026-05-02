@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Protestant Bible Study Resources",
+  description: "Protestant study resources — KJV and Reformed Bible study, Reformation history, confessions of faith, and key Protestant theological texts.",
+  keywords: "Protestant resources, Reformed theology, Protestant bible study, Reformation resources, christian history",
+  path: "/library/protestant/resources",
+});
 
 const protestantMobileSections = [
   {

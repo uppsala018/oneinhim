@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
@@ -6,11 +8,21 @@ import { fathersLibrary, getFatherProfile, getFatherWork } from "@/lib/content";
 
 export function generateStaticParams() {
   return fathersLibrary.flatMap((father) =>
-    father.works.map((work) => ({
-      slug: father.slug,
-      workSlug: work.slug,
-    })),
+    father.works.map((work) => ({ slug: father.slug, workSlug: work.slug })),
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; workSlug: string }> }): Promise<Metadata> {
+  const { slug, workSlug } = await params;
+  const father = getFatherProfile(slug);
+  const work = getFatherWork(slug, workSlug);
+  if (!father || !work) return buildMeta({ title: "Work Not Found", description: "Text not found." });
+  return buildMeta({
+    title: `${work.title} — ${father.name}`,
+    description: `Read ${work.title} by ${father.name}. An early church patristic text from the ${father.era} era, free for Bible study and research.`.slice(0, 155),
+    keywords: `${father.name}, ${work.title}, church fathers, patristic writings, early church`,
+    path: `/library/fathers/${slug}/${workSlug}`,
+  });
 }
 
 export default async function FatherWorkPage({

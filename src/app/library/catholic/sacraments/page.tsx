@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "The Seven Sacraments of the Catholic Church",
+  description: "A complete guide to the seven Catholic sacraments — Baptism, Eucharist, Confirmation, Penance, Anointing, Holy Orders and Matrimony.",
+  keywords: "Catholic sacraments, baptism, Eucharist, confirmation, Catholic church, sacramental theology",
+  path: "/library/catholic/sacraments",
+});
 
 const sacraments = [
   {

@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
@@ -7,9 +9,20 @@ import {
 } from "@/lib/content";
 
 export function generateStaticParams() {
-  return orientalOrthodoxLibrary.map((entry) => ({
-    slug: entry.slug,
-  }));
+  return orientalOrthodoxLibrary.map((entry) => ({ slug: entry.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const entry = getOrientalOrthodoxEntry(slug);
+  if (!entry) return buildMeta({ title: "Not Found", description: "Entry not found." });
+  const desc = ((entry.summary ?? `Study ${entry.title} in the Oriental Orthodox library.`).slice(0, 155));
+  return buildMeta({
+    title: entry.title,
+    description: desc,
+    keywords: `${entry.title}, Oriental Orthodox, Coptic church, Ethiopian Orthodox, Syriac Christianity`,
+    path: `/library/oriental-orthodox/${slug}`,
+  });
 }
 
 export default async function OrientalOrthodoxEntryPage({

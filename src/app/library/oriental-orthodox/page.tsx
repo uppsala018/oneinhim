@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import AppHeader from "@/components/app-header";
 import SectionHeading from "@/components/section-heading";
 import Link from "next/link";
 import { orientalOrthodoxLibrary } from "@/lib/content";
+
+export const metadata: Metadata = buildMeta({
+  title: "Oriental Orthodox — Coptic, Ethiopian & Syriac",
+  description: "Study Oriental Orthodox Christianity — Coptic, Ethiopian, Armenian, and Syriac traditions, texts, and theology from the ancient pre-Chalcedonian churches.",
+  keywords: "Oriental Orthodox, Coptic church, Ethiopian Orthodox, Syriac Christianity, Armenian church, early church",
+  path: "/library/oriental-orthodox",
+});
 
 const resources = [
   {

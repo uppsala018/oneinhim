@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
@@ -9,11 +11,21 @@ import {
 
 export function generateStaticParams() {
   return protestantFigures.flatMap((figure) =>
-    figure.works.map((work) => ({
-      slug: figure.slug,
-      workSlug: work.slug,
-    })),
+    figure.works.map((work) => ({ slug: figure.slug, workSlug: work.slug })),
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; workSlug: string }> }): Promise<Metadata> {
+  const { slug, workSlug } = await params;
+  const figure = getProtestantFigure(slug);
+  const work = getProtestantFigureWork(slug, workSlug);
+  if (!figure || !work) return buildMeta({ title: "Work Not Found", description: "Work not found." });
+  return buildMeta({
+    title: `${work.title} — ${figure.name}`,
+    description: `Read ${work.title} by ${figure.name}. A key text of the Protestant Reformation and Reformed theology, free online.`.slice(0, 155),
+    keywords: `${figure.name}, ${work.title}, Protestant reformation, Reformed theology, reformation documents`,
+    path: `/library/protestant/figures/${slug}/${workSlug}`,
+  });
 }
 
 export default async function ProtestantFigureWorkPage({

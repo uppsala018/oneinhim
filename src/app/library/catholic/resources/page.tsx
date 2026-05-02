@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SectionHeading from "@/components/section-heading";
+
+export const metadata: Metadata = buildMeta({
+  title: "Catholic Study Resources",
+  description: "Catholic Bible study resources including the Roman Catechism, saints, sacraments, the Rosary, feast days, and Catholic theology — all free.",
+  keywords: "Catholic bible study, Roman Catechism, Catholic saints, Catholic devotions, catechism of Trent",
+  path: "/library/catholic/resources",
+});
 
 const catholicMobileSections = [
   {

@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SectionHeading from "@/components/section-heading";
 import { protestantFigures } from "@/lib/content";
+
+export const metadata: Metadata = buildMeta({
+  title: "Reformation Figures — Luther, Calvin & the Reformers",
+  description: "Study the lives and writings of Protestant Reformation figures — Martin Luther, John Calvin, Zwingli, Wesley and the major Reformers.",
+  keywords: "Martin Luther, John Calvin, Protestant reformation, reformers, Protestant theology, church history",
+  path: "/library/protestant/figures",
+});
 
 const protestantFigureSections = [
   {

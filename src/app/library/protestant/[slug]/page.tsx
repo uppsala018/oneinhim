@@ -1,12 +1,25 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
 import { getProtestantEntry, protestantLibrary } from "@/lib/content";
 
 export function generateStaticParams() {
-  return protestantLibrary.map((entry) => ({
-    slug: entry.slug,
-  }));
+  return protestantLibrary.map((entry) => ({ slug: entry.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const entry = getProtestantEntry(slug);
+  if (!entry) return buildMeta({ title: "Not Found", description: "Entry not found." });
+  const desc = ((entry.summary ?? `Study ${entry.title} in the Protestant library.`).slice(0, 155));
+  return buildMeta({
+    title: entry.title,
+    description: desc,
+    keywords: `${entry.title}, Protestant resources, Protestant theology, reformation, bible study`,
+    path: `/library/protestant/${slug}`,
+  });
 }
 
 export default async function ProtestantEntryPage({

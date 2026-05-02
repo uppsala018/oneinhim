@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SectionHeading from "@/components/section-heading";
 import { protestantWorks } from "@/lib/content";
+
+export const metadata: Metadata = buildMeta({
+  title: "Protestant Confessions & Reformation Documents",
+  description: "Read the great Protestant confessions — the Augsburg Confession, Heidelberg Catechism, Westminster Confession, and other Reformation-era documents.",
+  keywords: "Protestant confessions, Augsburg Confession, Westminster Confession, Heidelberg Catechism, reformation documents",
+  path: "/library/protestant/texts",
+});
 
 const protestantTextSections = [
   {

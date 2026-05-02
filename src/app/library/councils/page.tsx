@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import { councilsLibrary } from "@/lib/content";
+
+export const metadata: Metadata = buildMeta({
+  title: "Ecumenical Councils of the Church",
+  description: "Study all seven Ecumenical Councils — Nicaea, Constantinople, Ephesus, Chalcedon and more. Learn what was decided and why each council still matters.",
+  keywords: "ecumenical councils, Council of Nicaea, Council of Chalcedon, church councils, early church, church history",
+  path: "/library/councils",
+});
 
 export default function CouncilsPage() {
   return (

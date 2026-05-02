@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import SectionHeading from "@/components/section-heading";
@@ -7,6 +9,13 @@ import {
   protestantLibrary,
   protestantWorks,
 } from "@/lib/content";
+
+export const metadata: Metadata = buildMeta({
+  title: "Protestant Bible Study & Theology",
+  description: "Explore Protestant Christianity — the Reformation, Martin Luther, John Calvin, key confessions, Reformed theology, and Protestant scripture study.",
+  keywords: "Protestant theology, reformation, Martin Luther, John Calvin, Protestant bible study, Reformed theology",
+  path: "/library/protestant",
+});
 
 export default function ProtestantPage() {
   const fathers = getFathersForTrack("protestant");

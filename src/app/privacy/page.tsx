@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Privacy Policy",
+  description: "Privacy policy for One In Him Bible Study — how we handle your data, what we collect, and your rights as a user of our free Bible study platform.",
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

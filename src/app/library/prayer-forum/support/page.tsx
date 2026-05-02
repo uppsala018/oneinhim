@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+
+export const metadata: Metadata = buildMeta({
+  title: "Help & Support",
+  description: "Get help with One In Him Bible Study — contact support, report issues, or find answers to common questions about the app and website.",
+  path: "/library/prayer-forum/support",
+});
 
 export default function SupportPage() {
   return (

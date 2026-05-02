@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
+import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import SectionHeading from "@/components/section-heading";
 import { romanCatechismLibrary } from "@/lib/content";
+
+export const metadata: Metadata = buildMeta({
+  title: "Roman Catechism — Catechism of the Council of Trent",
+  description: "Read the Roman Catechism (Catechism of Trent) online — the authoritative Catholic catechism from the Council of Trent, free and complete.",
+  keywords: "Roman Catechism, Catechism of Trent, Catholic catechism, Council of Trent, Catholic doctrine, bible study",
+  path: "/library/catechism",
+});
 
 function toPartId(part: string) {
   return part.toLowerCase().replace(/[^a-z0-9]+/g, "-");
