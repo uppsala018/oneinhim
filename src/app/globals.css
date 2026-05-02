@@ -1,0 +1,3504 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #041126;
+  --color-panel: rgba(9, 29, 58, 0.84);
+  --color-border: rgba(222, 190, 120, 0.26);
+  --color-highlight: #e5c57a;
+  --color-ink: #f5f1e6;
+  --color-muted: #cbc4b2;
+  --color-soft: #9fb0cb;
+}
+
+html[data-theme="light"] {
+  --color-bg: #f3ead7;
+  --color-panel: rgba(255, 249, 238, 0.88);
+  --color-border: rgba(117, 83, 31, 0.22);
+  --color-highlight: #8f6219;
+  --color-ink: #23170d;
+  --color-muted: #5d4931;
+  --color-soft: #7e6b55;
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(20, 48, 92, 0.92), transparent 28%),
+    linear-gradient(180deg, #06152d 0%, #041126 52%, #071930 100%);
+  color: var(--color-ink);
+  font-family: var(--font-body), serif;
+}
+
+html[data-theme="light"] body {
+  background:
+    radial-gradient(circle at top, rgba(255, 241, 214, 0.92), transparent 28%),
+    linear-gradient(180deg, #f8f1e2 0%, #f3ead7 52%, #efe2c9 100%);
+  color: var(--color-ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-weight: 600;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.cta-primary {
+  background: linear-gradient(180deg, #f0cf84, #cba45b);
+  color: #0a1530;
+  box-shadow: 0 18px 40px rgba(203, 164, 91, 0.28);
+}
+
+.cta-secondary {
+  border: 1px solid var(--color-border);
+  background: rgba(8, 26, 57, 0.52);
+  color: var(--color-ink);
+}
+
+.cta-primary:hover,
+.cta-secondary:hover {
+  transform: translateY(-1px);
+}
+
+.mobile-app-shell {
+  min-height: 100svh;
+  background:
+    linear-gradient(rgba(4, 17, 38, 0.74), rgba(4, 17, 38, 0.96)),
+    url("/assets/art/hero-banner.png") top center / cover no-repeat,
+    #041126;
+  color: var(--color-ink);
+  padding-bottom: 6.4rem;
+}
+
+html[data-theme="light"] .mobile-app-shell {
+  background:
+    linear-gradient(rgba(248, 241, 228, 0.75), rgba(243, 234, 215, 0.96)),
+    url("/assets/art/hero-banner.png") top center / cover no-repeat,
+    #f3ead7;
+}
+
+.mobile-home {
+  padding: 1.25rem 1.15rem 6.5rem;
+}
+
+.mobile-home__hero {
+  display: grid;
+  justify-items: center;
+  padding: 0.3rem 0 1rem;
+  text-align: center;
+}
+
+.mobile-home__logo {
+  width: clamp(260px, 80vw, 460px);
+  height: auto;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 4px 24px rgba(229, 197, 122, 0.35));
+}
+
+.mobile-home__cross {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  text-shadow: 0 0 22px rgba(229, 197, 122, 0.72);
+}
+
+.mobile-home__verse-ref {
+  margin: 0.3rem 0 0;
+  color: rgba(229, 197, 122, 0.7);
+  font-family: var(--font-display), serif;
+  font-size: clamp(0.95rem, 3.8vw, 1.35rem);
+  font-style: italic;
+  letter-spacing: 0.08em;
+}
+
+.mobile-home__hero h1 {
+  margin: 0.1rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(3rem, 13vw, 4.8rem);
+  font-weight: 600;
+  line-height: 0.95;
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.22);
+}
+
+.mobile-home__book {
+  color: var(--color-highlight);
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.mobile-home__subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.1rem, 5vw, 1.8rem);
+}
+
+.mobile-home__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.mobile-home-card {
+  aspect-ratio: 1.57;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  overflow: hidden;
+  border: 2px solid rgba(229, 197, 122, 0.66);
+  border-radius: 1.35rem;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(40, 83, 134, 0.62), transparent 62%),
+    rgba(7, 31, 64, 0.72);
+  box-shadow:
+    inset 0 0 22px rgba(45, 91, 143, 0.24),
+    0 12px 28px rgba(0, 0, 0, 0.18);
+  padding: 0.65rem;
+  text-align: center;
+}
+
+.mobile-home-card__icon {
+  min-height: 3.4rem;
+  display: grid;
+  place-items: center;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.8rem, 9vw, 3.2rem);
+  line-height: 1;
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.24);
+}
+
+.mobile-home-card__title {
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.05rem, 4.2vw, 1.7rem);
+  line-height: 1.1;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.34);
+}
+
+.mobile-bottom-nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1px solid rgba(229, 197, 122, 0.14);
+  background: rgba(4, 14, 32, 0.96);
+  box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile-bottom-nav__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+  padding: 0.75rem 0 0.65rem;
+  color: rgba(159, 176, 203, 0.7);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: color 160ms ease;
+}
+
+.mobile-bottom-nav__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.75rem;
+  transition:
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.mobile-bottom-nav__label {
+  line-height: 1;
+}
+
+.mobile-bottom-nav__item--active {
+  color: var(--color-highlight);
+}
+
+.mobile-bottom-nav__item--active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.2rem;
+  height: 2px;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, transparent, var(--color-highlight), transparent);
+  box-shadow: 0 0 10px rgba(229, 197, 122, 0.55);
+}
+
+.mobile-bottom-nav__item--active .mobile-bottom-nav__icon {
+  background: rgba(229, 197, 122, 0.1);
+  box-shadow: 0 0 14px rgba(229, 197, 122, 0.12);
+}
+
+.mobile-section-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  min-height: 5.6rem;
+  display: grid;
+  grid-template-columns: 3.2rem 1fr 3.2rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(229, 197, 122, 0.18);
+  background: rgba(4, 17, 38, 0.92);
+  padding: 0.8rem 1.15rem;
+  text-align: center;
+  backdrop-filter: blur(16px);
+}
+
+.mobile-section-header__back {
+  color: var(--color-highlight);
+  font-size: 3.4rem;
+  line-height: 0.7;
+}
+
+.mobile-section-header h1 {
+  margin: 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.05rem, 8vw, 3.3rem);
+  font-weight: 600;
+  line-height: 1;
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.24);
+}
+
+.mobile-section-header span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--color-highlight);
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+}
+
+.councils-mobile {
+  background:
+    radial-gradient(circle at 18% 6%, rgba(229, 197, 122, 0.11), transparent 18rem),
+    linear-gradient(180deg, rgba(4, 17, 38, 0.94), rgba(4, 17, 38, 0.98)),
+    #041126;
+}
+
+.councils-timeline {
+  position: relative;
+  display: grid;
+  gap: 1.05rem;
+  padding: 1.4rem 1.35rem 1rem 4.55rem;
+}
+
+.councils-timeline::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2.9rem;
+  width: 0.18rem;
+  content: "";
+  background: linear-gradient(180deg, var(--color-highlight), rgba(229, 197, 122, 0.24));
+  box-shadow: 0 0 18px rgba(229, 197, 122, 0.2);
+}
+
+.council-timeline-item {
+  position: relative;
+}
+
+.council-timeline-item__marker {
+  position: absolute;
+  top: 2.15rem;
+  left: -3.06rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+}
+
+.council-timeline-item__marker::after {
+  position: absolute;
+  left: 2.65rem;
+  width: 1.25rem;
+  height: 0.16rem;
+  content: "";
+  background: var(--color-highlight);
+}
+
+.council-timeline-item__marker span {
+  width: 3.05rem;
+  height: 3.05rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-highlight);
+  border-radius: 999px;
+  background: #071936;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.45rem;
+  box-shadow: 0 0 0 0.24rem rgba(4, 17, 38, 0.92);
+}
+
+.council-card {
+  display: grid;
+  grid-template-columns: 4.7rem 1fr;
+  gap: 0.8rem;
+  border: 1.5px solid rgba(229, 197, 122, 0.64);
+  border-radius: 1.45rem;
+  background:
+    radial-gradient(circle at top left, rgba(48, 92, 146, 0.48), transparent 62%),
+    rgba(7, 31, 64, 0.78);
+  box-shadow:
+    inset 0 0 24px rgba(45, 91, 143, 0.2),
+    0 14px 28px rgba(0, 0, 0, 0.2);
+  padding: 0.85rem;
+}
+
+.council-card__icon {
+  min-height: 5rem;
+  display: grid;
+  place-items: center;
+  color: var(--color-highlight);
+  font-size: 3.25rem;
+  line-height: 1;
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.26);
+}
+
+.council-card__body p {
+  margin: 0;
+  color: var(--color-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.council-card__body h2 {
+  margin: 0.18rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.55rem, 6.1vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.council-card__body ul {
+  display: grid;
+  gap: 0.12rem;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  color: var(--color-ink);
+  font-size: 0.94rem;
+  line-height: 1.22;
+  list-style: none;
+}
+
+.council-card__button {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.75rem;
+  border: 1.5px solid var(--color-highlight);
+  border-radius: 0.55rem;
+  padding: 0.42rem 0.82rem;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.council-detail {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(229, 197, 122, 0.13), transparent 18rem),
+    linear-gradient(180deg, rgba(4, 17, 38, 0.95), rgba(4, 17, 38, 0.98)),
+    #041126;
+  padding-right: 1.15rem;
+  padding-left: 1.15rem;
+}
+
+.council-detail__hero {
+  display: grid;
+  justify-items: center;
+  margin-top: 1.2rem;
+  border: 1.5px solid rgba(229, 197, 122, 0.56);
+  border-radius: 1.7rem;
+  background:
+    radial-gradient(circle at top, rgba(45, 91, 143, 0.42), transparent 60%),
+    rgba(7, 31, 64, 0.72);
+  padding: 1.35rem;
+  text-align: center;
+}
+
+.council-detail__seal {
+  width: 4.4rem;
+  height: 4.4rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-highlight);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 2.2rem;
+}
+
+.council-detail__hero > p:first-of-type {
+  margin: 0.9rem 0 0;
+  color: var(--color-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.council-detail__hero h2 {
+  margin: 0.35rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.25rem, 9vw, 3.8rem);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.council-detail__hero > p:last-child {
+  margin: 0.9rem 0 0;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.council-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.council-detail-grid article,
+.council-study-card {
+  border: 1px solid rgba(229, 197, 122, 0.34);
+  border-radius: 1.25rem;
+  background: rgba(7, 31, 64, 0.62);
+  padding: 1rem;
+}
+
+.council-detail-grid span,
+.council-study-card__eyebrow {
+  margin: 0;
+  color: var(--color-highlight);
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.council-detail-grid p,
+.council-study-card p {
+  margin: 0.35rem 0 0;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.council-study-card {
+  margin-top: 0.9rem;
+}
+
+.council-study-card--gold {
+  border-color: rgba(229, 197, 122, 0.62);
+  background: linear-gradient(145deg, rgba(229, 197, 122, 0.13), rgba(7, 31, 64, 0.7));
+}
+
+.council-study-card h2 {
+  margin: 0.3rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.council-study-steps,
+.council-term-list,
+.council-reception-list,
+.council-link-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.council-paragraph-stack {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.council-paragraph-stack p {
+  margin: 0;
+}
+
+.council-study-steps article {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: 0.8rem;
+}
+
+.council-study-steps article > span {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-highlight);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+}
+
+.council-study-steps h3,
+.council-term-list h3,
+.council-reception-list h3 {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: 1.35rem;
+}
+
+.council-term-list article,
+.council-reception-list article {
+  border-top: 1px solid rgba(229, 197, 122, 0.18);
+  padding-top: 0.75rem;
+}
+
+.council-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.council-chip-row span {
+  border: 1px solid rgba(229, 197, 122, 0.34);
+  border-radius: 999px;
+  padding: 0.42rem 0.72rem;
+  color: var(--color-soft);
+  font-size: 0.9rem;
+}
+
+.council-link-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(229, 197, 122, 0.18);
+  padding: 0.75rem 0 0;
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: 1.25rem;
+}
+
+.council-link-list a span {
+  color: var(--color-highlight);
+  font-size: 1.7rem;
+}
+
+.church-history-mobile {
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(229, 197, 122, 0.12), transparent 18rem),
+    linear-gradient(180deg, rgba(4, 17, 38, 0.96), rgba(4, 17, 38, 0.99)),
+    #041126;
+}
+
+.history-tabs {
+  position: sticky;
+  top: 5.6rem;
+  z-index: 25;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid rgba(229, 197, 122, 0.22);
+  background: rgba(4, 17, 38, 0.94);
+  backdrop-filter: blur(16px);
+}
+
+.history-tabs__item {
+  min-height: 3.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  border-right: 1px solid rgba(229, 197, 122, 0.15);
+  color: var(--color-muted);
+  font-size: clamp(0.68rem, 2.75vw, 0.95rem);
+}
+
+.history-tabs__item span {
+  color: var(--color-highlight);
+  font-size: 1rem;
+}
+
+.history-tabs__item--active {
+  background: linear-gradient(180deg, #f0cf84, #cba45b);
+  color: #111826;
+  font-weight: 700;
+}
+
+.history-tabs__item--active span {
+  color: #111826;
+}
+
+.history-topic-title {
+  padding: 1.05rem 1.35rem 0.75rem;
+  text-align: center;
+}
+
+.history-topic-title p:first-child {
+  margin: 0;
+  color: var(--color-soft);
+  font-size: 0.92rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.history-topic-title h2 {
+  margin: 0.4rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.9rem, 7.6vw, 3.35rem);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.history-topic-title p:last-child {
+  margin: 0.8rem auto 0;
+  max-width: 42rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.history-schism-map {
+  margin: 0.55rem 1.35rem 0.9rem;
+  text-align: center;
+}
+
+.history-schism-map__top span {
+  display: block;
+  color: var(--color-highlight);
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.history-schism-map__top h2 {
+  margin: 0.25rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.55rem, 6.1vw, 2.45rem);
+  font-weight: 600;
+}
+
+.history-schism-map__split {
+  position: relative;
+  height: 3rem;
+  max-width: 20rem;
+  margin: 0.35rem auto 0;
+}
+
+.history-schism-map__split::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0.28rem;
+  height: 1.45rem;
+  content: "";
+  border-radius: 99px;
+  background: var(--color-highlight);
+  transform: translateX(-50%);
+}
+
+.history-schism-map__split span {
+  position: absolute;
+  top: 1.4rem;
+  width: 50%;
+  height: 1.45rem;
+  border-top: 0.28rem solid var(--color-highlight);
+}
+
+.history-schism-map__split span:first-child {
+  left: 0;
+  border-left: 0.28rem solid var(--color-highlight);
+  border-top-left-radius: 2rem;
+}
+
+.history-schism-map__split span:last-child {
+  right: 0;
+  border-right: 0.28rem solid var(--color-highlight);
+  border-top-right-radius: 2rem;
+}
+
+.history-schism-map__churches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.history-schism-map__churches article {
+  display: grid;
+  justify-items: center;
+}
+
+.history-schism-map__churches div {
+  width: 4.6rem;
+  height: 4.6rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-highlight);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-size: 2.35rem;
+  background: rgba(7, 31, 64, 0.72);
+}
+
+.history-schism-map__churches h3 {
+  margin: 0.7rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.05rem, 4.2vw, 1.55rem);
+  line-height: 1.05;
+}
+
+.history-schism-map__churches p {
+  margin: 0.25rem 0 0;
+  color: var(--color-ink);
+  font-style: italic;
+}
+
+.history-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  padding: 0 1.35rem;
+}
+
+.history-tradition-tree {
+  margin: 0.4rem 1.35rem 1rem;
+  border: 1.5px solid rgba(229, 197, 122, 0.55);
+  border-radius: 1.45rem;
+  background:
+    radial-gradient(circle at top, rgba(45, 91, 143, 0.34), transparent 18rem),
+    rgba(7, 31, 64, 0.68);
+  padding: 1rem 0.85rem;
+  overflow: hidden;
+}
+
+.history-tradition-tree__head {
+  text-align: center;
+}
+
+.history-tradition-tree__head p {
+  margin: 0;
+  color: var(--color-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.history-tradition-tree__head h2 {
+  margin: 0.25rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.65rem, 6.5vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.02;
+}
+
+.history-tradition-tree__head span {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.history-tradition-tree__trunk {
+  position: relative;
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  padding-left: 1.55rem;
+}
+
+.history-tradition-tree__trunk::before {
+  position: absolute;
+  top: 0.35rem;
+  bottom: 0.4rem;
+  left: 0.55rem;
+  width: 0.16rem;
+  content: "";
+  border-radius: 99px;
+  background: linear-gradient(180deg, var(--color-highlight), rgba(229, 197, 122, 0.22));
+}
+
+.history-tradition-event,
+.history-tradition-split,
+.history-protestant-branching {
+  position: relative;
+  border: 1px solid rgba(229, 197, 122, 0.32);
+  border-radius: 1rem;
+  background: rgba(4, 17, 38, 0.58);
+  padding: 0.75rem;
+  text-decoration: none;
+}
+
+.history-tradition-event::before,
+.history-tradition-split::before,
+.history-protestant-branching::before {
+  position: absolute;
+  top: 1.05rem;
+  left: -1.45rem;
+  width: 0.78rem;
+  height: 0.78rem;
+  content: "";
+  border: 1.5px solid var(--color-highlight);
+  border-radius: 999px;
+  background: #071936;
+  box-shadow: 0 0 0 0.22rem #071936;
+}
+
+.history-tradition-event strong,
+.history-tradition-split strong,
+.history-protestant-branching strong {
+  color: var(--color-highlight);
+  font-size: 0.76rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.history-tradition-event h3,
+.history-tradition-split h3,
+.history-protestant-branching h3 {
+  margin: 0.25rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.history-tradition-event p,
+.history-tradition-split p,
+.history-protestant-branching p {
+  margin: 0.4rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+  line-height: 1.42;
+}
+
+.history-tradition-event a {
+  display: inline-flex;
+  margin-top: 0.55rem;
+  border: 1px solid rgba(229, 197, 122, 0.42);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  color: var(--color-highlight);
+  font-size: 0.82rem;
+}
+
+.history-tradition-split {
+  border-color: rgba(229, 197, 122, 0.58);
+  background: linear-gradient(145deg, rgba(229, 197, 122, 0.11), rgba(4, 17, 38, 0.58));
+}
+
+.history-tradition-lines {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  position: relative;
+}
+
+.history-tradition-lines::before {
+  position: absolute;
+  top: -0.8rem;
+  left: 20%;
+  right: 20%;
+  height: 0.16rem;
+  content: "";
+  background: rgba(229, 197, 122, 0.64);
+}
+
+.history-tradition-lines article,
+.history-tradition-lines a {
+  border: 1px solid rgba(229, 197, 122, 0.32);
+  border-radius: 0.95rem;
+  background: rgba(7, 31, 64, 0.76);
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.history-tradition-lines span {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  margin: 0 auto 0.45rem;
+  border: 1.5px solid var(--color-highlight);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-size: 1.45rem;
+}
+
+.history-tradition-lines h3 {
+  margin: 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1rem;
+  line-height: 1.05;
+}
+
+.history-tradition-lines p,
+.history-tradition-lines strong {
+  display: block;
+  margin: 0.35rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.74rem;
+  line-height: 1.25;
+}
+
+.history-tradition-lines strong {
+  color: var(--color-highlight);
+  font-weight: 500;
+}
+
+.history-protestant-branching__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+}
+
+.history-protestant-branching__grid span,
+.history-protestant-branching__grid a {
+  min-height: 2.35rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(229, 197, 122, 0.32);
+  border-radius: 0.7rem;
+  background: rgba(7, 31, 64, 0.78);
+  color: var(--color-ink);
+  font-size: 0.72rem;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+}
+
+.history-mini-card,
+.history-wide-card {
+  border: 1.5px solid rgba(229, 197, 122, 0.54);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at top, rgba(45, 91, 143, 0.34), transparent 58%),
+    rgba(7, 31, 64, 0.72);
+  padding: 0.78rem;
+}
+
+.history-mini-card > span,
+.history-wide-card > span {
+  width: 2.85rem;
+  height: 2.85rem;
+  display: grid;
+  place-items: center;
+  margin: -0.35rem auto 0.35rem;
+  border: 1.5px solid var(--color-highlight);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-size: 1.45rem;
+}
+
+.history-mini-card h3,
+.history-wide-card h3 {
+  margin: 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.05rem, 4vw, 1.55rem);
+  line-height: 1.05;
+  text-align: center;
+}
+
+.history-mini-card ul,
+.history-wide-card ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.65rem 0 0;
+  padding-left: 1rem;
+  color: var(--color-ink);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.history-mini-card p {
+  margin: 0.65rem 0 0;
+  color: var(--color-ink);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.history-reformation-hero {
+  padding: 0 1.35rem;
+  text-align: center;
+}
+
+.history-reformation-hero p {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 1rem;
+}
+
+.history-reformation-hero h2 {
+  margin: 0.25rem 0 1rem;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(2rem, 8vw, 3.45rem);
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+.history-reformation-hero__image {
+  min-height: 8.2rem;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1.5px solid rgba(229, 197, 122, 0.62);
+  border-radius: 1.3rem;
+  background:
+    linear-gradient(90deg, rgba(23, 33, 31, 0.78), rgba(92, 63, 32, 0.64)),
+    radial-gradient(circle at 75% 45%, rgba(229, 197, 122, 0.34), transparent 10rem),
+    rgba(75, 48, 28, 0.7);
+}
+
+.history-reformation-hero__image span {
+  border: 2px solid rgba(229, 197, 122, 0.7);
+  background: rgba(236, 213, 164, 0.76);
+  padding: 1.15rem 0.85rem;
+  color: #271b10;
+  font-family: var(--font-display), serif;
+  font-size: 1.05rem;
+  transform: rotate(-3deg);
+}
+
+.history-reformer-strip,
+.history-charismatic-figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  padding: 0.85rem 1.35rem 0.25rem;
+}
+
+.history-reformer-strip article,
+.history-reformer-strip a,
+.history-charismatic-figures article,
+.history-charismatic-figures a {
+  border: 1.5px solid rgba(229, 197, 122, 0.5);
+  border-radius: 1.1rem;
+  background: rgba(7, 31, 64, 0.72);
+  padding: 0.68rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.history-reformer-strip article > div,
+.history-reformer-strip a > div,
+.history-charismatic-figures article > div,
+.history-charismatic-figures a > div {
+  width: 3.9rem;
+  height: 3.9rem;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 0.55rem;
+  border: 2px solid var(--color-highlight);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(229, 197, 122, 0.22), rgba(10, 29, 54, 0.95));
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.55rem;
+}
+
+.history-reformer-strip h3,
+.history-charismatic-figures h3 {
+  margin: 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.history-reformer-strip p,
+.history-charismatic-figures p,
+.history-charismatic-figures small {
+  display: block;
+  margin: 0.35rem 0 0;
+  color: var(--color-ink);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.history-reformer-strip strong {
+  display: block;
+  margin-top: 0.65rem;
+  border-top: 1px solid rgba(229, 197, 122, 0.28);
+  padding-top: 0.55rem;
+  color: var(--color-highlight);
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.history-wide-card {
+  margin: 0.85rem 1.35rem 0;
+}
+
+.history-wide-card ul {
+  font-size: 0.9rem;
+}
+
+.history-charismatic-timeline {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding: 0 1.35rem 0 3.65rem;
+}
+
+.history-charismatic-timeline::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2.7rem;
+  width: 0.16rem;
+  content: "";
+  background: linear-gradient(180deg, var(--color-highlight), rgba(229, 197, 122, 0.22));
+}
+
+.history-charismatic-step {
+  position: relative;
+  border-bottom: 1px solid rgba(229, 197, 122, 0.24);
+  padding-bottom: 1rem;
+}
+
+.history-charismatic-step > span {
+  position: absolute;
+  top: 0;
+  left: -2.55rem;
+  width: 2.55rem;
+  height: 2.55rem;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--color-highlight);
+  border-radius: 999px;
+  background: #071936;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.22rem;
+}
+
+.history-charismatic-step h2 {
+  margin: 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.3rem, 5vw, 2rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.history-charismatic-step p {
+  margin: 0.75rem 0 0;
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.history-azusa-card {
+  min-height: 5.4rem;
+  display: grid;
+  place-items: center;
+  margin-top: 0.8rem;
+  border-radius: 1rem;
+  background:
+    linear-gradient(135deg, rgba(229, 197, 122, 0.12), rgba(7, 31, 64, 0.62)),
+    rgba(76, 57, 38, 0.62);
+  width: 100%;
+}
+
+.history-azusa-card strong {
+  border: 1px solid rgba(229, 197, 122, 0.45);
+  padding: 0.8rem;
+  color: var(--color-highlight);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.history-denomination-list {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.8rem;
+}
+
+.history-denomination-list p,
+.history-denomination-list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border: 1px solid rgba(229, 197, 122, 0.34);
+  border-radius: 0.8rem;
+  background: rgba(7, 31, 64, 0.72);
+  padding: 0.75rem 0.9rem;
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: 1.05rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.history-denomination-list span,
+.history-denomination-list b {
+  display: none;
+}
+
+.history-denomination-list b {
+  color: var(--color-highlight);
+  font-size: 1.7rem;
+}
+
+.history-study-sections {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.95rem 1.35rem 0;
+}
+
+.history-study-sections article {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 0.75rem;
+  border: 1px solid rgba(229, 197, 122, 0.28);
+  border-radius: 1.15rem;
+  background: rgba(7, 31, 64, 0.58);
+  padding: 0.9rem;
+}
+
+.history-study-sections article > span {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-highlight);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+}
+
+.history-study-sections h3 {
+  margin: 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.5rem;
+  line-height: 1.05;
+}
+
+.history-study-sections p {
+  margin: 0.45rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.catholic-devotions-mobile {
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(229, 197, 122, 0.14), transparent 18rem),
+    linear-gradient(180deg, rgba(4, 17, 38, 0.95), rgba(4, 17, 38, 0.99)),
+    #041126;
+}
+
+.catholic-devotions-hero {
+  margin: 1rem 1.35rem 0;
+  border: 1.5px solid rgba(229, 197, 122, 0.55);
+  border-radius: 1.45rem;
+  background:
+    radial-gradient(circle at top, rgba(111, 35, 62, 0.35), transparent 15rem),
+    rgba(7, 31, 64, 0.72);
+  padding: 1rem;
+  text-align: center;
+}
+
+.catholic-devotions-hero p {
+  margin: 0;
+  color: var(--color-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.catholic-devotions-hero h2 {
+  margin: 0.35rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.8rem, 7vw, 3rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.catholic-devotions-hero span {
+  display: block;
+  margin-top: 0.65rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.42;
+}
+
+.catholic-devotions-grid,
+.catholic-devotions-paths,
+.catholic-devotions-doctrine {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.9rem 1.35rem 0;
+}
+
+.catholic-devotions-card,
+.catholic-devotions-path,
+.catholic-devotions-doctrine article {
+  border: 1.5px solid rgba(229, 197, 122, 0.45);
+  border-radius: 1.2rem;
+  background:
+    radial-gradient(circle at top left, rgba(45, 91, 143, 0.32), transparent 12rem),
+    rgba(7, 31, 64, 0.72);
+  padding: 0.9rem;
+}
+
+.catholic-devotions-card p {
+  margin: 0;
+  color: var(--color-soft);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.catholic-devotions-card h2,
+.catholic-devotions-path h2,
+.catholic-devotions-doctrine h2 {
+  margin: 0.25rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.catholic-devotions-card > span,
+.catholic-devotions-path p,
+.catholic-devotions-doctrine p {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.catholic-devotions-card div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.catholic-devotions-card small {
+  border: 1px solid rgba(229, 197, 122, 0.26);
+  border-radius: 999px;
+  padding: 0.3rem 0.55rem;
+  color: var(--color-ink);
+  font-size: 0.72rem;
+}
+
+.catholic-devotions-path {
+  display: grid;
+  grid-template-columns: 3.3rem 1fr;
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.catholic-devotions-path > div {
+  width: 3.3rem;
+  height: 3.3rem;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--color-highlight);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.45rem;
+}
+
+.orthodox-devotions-mobile {
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(229, 197, 122, 0.14), transparent 18rem),
+    linear-gradient(180deg, rgba(4, 17, 38, 0.95), rgba(4, 17, 38, 0.99)),
+    #041126;
+}
+
+.orthodox-devotions-hero {
+  margin: 1rem 1.35rem 0;
+  border: 1.5px solid rgba(229, 197, 122, 0.55);
+  border-radius: 1.45rem;
+  background:
+    radial-gradient(circle at top, rgba(40, 83, 134, 0.35), transparent 15rem),
+    rgba(7, 31, 64, 0.72);
+  padding: 1rem;
+  text-align: center;
+}
+
+.orthodox-devotions-hero p {
+  margin: 0;
+  color: var(--color-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.orthodox-devotions-hero h2 {
+  margin: 0.35rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.8rem, 7vw, 3rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.orthodox-devotions-hero span {
+  display: block;
+  margin-top: 0.65rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.42;
+}
+
+.orthodox-devotions-grid,
+.orthodox-devotions-paths,
+.orthodox-devotions-doctrine {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.9rem 1.35rem 0;
+}
+
+.orthodox-devotions-card,
+.orthodox-devotions-path,
+.orthodox-devotions-doctrine article {
+  border: 1.5px solid rgba(229, 197, 122, 0.45);
+  border-radius: 1.2rem;
+  background:
+    radial-gradient(circle at top left, rgba(45, 91, 143, 0.32), transparent 12rem),
+    rgba(7, 31, 64, 0.72);
+  padding: 0.9rem;
+}
+
+.orthodox-devotions-card p {
+  margin: 0;
+  color: var(--color-soft);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.orthodox-devotions-card h2,
+.orthodox-devotions-path h2,
+.orthodox-devotions-doctrine h2 {
+  margin: 0.25rem 0 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.orthodox-devotions-card > span,
+.orthodox-devotions-path p,
+.orthodox-devotions-doctrine p {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.orthodox-devotions-card div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.orthodox-devotions-card small {
+  border: 1px solid rgba(229, 197, 122, 0.26);
+  border-radius: 999px;
+  padding: 0.3rem 0.55rem;
+  color: var(--color-ink);
+  font-size: 0.72rem;
+}
+
+.orthodox-devotions-path {
+  display: grid;
+  grid-template-columns: 3.3rem 1fr;
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.orthodox-devotions-path > div {
+  width: 3.3rem;
+  height: 3.3rem;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--color-highlight);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.45rem;
+}
+
+@media (max-width: 420px) {
+  .history-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-mini-card {
+    text-align: left;
+  }
+}
+
+.orthodox-mobile {
+  background:
+    linear-gradient(180deg, rgba(3, 15, 33, 0.62), rgba(4, 17, 38, 0.98) 34rem),
+    radial-gradient(circle at top, rgba(104, 72, 40, 0.35), transparent 34rem),
+    #041126;
+}
+
+.orthodox-mobile__topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  min-height: 4.65rem;
+  display: grid;
+  grid-template-columns: 2.8rem 2.6rem 1fr;
+  align-items: center;
+  gap: 0.55rem;
+  border-bottom: 1px solid rgba(229, 197, 122, 0.18);
+  background: rgba(4, 17, 38, 0.94);
+  padding: 0 1rem;
+  backdrop-filter: blur(16px);
+}
+
+.orthodox-mobile__back,
+.orthodox-mobile__cross {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 2.35rem;
+  line-height: 1;
+}
+
+.orthodox-mobile__topbar h1 {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.7rem, 7.2vw, 2.7rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.orthodox-mobile__sections {
+  display: grid;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem 0;
+}
+
+.orthodox-mobile__intro {
+  margin: 1rem;
+  border: 1px solid rgba(229, 197, 122, 0.42);
+  border-radius: 1.35rem;
+  background:
+    radial-gradient(circle at top right, rgba(45, 91, 143, 0.28), transparent 54%),
+    rgba(7, 27, 55, 0.82);
+  padding: 1.25rem;
+}
+
+.orthodox-mobile__intro p {
+  color: var(--color-highlight);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.orthodox-mobile__intro h2 {
+  margin-top: 0.55rem;
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.75rem, 7vw, 2.65rem);
+  line-height: 1.05;
+}
+
+.orthodox-mobile__intro span {
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.orthodox-mobile-card {
+  overflow: hidden;
+  border: 1.5px solid rgba(229, 197, 122, 0.62);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(39, 83, 134, 0.36), transparent 44%),
+    rgba(6, 27, 57, 0.88);
+  box-shadow:
+    inset 0 0 20px rgba(45, 91, 143, 0.16),
+    0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.orthodox-mobile-card__head {
+  display: grid;
+  grid-template-columns: 3rem 1fr 2rem;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.8rem 1rem 0.45rem;
+}
+
+.orthodox-mobile-card__icon {
+  display: grid;
+  place-items: center;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.8rem;
+}
+
+.orthodox-mobile-card__head h2 {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.35rem, 6vw, 2rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.orthodox-mobile-card__chevron {
+  color: var(--color-highlight);
+  font-size: 2rem;
+  line-height: 1;
+  text-align: right;
+}
+
+.orthodox-mobile-card__items {
+  padding: 0 1rem 0.75rem 4rem;
+}
+
+.orthodox-mobile-card__items a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+  border-top: 1px solid rgba(229, 197, 122, 0.16);
+  padding: 0.48rem 0;
+}
+
+.orthodox-mobile-card__items strong {
+  display: block;
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.08rem, 4.6vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.orthodox-mobile-card__items small {
+  display: block;
+  margin-top: 0.16rem;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.orthodox-mobile-card__items a > span:last-child {
+  color: var(--color-highlight);
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.orthodox-mobile__notice {
+  margin: 0.9rem 1rem 0;
+  border: 1px solid rgba(229, 197, 122, 0.32);
+  border-radius: 1.2rem;
+  background: rgba(5, 17, 34, 0.64);
+  padding: 1rem;
+}
+
+.orthodox-mobile__notice h2 {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.4rem;
+}
+
+.orthodox-mobile__notice p {
+  margin-top: 0.45rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.lxx-reader {
+  padding: 0 1rem 6.5rem;
+  background:
+    linear-gradient(180deg, rgba(4, 17, 38, 0.88), rgba(4, 17, 38, 0.98)),
+    radial-gradient(circle at top right, rgba(92, 69, 35, 0.34), transparent 26rem),
+    #041126;
+}
+
+.fathers-mobile {
+  padding: 0 1rem 6.8rem;
+  background:
+    linear-gradient(180deg, rgba(4, 17, 38, 0.92), rgba(4, 17, 38, 0.98)),
+    radial-gradient(circle at top, rgba(28, 61, 106, 0.55), transparent 34rem),
+    #041126;
+}
+
+.fathers-mobile__topbar {
+  min-height: 5.4rem;
+  display: grid;
+  grid-template-columns: 2.6rem 1fr 2.6rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fathers-mobile__topbar a,
+.fathers-mobile__topbar span {
+  color: var(--color-highlight);
+  font-size: 2.6rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.fathers-mobile__topbar h1 {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(2rem, 8.8vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+
+.fathers-mobile__search {
+  min-height: 4.7rem;
+  display: grid;
+  grid-template-columns: 3.3rem 1fr;
+  align-items: center;
+  border: 1px solid rgba(159, 176, 203, 0.28);
+  border-radius: 1.25rem;
+  background: rgba(11, 34, 67, 0.72);
+  padding: 0 1rem;
+}
+
+.fathers-mobile__search span {
+  color: var(--color-highlight);
+  font-size: 2.2rem;
+}
+
+.fathers-mobile__search input {
+  min-width: 0;
+  color: var(--color-ink);
+  font-size: clamp(1.1rem, 4.8vw, 1.65rem);
+  outline: none;
+}
+
+.fathers-mobile__search input::placeholder {
+  color: rgba(203, 196, 178, 0.72);
+}
+
+.fathers-mobile__filters {
+  display: flex;
+  gap: 0.55rem;
+  overflow-x: auto;
+  padding: 1.15rem 0 0.75rem;
+  scrollbar-width: none;
+}
+
+.fathers-mobile__filters::-webkit-scrollbar {
+  display: none;
+}
+
+.fathers-mobile__filters button {
+  flex: 0 0 auto;
+  border: 1.5px solid rgba(229, 197, 122, 0.82);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1rem;
+  padding: 0.65rem 1rem;
+}
+
+.fathers-mobile__filter--active {
+  background: linear-gradient(180deg, #e9c878, #caa45a);
+  color: #14100a !important;
+}
+
+.fathers-mobile__list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.fathers-mobile-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5.6rem 1fr 1.6rem;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 8.4rem;
+  border: 1.5px solid rgba(229, 197, 122, 0.5);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(45, 91, 143, 0.34), transparent 52%),
+    rgba(7, 31, 64, 0.82);
+  padding: 0.85rem;
+}
+
+.fathers-mobile-card__portrait {
+  width: 5.2rem;
+  height: 5.2rem;
+  overflow: hidden;
+  border: 2px solid var(--color-highlight);
+  border-radius: 999px;
+  background: rgba(12, 38, 76, 0.84);
+  box-shadow:
+    inset 0 0 0 4px rgba(7, 31, 64, 0.84),
+    0 8px 18px rgba(0, 0, 0, 0.24);
+}
+
+.fathers-mobile-card__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.fathers-mobile-card h2 {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.45rem, 6.2vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.04;
+}
+
+.fathers-mobile-card__era {
+  margin-top: 0.1rem;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.08rem;
+  line-height: 1.15;
+}
+
+.fathers-mobile-card__summary {
+  display: -webkit-box;
+  margin-top: 0.35rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(0.98rem, 4vw, 1.35rem);
+  line-height: 1.28;
+}
+
+.fathers-mobile-card__arrow {
+  color: var(--color-highlight);
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.lxx-reader__topbar {
+  position: sticky;
+  top: 0;
+  z-index: 35;
+  min-height: 4.8rem;
+  display: grid;
+  grid-template-columns: 3rem 1fr 3rem;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 -1rem;
+  border-bottom: 1px solid rgba(229, 197, 122, 0.2);
+  background: rgba(4, 17, 38, 0.94);
+  padding: 0 1rem;
+  backdrop-filter: blur(16px);
+}
+
+.lxx-reader__topbar p {
+  color: var(--color-soft);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.lxx-reader__topbar h1 {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.45rem, 6.6vw, 2.35rem);
+  line-height: 1;
+  text-align: center;
+}
+
+.lxx-reader__icon {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 2.4rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.lxx-reader__controls {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.lxx-reader__controls label,
+.lxx-reader__search {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.lxx-reader__controls span {
+  color: var(--color-highlight);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.lxx-reader__controls select,
+.lxx-reader__search input {
+  width: 100%;
+  border: 1px solid rgba(229, 197, 122, 0.38);
+  border-radius: 1rem;
+  background: rgba(5, 17, 34, 0.78);
+  color: var(--color-ink);
+  padding: 0.85rem 1rem;
+  outline: none;
+}
+
+.lxx-reader__search {
+  position: relative;
+  margin-top: 0.85rem;
+}
+
+.lxx-reader__results {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  left: 0;
+  z-index: 30;
+  display: grid;
+  gap: 0.35rem;
+  border: 1px solid rgba(229, 197, 122, 0.28);
+  border-radius: 1rem;
+  background: rgba(4, 17, 38, 0.98);
+  padding: 0.4rem;
+}
+
+.lxx-reader__results button {
+  display: grid;
+  gap: 0.2rem;
+  border-radius: 0.8rem;
+  padding: 0.65rem;
+  text-align: left;
+}
+
+.lxx-reader__results strong {
+  color: var(--color-highlight);
+}
+
+.lxx-reader__results span {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.lxx-reader__chapter-heading,
+.lxx-reader__selected {
+  margin-top: 1rem;
+  border: 1px solid rgba(229, 197, 122, 0.32);
+  border-radius: 1.2rem;
+  background: rgba(7, 27, 55, 0.72);
+  padding: 1rem;
+}
+
+.lxx-reader__chapter-heading p,
+.lxx-reader__chapter-heading span {
+  color: var(--color-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.lxx-reader__chapter-heading h2 {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(2rem, 9vw, 3.2rem);
+}
+
+.lxx-reader__status {
+  color: var(--color-muted);
+  padding: 1rem 0;
+}
+
+.lxx-reader__chapter {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.lxx-verse {
+  scroll-margin-top: 8rem;
+}
+
+.lxx-verse > button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.lxx-verse span {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.55rem;
+}
+
+.lxx-verse p {
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.35rem, 5.8vw, 2.25rem);
+  line-height: 1.28;
+}
+
+.lxx-verse--active p {
+  color: #fff8e8;
+}
+
+.lxx-reader__selected {
+  margin-bottom: 1rem;
+}
+
+.lxx-reader__selected strong {
+  color: var(--color-highlight);
+}
+
+.lxx-reader__selected p {
+  margin-top: 0.45rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.lxx-reader__chapter-nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.lxx-reader__chapter-nav button {
+  border: 1px solid rgba(229, 197, 122, 0.4);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  padding: 0.8rem;
+}
+
+.lxx-reader__chapter-nav button:disabled {
+  opacity: 0.38;
+}
+
+.kjv-mobile {
+  padding-bottom: 6rem;
+}
+
+.kjv-mobile--compact .kjv-mobile__topbar {
+  min-height: 4.2rem;
+}
+
+.kjv-mobile--compact .kjv-mobile__topbar h1 {
+  font-size: clamp(1.5rem, 6vw, 2.4rem);
+}
+
+.kjv-mobile--compact .kjv-mobile__chapterbar strong {
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+}
+
+.kjv-mobile--compact .kjv-mobile__verses {
+  padding-top: 0.75rem;
+}
+
+.kjv-mobile--compact .kjv-mobile-verse {
+  margin-bottom: 1.1rem;
+}
+
+.kjv-mobile--compact .kjv-mobile-verse__text {
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+}
+
+.kjv-mobile__topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  min-height: 4.7rem;
+  display: grid;
+  grid-template-columns: 3.5rem 1fr 3.5rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(159, 176, 203, 0.18);
+  background: rgba(4, 17, 38, 0.92);
+  padding: 0 0.85rem;
+  backdrop-filter: blur(16px);
+}
+
+.kjv-mobile__topbar h1 {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.75rem, 7vw, 2.8rem);
+  font-weight: 600;
+  text-align: center;
+}
+
+.kjv-mobile__icon-button,
+.kjv-mobile__chapterbar button {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.kjv-mobile__chapterbar {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr 4.5rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(159, 176, 203, 0.18);
+  background: rgba(5, 22, 49, 0.7);
+}
+
+.kjv-mobile__chapterbar div {
+  min-height: 4.7rem;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  align-items: center;
+  gap: 0.55rem;
+  border-right: 1px solid rgba(159, 176, 203, 0.12);
+  border-left: 1px solid rgba(159, 176, 203, 0.12);
+  color: var(--color-highlight);
+}
+
+.kjv-mobile__chapterbar span {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.kjv-mobile__chapterbar strong {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.1rem, 9vw, 3.3rem);
+  font-weight: 600;
+  text-align: center;
+}
+
+.kjv-mobile__selectors {
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem 0;
+}
+
+.kjv-mobile__selectors select {
+  min-width: 0;
+  border: 1px solid rgba(229, 197, 122, 0.36);
+  border-radius: 999px;
+  background: rgba(5, 17, 34, 0.76);
+  color: var(--color-ink);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+.kjv-mobile__status {
+  padding: 1rem;
+  color: var(--color-muted);
+}
+
+.kjv-mobile__verses {
+  padding: 1.1rem 1rem 0;
+}
+
+.kjv-mobile-verse {
+  margin-bottom: 1.55rem;
+  scroll-margin-top: 10.2rem;
+}
+
+.kjv-mobile-verse__text {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.6rem 1fr;
+  gap: 0.75rem;
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(2rem, 8.2vw, 3.25rem);
+  line-height: 1.25;
+  text-align: left;
+}
+
+.kjv-mobile-verse__number {
+  color: var(--color-highlight);
+}
+
+.kjv-mobile-verse__strongs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.55rem 0 0 3.35rem;
+}
+
+.kjv-mobile-strong {
+  display: grid;
+  justify-items: center;
+  border-bottom: 2px solid currentColor;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  line-height: 1.05;
+  padding: 0.12rem 0.08rem;
+}
+
+.kjv-mobile-strong span {
+  font-size: clamp(1.2rem, 5vw, 1.75rem);
+}
+
+.kjv-mobile-strong small {
+  font-size: clamp(0.85rem, 3.7vw, 1.05rem);
+}
+
+.kjv-mobile-strong--active {
+  color: #f6dd9a;
+  text-shadow: 0 0 14px rgba(229, 197, 122, 0.45);
+}
+
+.kjv-mobile-concordance {
+  margin-top: 1.45rem;
+  overflow: hidden;
+  border: 2px solid rgba(229, 197, 122, 0.78);
+  border-radius: 1.3rem;
+  background: rgba(5, 22, 49, 0.76);
+  box-shadow: inset 0 0 24px rgba(35, 73, 121, 0.24);
+}
+
+.kjv-mobile-concordance__header {
+  min-height: 4.2rem;
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid rgba(229, 197, 122, 0.62);
+  color: var(--color-highlight);
+  padding: 0.75rem 1rem;
+}
+
+.kjv-mobile-concordance__header strong {
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.45rem, 6vw, 2.15rem);
+}
+
+.kjv-mobile-concordance__header button {
+  border: 1px solid rgba(229, 197, 122, 0.48);
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  color: var(--color-highlight);
+  font-size: 0.8rem;
+}
+
+.kjv-mobile-concordance__body {
+  display: grid;
+  grid-template-columns: 5.2rem 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.kjv-mobile-concordance__badge {
+  width: 5.2rem;
+  height: 5.2rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-highlight);
+  border-radius: 50%;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.75rem;
+}
+
+.kjv-mobile-concordance__body h2 {
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.55rem, 6vw, 2.35rem);
+  line-height: 1.15;
+}
+
+.kjv-mobile-concordance__body p {
+  margin-top: 0.35rem;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 4.5vw, 1.35rem);
+  line-height: 1.45;
+}
+
+.kjv-mobile-concordance__meta {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  border-top: 1px solid rgba(229, 197, 122, 0.45);
+  padding-top: 1rem;
+}
+
+.kjv-mobile-concordance__meta div + div {
+  border-left: 1px solid rgba(229, 197, 122, 0.38);
+  padding-left: 1rem;
+}
+
+.kjv-mobile-concordance__meta span {
+  display: block;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.05rem;
+}
+
+.kjv-mobile-concordance__meta strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--color-ink);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.kjv-mobile-concordance__loading {
+  padding: 1rem;
+  color: var(--color-muted);
+}
+
+@media (min-width: 1024px) {
+  .mobile-bottom-nav {
+    display: none;
+  }
+}
+
+.catholic-mobile {
+  position: relative;
+  padding: 0 1rem 7rem;
+}
+
+.catholic-mobile__topbar {
+  min-height: 5rem;
+  display: grid;
+  grid-template-columns: 3.3rem 1fr 3.3rem;
+  align-items: center;
+}
+
+.catholic-mobile__topbar h1 {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.85rem, 7.2vw, 3rem);
+  font-weight: 600;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.catholic-mobile__icon-button {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 2.8rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.catholic-mobile__selector {
+  min-height: 4.7rem;
+  display: grid;
+  grid-template-columns: 3rem 1fr 5.2rem;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1.5px solid rgba(229, 197, 122, 0.62);
+  border-radius: 1rem;
+  background: rgba(5, 22, 49, 0.68);
+  padding: 0 0.75rem;
+}
+
+.catholic-mobile__selector span {
+  color: var(--color-highlight);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.catholic-mobile__selector select {
+  min-width: 0;
+  border: 0;
+  border-left: 1px solid rgba(229, 197, 122, 0.32);
+  background: transparent;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.3rem, 6vw, 2.25rem);
+  outline: none;
+  padding: 0.4rem 0.65rem;
+  text-align: center;
+}
+
+.catholic-mobile__selector select:last-child {
+  border-right: 0;
+  text-align: right;
+}
+
+.catholic-mobile__status {
+  color: var(--color-muted);
+  padding: 1rem 0.25rem 0;
+}
+
+.catholic-mobile__reading {
+  padding: 1.35rem 0.25rem 0.6rem;
+}
+
+.catholic-mobile__reading-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+}
+
+.catholic-mobile__reading p {
+  margin-top: 0.9rem;
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.15rem, 8.6vw, 3.75rem);
+  line-height: 1.18;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.26);
+}
+
+.catholic-mobile__actions {
+  display: flex;
+  gap: 1.7rem;
+  margin-top: 1.5rem;
+}
+
+.catholic-mobile__actions button {
+  color: var(--color-highlight);
+  font-size: 2rem;
+}
+
+.catholic-mobile__reading {
+  display: none;
+}
+
+.catholic-mobile__chapter {
+  padding: 1.35rem 0.25rem 0.3rem;
+}
+
+.catholic-mobile__study-strip {
+  display: grid;
+  gap: 0.7rem;
+  padding: 0 0.25rem 0.8rem;
+}
+
+.catholic-mobile__study-chip,
+.catholic-mobile__note,
+.catholic-mobile-verse__note {
+  border: 1px solid rgba(229, 197, 122, 0.36);
+  border-radius: 1rem;
+  background: rgba(5, 17, 34, 0.56);
+}
+
+.catholic-mobile__study-chip {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem 1rem;
+}
+
+.catholic-mobile__study-chip span,
+.catholic-mobile__note strong,
+.catholic-mobile-verse__note strong {
+  color: var(--color-highlight);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.catholic-mobile__study-chip strong,
+.catholic-mobile__note p,
+.catholic-mobile-verse__note p {
+  color: var(--color-ink);
+  font-family: var(--font-body), serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.catholic-mobile-verse__notes {
+  margin: 0.8rem 0 0 3.5rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.catholic-mobile-verse__note {
+  padding: 0.7rem 0.85rem;
+}
+
+.catholic-mobile-verse {
+  scroll-margin-top: 10rem;
+  margin-bottom: 1.4rem;
+}
+
+.catholic-mobile-verse > button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.7rem 1fr;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.catholic-mobile-verse span {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  line-height: 1.15;
+}
+
+.catholic-mobile-verse p {
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.85rem, 7.4vw, 3.25rem);
+  line-height: 1.22;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.26);
+}
+
+.catholic-mobile-verse--active p {
+  color: #fff8e8;
+}
+
+.catholic-mobile-verse__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0 3.5rem;
+}
+
+.catholic-mobile-verse__actions button,
+.catholic-mobile-verse__actions span {
+  border: 1px solid rgba(229, 197, 122, 0.42);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-family: var(--font-body), serif;
+  font-size: 0.86rem;
+  line-height: 1;
+  padding: 0.55rem 0.8rem;
+}
+
+.catholic-mobile__divider {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--color-highlight);
+  margin: 0.55rem 0 1rem;
+}
+
+.catholic-mobile__divider::before,
+.catholic-mobile__divider::after {
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(229, 197, 122, 0.72));
+}
+
+.catholic-mobile__divider::after {
+  background: linear-gradient(90deg, rgba(229, 197, 122, 0.72), transparent);
+}
+
+.catholic-mobile-catechism {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.9rem;
+  border: 1.5px solid rgba(229, 197, 122, 0.72);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at top left, rgba(111, 48, 63, 0.8), transparent 56%),
+    rgba(48, 18, 34, 0.88);
+  padding: 1.2rem 1rem;
+}
+
+.catholic-mobile-catechism__icon {
+  color: var(--color-highlight);
+  font-size: 3.6rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.catholic-mobile-catechism h2,
+.catholic-mobile-crossrefs h2 {
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.65rem, 6.6vw, 2.45rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.catholic-mobile-catechism p {
+  margin-top: 0.65rem;
+  color: var(--color-ink);
+  font-size: clamp(1.05rem, 4.6vw, 1.35rem);
+  line-height: 1.45;
+}
+
+.catholic-mobile-catechism a {
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  border: 1.5px solid var(--color-highlight);
+  border-radius: 999px;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.25rem;
+  padding: 0.45rem 1.3rem;
+}
+
+.catholic-mobile-crossrefs {
+  margin-top: 1rem;
+  overflow: hidden;
+  border: 1.5px solid rgba(229, 197, 122, 0.64);
+  border-radius: 1.25rem;
+  background: rgba(5, 22, 49, 0.72);
+  padding: 1rem;
+}
+
+.catholic-mobile-crossrefs__title {
+  display: grid;
+  grid-template-columns: 3rem 1fr 2.5rem;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--color-highlight);
+}
+
+.catholic-mobile-crossrefs__title span {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.catholic-mobile-crossrefs__row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1rem minmax(6rem, 0.7fr) 1fr 1rem;
+  align-items: center;
+  gap: 0.55rem;
+  border-top: 1px solid rgba(229, 197, 122, 0.18);
+  color: var(--color-highlight);
+  padding: 0.55rem 0;
+  text-align: left;
+}
+
+.catholic-mobile-crossrefs__row strong {
+  font-family: var(--font-display), serif;
+  font-size: clamp(1rem, 4.5vw, 1.35rem);
+  font-weight: 500;
+}
+
+.catholic-mobile-crossrefs__row em {
+  overflow: hidden;
+  color: var(--color-ink);
+  font-size: clamp(0.9rem, 3.8vw, 1.05rem);
+  font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.catholic-mobile__toggle {
+  min-height: 4.4rem;
+  display: grid;
+  grid-template-columns: 2.7rem 1fr 4rem;
+  align-items: center;
+  gap: 0.7rem;
+  border-top: 1px solid rgba(159, 176, 203, 0.18);
+  border-bottom: 1px solid rgba(159, 176, 203, 0.18);
+  margin: 1rem -1rem 0;
+  padding: 0 1rem;
+}
+
+.catholic-mobile__toggle span {
+  color: var(--color-highlight);
+  font-size: 2rem;
+}
+
+.catholic-mobile__toggle strong {
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1rem, 4.4vw, 1.35rem);
+  font-weight: 400;
+}
+
+.catholic-mobile__toggle input {
+  width: 3.45rem;
+  height: 1.9rem;
+  accent-color: var(--color-highlight);
+}
+
+.catholic-mobile__chapter-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+.catholic-mobile__chapter-actions button {
+  flex: 1;
+  min-height: 2.8rem;
+  border: 1px solid rgba(229, 197, 122, 0.42);
+  border-radius: 999px;
+  color: var(--color-highlight);
+}
+
+.catholic-mobile__chapter-actions button:disabled {
+  opacity: 0.38;
+}
+
+/* ── Shared verse bookmark color ─────────────────────────── */
+
+.kjv-mobile-verse--bookmarked {
+  border-left: 3px solid rgba(229, 197, 122, 0.7);
+  background: rgba(229, 197, 122, 0.05);
+}
+
+.catholic-mobile-verse--bookmarked {
+  border-left: 3px solid rgba(229, 197, 122, 0.7);
+  background: rgba(229, 197, 122, 0.05);
+}
+
+.lxx-verse--bookmarked {
+  border-left: 3px solid rgba(229, 197, 122, 0.7);
+  background: rgba(229, 197, 122, 0.05);
+}
+
+/* KJV quick bookmark/share row */
+.kjv-mobile-verse__quick-actions {
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.35rem 0.5rem 0.25rem;
+}
+
+.kjv-mobile-verse__quick-btn {
+  border: 1px solid rgba(229, 197, 122, 0.28);
+  border-radius: 999px;
+  background: transparent;
+  padding: 0.28rem 0.75rem;
+  color: var(--color-soft);
+  font-size: 0.78rem;
+  transition: all 140ms ease;
+}
+
+.kjv-mobile-verse__quick-btn--saved {
+  border-color: rgba(229, 197, 122, 0.6);
+  color: var(--color-highlight);
+}
+
+/* Catholic verse action saved state */
+.catholic-mobile-verse__actions-saved {
+  color: var(--color-highlight) !important;
+}
+
+/* LXX bookmark/share row */
+.lxx-reader__verse-actions {
+  display: flex;
+  gap: 0.45rem;
+  padding-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.lxx-reader__action-btn {
+  border: 1px solid rgba(229, 197, 122, 0.28);
+  border-radius: 999px;
+  background: transparent;
+  padding: 0.32rem 0.85rem;
+  color: var(--color-soft);
+  font-size: 0.8rem;
+  transition: all 140ms ease;
+}
+
+.lxx-reader__action-btn--active {
+  border-color: rgba(229, 197, 122, 0.65);
+  color: var(--color-highlight);
+}
+
+/* ── Donate Page ──────────────────────────────────────────── */
+
+.donate-page {
+  background:
+    radial-gradient(circle at 50% 8%, rgba(229, 197, 122, 0.1), transparent 22rem),
+    linear-gradient(180deg, rgba(4, 17, 38, 0.96), rgba(4, 17, 38, 0.99)),
+    #041126;
+}
+
+.donate-body {
+  display: grid;
+  gap: 1.4rem;
+  padding: 1.2rem 1.25rem 2rem;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+.donate-verse-card {
+  border: 1.5px solid rgba(229, 197, 122, 0.38);
+  border-radius: 1.6rem;
+  background:
+    radial-gradient(circle at top, rgba(45, 91, 143, 0.35), transparent 70%),
+    rgba(7, 31, 64, 0.72);
+  padding: 1.4rem 1.5rem;
+  text-align: center;
+}
+
+.donate-verse-ref {
+  margin: 0 0 0.6rem;
+  color: rgba(229, 197, 122, 0.7);
+  font-family: var(--font-display), serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+
+.donate-verse-text {
+  margin: 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.2rem, 5vw, 1.65rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.donate-mission {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.donate-mission__heading {
+  margin: 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.donate-mission__body {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.donate-mission__body em {
+  color: var(--color-ink);
+  font-style: italic;
+}
+
+.donate-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.6rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f0cf84, #cba45b);
+  box-shadow: 0 12px 32px rgba(203, 164, 91, 0.32);
+  color: #0a1530;
+  font-family: var(--font-display), serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.donate-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(203, 164, 91, 0.42);
+}
+
+.donate-footer {
+  margin: 0;
+  color: var(--color-soft);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.support-topics {
+  border: 1px solid rgba(229, 197, 122, 0.2);
+  border-radius: 1.4rem;
+  background: rgba(7, 25, 54, 0.62);
+  padding: 1.2rem 1.3rem;
+}
+
+.support-topics__heading {
+  margin: 0 0 0.75rem;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.support-topics__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.support-topics__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.support-topics__list li::before {
+  content: "›";
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+/* ── Privacy Policy ──────────────────────────────────────── */
+
+.privacy-body {
+  display: grid;
+  gap: 0;
+  padding: 1rem 1.25rem 2.5rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.privacy-meta {
+  margin: 0 0 1.2rem;
+  color: var(--color-soft);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.privacy-section {
+  border-top: 1px solid rgba(229, 197, 122, 0.14);
+  padding: 1.1rem 0;
+}
+
+.privacy-section h2 {
+  margin: 0 0 0.55rem;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.2rem, 4.5vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.privacy-section p {
+  margin: 0 0 0.5rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.privacy-section p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-section ul {
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.privacy-section ul li {
+  display: flex;
+  gap: 0.6rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.privacy-section ul li::before {
+  content: "›";
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.privacy-section strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.privacy-section--contact {
+  border-bottom: 1px solid rgba(229, 197, 122, 0.14);
+}
+
+.privacy-contact-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  color: var(--color-highlight);
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Prayer Forum ─────────────────────────────────────────── */
+
+.forum {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.forum-notice {
+  border: 1px solid rgba(229, 197, 122, 0.22);
+  border-radius: 1rem;
+  background: rgba(229, 197, 122, 0.07);
+  padding: 0.75rem 1rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Sign-in card */
+.forum-signin-card {
+  border: 1px solid rgba(229, 197, 122, 0.28);
+  border-radius: 1.4rem;
+  background: rgba(7, 25, 54, 0.72);
+  padding: 1.2rem;
+}
+
+.forum-signin-card__title {
+  margin: 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.forum-signin-card__body {
+  margin: 0.4rem 0 0.85rem;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.forum-signin-card__row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.forum-signin-card__input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid rgba(229, 197, 122, 0.28);
+  border-radius: 999px;
+  background: rgba(4, 17, 38, 0.72);
+  padding: 0.65rem 1rem;
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.forum-signin-card__input::placeholder {
+  color: var(--color-soft);
+}
+
+.forum-signin-card__button {
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f0cf84, #cba45b);
+  padding: 0.65rem 1.1rem;
+  color: #0a1530;
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.forum-signin-card__button:disabled {
+  opacity: 0.55;
+}
+
+.forum-signin-card__error {
+  margin: 0.5rem 0 0;
+  color: #e6a5a5;
+  font-size: 0.82rem;
+}
+
+/* User bar */
+.forum-user-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(229, 197, 122, 0.16);
+  border-radius: 999px;
+  background: rgba(7, 25, 54, 0.62);
+  padding: 0.5rem 0.85rem 0.5rem 1.1rem;
+}
+
+.forum-user-bar__email {
+  color: var(--color-soft);
+  font-size: 0.82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.forum-user-bar__signout {
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+
+/* Compose trigger */
+.forum-compose-trigger {
+  width: 100%;
+  border: 1.5px dashed rgba(229, 197, 122, 0.36);
+  border-radius: 1.2rem;
+  background: rgba(7, 25, 54, 0.5);
+  padding: 0.9rem;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.forum-compose-trigger:hover {
+  background: rgba(229, 197, 122, 0.07);
+  border-color: rgba(229, 197, 122, 0.55);
+}
+
+.forum-post-message {
+  margin: 0;
+  color: var(--color-highlight);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Compose form */
+.forum-compose {
+  border: 1.5px solid rgba(229, 197, 122, 0.32);
+  border-radius: 1.4rem;
+  background: rgba(7, 25, 54, 0.82);
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.forum-compose__heading {
+  margin: 0;
+  color: var(--color-highlight);
+  font-family: var(--font-display), serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.forum-compose__category-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.forum-compose__cat-btn {
+  border: 1px solid rgba(229, 197, 122, 0.3);
+  border-radius: 999px;
+  background: transparent;
+  padding: 0.38rem 0.85rem;
+  color: var(--color-soft);
+  font-size: 0.82rem;
+  transition: all 140ms ease;
+}
+
+.forum-compose__cat-btn--active {
+  border-color: var(--color-highlight);
+  background: rgba(229, 197, 122, 0.14);
+  color: var(--color-highlight);
+  font-weight: 600;
+}
+
+.forum-input {
+  width: 100%;
+  border: 1px solid rgba(229, 197, 122, 0.24);
+  border-radius: 1rem;
+  background: rgba(4, 17, 38, 0.7);
+  padding: 0.72rem 1rem;
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  outline: none;
+  resize: vertical;
+  font-family: var(--font-body), sans-serif;
+}
+
+.forum-input::placeholder {
+  color: var(--color-soft);
+}
+
+.forum-input--textarea {
+  min-height: 7rem;
+}
+
+.forum-error {
+  margin: 0;
+  color: #e6a5a5;
+  font-size: 0.82rem;
+}
+
+.forum-compose__actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.forum-btn {
+  border-radius: 999px;
+  padding: 0.62rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: opacity 140ms ease;
+}
+
+.forum-btn:disabled {
+  opacity: 0.5;
+}
+
+.forum-btn--primary {
+  background: linear-gradient(180deg, #f0cf84, #cba45b);
+  color: #0a1530;
+}
+
+.forum-btn--ghost {
+  border: 1px solid rgba(229, 197, 122, 0.3);
+  color: var(--color-muted);
+}
+
+/* Tabs */
+.forum-tabs {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 0.15rem;
+}
+
+.forum-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.forum-tab {
+  flex-shrink: 0;
+  border: 1px solid rgba(229, 197, 122, 0.2);
+  border-radius: 999px;
+  background: transparent;
+  padding: 0.42rem 0.95rem;
+  color: var(--color-soft);
+  font-size: 0.82rem;
+  transition: all 140ms ease;
+}
+
+.forum-tab--active {
+  border-color: var(--color-highlight);
+  background: rgba(229, 197, 122, 0.12);
+  color: var(--color-highlight);
+  font-weight: 600;
+}
+
+.forum-tab--refresh {
+  margin-left: auto;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  font-size: 1rem;
+}
+
+/* Feed */
+.forum-status {
+  margin: 0.5rem 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.forum-status--error {
+  color: #e6a5a5;
+}
+
+.forum-feed {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.forum-card {
+  border: 1px solid rgba(229, 197, 122, 0.2);
+  border-left: 3px solid rgba(229, 197, 122, 0.55);
+  border-radius: 1.2rem;
+  background: var(--cat-color, rgba(229, 197, 122, 0.07));
+  padding: 1rem;
+}
+
+.forum-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.forum-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.forum-card__name {
+  color: var(--color-ink);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.forum-card__time {
+  color: var(--color-soft);
+  font-size: 0.76rem;
+}
+
+.forum-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  justify-content: flex-end;
+}
+
+.forum-card__badge {
+  border: 1px solid rgba(229, 197, 122, 0.28);
+  border-radius: 999px;
+  padding: 0.18rem 0.6rem;
+  color: var(--color-highlight);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.forum-card__badge--answered {
+  border-color: rgba(120, 200, 160, 0.4);
+  color: #7ec89a;
+}
+
+.forum-card__text {
+  margin: 0 0 0.8rem;
+  color: var(--color-ink);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.forum-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.forum-card__pray-btn {
+  border: 1px solid rgba(229, 197, 122, 0.3);
+  border-radius: 999px;
+  background: rgba(229, 197, 122, 0.07);
+  padding: 0.38rem 0.9rem;
+  color: var(--color-highlight);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: background 140ms ease;
+}
+
+.forum-card__pray-btn:hover:not(:disabled) {
+  background: rgba(229, 197, 122, 0.16);
+}
+
+.forum-card__pray-btn:disabled {
+  opacity: 0.45;
+}
+
+.forum-card__answered-btn {
+  color: var(--color-soft);
+  font-size: 0.76rem;
+  text-decoration: underline;
+}
+
+.forum-card__admin-reply {
+  border: 1px solid rgba(229, 197, 122, 0.3);
+  border-radius: 0.85rem;
+  background: rgba(229, 197, 122, 0.07);
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.forum-card__admin-reply-label {
+  margin: 0 0 0.25rem;
+  color: var(--color-highlight);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.forum-card__admin-reply-text {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}

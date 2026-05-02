@@ -1,0 +1,200 @@
+[
+  {
+    "slug": "augsburg-confession",
+    "title": "Augsburg Confession",
+    "tradition": "Lutheran",
+    "yearLabel": "1530",
+    "category": "Confession",
+    "summary": "The principal Lutheran confession presented to Emperor Charles V, summarizing evangelical teaching and identifying points of disagreement with late medieval Roman practice.",
+    "source": "Book of Concord and related public-domain Lutheran editions",
+    "sourceUrl": "https://bookofconcord.org/augsburg-confession/",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Why it matters",
+        "paragraphs": [
+          "The Augsburg Confession is one of the most important Protestant doctrinal standards. It was written to show that the Lutheran reformers were not inventing a new religion, but defending what they believed to be the catholic faith purified by Scripture.",
+          "Its early articles cover God, sin, Christ, justification, ministry, new obedience, the church, and the sacraments. The later articles criticize abuses such as mandatory monastic vows, the sacrificial understanding of the mass, and restrictions around clerical marriage."
+        ],
+        "bullets": [
+          "Strong on justification by faith",
+          "Retains a structured doctrine of church and sacraments",
+          "Defines Lutheran identity in relation to Rome and other reformers"
+        ]
+      },
+      {
+        "id": "structure",
+        "title": "Study structure",
+        "paragraphs": [
+          "A good way to study the confession is to divide it into two halves. First, read the positive doctrinal articles that state what Lutherans confess. Then read the articles on abuses corrected, where the conflict with Rome becomes more explicit.",
+          "This structure helps distinguish between core doctrinal claims and reforming criticism. It also prevents reducing the document to polemic alone."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "thirty-nine-articles",
+    "title": "Thirty-Nine Articles of Religion",
+    "tradition": "Anglican",
+    "yearLabel": "1563/1571",
+    "category": "Articles",
+    "summary": "The classical doctrinal standard of Anglicanism, balancing reformed theology, episcopal order, and the liturgical inheritance of the English church.",
+    "source": "Public-domain Anglican texts",
+    "sourceUrl": "https://anglican.net/doctrines/thirty-nine-articles/",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Why it matters",
+        "paragraphs": [
+          "The Thirty-Nine Articles define the doctrinal profile of classical Anglicanism. They reject late medieval developments on purgatory, indulgences, and certain sacramental claims while preserving episcopal order, a prayer-book tradition, and a national church framework.",
+          "The document is often studied as a mediating Protestant text: more liturgical and institutional than many free-church traditions, yet clearly reformed in authority, justification, and many core doctrinal commitments."
+        ],
+        "bullets": [
+          "Shows how Protestant reform took shape inside the English church",
+          "Important for Anglican, Episcopal, and broader historical study",
+          "Useful for comparing confessional Protestantism with Lutheran and Reformed sources"
+        ]
+      },
+      {
+        "id": "structure",
+        "title": "Study structure",
+        "paragraphs": [
+          "Start with the articles on Scripture, creeds, sin, justification, and the church. Then move to the articles on sacraments, ceremonies, and civil authority.",
+          "Reading the articles in thematic groups makes their internal logic clearer than treating them as an undifferentiated list."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "heidelberg-catechism",
+    "title": "Heidelberg Catechism",
+    "tradition": "Reformed",
+    "yearLabel": "1563",
+    "category": "Catechism",
+    "summary": "A beloved Reformed catechism structured around guilt, grace, and gratitude, designed for teaching both doctrine and devotion.",
+    "source": "Public-domain Reformed catechism editions",
+    "sourceUrl": "https://www.ccel.org/ccel/anonymous/heidelberg",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Why it matters",
+        "paragraphs": [
+          "The Heidelberg Catechism is one of the warmest and most pastoral documents in the Protestant confessional tradition. It teaches doctrine through questions and answers that move from human misery to redemption in Christ and then to thankful obedience.",
+          "Its opening question on belonging to Christ has made it a classic of Protestant devotion as well as catechesis."
+        ],
+        "bullets": [
+          "Organized around guilt, grace, and gratitude",
+          "Pastoral tone rather than merely polemical tone",
+          "Major text for Reformed teaching and family catechesis"
+        ]
+      },
+      {
+        "id": "structure",
+        "title": "Study structure",
+        "paragraphs": [
+          "A productive reading plan is to follow the catechism through its three-part movement and then revisit the sections on sacraments, the Apostles' Creed, the Ten Commandments, and the Lord's Prayer.",
+          "That pattern keeps doctrine tied to worship, prayer, and Christian life."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "westminster-shorter-catechism",
+    "title": "Westminster Shorter Catechism",
+    "tradition": "Presbyterian / Reformed",
+    "yearLabel": "1647",
+    "category": "Catechism",
+    "summary": "A concise Reformed catechism famous for its opening question and for its careful teaching on God, covenant, salvation, the commandments, and prayer.",
+    "source": "Public-domain Westminster standards",
+    "sourceUrl": "https://www.ccel.org/creeds/westminster-shorter-cat.html",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Why it matters",
+        "paragraphs": [
+          "The Westminster Shorter Catechism became one of the most influential teaching texts in English-speaking Presbyterianism. Its style is concise and doctrinally dense, intended for memorization and systematic instruction.",
+          "It is especially useful for studying classical Protestant views of God's decrees, covenant theology, moral law, the sacraments, and the means of grace."
+        ],
+        "bullets": [
+          "Compact and highly structured",
+          "Central to Presbyterian formation",
+          "Good comparative text against Catholic and Orthodox catechetical models"
+        ]
+      },
+      {
+        "id": "structure",
+        "title": "Study structure",
+        "paragraphs": [
+          "Begin with the sections on God and Scripture, then move into creation, providence, fall, redemption, and application of salvation. End with the commandments, sacraments, and the Lord's Prayer.",
+          "Its pedagogical design makes it especially suitable for a question-by-question study mode later in the app."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "london-baptist-confession-1689",
+    "title": "Second London Baptist Confession",
+    "tradition": "Particular Baptist",
+    "yearLabel": "1677/1689",
+    "category": "Confession",
+    "summary": "A major Baptist confession adapted from the Westminster and Savoy traditions, preserving Reformed theology while giving distinct Baptist accounts of church membership and baptism.",
+    "source": "Public-domain Baptist confessional editions",
+    "sourceUrl": "https://www.ccel.org/creeds/bcf.htm",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Why it matters",
+        "paragraphs": [
+          "The Second London Baptist Confession is one of the defining texts of the Reformed Baptist tradition. It shares much language with Westminster documents while differing on covenant administration, baptism, and the constitution of the visible church.",
+          "It shows that Protestant diversity did not always mean abandoning confessional rigor; sometimes it meant preserving a shared theological framework while revising specific ecclesial claims."
+        ],
+        "bullets": [
+          "Close to Westminster in many doctrinal areas",
+          "Distinctly Baptist on baptism and church membership",
+          "Important for mapping confessional Protestant diversity"
+        ]
+      },
+      {
+        "id": "structure",
+        "title": "Study structure",
+        "paragraphs": [
+          "Read it comparatively with the Westminster standards. The shared language makes the Baptist distinctives easier to see.",
+          "Special attention should go to the chapters on Scripture, covenant, church, baptism, and the Lord's Supper."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "luther-large-catechism",
+    "title": "Luther's Large Catechism",
+    "tradition": "Lutheran",
+    "yearLabel": "1529",
+    "category": "Catechism",
+    "summary": "Martin Luther's extended catechetical teaching on the commandments, creed, Lord's Prayer, baptism, confession, and the Lord's Supper.",
+    "source": "Project Gutenberg and Lutheran public-domain editions",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/1670",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Why it matters",
+        "paragraphs": [
+          "The Large Catechism is one of the best entry points into Luther's pastoral theology. It is not only a doctrinal manual but a guide to Christian formation, preaching, and family instruction.",
+          "It shows how early Protestant reform linked doctrine to worship, prayer, and ordinary household teaching."
+        ],
+        "bullets": [
+          "Catechetical rather than abstractly academic",
+          "Strong on commandments, creed, and prayer",
+          "Important bridge between confessional doctrine and pastoral practice"
+        ]
+      },
+      {
+        "id": "structure",
+        "title": "Study structure",
+        "paragraphs": [
+          "Read it by the six chief parts: commandments, creed, prayer, baptism, confession, and the Lord's Supper.",
+          "That order highlights Luther's conviction that Christian life is formed through repeated catechesis rather than sporadic information."
+        ]
+      }
+    ]
+  }
+]

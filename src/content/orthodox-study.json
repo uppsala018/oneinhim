@@ -1,0 +1,669 @@
+[
+  {
+    "slug": "septuagint-study-path",
+    "title": "Septuagint Study Path",
+    "category": "Orthodox Bible",
+    "summary": "A source-safe path for studying the Septuagint in the app using public-domain Brenton material and free reference resources.",
+    "source": "Built from public-domain Brenton Septuagint resources and free Orthodox reference material.",
+    "sections": [
+      {
+        "id": "why-lxx",
+        "title": "Why The Septuagint Matters",
+        "paragraphs": [
+          "The Septuagint is the ancient Greek form of the Old Testament that shaped much of early Christian biblical language. Orthodox tradition gives it special importance because it stands close to the scriptural world of the apostles, the Greek-speaking fathers, and Byzantine liturgical usage.",
+          "For the app, the safest path is not to import the modern Orthodox Study Bible. Instead, the Orthodox Bible section should begin with public-domain Septuagint resources, especially Brenton's English translation, then add study notes, cross references, and patristic links around that source."
+        ],
+        "bullets": [
+          "Primary text path: Brenton's English translation of the Septuagint.",
+          "Study method: compare Septuagint readings with KJV and Douay-Rheims where helpful.",
+          "Expansion path: add per-book introductions, Orthodox canon notes, and patristic references."
+        ]
+      },
+      {
+        "id": "implementation",
+        "title": "Implemented Reader Path",
+        "paragraphs": [
+          "The app now has a route-backed Brenton LXX reader similar to the KJV reader: book selector, chapter selector, canon-group filtering, full chapter scroll, and search/reference lookup.",
+          "The OSB can be mentioned as a modern printed study Bible for users to buy or consult elsewhere, but its Bible text and notes should not be bundled in the app."
+        ],
+        "bullets": [
+          "Open the Brenton LXX reader at /library/orthodox/lxx.",
+          "Use the Deuterocanonical And Orthodox Books filter for Tobit, Judith, Wisdom, Sirach, Baruch, Maccabees, and related books.",
+          "Next expansion: add per-book Orthodox introductions and patristic references."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Open the app's Brenton LXX reader",
+        "href": "/library/orthodox/lxx"
+      },
+      {
+        "label": "eBible Brenton Septuagint project page",
+        "href": "https://ebible.org/find/details.php?id=eng-Brenton"
+      },
+      {
+        "label": "eBible public download index",
+        "href": "https://ebible.org/download.php"
+      },
+      {
+        "label": "CCEL Brenton Septuagint text",
+        "href": "https://ccel.org/bible/brenton"
+      }
+    ]
+  },
+  {
+    "slug": "orthodox-canon-notes",
+    "title": "Orthodox Canon And Deuterocanonical Notes",
+    "category": "Orthodox Bible",
+    "summary": "A study note explaining why Orthodox Old Testament lists differ from Protestant and Catholic lists, with room for book-by-book expansion.",
+    "source": "App-authored study overview for source-safe Orthodox Bible navigation.",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "The Orthodox Old Testament Is Septuagint-Shaped",
+        "paragraphs": [
+          "Orthodox churches normally approach the Old Testament through the Septuagint tradition. This means the Orthodox biblical world includes books and book forms that are absent from most Protestant Old Testaments and arranged differently from many Western editions.",
+          "The app should present these books without flattening the differences between traditions. Protestant, Catholic, Eastern Orthodox, and Oriental Orthodox can share many texts while still having distinct canonical histories."
+        ],
+        "bullets": [
+          "Use neutral language: deuterocanonical, anagignoskomena, or ecclesiastical books depending on context.",
+          "Do not force one Western table of contents onto Orthodox study.",
+          "Add book introductions before importing a full LXX reader."
+        ]
+      },
+      {
+        "id": "reader-design",
+        "title": "Reader Design",
+        "paragraphs": [
+          "The Orthodox reader should show the LXX book order and clearly mark books that are shared, differently named, or tradition-specific. Cross-links can connect Wisdom, Sirach, Tobit, Judith, Maccabees, and additions to Daniel and Esther with Catholic and historical study sections."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Open deuterocanonical books in the Brenton LXX reader",
+        "href": "/library/orthodox/lxx?group=deuterocanonical"
+      },
+      {
+        "label": "Orthodox Study overview at OCA",
+        "href": "https://www.oca.org/orthodoxy"
+      }
+    ]
+  },
+  {
+    "slug": "liturgical-study",
+    "title": "Divine Liturgy Study",
+    "category": "Liturgy",
+    "summary": "A structured Orthodox study page for the Divine Liturgy, moving from preparation and Scripture to the Eucharistic offering, epiklesis, communion, and practical study resources.",
+    "source": "App-authored study guide built from free Orthodox resources, especially OCA Orthodox Faith and GOARCH material.",
+    "sections": [
+      {
+        "id": "meaning",
+        "title": "What The Divine Liturgy Is",
+        "paragraphs": [
+          "The Divine Liturgy is the central eucharistic worship of the Orthodox Church. It is not only a sermon service or private devotion, but the gathered action of the Church worshipping the Holy Trinity, hearing the Scriptures, giving thanks, offering bread and wine, and receiving communion.",
+          "Orthodox theology is learned not only through doctrinal summaries but through prayer, hymnody, Scripture, icons, and sacramental worship. The Divine Liturgy forms the Church by placing Scripture, thanksgiving, repentance, intercession, and communion at the center of Christian life."
+        ],
+        "bullets": [
+          "Main service: the Liturgy of St. John Chrysostom, used most Sundays and feast days.",
+          "Related form: the Liturgy of St. Basil, used at appointed times in the church year.",
+          "Older form: the Liturgy of St. James, used in some Orthodox settings on his feast."
+        ]
+      },
+      {
+        "id": "preparation",
+        "title": "The Service Of Preparation",
+        "paragraphs": [
+          "Before the public beginning of the Liturgy, the gifts of bread and wine are prepared. This preparation is not a practical detail only; it gathers the offering of the people and places the whole Church around Christ, the Lamb of God.",
+          "The bread and wine are later carried in the Great Entrance and offered in thanksgiving. This movement helps the worshipper understand that the Liturgy is the offering of life back to God in Christ."
+        ],
+        "bullets": [
+          "Bread and wine are prepared for the Eucharist.",
+          "Names of the living and departed may be remembered.",
+          "The offering points toward Christ and the whole gathered Church."
+        ]
+      },
+      {
+        "id": "catechumens",
+        "title": "The Liturgy Of The Catechumens",
+        "paragraphs": [
+          "The first public part of the Divine Liturgy centers on gathering, prayer, hymns, and the proclamation of Scripture. It includes litanies, antiphons, the Little Entrance, the Trisagion, the Epistle, the Gospel, and preaching.",
+          "This section is called the Liturgy of the Catechumens because it historically instructed those preparing for baptism. In app study, it should connect directly to Bible reading, especially the Gospel and apostolic writings."
+        ],
+        "bullets": [
+          "Great Litany: prayer for peace, salvation, the Church, the world, the sick, travelers, and all in need.",
+          "Little Entrance: procession with the Gospel, directing attention to Christ speaking through Scripture.",
+          "Epistle and Gospel: the Church hears the apostolic and evangelical witness before the Eucharistic offering."
+        ]
+      },
+      {
+        "id": "faithful",
+        "title": "The Liturgy Of The Faithful",
+        "paragraphs": [
+          "The second major part centers on the Eucharistic offering. The Church prays, offers the gifts, gives thanks, remembers Christ's saving work, invokes the Holy Spirit, and receives communion.",
+          "The Great Entrance is a major transition. The gifts are carried solemnly, not as a theatrical scene, but as the Church prepares to offer thanksgiving and enter the Eucharistic mystery."
+        ],
+        "bullets": [
+          "Great Entrance: the gifts are brought forward in prayer and remembrance.",
+          "Creed: the faithful confess the apostolic faith before the Eucharistic prayer.",
+          "Lord's Prayer: the people approach communion as children of the Father."
+        ]
+      },
+      {
+        "id": "anaphora",
+        "title": "Anaphora And Thanksgiving",
+        "paragraphs": [
+          "The anaphora is the Eucharistic prayer of offering and thanksgiving. The Church lifts up the gifts to the Father and remembers creation, salvation, the Last Supper, the cross, the tomb, the resurrection, the ascension, and the kingdom to come.",
+          "This is the heart of Orthodox eucharistic theology. The Liturgy does not treat Christ's saving work as a distant memory only; it brings the faithful into grateful participation in the one saving work of Christ."
+        ],
+        "bullets": [
+          "Thanksgiving: eucharistia means thanksgiving.",
+          "Remembrance: anamnesis is a living remembrance before God.",
+          "Offering: the Church offers God's own gifts back to God in Christ."
+        ]
+      },
+      {
+        "id": "epiklesis",
+        "title": "Epiklesis: Invocation Of The Holy Spirit",
+        "paragraphs": [
+          "The epiklesis is the prayer calling upon the Holy Spirit. Orthodox theology gives this invocation central importance because the Church asks the Father to send the Spirit upon the people and the gifts.",
+          "The Eucharist is therefore Trinitarian: offered to the Father, in Christ, by the Holy Spirit. The worshipper should not isolate communion from the whole movement of prayer, thanksgiving, remembrance, and invocation."
+        ],
+        "bullets": [
+          "The Spirit is invoked upon the people and the gifts.",
+          "The bread and wine are received as the Body and Blood of Christ.",
+          "The people are also changed for communion, holiness, and life in Christ."
+        ]
+      },
+      {
+        "id": "communion",
+        "title": "Communion And Sending",
+        "paragraphs": [
+          "Holy Communion is the culmination of the Divine Liturgy. The faithful receive the Body and Blood of Christ as the medicine of immortality, the fulfillment of thanksgiving, and communion with the Holy Trinity.",
+          "The Liturgy then sends the faithful back into the world. The dismissal does not end Christian life; it sends the worshipper to live what has been received."
+        ],
+        "bullets": [
+          "Communion is approached with preparation, repentance, and faith.",
+          "The Eucharist is personal but never individualistic; it is communion in the Body of Christ.",
+          "The dismissal sends the faithful to continue prayer, mercy, and witness."
+        ]
+      },
+      {
+        "id": "app-study-plan",
+        "title": "Implemented App Study Path",
+        "paragraphs": [
+          "The app now includes a step-by-step annotated Divine Liturgy guide. That screen shows each major movement of the service with the liturgical action, theological meaning, study prompt, and links to Scripture, the Brenton LXX reader, and Orthodox resources.",
+          "Church Father integration should come later as its own focused pass, so the current guide keeps patristic links light and concentrates on worship, Scripture, prayer, and liturgical structure."
+        ],
+        "bullets": [
+          "Open the annotated guide at /library/orthodox/divine-liturgy.",
+          "Bible links now include John 6, the Last Supper, 1 Corinthians 10-11, Acts 2, Matthew 6, and James 2.",
+          "LXX links now include Passover, Isaiah 6, Isaiah 53, and Psalms."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Open the annotated Divine Liturgy guide",
+        "href": "/library/orthodox/divine-liturgy"
+      },
+      {
+        "label": "OCA: The Divine Liturgy",
+        "href": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-divine-liturgy/the-divine-liturgy"
+      },
+      {
+        "label": "OCA: Eucharistic Canon / Anaphora",
+        "href": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-divine-liturgy/eucharistic-canon-anaphora"
+      },
+      {
+        "label": "OCA: Epiklesis",
+        "href": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-divine-liturgy/epiklesis"
+      },
+      {
+        "label": "OCA: Communion",
+        "href": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-divine-liturgy/communion"
+      },
+      {
+        "label": "GOARCH liturgical resources",
+        "href": "https://www.goarch.org/"
+      },
+      {
+        "label": "Open the app's Brenton LXX reader",
+        "href": "/library/orthodox/lxx"
+      },
+      {
+        "label": "Read St. John Chrysostom in the Fathers library",
+        "href": "/library/fathers/john-chrysostom"
+      },
+      {
+        "label": "Read St. Cyril of Jerusalem in the Fathers library",
+        "href": "/library/fathers/cyril-jerusalem"
+      }
+    ]
+  },
+  {
+    "slug": "jesus-prayer",
+    "title": "The Jesus Prayer",
+    "category": "Prayer",
+    "summary": "A practical and theological introduction to the Jesus Prayer, now connected to Gospel passages on mercy, repentance, watchfulness, and continual prayer.",
+    "source": "App-authored study overview using free Orthodox reference resources, especially OCA's Jesus Prayer material.",
+    "sections": [
+      {
+        "id": "prayer",
+        "title": "The Prayer",
+        "paragraphs": [
+          "The Jesus Prayer is commonly given in the form: Lord Jesus Christ, Son of God, have mercy on me, a sinner. It gathers confession of Christ, repentance, mercy, humility, and attentiveness into a short prayer that can be repeated with reverence.",
+          "The prayer is not a technique for controlling God or manufacturing mystical experience. In Orthodox teaching it belongs inside repentance, obedience, sacramental life, and guidance from the Church."
+        ],
+        "bullets": [
+          "Christology: Jesus is confessed as Lord and Son of God.",
+          "Repentance: the worshipper asks for mercy rather than self-justification.",
+          "Watchfulness: repetition trains attention and humility."
+        ]
+      },
+      {
+        "id": "gospel-roots",
+        "title": "Gospel Roots Of The Prayer",
+        "paragraphs": [
+          "The Jesus Prayer is not an isolated formula. It gathers several Gospel cries into one disciplined prayer: the publican's repentance, the blind man's plea for mercy, the confession of Jesus as Lord and Son, and the continual turning of the heart toward Christ.",
+          "The prayer's words are short because the point is not verbal complexity. It teaches the worshipper to stand truthfully before Christ: confessing who He is, confessing personal need, and asking for mercy."
+        ],
+        "bullets": [
+          "Luke 18:13: the publican prays, God, be merciful to me a sinner.",
+          "Mark 10:47: blind Bartimaeus cries, Jesus, Son of David, have mercy on me.",
+          "Luke 18:38: the blind man near Jericho repeats the same cry for mercy.",
+          "Matthew 16:16: Peter confesses Jesus as the Christ, the Son of the living God.",
+          "Luke 23:42: the thief turns to Jesus in remembrance and hope."
+        ]
+      },
+      {
+        "id": "how-to-practice",
+        "title": "How To Approach The Prayer",
+        "paragraphs": [
+          "The Jesus Prayer should be approached with humility, not as a spiritual technique. Orthodox teachers commonly place it within repentance, sacramental life, obedience, and guidance. Its aim is attention to Christ, not self-generated religious experience.",
+          "For a beginner, the app should present the prayer as a simple rule of remembrance: pray slowly, reverently, and without forcing emotional states. The words train attention, but the mercy belongs to Christ."
+        ],
+        "bullets": [
+          "Begin with a short, consistent time rather than ambition.",
+          "Pray the words with attention and repentance.",
+          "Do not chase visions, sensations, or unusual experiences.",
+          "Connect the prayer to confession, Eucharistic life, Scripture, and acts of mercy."
+        ]
+      },
+      {
+        "id": "app-study-links",
+        "title": "App Study Connections",
+        "paragraphs": [
+          "This prayer section now connects directly to Gospel passages in the KJV reader. Later, when Church Fathers are expanded, this page can link to patristic and monastic texts on watchfulness, humility, and prayer of the heart.",
+          "The prayer also belongs with the Hesychasm page, because hesychasm gives the wider Orthodox language of stillness, attention, and guarding the heart."
+        ],
+        "bullets": [
+          "Read Luke 18 for the publican's prayer and the blind man's cry.",
+          "Read Mark 10 for Bartimaeus and the repeated plea for mercy.",
+          "Read Matthew 16 for confession of Christ as Son of God.",
+          "Read 1 Thessalonians 5 for prayer without ceasing."
+        ]
+      },
+      {
+        "id": "church-context",
+        "title": "Church Context And Practice",
+        "paragraphs": [
+          "The Jesus Prayer is usually taught alongside confession, Eucharistic preparation, fasting, and obedience rather than as a standalone method. That keeps it inside the lived rhythm of Orthodox prayer.",
+          "For beginners, the most useful guidance is to pray the words simply and consistently, while avoiding any attempt to force spiritual experiences."
+        ],
+        "bullets": [
+          "Short, regular prayer is better than ambitious schedules.",
+          "Repentance and humility matter more than technique.",
+          "The prayer can be joined to Scripture reading and acts of mercy."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "KJV Luke 18",
+        "href": "/library/kjv?book=Luk&chapter=18"
+      },
+      {
+        "label": "KJV Mark 10",
+        "href": "/library/kjv?book=Mar&chapter=10"
+      },
+      {
+        "label": "KJV Matthew 16",
+        "href": "/library/kjv?book=Mat&chapter=16"
+      },
+      {
+        "label": "KJV 1 Thessalonians 5",
+        "href": "/library/kjv?book=1Th&chapter=5"
+      },
+      {
+        "label": "Hesychasm study",
+        "href": "/library/orthodox/hesychasm"
+      },
+      {
+        "label": "OCA: The Jesus Prayer",
+        "href": "https://www.oca.org/orthodoxy/the-orthodox-faith/spirituality/prayer-fasting-and-almsgiving/the-jesus-prayer"
+      },
+      {
+        "label": "OCA: Prayer, Fasting, and Almsgiving",
+        "href": "https://www.oca.org/orthodoxy/the-orthodox-faith/spirituality/prayer-fasting-and-almsgiving"
+      },
+      {
+        "label": "Hesychasm study",
+        "href": "/library/orthodox/hesychasm"
+      },
+      {
+        "label": "Orthodox fathers",
+        "href": "/library/fathers"
+      }
+    ]
+  },
+  {
+    "slug": "akathist-hymn-study",
+    "title": "Akathist And Hymn Study",
+    "category": "Prayer",
+    "summary": "A study path for Orthodox hymnography, akathists, and theological poetry with source-safe resources and links to Scripture, feasts, and worship.",
+    "source": "App-authored study overview using free Orthodox reference resources; hymn texts should only be imported when public-domain or openly licensed.",
+    "sections": [
+      {
+        "id": "what-hymns-do",
+        "title": "Hymns As Theology",
+        "paragraphs": [
+          "Orthodox hymns often teach doctrine by worship. They confess Christ, honor the Theotokos and saints, interpret Scripture, and form the imagination through repeated prayer.",
+          "The Akathist tradition is especially useful for study because it combines praise, biblical imagery, doctrinal confession, and poetic meditation. The app should introduce hymn texts carefully and only import texts that are clearly public domain or openly licensed."
+        ],
+        "bullets": [
+          "Explain major hymn types: troparion, kontakion, canon, and akathist.",
+          "Connect hymns to feasts and Scripture readings.",
+          "Import public-domain texts only after source verification."
+        ]
+      },
+      {
+        "id": "akathist-structure",
+        "title": "What An Akathist Is",
+        "paragraphs": [
+          "An akathist is a hymn of praise normally prayed standing. The best-known example is the Akathist Hymn to the Theotokos, but the form is also used for Christ, saints, feasts, and particular devotional themes.",
+          "Akathists commonly move through repeated poetic units that combine praise, biblical images, doctrinal confession, and prayer. This makes them useful for study because they teach theology through worship rather than through abstract outline alone."
+        ],
+        "bullets": [
+          "Kontakion: a short stanza or introductory hymn.",
+          "Ikos: an expanded stanza often containing a sequence of praises.",
+          "Refrain: a repeated phrase that forms memory through prayer.",
+          "Standing prayer: the word akathist means not sitting."
+        ]
+      },
+      {
+        "id": "hymn-types",
+        "title": "Major Orthodox Hymn Types",
+        "paragraphs": [
+          "Orthodox hymnography has several recurring forms. A beginner does not need to master all of them immediately, but knowing the basic names helps the user understand what they are reading or hearing.",
+          "The app should introduce hymn types through short explanations, Scripture links, feast connections, and verified resources. Full hymn text import should come only after copyright/source review."
+        ],
+        "bullets": [
+          "Troparion: a short hymn summarizing a feast, saint, or doctrinal theme.",
+          "Kontakion: a concise hymn that often gives the theological center of a feast.",
+          "Canon: a larger hymn cycle arranged in odes and biblical imagery.",
+          "Akathist: a standing hymn of praise and prayer, often with repeated salutations.",
+          "Prokeimenon: a psalm refrain connected to readings."
+        ]
+      },
+      {
+        "id": "scripture-and-feasts",
+        "title": "Scripture, Feasts, And Memory",
+        "paragraphs": [
+          "Hymns interpret Scripture liturgically. They connect biblical events to Christ, the Theotokos, saints, fasting seasons, and feasts. For example, Nativity hymns teach the Incarnation, Paschal hymns teach death and resurrection, and Theophany hymns teach Christ's baptism and the revelation of the Trinity.",
+          "The app should connect hymn study to the LXX reader and KJV reader: Psalms, Isaiah, Gospel feast passages, Philippians 2, and resurrection texts all belong in this study path."
+        ],
+        "bullets": [
+          "Psalms supply much of the prayer language of Orthodox worship.",
+          "Isaiah shapes many messianic and feast hymns.",
+          "Luke 1-2 connects to Annunciation and Nativity hymnography.",
+          "John 1 connects to Incarnation and the Word made flesh.",
+          "1 Corinthians 15 connects to Paschal resurrection theology."
+        ]
+      },
+      {
+        "id": "source-safe-plan",
+        "title": "Source-Safe App Plan",
+        "paragraphs": [
+          "Because many modern liturgical translations are copyrighted, this app should not copy full hymn texts unless the source is clearly public-domain or openly licensed. The safe implementation is to provide study summaries, structure, Scripture links, and external resources first.",
+          "A later import pass can add public-domain hymn texts, verified open translations, and a feast calendar. Until then, this page gives the user a real study framework without creating copyright risk."
+        ],
+        "bullets": [
+          "Use summaries and explanations freely authored for the app.",
+          "Link to official/free Orthodox resources for full liturgical texts.",
+          "Import full texts only after source license verification.",
+          "Connect hymn forms to Scripture and feast themes already in the app."
+        ]
+      },
+      {
+        "id": "study-order",
+        "title": "Recommended Study Order",
+        "paragraphs": [
+          "Start with the hymn for the feast you are already reading in Scripture, then compare the themes with the theological language of the Fathers. That makes hymn study concrete and avoids treating it as an abstract music category.",
+          "After that, move to the Akathist tradition, the major feast hymns, and the Psalms, since those are the most important entry points for Orthodox worship study."
+        ],
+        "bullets": [
+          "Begin with feast-linked Scripture.",
+          "Move from short hymns to longer forms like canons and akathists.",
+          "Compare poetic language with the Fathers and the liturgical calendar."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Brenton LXX Psalms",
+        "href": "/library/orthodox/lxx?book=psalms&chapter=1"
+      },
+      {
+        "label": "Brenton LXX Isaiah",
+        "href": "/library/orthodox/lxx?book=esaias&chapter=9"
+      },
+      {
+        "label": "KJV Luke 1",
+        "href": "/library/kjv?book=Luk&chapter=1"
+      },
+      {
+        "label": "KJV John 1",
+        "href": "/library/kjv?book=Jhn&chapter=1"
+      },
+      {
+        "label": "KJV 1 Corinthians 15",
+        "href": "/library/kjv?book=1Co&chapter=15"
+      },
+      {
+        "label": "Divine Liturgy guide",
+        "href": "/library/orthodox/divine-liturgy"
+      },
+      {
+        "label": "GOARCH worship resources",
+        "href": "https://www.goarch.org/"
+      },
+      {
+        "label": "OCA liturgical resources",
+        "href": "https://www.oca.org/liturgics"
+      },
+      {
+        "label": "OrthodoxWiki: Akathist",
+        "href": "https://orthodoxwiki.org/Akathist"
+      },
+      {
+        "label": "Jesus Prayer",
+        "href": "/library/orthodox/jesus-prayer"
+      },
+      {
+        "label": "Divine Liturgy guide",
+        "href": "/library/orthodox/divine-liturgy"
+      }
+    ]
+  },
+  {
+    "slug": "hesychasm",
+    "title": "Hesychasm",
+    "category": "Orthodox Theology",
+    "summary": "An introduction to Orthodox hesychasm: stillness, prayer, watchfulness, and the theology of divine communion.",
+    "source": "App-authored study overview using free Orthodox reference resources.",
+    "sections": [
+      {
+        "id": "definition",
+        "title": "Stillness And Watchfulness",
+        "paragraphs": [
+          "Hesychasm refers to the Orthodox tradition of inner stillness, watchful prayer, repentance, and attention to God. It is closely associated with the Jesus Prayer and with the wider ascetic tradition of guarding the heart.",
+          "The topic should be taught carefully. It is not a generic meditation method detached from doctrine. In Orthodox theology it belongs to the life of the Church, the sacraments, humility, and guidance."
+        ],
+        "bullets": [
+          "Core practices: watchfulness, repentance, silence, and prayer.",
+          "Core danger: treating spiritual methods as self-powered techniques.",
+          "Core doctrine: communion with God is by grace, not by possession of the divine essence."
+        ]
+      },
+      {
+        "id": "app-links",
+        "title": "App Study Connections",
+        "paragraphs": [
+          "The hesychasm page should connect to the Jesus Prayer, theosis, icons, monastic history, and later Byzantine theological debates. It should also connect to patristic warnings about pride, delusion, and prayer without repentance."
+        ]
+      },
+      {
+        "id": "theosis-context",
+        "title": "Theosis And Communion",
+        "paragraphs": [
+          "Hesychasm belongs to the wider Orthodox account of theosis: participation in God's life by grace. That is why the goal is not secret knowledge or altered states, but purification of the heart and communion with God.",
+          "For the app, the safest and clearest way to explain hesychasm is to connect it to repentance, the Eucharist, the Jesus Prayer, and the life of the Church."
+        ],
+        "bullets": [
+          "Prayer of the heart",
+          "Humility and repentance",
+          "Grace-filled communion rather than technique"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "OCA Orthodox Faith resources",
+        "href": "https://www.oca.org/orthodoxy"
+      },
+      {
+        "label": "Jesus Prayer study",
+        "href": "/library/orthodox/jesus-prayer"
+      },
+      {
+        "label": "Orthodox fathers",
+        "href": "/library/fathers"
+      },
+      {
+        "label": "Icons and iconography",
+        "href": "/library/orthodox/icons-iconography"
+      }
+    ]
+  },
+  {
+    "slug": "icons-iconography",
+    "title": "Icons And Iconography",
+    "category": "Orthodox Theology",
+    "summary": "A study path for icons as confession of the Incarnation, worship, memory, and visual theology.",
+    "source": "App-authored study overview with Orthodox and historical expansion links.",
+    "sections": [
+      {
+        "id": "incarnation",
+        "title": "Icons And The Incarnation",
+        "paragraphs": [
+          "Orthodox iconography is not merely religious decoration. It is tied to the confession that the Son of God truly became visible in the flesh. Because Christ became man, the Church can depict Him according to His humanity without claiming to contain the divine nature.",
+          "This study path should connect icons to Christology, worship, memory of the saints, and the iconoclastic controversy. Nicaea II is more directly relevant to icons than Nicaea I, so the app should eventually add a dedicated Nicaea II council page."
+        ],
+        "bullets": [
+          "Christological foundation: the Word became flesh.",
+          "Liturgical function: icons direct honor to the prototype, not wood and paint as idols.",
+          "History link: iconoclasm and the Seventh Ecumenical Council."
+        ]
+      },
+      {
+        "id": "iconoclasm",
+        "title": "Iconoclasm And Nicaea II",
+        "paragraphs": [
+          "The icon controversy was answered most decisively at the Seventh Ecumenical Council, which defended the veneration of icons in light of the Incarnation. The issue was not whether matter is holy in itself, but whether Christ can truly be depicted because He truly became man.",
+          "That makes icons a theological subject as much as an artistic one."
+        ],
+        "bullets": [
+          "Nicaea II is the key council for icons.",
+          "The defense of icons is grounded in Christ's real humanity.",
+          "Honor passes to the prototype, not to paint and wood as divine objects."
+        ]
+      },
+      {
+        "id": "how-to-read-icons",
+        "title": "How To Read Icons",
+        "paragraphs": [
+          "Icons are read, not just looked at. Their posture, colors, inscriptions, and gestures all communicate theology and memory.",
+          "The app should eventually connect icons to the feasts and saints they depict so that the user can move from image to Scripture and back again."
+        ],
+        "bullets": [
+          "Look for inscriptions and feast titles.",
+          "Connect iconography to Scripture and the liturgical calendar.",
+          "Study icons as confessional images of the Incarnation."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "OCA Orthodox Faith resources",
+        "href": "https://www.oca.org/orthodoxy"
+      },
+      {
+        "label": "Greek Orthodox Archdiocese resources",
+        "href": "https://www.goarch.org/"
+      },
+      {
+        "label": "Council of Nicaea",
+        "href": "/library/councils/nicaea-325"
+      },
+      {
+        "label": "Church History Timeline",
+        "href": "/library/history/timeline"
+      }
+    ]
+  },
+  {
+    "slug": "oriental-coptic-ethiopian-studies",
+    "title": "Oriental, Coptic, And Ethiopian Orthodox Studies",
+    "category": "Oriental Orthodox",
+    "summary": "A study path for Oriental Orthodox traditions, especially Coptic and Ethiopian resources already represented in the app.",
+    "source": "Built from OrientalOrthodoxy.com archive links and source-safe Orthodox study notes.",
+    "sections": [
+      {
+        "id": "why-separate",
+        "title": "Why This Needs Its Own Path",
+        "paragraphs": [
+          "Oriental Orthodoxy is not the same thing as Eastern Orthodoxy. The Coptic, Syriac, Armenian, Ethiopian, Eritrean, and Malankara traditions have their own histories, liturgies, saints, languages, and theological vocabulary.",
+          "The app should keep this section explicit so users can study Oriental Orthodox traditions without burying them under a generic Orthodox category."
+        ],
+        "bullets": [
+          "Coptic study: Alexandrian fathers, Coptic liturgy, monasticism, and anti-Chalcedonian history.",
+          "Ethiopian study: Ge'ez biblical tradition, Ethiopian saints, royal confessions, and distinctive canon questions.",
+          "Shared path: Christology, liturgy, fasting, monasticism, and patristic continuity."
+        ]
+      },
+      {
+        "id": "current-app-material",
+        "title": "Current App Material",
+        "paragraphs": [
+          "The app already has a dedicated Oriental Orthodox page with imported texts. This study path now gives the Orthodox hub a direct route into that material and marks it as its own branch for future expansion."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Open the app's Oriental Orthodox library",
+        "href": "/library/oriental-orthodox"
+      },
+      {
+        "label": "OrientalOrthodoxy.com text library",
+        "href": "https://www.orientalorthodoxy.com/library/texts/"
+      },
+      {
+        "label": "Coptic Orthodox Diocese library",
+        "href": "https://www.suscopts.org/resources/literature/"
+      }
+    ]
+  }
+]

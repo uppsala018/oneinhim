@@ -1,0 +1,830 @@
+[
+  {
+    "slug": "reformation-era",
+    "title": "The Reformation Era",
+    "era": "16th century",
+    "summary": "A study entry on Luther, Calvin, Zwingli, Knox, Wesley, and the early fracture points of Protestant history.",
+    "focus": "Origins of Protestant theology and ecclesial separation",
+    "source": "Historical Analysis of Protestantism: From the Reformation to the Present Day",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Martin Luther and the German Reformation",
+        "paragraphs": [
+          "The Reformation is traditionally dated to October 31, 1517, when Martin Luther challenged the sale of indulgences in Wittenberg. His initial protest widened into a more fundamental critique of the Roman Catholic sacramental system and church authority.",
+          "Luther's work reshaped Western Christianity not only through doctrine but through translation, preaching, and education. His German Bible helped democratize religious knowledge and influenced the development of modern German language and literacy."
+        ],
+        "bullets": [
+          "Sola Fide: justification by faith alone",
+          "Sola Scriptura: Scripture as the final authority",
+          "Priesthood of All Believers"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "John Calvin and the Reformed Tradition",
+        "paragraphs": [
+          "John Calvin represents the second generation of the Reformation. His Institutes of the Christian Religion gave the movement a systematic theological framework and a disciplined vision of church and society.",
+          "Calvinism spread into Scotland, France, and the Netherlands and became a decisive force in later Presbyterian and Reformed traditions."
+        ],
+        "bullets": [
+          "Divine sovereignty",
+          "Predestination",
+          "Regulative principle of worship"
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Zwingli and the Radical Reformation",
+        "paragraphs": [
+          "In Zurich, Huldrych Zwingli led a parallel reform movement that differed sharply from Luther on the Eucharist. Alongside this, the Anabaptists pushed more radical claims about believer's baptism and the separation of church and state.",
+          "These radical groups were often persecuted by both Catholics and other Protestants, showing that Protestantism was diverse and contentious from the beginning."
+        ],
+        "bullets": [
+          "Dispute over the nature of the Eucharist",
+          "Believer's baptism",
+          "Separation of church and state"
+        ]
+      },
+      {
+        "id": "section-4",
+        "title": "John Knox and the Scottish Reformation",
+        "paragraphs": [
+          "John Knox carried Reformed Protestantism into the Scottish setting after exile, imprisonment, and contact with Geneva. His preaching and organizing helped give Scottish Protestantism its Presbyterian shape.",
+          "Knox is important because he shows how the Reformation moved from individual reformers into church order, discipline, education, and national religious identity."
+        ],
+        "bullets": [
+          "Presbyterian church order",
+          "Reformed preaching",
+          "Scottish Protestant identity"
+        ]
+      },
+      {
+        "id": "section-5",
+        "title": "John Wesley and the Methodist Renewal",
+        "paragraphs": [
+          "John Wesley belongs later than the first Reformation generation, but he is essential for understanding the Protestant family tree. Methodism grew from Anglican and Pietist roots and emphasized conversion, assurance, disciplined societies, and holiness of heart and life.",
+          "Including Wesley in the Reformation study path helps users see the development from confessional Protestantism into revival, holiness, and later Pentecostal streams."
+        ],
+        "bullets": [
+          "Methodist societies and disciplined devotion",
+          "Conversion and assurance",
+          "Holiness as a bridge toward later renewal movements"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Project Gutenberg - Martin Luther",
+        "href": "https://www.gutenberg.org/ebooks/author/155"
+      },
+      {
+        "label": "CCEL - John Calvin",
+        "href": "https://www.ccel.org/ccel/calvin"
+      },
+      {
+        "label": "John Wesley profile",
+        "href": "/library/protestant/figures/john-wesley"
+      }
+    ]
+  },
+  {
+    "slug": "post-reformation-movements",
+    "title": "Post-Reformation Movements",
+    "era": "17th-19th centuries",
+    "summary": "A study entry on Puritanism, Pietism, Methodism, the Holiness tradition, and the later revival streams that shaped modern Protestantism.",
+    "focus": "Personal holiness, revival, and devotional Protestantism",
+    "source": "Historical Analysis of Protestantism: From the Reformation to the Present Day",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Puritans and Pietists",
+        "paragraphs": [
+          "Seventeenth-century Protestantism did not stop at confessional settlement. New movements arose to deepen the Reformation by emphasizing personal holiness, practical piety, and the religion of the heart.",
+          "Puritanism sought to further purify the Church of England, while German Pietism encouraged Bible study, small groups, and personal conversion."
+        ],
+        "bullets": [
+          "Covenant theology",
+          "Strict moral discipline",
+          "Heart religion and small-group study"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Methodism and Holiness",
+        "paragraphs": [
+          "John Wesley and the Methodist movement grew out of Anglican and Pietist streams. Wesley stressed disciplined devotion, conversion, and what he described as Christian perfection or entire sanctification.",
+          "The later Holiness movement developed this further by teaching a second work of grace that empowered holy living and prepared the ground for Pentecostalism."
+        ],
+        "bullets": [
+          "Christian perfection",
+          "Entire sanctification",
+          "Direct preparation for Pentecostal theology"
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Revivalism and Missionary Protestantism",
+        "paragraphs": [
+          "The eighteenth and nineteenth centuries also saw waves of evangelical revivalism. These awakenings emphasized conversion, preaching, singing, missions, and public calls to decision.",
+          "That revival pattern helped shape new Protestant networks in Britain, North America, and the wider missionary world. In practice, it reinforced a style of Christianity that was mobile, voluntary, and evangelistically outward-facing."
+        ],
+        "bullets": [
+          "Conversion preaching",
+          "Missionary expansion",
+          "Voluntary association and revival meetings"
+        ]
+      },
+      {
+        "id": "section-4",
+        "title": "From Holiness to Pentecostalism",
+        "paragraphs": [
+          "Holiness teaching did not end with the nineteenth century. Its emphasis on sanctification, Spirit-filled living, and deepened devotion fed directly into Pentecostalism in the early twentieth century.",
+          "The later Pentecostal and Charismatic waves should be read as part of the same long Protestant story: reform, revival, holiness, and then Spirit-centered renewal."
+        ],
+        "bullets": [
+          "Holiness as a bridge to Pentecostalism",
+          "Early twentieth-century renewal movements",
+          "Continuation into charismatic Protestantism"
+        ]
+      },
+      {
+        "id": "section-5",
+        "title": "Protestant Family Tree After The Reformation",
+        "paragraphs": [
+          "By the time these movements mature, Protestantism is no longer just the original Lutheran, Reformed, and Anglican split. It has become a family of related but distinct traditions with different liturgical habits, ecclesial structures, and spiritual emphases.",
+          "That is why this section belongs next to the Reformation-era page: it shows how the original reform debate unfolded into centuries of doctrinal development and new denominations."
+        ],
+        "bullets": [
+          "Confessional Protestantism remains important",
+          "Revival and holiness movements create new branches",
+          "Pentecostal and charismatic Protestantism becomes a major modern stream"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Project Gutenberg - John Wesley",
+        "href": "https://www.gutenberg.org/ebooks/author/31438"
+      },
+      {
+        "label": "John Wesley - Sermons and Notes",
+        "href": "https://www.ccel.org/ccel/wesley"
+      },
+      {
+        "label": "Post-Reformation Movements in Protestantism",
+        "href": "/library/protestant/major-protestant-groups-today"
+      },
+      {
+        "label": "Pentecostal and Charismatic Protestantism",
+        "href": "/library/protestant/pentecostal-and-charismatic"
+      }
+    ]
+  },
+  {
+    "slug": "pentecostal-and-charismatic",
+    "title": "Pentecostal and Charismatic Protestantism",
+    "era": "20th century to present",
+    "summary": "A study entry on Azusa Street, Pentecostalism, and the later Charismatic movement.",
+    "focus": "Holy Spirit experience, revivalism, and modern renewal movements",
+    "source": "Historical Analysis of Protestantism: From the Reformation to the Present Day",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Azusa Street",
+        "paragraphs": [
+          "The Azusa Street Revival of 1906, led by William J. Seymour in Los Angeles, is widely treated as the ignition point of modern Pentecostalism. The movement centered on baptism in the Holy Spirit and speaking in tongues.",
+          "Azusa Street also stands out for its early interracial character, which became one of the most discussed and contested features of the revival."
+        ],
+        "bullets": [
+          "Baptism in the Holy Spirit",
+          "Speaking in tongues",
+          "Revivalist and missionary momentum"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "The Charismatic Movement",
+        "paragraphs": [
+          "In the 1960s, Pentecostal-style experiences spread into mainline Protestant churches and the Roman Catholic Church. This became known as the Charismatic movement, often called the second wave.",
+          "Unlike early Pentecostals, Charismatics often remained within their original denominations, carrying an emphasis on spiritual gifts into more traditional liturgical or denominational settings."
+        ],
+        "bullets": [
+          "Spread across denominations",
+          "Retention of original church identity",
+          "Renewed attention to charismata"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Assemblies of God",
+        "href": "/library/protestant/assemblies-of-god"
+      },
+      {
+        "label": "Church of God in Christ",
+        "href": "/library/protestant/church-of-god-in-christ"
+      },
+      {
+        "label": "Foursquare Church",
+        "href": "/library/protestant/foursquare-church"
+      },
+      {
+        "label": "Vineyard Movement",
+        "href": "/library/protestant/vineyard-movement"
+      },
+      {
+        "label": "Apostolic Faith Mission",
+        "href": "/library/protestant/apostolic-faith-mission"
+      },
+      {
+        "label": "Charles Parham",
+        "href": "/library/protestant/charles-parham"
+      },
+      {
+        "label": "William J. Seymour",
+        "href": "/library/protestant/william-j-seymour"
+      },
+      {
+        "label": "Aimee Semple McPherson",
+        "href": "/library/protestant/aimee-semple-mcpherson"
+      },
+      {
+        "label": "Oral Roberts",
+        "href": "/library/protestant/oral-roberts"
+      },
+      {
+        "label": "Charismatic Movement",
+        "href": "/library/history/charismatic-movement"
+      },
+      {
+        "label": "Azusa Street Heritage",
+        "href": "https://www.azusastreet.org/"
+      }
+    ]
+  },
+  {
+    "slug": "apostolic-faith-mission",
+    "title": "Apostolic Faith Mission",
+    "era": "1906 onward",
+    "summary": "The Azusa Street mission in Los Angeles where William J. Seymour led a revival that became a major center for early Pentecostal spread.",
+    "focus": "Azusa Street, revival, interracial worship, Spirit baptism, and mission",
+    "source": "App-authored historical study from public historical references.",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "What It Was",
+        "paragraphs": [
+          "The Apostolic Faith Mission was the name associated with the Azusa Street revival in Los Angeles. It gathered in a modest mission space at 312 Azusa Street and became one of the best-known centers of early Pentecostalism.",
+          "The mission was led by William J. Seymour, an African American holiness preacher. Its meetings were marked by prayer, preaching, testimonies, tongues, healing claims, interracial worship, and a strong expectation that the Holy Spirit was empowering the Church for mission."
+        ],
+        "bullets": [
+          "Location: 312 Azusa Street, Los Angeles",
+          "Central leader: William J. Seymour",
+          "Main themes: Holy Spirit baptism, tongues, healing, prayer, and mission"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "How It Happened",
+        "paragraphs": [
+          "The revival grew from the Holiness and early Pentecostal streams that preceded it. Seymour had been influenced by teaching connected to Charles Parham, especially the expectation that speaking in tongues was evidence of Spirit baptism.",
+          "After Seymour came to Los Angeles, prayer meetings intensified and reports of tongues and healing drew attention. The movement soon outgrew earlier meeting places and centered at Azusa Street, where visitors came from many regions and carried Pentecostal teaching outward."
+        ],
+        "bullets": [
+          "Holiness teaching prepared the ground",
+          "Los Angeles prayer meetings became the immediate setting",
+          "Visitors carried the message into new churches and missions"
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Why It Matters",
+        "paragraphs": [
+          "Azusa Street became a symbolic birthplace of global Pentecostalism, though Pentecostal beginnings were broader than one building or one leader. Its importance comes from the way people from different backgrounds gathered, reported spiritual experiences, and then spread the movement through preaching and mission.",
+          "The Apostolic Faith Mission also matters because it shows how modern charismatic Protestantism developed from revival, holiness, race, migration, and global mission rather than from academic theology alone."
+        ],
+        "bullets": [
+          "Major center for early Pentecostal spread",
+          "Important example of interracial revival in the segregated United States",
+          "Directly connected to later Pentecostal and charismatic denominations"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "William J. Seymour",
+        "href": "/library/protestant/william-j-seymour"
+      },
+      {
+        "label": "Pentecostal and Charismatic Protestantism",
+        "href": "/library/protestant/pentecostal-and-charismatic"
+      },
+      {
+        "label": "Charismatic Movement",
+        "href": "/library/history/charismatic-movement"
+      }
+    ]
+  },
+  {
+    "slug": "charles-parham",
+    "title": "Charles Parham",
+    "era": "1873-1929",
+    "summary": "Early Pentecostal teacher whose Bible school and theology helped shape the link between Spirit baptism and speaking in tongues.",
+    "focus": "Holiness roots, Topeka Bible school, tongues, and early Pentecostal teaching",
+    "source": "App-authored historical biography from public historical references.",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Biography",
+        "paragraphs": [
+          "Charles Fox Parham was an American holiness preacher and teacher associated with the earliest phase of Pentecostalism. His ministry developed in the atmosphere of late nineteenth-century holiness religion, revivalism, healing teaching, and expectation of a deeper work of the Holy Spirit.",
+          "Parham is especially remembered for his Bible school in Topeka, Kansas, where students studied the book of Acts and concluded that speaking in tongues was connected to baptism in the Holy Spirit. This teaching became one of the most influential ideas in classical Pentecostalism."
+        ],
+        "bullets": [
+          "American holiness preacher and Bible teacher",
+          "Associated with Topeka, Kansas, and early Pentecostal teaching",
+          "Linked Spirit baptism with tongues in a way that shaped later Pentecostal doctrine"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Place In Protestant History",
+        "paragraphs": [
+          "Parham's importance is not that he created all of Pentecostalism by himself, but that he gave a doctrinal form to a movement already drawing from holiness, healing, revival, and missionary expectation.",
+          "His influence reached William J. Seymour, even though Seymour's Azusa Street work became the more famous global center of Pentecostal spread."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Apostolic Faith Mission",
+        "href": "/library/protestant/apostolic-faith-mission"
+      },
+      {
+        "label": "William J. Seymour",
+        "href": "/library/protestant/william-j-seymour"
+      }
+    ]
+  },
+  {
+    "slug": "william-j-seymour",
+    "title": "William J. Seymour",
+    "era": "1870-1922",
+    "summary": "African American holiness preacher and leader of the Azusa Street revival, one of the central figures in early global Pentecostalism.",
+    "focus": "Azusa Street, prayer, Spirit baptism, interracial worship, and mission",
+    "source": "App-authored historical biography from public historical references.",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Biography",
+        "paragraphs": [
+          "William J. Seymour was an African American holiness preacher who became the central leader of the Azusa Street revival in Los Angeles. His ministry was shaped by holiness religion, prayer, expectation of Spirit baptism, and a deep concern for humble Christian life.",
+          "In 1906 Seymour's Los Angeles meetings became a major gathering point for early Pentecostal experience. People came to Azusa Street to pray, worship, testify, seek healing, and report speaking in tongues. The revival's interracial character was especially notable in the segregated social world of the early twentieth-century United States."
+        ],
+        "bullets": [
+          "Leader of the Azusa Street revival",
+          "Preached Spirit baptism and holiness",
+          "Helped make Pentecostalism a global missionary movement"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Why He Matters",
+        "paragraphs": [
+          "Seymour matters because Azusa Street became one of the most important launching points for Pentecostalism worldwide. Many later Pentecostal leaders and missionaries traced their inspiration, contacts, or theology back to the revival.",
+          "His life also shows the complexity of Protestant renewal: the movement was evangelical and revivalist, but it also crossed racial, social, and denominational boundaries in ways that made it difficult to contain."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Apostolic Faith Mission",
+        "href": "/library/protestant/apostolic-faith-mission"
+      },
+      {
+        "label": "Charismatic Movement",
+        "href": "/library/history/charismatic-movement"
+      }
+    ]
+  },
+  {
+    "slug": "aimee-semple-mcpherson",
+    "title": "Aimee Semple McPherson",
+    "era": "1890-1944",
+    "summary": "Pentecostal evangelist, media pioneer, and founder of the Foursquare Church.",
+    "focus": "Evangelism, healing, media ministry, and the Foursquare gospel",
+    "source": "App-authored historical biography from public historical references.",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Biography",
+        "paragraphs": [
+          "Aimee Semple McPherson was a Canadian-born Pentecostal evangelist who became one of the most famous religious figures in early twentieth-century America. She preached widely, emphasized salvation, healing, Spirit-filled life, and the return of Christ, and used public events and media with unusual skill for her time.",
+          "She founded the Foursquare Church in Los Angeles, organizing her preaching around the fourfold gospel: Jesus Christ as Savior, Baptizer with the Holy Spirit, Healer, and Coming King."
+        ],
+        "bullets": [
+          "Founder of the Foursquare Church",
+          "Major Pentecostal evangelist and media figure",
+          "Associated with the fourfold gospel"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Why She Matters",
+        "paragraphs": [
+          "McPherson matters because she shows how Pentecostalism moved from small revival meetings into mass evangelism, media, urban ministry, and organized denominational life.",
+          "Her ministry also demonstrates the unusually visible role some women held in early Pentecostal leadership, preaching, and church founding."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Foursquare Church",
+        "href": "/library/protestant/foursquare-church"
+      },
+      {
+        "label": "Pentecostal and Charismatic Protestantism",
+        "href": "/library/protestant/pentecostal-and-charismatic"
+      }
+    ]
+  },
+  {
+    "slug": "oral-roberts",
+    "title": "Oral Roberts",
+    "era": "1918-2009",
+    "summary": "Pentecostal healing evangelist, broadcaster, university founder, and major figure in modern charismatic Christianity.",
+    "focus": "Healing evangelism, media, education, and charismatic expansion",
+    "source": "App-authored historical biography from public historical references.",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Biography",
+        "paragraphs": [
+          "Oral Roberts was an American Pentecostal and charismatic evangelist known for healing campaigns, radio and television ministry, and large-scale public evangelism. His preaching connected divine healing, faith, prayer, and expectation of God's work in everyday life.",
+          "Roberts also founded Oral Roberts University, which connected charismatic spirituality with higher education and institutional development. His influence reached beyond classical Pentecostal circles into the broader charismatic and evangelical world."
+        ],
+        "bullets": [
+          "Healing evangelist and media preacher",
+          "Founder of Oral Roberts University",
+          "Important bridge between Pentecostalism and broader charismatic Christianity"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Why He Matters",
+        "paragraphs": [
+          "Roberts matters because he represents the mid-twentieth-century move from revival tent meetings into television, universities, publishing, and broad charismatic influence.",
+          "His career shows how Pentecostal themes entered the religious mainstream through media and institutions, not only through local church planting."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Charismatic Movement",
+        "href": "/library/history/charismatic-movement"
+      },
+      {
+        "label": "Pentecostal and Charismatic Protestantism",
+        "href": "/library/protestant/pentecostal-and-charismatic"
+      }
+    ]
+  },
+  {
+    "slug": "assemblies-of-god",
+    "title": "Assemblies of God",
+    "era": "1914 onward",
+    "summary": "The largest classical Pentecostal fellowship, organized around Spirit baptism, mission, Bible preaching, and congregational networks.",
+    "focus": "Classical Pentecostal identity and global mission",
+    "source": "Historical Analysis of Protestantism: From the Reformation to the Present Day",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Origins and structure",
+        "paragraphs": [
+          "The Assemblies of God formed in the early twentieth century as Pentecostal believers sought a cooperative fellowship for missions, evangelism, and theological coordination.",
+          "It became a major classical Pentecostal body by combining local church autonomy with shared doctrine, mission boards, and ministerial fellowship."
+        ],
+        "bullets": [
+          "Classical Pentecostal identity",
+          "Strong missionary orientation",
+          "Local church autonomy with fellowship structures"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Why it matters",
+        "paragraphs": [
+          "The Assemblies of God helped define the shape of global Pentecostalism: Bible preaching, evangelism, healing, and expectation of Spirit-empowered life.",
+          "Its worldwide growth makes it one of the most important denominations for understanding modern Protestant Christianity."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Pentecostal and Charismatic Protestantism",
+        "href": "/library/protestant/pentecostal-and-charismatic"
+      },
+      {
+        "label": "Charismatic Movement",
+        "href": "/library/history/charismatic-movement"
+      },
+      {
+        "label": "Church History Timeline",
+        "href": "/library/history/timeline"
+      }
+    ]
+  },
+  {
+    "slug": "church-of-god-in-christ",
+    "title": "Church of God in Christ",
+    "era": "1897 onward",
+    "summary": "A major Holiness-Pentecostal denomination shaped by sanctification teaching, powerful preaching, and strong worship life.",
+    "focus": "Holiness-Pentecostal preaching and worship",
+    "source": "Historical Analysis of Protestantism: From the Reformation to the Present Day",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Holiness roots",
+        "paragraphs": [
+          "The Church of God in Christ emerged from the Holiness movement and became one of the most influential Pentecostal denominations in the United States.",
+          "Its history shows how nineteenth-century holiness teaching flowed into twentieth-century Pentecostal spirituality."
+        ],
+        "bullets": [
+          "Holiness and sanctification emphasis",
+          "Pentecostal worship and preaching",
+          "Strong ecclesial identity"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Why it matters",
+        "paragraphs": [
+          "COGIC is a major example of how Pentecostalism developed within African American Christian life and became a global worship and preaching tradition.",
+          "It belongs in the study of Protestant history because it shows both continuity with earlier holiness theology and the rise of modern Pentecostal expression."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Pentecostal and Charismatic Protestantism",
+        "href": "/library/protestant/pentecostal-and-charismatic"
+      },
+      {
+        "label": "Charismatic Movement",
+        "href": "/library/history/charismatic-movement"
+      },
+      {
+        "label": "Post-Reformation Movements",
+        "href": "/library/protestant/post-reformation-movements"
+      }
+    ]
+  },
+  {
+    "slug": "foursquare-church",
+    "title": "Foursquare Church",
+    "era": "1923 onward",
+    "summary": "A Pentecostal denomination founded by Aimee Semple McPherson, known for evangelism, healing, media ministry, and the fourfold gospel.",
+    "focus": "Evangelism, healing, and Pentecostal proclamation",
+    "source": "Historical Analysis of Protestantism: From the Reformation to the Present Day",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Founder and message",
+        "paragraphs": [
+          "Aimee Semple McPherson founded the Foursquare Church after building a widely known evangelistic ministry centered on preaching, healing, and public witness.",
+          "The denomination's classic fourfold gospel presents Christ as Savior, Baptizer with the Holy Spirit, Healer, and Coming King."
+        ],
+        "bullets": [
+          "Evangelistic and revivalist style",
+          "Fourfold gospel",
+          "Media and public ministry emphasis"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Why it matters",
+        "paragraphs": [
+          "Foursquare is important because it shows how Pentecostalism moved into large-scale evangelism, media, and accessible church life.",
+          "It also illustrates how women played major founding roles in the Pentecostal world."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Pentecostal and Charismatic Protestantism",
+        "href": "/library/protestant/pentecostal-and-charismatic"
+      },
+      {
+        "label": "Charismatic Movement",
+        "href": "/library/history/charismatic-movement"
+      },
+      {
+        "label": "Protestant Figures",
+        "href": "/library/protestant/figures"
+      }
+    ]
+  },
+  {
+    "slug": "vineyard-movement",
+    "title": "Vineyard Movement",
+    "era": "1970s onward",
+    "summary": "A later charismatic network emphasizing worship, spiritual gifts, accessible church planting, and a softer renewal style than older Pentecostal bodies.",
+    "focus": "Charismatic renewal and modern worship culture",
+    "source": "Historical Analysis of Protestantism: From the Reformation to the Present Day",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Origins and character",
+        "paragraphs": [
+          "The Vineyard Movement grew out of the broader charismatic renewal and became known for contemporary worship, healing prayer, and a church-planting ethos.",
+          "It sits between older Pentecostal distinctives and later evangelical church-planting networks."
+        ],
+        "bullets": [
+          "Charismatic worship and prayer",
+          "Church planting and mission",
+          "Influence on contemporary evangelical culture"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Why it matters",
+        "paragraphs": [
+          "The Vineyard is important because it shows how charismatic spirituality adapted to modern evangelical settings without requiring older Pentecostal denominational forms.",
+          "Its emphasis on accessible worship and prayer helped shape much of the wider contemporary praise-and-worship landscape."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Pentecostal and Charismatic Protestantism",
+        "href": "/library/protestant/pentecostal-and-charismatic"
+      },
+      {
+        "label": "Charismatic Movement",
+        "href": "/library/history/charismatic-movement"
+      },
+      {
+        "label": "Church History Timeline",
+        "href": "/library/history/timeline"
+      }
+    ]
+  },
+  {
+    "slug": "denominations-claim",
+    "title": "The '30,000 Denominations' Claim",
+    "era": "Modern analysis",
+    "summary": "A study entry explaining why the famous Protestant denomination count is often overstated or methodologically misunderstood.",
+    "focus": "Modern apologetic claims and denominational statistics",
+    "source": "Historical Analysis of Protestantism: From the Reformation to the Present Day",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Where the Number Comes From",
+        "paragraphs": [
+          "The high denomination count often comes from the World Christian Encyclopedia. That work uses a sociological definition in which a denomination can be counted separately within each country.",
+          "Under that method, Roman Catholic and Orthodox bodies are also multiplied by national presence. The result is useful for sociology, but it is often misused as though it were a clean count of distinct theological systems."
+        ],
+        "bullets": [
+          "One country can mean one separate count",
+          "Catholic and Orthodox totals are also inflated by the same method",
+          "The figure is partly a methodological artifact"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Why the Claim Still Matters",
+        "paragraphs": [
+          "The claim is not meaningless, because Protestantism is genuinely more fragmented institutionally than Catholicism. But the popular number is often weaponized without explaining what is actually being counted.",
+          "A responsible study path should distinguish between institutional fragmentation, doctrinal diversity, and methodological counting practices."
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Gordon-Conwell Center for Global Christianity",
+        "href": "https://www.gordonconwell.edu/center-for-global-christianity/resources/status-of-global-christianity/"
+      }
+    ]
+  },
+  {
+    "slug": "major-protestant-groups-today",
+    "title": "Major Protestant Groups Today",
+    "era": "Modern global Protestantism",
+    "summary": "A study entry surveying the main Protestant families that shape the modern landscape: Lutheran, Reformed, Anglican, Methodist, Baptist, Pentecostal, and independent evangelical streams.",
+    "focus": "Contemporary Protestant families, identity, and institutional shape",
+    "source": "Historical Analysis of Protestantism: From the Reformation to the Present Day",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Confessional and Historic Protestant Families",
+        "paragraphs": [
+          "Modern Protestantism still carries major historic families that can be traced to the Reformation and its early aftermath. Lutheran, Reformed, Anglican, Methodist, and Baptist traditions each preserve different emphases in worship, polity, doctrine, and church memory.",
+          "These traditions should not be collapsed into a single system. Some remain strongly confessional and liturgical, while others center more on revival, congregational governance, or missionary expansion."
+        ],
+        "bullets": [
+          "Lutheranism preserves a confessional Reformation identity around justification, catechesis, and sacramental worship",
+          "Reformed and Presbyterian churches emphasize covenant theology, disciplined doctrine, and elder-led polity",
+          "Anglicanism and Methodism retain distinct liturgical and pastoral inheritances"
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Evangelical, Baptist, and Non-Denominational Expansion",
+        "paragraphs": [
+          "In many countries, especially in the modern missionary era, Protestant growth has been driven less by old state churches and more by evangelical, Baptist, free church, and non-denominational networks.",
+          "These groups often prioritize conversion, Bible preaching, missions, and flexible local governance. Their institutional identity can be thinner than older Protestant communions, but their global influence is substantial."
+        ],
+        "bullets": [
+          "Strong focus on personal conversion and biblical preaching",
+          "Congregational or low-structure governance is common",
+          "Global expansion often occurs through missions, church planting, and media"
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Pentecostal and Independent Growth",
+        "paragraphs": [
+          "A large share of modern Protestant growth is now connected to Pentecostal, Charismatic, and independent churches. In global Christianity statistics, these groups are sometimes counted separately even when they share Protestant theology or history.",
+          "This is one reason denominational statistics can be confusing. Modern Protestantism includes both historically rooted churches and newer independent bodies whose doctrinal boundaries, worship practices, and international structures vary widely."
+        ],
+        "bullets": [
+          "Pentecostal and Charismatic bodies are among the fastest-growing Protestant movements",
+          "Independent churches can be institutionally flexible but difficult to classify",
+          "Statistical fragmentation does not always equal complete doctrinal separation"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Evangelical Lutheran Church in America",
+        "href": "https://www.elca.org/"
+      },
+      {
+        "label": "Presbyterian Historical Society",
+        "href": "https://www.history.pcusa.org/"
+      },
+      {
+        "label": "World Methodist Council",
+        "href": "https://worldmethodistcouncil.org/"
+      },
+      {
+        "label": "IFPH - Assemblies of God and Pentecostal History",
+        "href": "https://ifph.org/"
+      }
+    ]
+  },
+  {
+    "slug": "free-protestant-resources",
+    "title": "Free Protestant and Reformation Resources",
+    "era": "Study tools",
+    "summary": "A curated entry of free public-domain and educational resources for Protestant study.",
+    "focus": "Primary texts, teaching tools, and denominational resources",
+    "source": "Historical Analysis of Protestantism: From the Reformation to the Present Day",
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Primary Works and Study Tools",
+        "paragraphs": [
+          "The Protestant side should not depend on paid or restricted material. Public-domain reformers, open archives, and educational sites are enough to build a serious study path.",
+          "The resources below are useful starting points for Luther, Calvin, Wesley, Reformation teaching, and modern denominational study."
+        ],
+        "bullets": [
+          "Project Gutenberg for Luther and Wesley",
+          "CCEL for Calvin and broader Christian classics",
+          "Core Knowledge for structured Reformation teaching"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": "Project Gutenberg - Martin Luther",
+        "href": "https://www.gutenberg.org/ebooks/author/155"
+      },
+      {
+        "label": "CCEL - John Calvin",
+        "href": "https://www.ccel.org/ccel/calvin"
+      },
+      {
+        "label": "Project Gutenberg - John Wesley",
+        "href": "https://www.gutenberg.org/ebooks/author/31438"
+      },
+      {
+        "label": "Christian Classics Ethereal Library",
+        "href": "https://www.ccel.org/"
+      },
+      {
+        "label": "Core Knowledge - The Reformation Unit",
+        "href": "https://www.coreknowledge.org/free-resource/ckhg-unit-05-reformation/"
+      },
+      {
+        "label": "Presbyterian Historical Society",
+        "href": "https://pcusa.org/historical-society/"
+      },
+      {
+        "label": "World Methodist Council",
+        "href": "https://worldmethodistcouncil.org/"
+      }
+    ]
+  }
+]

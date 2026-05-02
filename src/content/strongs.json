@@ -1,0 +1,74 @@
+{
+  "H7225": {
+    "id": "H7225",
+    "lemma": "reshith",
+    "language": "Hebrew",
+    "transliteration": "re'shith",
+    "pronunciation": "ray-sheeth",
+    "definition": "Beginning, first, chief, or the starting point of a thing.",
+    "root": "From the head or first principle; often used for the first stage of creation or history."
+  },
+  "H430": {
+    "id": "H430",
+    "lemma": "elohim",
+    "language": "Hebrew",
+    "transliteration": "elohim",
+    "pronunciation": "el-o-heem",
+    "definition": "God, gods, or the supreme divine name in many Old Testament contexts.",
+    "root": "Related to H433 and used with singular force for the true God."
+  },
+  "H1254": {
+    "id": "H1254",
+    "lemma": "bara",
+    "language": "Hebrew",
+    "transliteration": "bara",
+    "pronunciation": "baw-raw",
+    "definition": "To create, shape, or bring into existence, especially with God as subject.",
+    "root": "Used in Scripture for divine creative action."
+  },
+  "H8414": {
+    "id": "H8414",
+    "lemma": "tohu",
+    "language": "Hebrew",
+    "transliteration": "tohu",
+    "pronunciation": "toh-hoo",
+    "definition": "Formlessness, confusion, waste, or desolation.",
+    "root": "A state of unshaped emptiness before ordering."
+  },
+  "H922": {
+    "id": "H922",
+    "lemma": "bohu",
+    "language": "Hebrew",
+    "transliteration": "bohu",
+    "pronunciation": "bo-hoo",
+    "definition": "Emptiness or voidness.",
+    "root": "Used with tohu to describe unformed creation."
+  },
+  "H7307": {
+    "id": "H7307",
+    "lemma": "ruach",
+    "language": "Hebrew",
+    "transliteration": "ruach",
+    "pronunciation": "roo-akh",
+    "definition": "Spirit, wind, or breath.",
+    "root": "Often used for the divine Spirit or life-giving breath."
+  },
+  "H559": {
+    "id": "H559",
+    "lemma": "amar",
+    "language": "Hebrew",
+    "transliteration": "amar",
+    "pronunciation": "aw-mar",
+    "definition": "To say, speak, or utter.",
+    "root": "A common verb of divine or human speech."
+  },
+  "H216": {
+    "id": "H216",
+    "lemma": "or",
+    "language": "Hebrew",
+    "transliteration": "or",
+    "pronunciation": "ore",
+    "definition": "Light, illumination, or brightness.",
+    "root": "Used for physical light and symbolic revelation."
+  }
+}

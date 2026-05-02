@@ -1,0 +1,390 @@
+[
+  {
+    "slug": "nicaea",
+    "title": "Council of Nicaea",
+    "era": "325",
+    "summary": "The first ecumenical council confronted Arianism, articulated the Son's full divinity, and gave the Church a creed that shaped later orthodoxy.",
+    "overview": "Nicaea gathered bishops from across the empire to answer the claim that the Son was a creature. Its importance lies not only in one disputed term, but in how the Church publicly clarified the relation of the Father and the Son for worship, salvation, and scriptural reading.",
+    "significance": "Nicaea became a hinge point for later Trinitarian theology and a reference standard for Catholic, Orthodox, and many Protestant accounts of classical Christian doctrine.",
+    "sections": [
+      {
+        "id": "nicaea-background",
+        "title": "Doctrinal Background",
+        "summary": "The crisis centered on Arius and the claim that the Son was not eternal in the same way as the Father.",
+        "detail": "The controversy was not merely semantic. If the Son were a created being, then Christian worship and salvation would be radically reframed. The bishops treated the issue as central because the Church baptized in Christ's name, prayed to Him, and read Scripture as testifying to His divine identity.",
+        "tags": ["arianism", "christology", "trinity"]
+      },
+      {
+        "id": "nicaea-creed",
+        "title": "The Creed and Homoousios",
+        "summary": "The council used stronger language to prevent evasive reinterpretation of biblical terms.",
+        "detail": "The Nicene Creed declared the Son to be begotten, not made, and of one substance with the Father. This language served as a doctrinal fence: it was chosen because looser formulas had already been bent to non-Nicene meanings.",
+        "tags": ["creed", "homoousios", "doctrine"]
+      },
+      {
+        "id": "nicaea-aftermath",
+        "title": "Aftermath and Reception",
+        "summary": "Nicaea did not end the controversy immediately; its formula had to be defended and interpreted over decades.",
+        "detail": "The post-Nicene period shows that councils settle matters only as they are received, explained, and defended. Athanasius and the Cappadocians were crucial in showing how Nicene language preserved both biblical worship and coherent Trinitarian confession.",
+        "tags": ["athanasius", "reception", "post-nicene"]
+      }
+    ],
+    "relatedTopics": ["great-schism", "reformation"]
+  },
+  {
+    "slug": "chalcedon-451",
+    "title": "Chalcedon and the Oriental Orthodox Split",
+    "era": "451 and after",
+    "summary": "The Council of Chalcedon clarified Christ's two natures for the Byzantine world, while several ancient churches rejected the definition and continued as the Oriental Orthodox traditions.",
+    "overview": "Chalcedon is one of the most important Christological turning points after Nicaea. It sought to confess Christ as one person in two natures, fully divine and fully human, without confusion or division. The council's definition was received in the imperial and Byzantine churches, but not by all ancient Christian communities.",
+    "significance": "The debate shaped the identity of the Coptic, Syriac, Armenian, Ethiopian, Eritrean, and Malankara traditions, which should be studied on their own terms rather than treated as a footnote to later East-West history.",
+    "sections": [
+      {
+        "id": "chalcedon-background",
+        "title": "Why Chalcedon Was Called",
+        "summary": "The church needed language that would protect both Christ's full divinity and full humanity.",
+        "detail": "The controversy after Ephesus and the Christological debates of the fifth century forced the bishops to say more precisely how the incarnate Son should be confessed. Chalcedon answered against both confusion of natures and separation of persons.",
+        "tags": ["chalcedon", "christology", "incarnation"]
+      },
+      {
+        "id": "chalcedon-definition",
+        "title": "The Chalcedonian Definition",
+        "summary": "The council taught one and the same Christ, Son, Lord, and only-begotten, acknowledged in two natures.",
+        "detail": "The definition was meant to preserve the unity of Christ's person while safeguarding the integrity of His divinity and humanity. It became standard for Byzantine, Latin, and many later Protestant traditions.",
+        "tags": ["definition", "two-natures", "orthodoxy"]
+      },
+      {
+        "id": "chalcedon-reception",
+        "title": "Reception and Division",
+        "summary": "Some ancient churches rejected Chalcedon and continued as the Oriental Orthodox communions.",
+        "detail": "The split was not simply a matter of politics or a quick misunderstanding. It was a real Christological disagreement that developed into separate ecclesial histories. The Coptic, Syriac, Armenian, Ethiopian, Eritrean, and Malankara churches should be read as continuing ancient apostolic traditions, not as modern offshoots.",
+        "tags": ["oriental-orthodox", "coptic", "syriac"]
+      }
+    ],
+    "relatedTopics": ["nicaea", "great-schism"]
+  },
+  {
+    "slug": "great-schism",
+    "title": "Great Schism",
+    "era": "1054 and after",
+    "summary": "The break between Eastern and Western Christianity grew from long-standing tensions in authority, language, liturgy, and political life, then hardened over time.",
+    "overview": "The schism is best understood as a process rather than a single moment. The events of 1054 were significant, but they sat within deeper disputes over papal claims, regional identity, the Filioque, and the competing trajectories of Greek East and Latin West.",
+    "significance": "The rupture shaped medieval Christianity, later confessional identity, and the modern theological vocabulary of Catholic-Orthodox relations.",
+    "sections": [
+      {
+        "id": "schism-causes",
+        "title": "Long-Building Causes",
+        "summary": "Political and cultural distance made doctrinal conflict harder to resolve.",
+        "detail": "As the Roman Empire's eastern and western centers diverged, so did habits of governance, liturgical expression, and theological style. Mutual unfamiliarity increased suspicion, especially when local customs became symbols of wider authority claims.",
+        "tags": ["east-west", "authority", "culture"]
+      },
+      {
+        "id": "schism-1054",
+        "title": "The 1054 Confrontation",
+        "summary": "The mutual excommunications of 1054 were dramatic but not the only cause of division.",
+        "detail": "The legation of Cardinal Humbert and the conflict with Patriarch Michael Cerularius made separation visible, but communion had already been strained. The later memory of 1054 often simplifies a more layered breakdown of trust and jurisdiction.",
+        "tags": ["1054", "excommunication", "cerularius"]
+      },
+      {
+        "id": "schism-memory",
+        "title": "How the Break Hardened",
+        "summary": "Later conflicts, especially the sack of Constantinople, deepened the rupture beyond immediate doctrinal dispute.",
+        "detail": "The Fourth Crusade and Latin occupation of Constantinople intensified ecclesial and civil resentment. After that, the split was reinforced by memory, wounded trust, and competing institutional worlds, not merely by one unresolved theological formula.",
+        "tags": ["crusades", "constantinople", "memory"]
+      }
+    ],
+    "relatedTopics": ["nicaea", "reformation"]
+  },
+  {
+    "slug": "reformation",
+    "title": "Protestant Reformation",
+    "era": "1517 onward",
+    "summary": "The Reformation challenged late medieval Western Christianity on authority, justification, sacramental practice, and institutional reform.",
+    "overview": "What began as a reform controversy in the Latin West became a durable reconfiguration of Christian life. The Reformation is not one event or one figure, but a series of disputes over doctrine, ecclesial power, preaching, and the shape of the Christian life.",
+    "significance": "Its consequences include confessional fragmentation, new patterns of biblical interpretation, and a transformed relationship between church, state, and public religion.",
+    "sections": [
+      {
+        "id": "reformation-causes",
+        "title": "Late Medieval Crisis",
+        "summary": "Calls for reform drew energy from real abuses, weak trust in institutions, and anxieties about salvation.",
+        "detail": "The Reformation cannot be reduced to indulgences alone. It emerged in a context of clerical criticism, educational change, humanist scholarship, and pastoral concern. Questions about grace, penance, and authority found a wide audience because institutional trust was already fragile.",
+        "tags": ["late-medieval", "reform", "authority"]
+      },
+      {
+        "id": "reformation-doctrine",
+        "title": "Doctrinal Flashpoints",
+        "summary": "Justification, Scripture, sacramental theology, and church authority became central dividing lines.",
+        "detail": "Disputes quickly expanded from discipline into doctrine. The status of Scripture, the place of tradition, the meaning of justification, and the number and efficacy of the sacraments all became markers of emerging confessional identities.",
+        "tags": ["justification", "scripture", "sacraments"]
+      },
+      {
+        "id": "reformation-aftermath",
+        "title": "Confessionalization and Response",
+        "summary": "The Reformation produced parallel reform movements, including Catholic reform and confessional state-building.",
+        "detail": "Trent, Protestant confessions, catechisms, and new educational networks all show that the Reformation era was constructive as well as divisive. The period reorganized doctrine, worship, and governance across Europe in lasting ways.",
+        "tags": ["trent", "confessions", "catholic-reform"]
+      }
+    ],
+    "relatedTopics": ["great-schism", "charismatic-movement"]
+  },
+  {
+    "slug": "charismatic-movement",
+    "title": "Charismatic Movement",
+    "era": "1906 onward",
+    "summary": "The modern Pentecostal and Charismatic movements emphasized baptism in the Holy Spirit, spiritual gifts, healing, renewal, and expressive worship, influencing Protestant, Catholic, and mainline churches.",
+    "overview": "The Charismatic Movement is best understood in stages: early Pentecostal revival, denominational formation, mid-century healing and evangelistic networks, and later renewal inside Catholic, Anglican, Lutheran, Methodist, Baptist, and non-denominational churches. It arose from Protestant revivalism but became a wider trans-denominational force.",
+    "significance": "Much of global Protestant Christianity today is Pentecostal or charismatic in worship, mission, prayer, and expectations of spiritual gifts. Catholic Charismatic Renewal and mainline renewal movements also show that the movement reached beyond its Protestant origins.",
+    "sections": [
+      {
+        "id": "charismatic-origins",
+        "title": "Origins and Azusa Street",
+        "summary": "The Azusa Street Revival became a major symbol of modern Pentecostal beginnings.",
+        "detail": "Led by William J. Seymour in Los Angeles, the revival emphasized baptism in the Holy Spirit, speaking in tongues, healing, interracial worship, and urgent mission. Earlier holiness and revival streams prepared the ground, but Azusa became the most famous center of global spread.",
+        "tags": ["azusa", "pentecostal", "revival"]
+      },
+      {
+        "id": "charismatic-leaders",
+        "title": "Key Leaders and Figures",
+        "summary": "Figures such as Charles Parham, William J. Seymour, Aimee Semple McPherson, and Oral Roberts shaped Pentecostal and charismatic identity.",
+        "detail": "Parham helped popularize tongues as a sign associated with Spirit baptism. Seymour gave Azusa its missionary and interracial power. McPherson built a public evangelistic and media presence. Roberts helped connect healing evangelism, media, and later charismatic networks.",
+        "tags": ["leaders", "healing", "mission"]
+      },
+      {
+        "id": "charismatic-denominations",
+        "title": "Major Denominations and Networks",
+        "summary": "Pentecostal denominations and later charismatic networks became major global Christian forces.",
+        "detail": "Assemblies of God, Church of God in Christ, Foursquare Church, Vineyard, independent charismatic networks, and many non-denominational churches carried charismatic spirituality into global worship, mission, and church planting.",
+        "tags": ["assemblies-of-god", "cogic", "vineyard"]
+      },
+      {
+        "id": "charismatic-renewal",
+        "title": "Renewal in Traditional Churches",
+        "summary": "From the 1960s onward, charismatic spirituality entered Catholic, Anglican, Lutheran, Methodist, and other established churches.",
+        "detail": "Catholic Charismatic Renewal and mainline charismatic renewal brought prayer meetings, healing prayer, praise music, and teaching on spiritual gifts into older church structures. This created both renewal and controversy, especially around discernment, authority, and worship style.",
+        "tags": ["catholic-renewal", "mainline", "spiritual-gifts"]
+      }
+    ],
+    "relatedTopics": ["reformation", "great-schism"]
+  },
+  {
+    "slug": "apostolic-catholic-church",
+    "title": "Apostolic Catholic Church",
+    "era": "33 AD onward",
+    "summary": "A study page explaining what is meant by the ancient apostolic catholic Church before later East-West and Reformation divisions.",
+    "overview": "In the earliest Christian centuries, the Church was not yet divided into the later medieval and modern communions. It was one apostolic, episcopal, sacramental Church spread through many cities and languages, with major centers such as Jerusalem, Antioch, Alexandria, Rome, and later Constantinople.",
+    "significance": "The word catholic means universal. It does not mean that every later claim is simple or uncontested, but it does show that catholic language belongs very early in Christian history, long before the 1054 East-West Schism or the sixteenth-century Reformation.",
+    "sections": [
+      {
+        "id": "apostolic-root",
+        "title": "Apostolic Root",
+        "summary": "The Church begins with the apostolic witness to Christ's death and resurrection.",
+        "detail": "Acts, the epistles, and the early fathers show churches gathered around baptism, Eucharist, teaching, prayer, bishops, presbyters, deacons, and the confession that Jesus is Lord.",
+        "tags": ["apostles", "church", "eucharist"]
+      },
+      {
+        "id": "catholic-language",
+        "title": "Catholic As Universal",
+        "summary": "Catholic means universal, whole, or according to the whole.",
+        "detail": "Ignatius of Antioch uses the phrase Catholic Church very early, showing that catholic language was already part of ancient Christian vocabulary before later denominational divisions.",
+        "tags": ["ignatius", "catholic", "universal"]
+      },
+      {
+        "id": "ancient-centers",
+        "title": "Ancient Centers",
+        "summary": "The ancient Church was spread across East and West.",
+        "detail": "Rome, Constantinople, Alexandria, Antioch, and Jerusalem became especially important sees. The later divisions should be read against this earlier shared world.",
+        "tags": ["rome", "constantinople", "patriarchates"]
+      }
+    ],
+    "relatedTopics": ["nicaea", "great-schism"],
+    "links": [
+      { "label": "Ignatius of Antioch", "href": "/library/fathers/ignatius-antioch" },
+      { "label": "Church Fathers", "href": "/library/fathers" },
+      { "label": "Ecumenical Councils", "href": "/library/councils" }
+    ]
+  },
+  {
+    "slug": "lutheran-tradition",
+    "title": "Lutheran Tradition",
+    "era": "1517 onward",
+    "summary": "A Protestant family rooted in Martin Luther, the German Reformation, justification by faith, catechesis, and the Lutheran confessions.",
+    "overview": "Lutheran Christianity begins in the German Reformation around Martin Luther's challenge to indulgence preaching and his wider teaching on Scripture, justification, preaching, baptism, Eucharist, and pastoral catechesis.",
+    "significance": "Lutheranism is one of the oldest Protestant traditions and remains strongly connected to confessional texts such as the Augsburg Confession and Luther's catechisms.",
+    "sections": [
+      { "id": "lineage", "title": "Lineage", "summary": "German Reformation and Lutheran confession.", "detail": "The lineage runs from Luther and Wittenberg through the Augsburg Confession, the Book of Concord, Lutheran state churches, missionary churches, and modern Lutheran communions.", "tags": ["luther", "augsburg", "confession"] },
+      { "id": "emphasis", "title": "Main Emphases", "summary": "Justification, Word, sacraments, and catechesis.", "detail": "Lutherans usually emphasize justification by faith, the preached Word, baptism, the Lord's Supper, law and gospel, and household catechesis.", "tags": ["justification", "sacraments", "catechism"] }
+    ],
+    "relatedTopics": ["reformation"],
+    "links": [
+      { "label": "Martin Luther", "href": "/library/protestant/figures/martin-luther" },
+      { "label": "Augsburg Confession", "href": "/library/protestant/texts/augsburg-confession" },
+      { "label": "Lutheran World Federation", "href": "https://www.lutheranworld.org/" }
+    ]
+  },
+  {
+    "slug": "reformed-tradition",
+    "title": "Reformed Tradition",
+    "era": "16th century onward",
+    "summary": "A Protestant family shaped by Swiss and French reform, Calvin, Zwingli, covenant theology, disciplined worship, and Reformed confessions.",
+    "overview": "The Reformed tradition developed from Swiss, French, Dutch, Scottish, and related reform movements. It is associated with Zwingli, Calvin, Bucer, Knox, Reformed confessions, and Presbyterian church order.",
+    "significance": "Reformed Christianity became a major Protestant stream through confessions, universities, preaching, missions, and Presbyterian and continental Reformed churches.",
+    "sections": [
+      { "id": "lineage", "title": "Lineage", "summary": "Swiss reform into Reformed and Presbyterian churches.", "detail": "Zurich, Geneva, Scotland, the Netherlands, and later English-speaking Presbyterianism all shaped the Reformed family.", "tags": ["zwingli", "calvin", "knox"] },
+      { "id": "emphasis", "title": "Main Emphases", "summary": "Scripture, covenant, sovereignty, and church discipline.", "detail": "Reformed traditions often emphasize God's sovereignty, covenant theology, preaching, elder-led order, catechesis, and a disciplined approach to worship.", "tags": ["covenant", "presbyterian", "confession"] }
+    ],
+    "relatedTopics": ["reformation"],
+    "links": [
+      { "label": "John Calvin", "href": "/library/protestant/figures/john-calvin" },
+      { "label": "Huldrych Zwingli", "href": "/library/protestant/figures/huldrych-zwingli" },
+      { "label": "John Knox", "href": "/library/protestant/figures/john-knox" },
+      { "label": "World Communion of Reformed Churches", "href": "https://wcrc.ch/" }
+    ]
+  },
+  {
+    "slug": "anglican-tradition",
+    "title": "Anglican Tradition",
+    "era": "16th century onward",
+    "summary": "A Protestant and catholic-shaped Western tradition rooted in the English Reformation, episcopal order, the Book of Common Prayer, and the Thirty-Nine Articles.",
+    "overview": "Anglican Christianity grew from the English Reformation and retained bishops, liturgy, and much ancient church structure while also absorbing Reformation theology and vernacular worship.",
+    "significance": "Anglicanism is important because it stands between several worlds: Reformation doctrine, catholic order, national church history, global mission, and later evangelical and charismatic renewal.",
+    "sections": [
+      { "id": "lineage", "title": "Lineage", "summary": "English Reformation and global communion.", "detail": "Anglican lineage runs through the Church of England, the Book of Common Prayer, the Thirty-Nine Articles, missionary expansion, and the global Anglican Communion.", "tags": ["england", "prayer-book", "bishops"] },
+      { "id": "emphasis", "title": "Main Emphases", "summary": "Scripture, liturgy, episcopal order, and common prayer.", "detail": "Anglican identity is often formed through prayer book worship, biblical preaching, episcopal structure, and a broad tradition that includes catholic, evangelical, and charismatic streams.", "tags": ["liturgy", "episcopal", "communion"] }
+    ],
+    "relatedTopics": ["reformation"],
+    "links": [
+      { "label": "Thirty-Nine Articles", "href": "/library/protestant/texts/thirty-nine-articles" },
+      { "label": "Anglican Communion", "href": "https://www.anglicancommunion.org/" }
+    ]
+  },
+  {
+    "slug": "anabaptist-tradition",
+    "title": "Anabaptist Tradition",
+    "era": "1520s onward",
+    "summary": "A radical Reformation family emphasizing believers' baptism, discipleship, church discipline, peace witness, and separation from coercive state religion.",
+    "overview": "Anabaptist movements emerged during the Reformation but often rejected both Catholic and magisterial Protestant arrangements. They argued for believers' baptism, voluntary church membership, and a visible life of discipleship.",
+    "significance": "Anabaptists shaped later Mennonite, Amish, Hutterite, Brethren, and free-church traditions, especially around baptism, peace, simplicity, and church-state separation.",
+    "sections": [
+      { "id": "lineage", "title": "Lineage", "summary": "Radical Reformation into free-church communities.", "detail": "The lineage includes Swiss Brethren, Menno Simons, Mennonite communities, and other free-church groups that emphasized voluntary discipleship.", "tags": ["mennonite", "believers-baptism", "discipleship"] },
+      { "id": "emphasis", "title": "Main Emphases", "summary": "Baptism, discipleship, peace, and church discipline.", "detail": "Anabaptist traditions often stress following Jesus visibly, baptism upon confession of faith, mutual accountability, and resistance to coercive religion.", "tags": ["peace", "community", "free-church"] }
+    ],
+    "relatedTopics": ["reformation"],
+    "links": [
+      { "label": "Mennonite World Conference", "href": "https://mwc-cmm.org/" },
+      { "label": "Reformation Era", "href": "/library/protestant/reformation-era" }
+    ]
+  },
+  {
+    "slug": "baptist-tradition",
+    "title": "Baptist Tradition",
+    "era": "17th century onward",
+    "summary": "A Protestant family emphasizing believers' baptism, congregational church life, preaching, religious liberty, and mission.",
+    "overview": "Baptist churches arose in the English-speaking world from separatist, Puritan, and free-church settings. They share believers' baptism and congregational life, though Baptist theology ranges from Calvinistic to more revivalist and evangelical forms.",
+    "significance": "Baptists became one of the largest Protestant families through preaching, missions, local church autonomy, and religious liberty advocacy.",
+    "sections": [
+      { "id": "lineage", "title": "Lineage", "summary": "English separatism into global Baptist churches.", "detail": "Baptist lineage includes early English Baptists, Particular and General Baptist streams, missionary societies, American Baptist growth, and global Baptist unions.", "tags": ["believers-baptism", "congregational", "missions"] },
+      { "id": "emphasis", "title": "Main Emphases", "summary": "Baptism, preaching, conversion, and local church autonomy.", "detail": "Baptists usually emphasize believer's baptism, personal conversion, Scripture, congregational governance, evangelism, and freedom of conscience.", "tags": ["conversion", "scripture", "liberty"] }
+    ],
+    "relatedTopics": ["reformation", "charismatic-movement"],
+    "links": [
+      { "label": "Second London Baptist Confession", "href": "/library/protestant/texts/london-baptist-confession-1689" },
+      { "label": "Baptist World Alliance", "href": "https://baptistworld.org/" }
+    ]
+  },
+  {
+    "slug": "methodist-tradition",
+    "title": "Methodist Tradition",
+    "era": "18th century onward",
+    "summary": "A Protestant family rooted in John Wesley, Anglican revival, disciplined societies, conversion, assurance, and holiness.",
+    "overview": "Methodism began as a renewal movement within Anglicanism through John and Charles Wesley and their networks of preaching, societies, classes, hymns, and disciplined Christian formation.",
+    "significance": "Methodism helped shape evangelical Protestantism, revivalism, holiness movements, missions, and later streams that prepared the way for Pentecostalism.",
+    "sections": [
+      { "id": "lineage", "title": "Lineage", "summary": "Anglican revival into Methodist churches.", "detail": "The Methodist line moves from Wesleyan renewal into Methodist churches, holiness movements, missionary networks, and later renewal traditions.", "tags": ["wesley", "holiness", "revival"] },
+      { "id": "emphasis", "title": "Main Emphases", "summary": "Grace, conversion, assurance, holiness, and disciplined discipleship.", "detail": "Methodist theology often highlights prevenient grace, conversion, assurance, sanctification, works of mercy, and ordered spiritual discipline.", "tags": ["sanctification", "societies", "grace"] }
+    ],
+    "relatedTopics": ["reformation", "charismatic-movement"],
+    "links": [
+      { "label": "John Wesley", "href": "/library/protestant/figures/john-wesley" },
+      { "label": "World Methodist Council", "href": "https://worldmethodistcouncil.org/" }
+    ]
+  },
+  {
+    "slug": "pentecostal-tradition",
+    "title": "Pentecostal Tradition",
+    "era": "1901 onward",
+    "summary": "A Protestant renewal family emphasizing baptism in the Holy Spirit, tongues, healing, evangelism, and mission.",
+    "overview": "Pentecostalism grew from holiness, revival, healing, and early twentieth-century renewal streams. Azusa Street became the most famous center of global Pentecostal spread.",
+    "significance": "Pentecostalism is one of the largest and fastest-growing forms of modern Protestant Christianity and strongly shaped global worship, mission, prayer, and expectations of spiritual gifts.",
+    "sections": [
+      { "id": "lineage", "title": "Lineage", "summary": "Holiness revival into Pentecostal denominations.", "detail": "The lineage includes holiness teaching, Charles Parham, William J. Seymour, Azusa Street, Assemblies of God, Church of God in Christ, Foursquare, and many global Pentecostal bodies.", "tags": ["azusa", "spirit-baptism", "mission"] },
+      { "id": "emphasis", "title": "Main Emphases", "summary": "Spirit baptism, tongues, healing, worship, and mission.", "detail": "Pentecostal traditions commonly emphasize the gifts of the Spirit, healing prayer, evangelism, expressive worship, testimony, and missionary urgency.", "tags": ["tongues", "healing", "worship"] }
+    ],
+    "relatedTopics": ["charismatic-movement"],
+    "links": [
+      { "label": "Apostolic Faith Mission", "href": "/library/protestant/apostolic-faith-mission" },
+      { "label": "Assemblies of God", "href": "/library/protestant/assemblies-of-god" },
+      { "label": "Church of God in Christ", "href": "/library/protestant/church-of-god-in-christ" },
+      { "label": "Assemblies of God", "href": "https://ag.org/" }
+    ]
+  },
+  {
+    "slug": "charismatic-tradition",
+    "title": "Charismatic Tradition",
+    "era": "1960s onward",
+    "summary": "A renewal stream emphasizing spiritual gifts and Spirit-filled worship within Protestant, Catholic, Orthodox-adjacent, and independent settings.",
+    "overview": "The charismatic tradition grew from Pentecostal spirituality but often remained inside older denominations. It spread through prayer groups, renewal meetings, healing prayer, praise music, and teaching on spiritual gifts.",
+    "significance": "Charismatic Christianity matters because it crossed denominational borders and influenced worship, mission, prayer, and church planting across much of global Christianity.",
+    "sections": [
+      { "id": "lineage", "title": "Lineage", "summary": "Pentecostal roots into wider denominational renewal.", "detail": "The charismatic line includes Pentecostal origins, mainline renewal, Catholic Charismatic Renewal, independent charismatic churches, and later networks such as Vineyard.", "tags": ["renewal", "spiritual-gifts", "vineyard"] },
+      { "id": "emphasis", "title": "Main Emphases", "summary": "Spiritual gifts, worship, healing prayer, and renewal.", "detail": "Charismatic traditions often stress present experience of the Holy Spirit, prophecy, healing, praise, small groups, and renewed prayer life.", "tags": ["gifts", "healing", "praise"] }
+    ],
+    "relatedTopics": ["charismatic-movement"],
+    "links": [
+      { "label": "Charismatic Movement", "href": "/library/history/charismatic-movement" },
+      { "label": "Vineyard Movement", "href": "/library/protestant/vineyard-movement" },
+      { "label": "Oral Roberts", "href": "/library/protestant/oral-roberts" }
+    ]
+  },
+  {
+    "slug": "non-denominational-tradition",
+    "title": "Non-denominational Tradition",
+    "era": "20th century onward",
+    "summary": "A modern Protestant pattern of independent churches, Bible churches, evangelical networks, and charismatic or seeker-oriented congregations outside older denominational labels.",
+    "overview": "Non-denominational Christianity usually means churches that are not formally governed by an older denomination. Many are evangelical, Baptist-like, charismatic, restorationist, or church-planting oriented.",
+    "significance": "This stream matters because much modern Protestant growth and church planting happens through independent congregations and networks rather than historic denominational structures.",
+    "sections": [
+      { "id": "lineage", "title": "Lineage", "summary": "Free-church, evangelical, Baptist, and charismatic influences.", "detail": "Non-denominational churches often inherit ideas from Baptist congregationalism, evangelical revivalism, Pentecostal or charismatic worship, Bible church teaching, and modern church-planting networks.", "tags": ["evangelical", "free-church", "church-planting"] },
+      { "id": "emphasis", "title": "Main Emphases", "summary": "Bible teaching, local autonomy, conversion, worship, and mission.", "detail": "Common emphases include personal faith, biblical preaching, local church flexibility, contemporary worship, small groups, and evangelism.", "tags": ["bible", "mission", "local-church"] }
+    ],
+    "relatedTopics": ["reformation", "charismatic-movement"],
+    "links": [
+      { "label": "Major Protestant Groups Today", "href": "/library/protestant/major-protestant-groups-today" },
+      { "label": "Denominations Claim", "href": "/library/protestant/denominations-claim" }
+    ]
+  },
+  {
+    "slug": "christianity-today-resources",
+    "title": "Christianity Today Resources",
+    "era": "2026",
+    "summary": "A resource page linking users to official sites for major Christian communions and representative Protestant world bodies.",
+    "overview": "Modern Christianity is institutionally diverse. Catholic, Eastern Orthodox, Oriental Orthodox, Anglican, Lutheran, Reformed, Baptist, Methodist, Pentecostal, and independent Protestant communities all continue with different structures and official bodies.",
+    "significance": "This page gives users a practical bridge from the app's study material into official communion and denomination resources.",
+    "sections": [
+      { "id": "why-links", "title": "Why Official Links Matter", "summary": "Official pages help users distinguish denominations from outside descriptions.", "detail": "The app explains history and doctrine internally, while official church and communion pages let users verify current structures, statements, and educational resources.", "tags": ["resources", "churches", "official"] }
+    ],
+    "relatedTopics": ["great-schism", "reformation", "charismatic-movement"],
+    "links": [
+      { "label": "The Holy See / Vatican", "href": "https://www.vatican.va/" },
+      { "label": "Orthodox Church in America", "href": "https://www.oca.org/" },
+      { "label": "Greek Orthodox Archdiocese", "href": "https://www.goarch.org/" },
+      { "label": "Oriental Orthodox Text Library", "href": "https://www.orientalorthodoxy.com/library/texts/" },
+      { "label": "Anglican Communion", "href": "https://www.anglicancommunion.org/" },
+      { "label": "Lutheran World Federation", "href": "https://www.lutheranworld.org/" },
+      { "label": "World Communion of Reformed Churches", "href": "https://wcrc.ch/" },
+      { "label": "Mennonite World Conference", "href": "https://mwc-cmm.org/" },
+      { "label": "Baptist World Alliance", "href": "https://baptistworld.org/" },
+      { "label": "World Methodist Council", "href": "https://worldmethodistcouncil.org/" },
+      { "label": "Assemblies of God", "href": "https://ag.org/" }
+    ]
+  }
+]

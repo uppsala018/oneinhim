@@ -1,0 +1,36 @@
+{
+  "name": "logos-legacy-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "import:kjv": "node scripts/import-kjv.mjs",
+    "import:catholic": "node scripts/import-catholic.mjs",
+    "import:full-kjv": "node scripts/import-full-kjv.mjs",
+    "import:full-catholic": "node scripts/import-full-catholic.mjs",
+    "import:roman-catechism": "node scripts/import-roman-catechism.mjs",
+    "import:fathers": "node scripts/import-fathers-library.mjs",
+    "import:oriental": "node scripts/import-oriental-orthodox.mjs",
+    "import:protestant": "node scripts/import-protestant-figures.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.1",
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "title": "Annotated Divine Liturgy Guide",
+  "subtitle": "A step-by-step study path for the Liturgy of St. John Chrysostom",
+  "source": "App-authored Orthodox study guide using source-safe summaries and links to Scripture, Brenton LXX, and free Orthodox resources.",
+  "summary": "This guide follows the major movements of the Divine Liturgy so a reader can understand what is happening, why it matters, and which Scriptures or study pages connect to each step.",
+  "steps": [
+    {
+      "id": "preparation",
+      "phase": "Preparation",
+      "title": "Proskomedia: The Gifts Are Prepared",
+      "liturgicalAction": "Bread and wine are prepared before the public beginning of the Liturgy.",
+      "meaning": "The offering of the people is gathered around Christ, the Lamb of God. The preparation already teaches that the Eucharist is not isolated from the Church, the living, the departed, and the whole economy of salvation.",
+      "studyPrompt": "Notice how Orthodox worship begins with offering, remembrance, and preparation before public proclamation.",
+      "links": [
+        {
+          "label": "LXX Passover background",
+          "href": "/library/orthodox/lxx?book=exodus&chapter=12"
+        },
+        {
+          "label": "Isaiah's servant and sacrifice",
+          "href": "/library/orthodox/lxx?book=esaias&chapter=53"
+        }
+      ]
+    },
+    {
+      "id": "opening-blessing",
+      "phase": "Gathering",
+      "title": "Blessed Is The Kingdom",
+      "liturgicalAction": "The Liturgy opens by blessing the kingdom of the Father, and of the Son, and of the Holy Spirit.",
+      "meaning": "The service begins eschatologically. The Church does not merely remember religious ideas; it enters worship directed toward the kingdom of God and the life of the Trinity.",
+      "studyPrompt": "Read the opening as the frame for everything that follows: worship is Trinitarian, ecclesial, and kingdom-oriented.",
+      "links": [
+        {
+          "label": "KJV Matthew 6:33",
+          "href": "/library/kjv?book=Mat&chapter=6&verse=33"
+        },
+        {
+          "label": "Orthodox theology: Theosis",
+          "href": "/library/fathers/athanasius"
+        }
+      ]
+    },
+    {
+      "id": "great-litany",
+      "phase": "Prayer",
+      "title": "The Great Litany",
+      "liturgicalAction": "The deacon or priest leads petitions for peace, salvation, the Church, the world, civil authorities, travelers, the sick, captives, and all in need.",
+      "meaning": "The first major act of the gathered Church is intercession. The Liturgy teaches that prayer is cosmic and communal, not merely private.",
+      "studyPrompt": "Track how often peace, mercy, preservation, and remembrance are requested.",
+      "links": [
+        {
+          "label": "Jesus Prayer study",
+          "href": "/library/orthodox/jesus-prayer"
+        },
+        {
+          "label": "KJV 1 Timothy 2",
+          "href": "/library/kjv?book=1Ti&chapter=2"
+        }
+      ]
+    },
+    {
+      "id": "antiphons",
+      "phase": "Psalmody",
+      "title": "Antiphons And Hymns",
+      "liturgicalAction": "Psalms, refrains, and hymns are sung as the Church prepares to hear the Gospel.",
+      "meaning": "The Liturgy is saturated with Scripture. Psalmody trains the heart to pray biblically, and hymnody confesses doctrine through worship.",
+      "studyPrompt": "Use this step to connect liturgy with the Psalms and with the later Akathist and hymn study path.",
+      "links": [
+        {
+          "label": "Brenton LXX Psalms",
+          "href": "/library/orthodox/lxx?book=psalms&chapter=1"
+        },
+        {
+          "label": "Akathist and hymn study",
+          "href": "/library/orthodox/akathist-hymn-study"
+        }
+      ]
+    },
+    {
+      "id": "little-entrance",
+      "phase": "Scripture",
+      "title": "The Little Entrance",
+      "liturgicalAction": "The Gospel book is carried in procession and brought before the people.",
+      "meaning": "The entrance directs the Church's attention to Christ who speaks in the Gospel. It is not a break in worship but a visible sign of the Word coming into the assembly.",
+      "studyPrompt": "Connect this movement to the Incarnation: the Word comes to His people and is proclaimed.",
+      "links": [
+        {
+          "label": "KJV John 1",
+          "href": "/library/kjv?book=Jhn&chapter=1"
+        },
+        {
+          "label": "Icons and Incarnation",
+          "href": "/library/orthodox/icons-iconography"
+        }
+      ]
+    },
+    {
+      "id": "readings",
+      "phase": "Scripture",
+      "title": "Epistle, Gospel, And Homily",
+      "liturgicalAction": "The apostolic reading and Gospel are proclaimed, followed by preaching or instruction.",
+      "meaning": "The Liturgy of the Catechumens forms hearers through Scripture before the Eucharistic offering. Doctrine, moral life, and sacramental worship belong together.",
+      "studyPrompt": "When building future app features, this step should connect lectionary readings to the KJV reader, LXX reader, and study notes.",
+      "links": [
+        {
+          "label": "KJV Gospel of John",
+          "href": "/library/kjv?book=Jhn&chapter=6"
+        },
+        {
+          "label": "Brenton LXX Isaiah",
+          "href": "/library/orthodox/lxx?book=esaias&chapter=6"
+        }
+      ]
+    },
+    {
+      "id": "great-entrance",
+      "phase": "Offering",
+      "title": "The Great Entrance",
+      "liturgicalAction": "The prepared gifts are carried solemnly to the altar.",
+      "meaning": "The Church brings the gifts forward in remembrance and prayer. This is a movement of offering, not a theatrical scene.",
+      "studyPrompt": "Consider how the whole life of the faithful is gathered and offered back to God in thanksgiving.",
+      "links": [
+        {
+          "label": "Divine Liturgy study overview",
+          "href": "/library/orthodox/liturgical-study"
+        },
+        {
+          "label": "KJV Romans 12",
+          "href": "/library/kjv?book=Rom&chapter=12"
+        }
+      ]
+    },
+    {
+      "id": "creed",
+      "phase": "Confession",
+      "title": "The Creed",
+      "liturgicalAction": "The faithful confess the Nicene-Constantinopolitan Creed before the Eucharistic prayer.",
+      "meaning": "The Eucharist is not separated from the apostolic faith. The Church confesses the Trinity, the Incarnation, the cross, the resurrection, the Church, baptism, and the age to come.",
+      "studyPrompt": "Use this step to connect liturgy with councils and doctrinal study.",
+      "links": [
+        {
+          "label": "Council of Nicaea",
+          "href": "/library/history/nicaea"
+        },
+        {
+          "label": "Cyril of Jerusalem",
+          "href": "/library/fathers/cyril-jerusalem"
+        }
+      ]
+    },
+    {
+      "id": "anaphora",
+      "phase": "Thanksgiving",
+      "title": "The Anaphora",
+      "liturgicalAction": "The Church lifts up the gifts in thanksgiving and remembers creation, salvation, the Last Supper, the cross, resurrection, ascension, and kingdom.",
+      "meaning": "This is the central Eucharistic prayer. Orthodox worship remembers Christ's saving work before God and offers thanksgiving through Christ.",
+      "studyPrompt": "Study the anaphora as the heart of eucharistia: thanksgiving, remembrance, offering, and communion.",
+      "links": [
+        {
+          "label": "KJV 1 Corinthians 11",
+          "href": "/library/kjv?book=1Co&chapter=11"
+        },
+        {
+          "label": "OCA Anaphora resource",
+          "href": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-divine-liturgy/eucharistic-canon-anaphora"
+        }
+      ]
+    },
+    {
+      "id": "epiklesis",
+      "phase": "Invocation",
+      "title": "The Epiklesis",
+      "liturgicalAction": "The Church calls upon the Father to send the Holy Spirit upon the people and the gifts.",
+      "meaning": "The Eucharist is Trinitarian: offered to the Father, in Christ, by the Holy Spirit. The Spirit is invoked for the sanctification of the gifts and the faithful.",
+      "studyPrompt": "Do not isolate the gifts from the people; the prayer asks that the Church also be changed for communion and holiness.",
+      "links": [
+        {
+          "label": "KJV Acts 2",
+          "href": "/library/kjv?book=Act&chapter=2"
+        },
+        {
+          "label": "OCA Epiklesis resource",
+          "href": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-divine-liturgy/epiklesis"
+        }
+      ]
+    },
+    {
+      "id": "lords-prayer",
+      "phase": "Preparation For Communion",
+      "title": "The Lord's Prayer",
+      "liturgicalAction": "The faithful pray the prayer taught by Christ before approaching communion.",
+      "meaning": "The Eucharistic approach is filial: the Church comes to the Father as children in the Son, asking for daily bread, forgiveness, deliverance, and the kingdom.",
+      "studyPrompt": "Read the Lord's Prayer here as preparation for communion, not as a detached devotional text.",
+      "links": [
+        {
+          "label": "KJV Matthew 6",
+          "href": "/library/kjv?book=Mat&chapter=6"
+        },
+        {
+          "label": "KJV Luke 11",
+          "href": "/library/kjv?book=Luk&chapter=11"
+        }
+      ]
+    },
+    {
+      "id": "communion",
+      "phase": "Communion",
+      "title": "Holy Communion",
+      "liturgicalAction": "The faithful receive the Body and Blood of Christ.",
+      "meaning": "Communion is the culmination of the Liturgy: union with Christ, participation in His life, and communion with the Church. It is approached with faith, repentance, preparation, and reverence.",
+      "studyPrompt": "Connect this step to John 6, the Last Supper, and 1 Corinthians 10-11.",
+      "links": [
+        {
+          "label": "KJV John 6",
+          "href": "/library/kjv?book=Jhn&chapter=6"
+        },
+        {
+          "label": "OCA Communion resource",
+          "href": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-divine-liturgy/communion"
+        }
+      ]
+    },
+    {
+      "id": "dismissal",
+      "phase": "Sending",
+      "title": "Thanksgiving And Dismissal",
+      "liturgicalAction": "The faithful give thanks and are dismissed to go in peace.",
+      "meaning": "The Liturgy sends the faithful back into the world. Christian life continues as prayer, mercy, repentance, and witness.",
+      "studyPrompt": "The end of the Liturgy is the beginning of lived Eucharistic life.",
+      "links": [
+        {
+          "label": "KJV James 2",
+          "href": "/library/kjv?book=Jas&chapter=2"
+        },
+        {
+          "label": "Jesus Prayer study",
+          "href": "/library/orthodox/jesus-prayer"
+        }
+      ]
+    }
+  ]
+}

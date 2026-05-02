@@ -1,0 +1,20 @@
+[
+  {
+    "id": "nicaea",
+    "title": "Council of Nicaea",
+    "era": "325",
+    "summary": "Addressed Arianism, defended the full divinity of the Son, and gave the church its first ecumenical creed."
+  },
+  {
+    "id": "great-schism",
+    "title": "Great Schism",
+    "era": "1054",
+    "summary": "A long-brewing rupture shaped by theology, papal authority, culture, and political tensions between East and West."
+  },
+  {
+    "id": "reformation",
+    "title": "Protestant Reformation",
+    "era": "1517 onward",
+    "summary": "A western church crisis around authority, reform, sacraments, and salvation that created enduring confessional divisions."
+  }
+]

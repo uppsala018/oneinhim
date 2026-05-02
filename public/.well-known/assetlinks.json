@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.oneinhim.biblestudy",
+    "sha256_cert_fingerprints": ["1C:80:2A:C3:B1:28:81:73:76:05:41:F8:59:A4:6D:60:CE:91:BC:08:BC:3E:28:30:11:FD:0F:2F:F4:36:D3:1C"]
+  }
+}]

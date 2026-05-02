@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ignatius-antioch",
+    "title": "Ignatius of Antioch",
+    "era": "c. 35-108",
+    "summary": "Apostolic father known for letters on unity, the bishop, and the Eucharist during his journey to martyrdom."
+  },
+  {
+    "id": "justin-martyr",
+    "title": "Justin Martyr",
+    "era": "c. 100-165",
+    "summary": "Apologist who connected Greek philosophy and Christian revelation, and described early Christian worship."
+  },
+  {
+    "id": "athanasius",
+    "title": "Athanasius",
+    "era": "c. 296-373",
+    "summary": "Defender of Nicene orthodoxy against Arianism and a central figure in Trinitarian theology."
+  }
+]
