@@ -1,40 +1,50 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import AuthControls from "@/components/auth-controls";
 
+const navLinks = [
+  { label: "Scripture", href: "/library/kjv" },
+  { label: "Fathers", href: "/library/fathers" },
+  { label: "Councils", href: "/library/councils" },
+  { label: "Traditions", href: "/library" },
+  { label: "History", href: "/library/history" },
+  { label: "Prayer Forum", href: "/library/prayer-forum" },
+];
+
 export default function AppHeader() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-white/8 bg-[rgba(4,17,38,0.88)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-8 lg:px-12">
-        <div>
-          <Link
-            href="/"
-            className="font-[family-name:var(--font-display)] text-2xl tracking-wide text-[var(--color-highlight)]"
-          >
-            One In Him
-          </Link>
-          <p className="text-sm text-[var(--color-muted)]">
-            Biblestudy &amp; Church History
-          </p>
-        </div>
-        <nav className="hidden flex-wrap gap-5 text-sm text-[var(--color-soft)] md:flex">
-          <Link href="/library">Library</Link>
-          <Link href="/library/protestant">Protestant</Link>
-          <Link href="/library/kjv">KJV + Strong&apos;s</Link>
-          <Link href="/library/catholic">Catholic Bible</Link>
-          <Link href="/library/orthodox">Orthodox</Link>
-          <Link href="/library/oriental-orthodox">Oriental Orthodox</Link>
-          <Link href="/library/catechism">Catechism</Link>
-          <Link href="/library/fathers">Fathers</Link>
-          <Link href="/library/councils">Councils</Link>
-          <Link href="/library/history">History</Link>
-          <Link href="/library/prayer-forum">Prayer Forum</Link>
-          <Link href="/library/settings">Settings</Link>
-          <Link href="/library/notes">Notes</Link>
+    <header className={`web-header${scrolled ? " web-header--scrolled" : ""}`}>
+      <div className="web-header__inner">
+        <Link href="/" className="web-header__brand">
+          <span className="web-header__brand-name">One In Him</span>
+          <span className="web-header__brand-sub">Bible Study &amp; Church History</span>
+        </Link>
+
+        <nav className="web-header__nav" aria-label="Main navigation">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
         </nav>
-        <div className="hidden md:block">
-          <AuthControls />
+
+        <div className="web-header__actions">
+          <Link href="/library" className="web-header__cta">
+            Explore Library
+          </Link>
+          <div className="hidden md:block">
+            <AuthControls />
+          </div>
         </div>
       </div>
     </header>
