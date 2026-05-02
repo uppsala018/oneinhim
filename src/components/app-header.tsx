@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Traditions", href: "/library" },
   { label: "History", href: "/library/history" },
   { label: "Prayer Forum", href: "/library/prayer-forum" },
+  { label: "Donate", href: "/donate" },
 ];
 
 export default function AppHeader() {
