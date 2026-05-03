@@ -351,9 +351,8 @@ export default function CatholicResourcesPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
-          eyebrow="Catholic Resources"
           title="Catholic study hub for Bible, catechesis, saints, liturgy, and tradition"
           body="Catholic Resources now sits at the same depth as the Orthodox and Protestant tracks with numbered mobile sections and internal study pages."
         />

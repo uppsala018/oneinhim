@@ -23,9 +23,8 @@ export default function ProtestantPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
-          eyebrow="Protestant Study"
           title="A Protestant study path now sits alongside the Catholic and Orthodox tracks."
           body="This hub brings together the KJV reader, Strong's tools, Reformation history, and selected fathers and theologians that remained influential in Protestant reading traditions."
         />

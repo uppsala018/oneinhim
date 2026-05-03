@@ -21,9 +21,8 @@ export default function FathersPage() {
       <div className="hidden lg:block">
         <AppHeader />
       </div>
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
-          eyebrow="Church Fathers"
           title="Patristic texts are now organized as a full-text library."
           body="Open a father, choose a work, and read the full document chapter by chapter."
         />

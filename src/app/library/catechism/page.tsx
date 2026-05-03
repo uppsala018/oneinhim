@@ -34,9 +34,8 @@ export default function CatechismPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
-          eyebrow="Roman Catechism"
           title="The full Catechism of Trent is now a real library inside the app."
           body="This section carries the public-domain Catechism of the Council of Trent as a route-backed library. The modern Catechism of the Catholic Church can be read free online at the Vatican website, but the embedded full text here is the Roman Catechism of Trent."
         />

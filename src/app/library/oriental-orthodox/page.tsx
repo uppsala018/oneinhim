@@ -37,9 +37,8 @@ export default function OrientalOrthodoxPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
-          eyebrow="Oriental Orthodox"
           title="A dedicated Oriental Orthodox page is now part of the Orthodox study side."
           body="This section is the base for expanding beyond Greek and Byzantine material into the Oriental Orthodox family, giving that tradition a clear place to grow inside the app."
         />

@@ -423,7 +423,7 @@ export default function ProtestantResourcesPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <section className="rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-8">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
             Protestant Resources

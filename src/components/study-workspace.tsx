@@ -736,23 +736,14 @@ export default function StudyWorkspace({
         </section>
       ) : null}
 
-      <section className="mx-auto hidden max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <section className="mx-auto hidden max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-[var(--color-soft)]">
           <Link
             href="/library"
-            className="rounded-full border border-[var(--color-border)] px-4 py-2"
+            className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
           >
-            Library Home
+            ← Back to Library
           </Link>
-          <span className="rounded-full border border-[var(--color-border)] bg-[var(--color-panel)] px-4 py-2">
-            Persistence:{" "}
-            {persistence.syncStatus === "supabase-ready"
-              ? "Supabase ready"
-              : "Local only"}
-          </span>
-          <span className="rounded-full border border-[var(--color-border)] bg-[var(--color-panel)] px-4 py-2">
-            KJV corpus: {bookCatalog.length === 66 ? "Full library loaded" : "Loading"}
-          </span>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[0.38fr_0.62fr]">

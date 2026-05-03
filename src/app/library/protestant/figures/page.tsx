@@ -202,9 +202,8 @@ export default function ProtestantFiguresPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
-          eyebrow="Protestant Figures"
           title="Reformers and Protestant theologians"
           body="Read Protestant figures through internal study profiles and primary texts, not only external links."
         />

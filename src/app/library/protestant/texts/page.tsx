@@ -181,9 +181,8 @@ export default function ProtestantTextsPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
-          eyebrow="Protestant Texts"
           title="Confessions, catechisms, and doctrinal standards"
           body="The Protestant text hub keeps the major standards in one place so the tradition has real internal depth, not just historical labels."
         />

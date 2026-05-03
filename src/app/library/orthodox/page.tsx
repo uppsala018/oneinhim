@@ -246,9 +246,8 @@ export default function OrthodoxPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
-          eyebrow="Orthodox Study"
           title="An Orthodox track now sits beside the Catholic and Protestant paths."
           body="This hub groups patristic texts, Orthodox-oriented catechetical material, and external resources for continued study. Shared fathers remain shared, but they are now easy to approach through an Orthodox reading path."
         />

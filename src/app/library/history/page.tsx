@@ -48,12 +48,9 @@ export default function HistoryHubPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <section className="rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
-            Church History
-          </p>
-          <h1 className="mt-4 font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)] md:text-5xl">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)] md:text-5xl">
             A study hub for splits, continuities, councils, and modern renewal movements.
           </h1>
           <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--color-muted)]">

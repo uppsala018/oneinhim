@@ -493,7 +493,7 @@ export default async function HistoryTopicPage({
   }
 
   return (
-    <main className="church-history-mobile mobile-app-shell">
+    <main className="church-history-mobile mobile-app-shell mt-[76px]">
       <header className="mobile-section-header">
         <Link href="/" aria-label="Back home" className="mobile-section-header__back">
           ‹

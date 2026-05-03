@@ -253,7 +253,7 @@ export default function CatholicRosaryPage() {
         <MobileBottomNav active="Home" />
       </section>
 
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <Link
           href="/library/catholic/saints-devotions"
           className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"

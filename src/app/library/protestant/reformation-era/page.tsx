@@ -176,9 +176,8 @@ export default function ProtestantReformationEraPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="mx-auto max-w-7xl px-6 py-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
-          eyebrow="Reformation Era"
           title="Origins of Protestant theology and ecclesial separation"
           body="The Reformation Era page collects the first major Protestant fracture points and shows how theology, authority, and worship developed into different confessional lines."
         />
