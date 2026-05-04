@@ -59,11 +59,11 @@ export default function SettingsPage() {
       <section className="mobile-app-shell min-h-screen">
         <header className="kjv-mobile__topbar">
           <Link href="/library" className="kjv-mobile__icon-button" aria-label="Back to library">
-            â†
+            ←
           </Link>
           <h1>Settings</h1>
           <Link href="/" className="kjv-mobile__icon-button" aria-label="Home">
-            âŚ‚
+            ⌂
           </Link>
         </header>
 

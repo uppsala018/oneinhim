@@ -15,7 +15,7 @@ export default function PrayerForumPage() {
   return (
     <main className="mobile-app-shell" style={{ paddingBottom: "7rem" }}>
       <header className="mobile-section-header">
-        <Link href="/" className="mobile-section-header__back" aria-label="Back">â€ą</Link>
+        <Link href="/" className="mobile-section-header__back" aria-label="Back">‹</Link>
         <div>
           <h1>Community</h1>
           <span>Prayer Â· Praise Â· Discussion</span>

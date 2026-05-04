@@ -66,7 +66,7 @@ export default function NotesPage() {
   return (
     <main className="mobile-app-shell" style={{ paddingBottom: "7rem" }}>
       <header className="mobile-section-header">
-        <Link href="/" className="mobile-section-header__back" aria-label="Back">â€ą</Link>
+        <Link href="/" className="mobile-section-header__back" aria-label="Back">‹</Link>
         <div><h1>Saved</h1><span>Bookmarks &amp; Notes</span></div>
         <span />
       </header>

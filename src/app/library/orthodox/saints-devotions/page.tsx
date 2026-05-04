@@ -65,7 +65,7 @@ const devotionPaths = [
   },
   {
     title: "Relics And Feast Days",
-    icon: "âś¦",
+    icon: "✦",
     summary:
       "Relics, feasts, and memorials are part of Orthodox holy memory and the Church's life in time.",
     study: ["Martyr witness", "Liturgical calendar", "Synaxis", "Commemoration"],
@@ -106,7 +106,7 @@ export default function OrthodoxSaintsDevotionsPage() {
       <main className="orthodox-devotions-mobile mobile-app-shell lg:hidden">
         <header className="mobile-section-header">
           <Link href="/library/orthodox" aria-label="Back to Orthodox Resources" className="mobile-section-header__back">
-            â€ą
+            ‹
           </Link>
           <div>
             <h1>Saints & Devotions</h1>

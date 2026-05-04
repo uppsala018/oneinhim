@@ -6,7 +6,7 @@ import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
   title: "Catholic Liturgical Calendar & Feast Days",
-  description: "Explore the Catholic liturgical year and feast days â€” Advent, Christmas, Lent, Easter, and the feasts of saints throughout the year.",
+  description: "Explore the Catholic liturgical year and feast days — Advent, Christmas, Lent, Easter, and the feasts of saints throughout the year.",
   keywords: "Catholic feast days, liturgical calendar, Catholic saints feast, liturgical year, Catholic church",
   path: "/library/catholic/feast-days",
 });
@@ -48,11 +48,11 @@ export default function CatholicFeastDaysPage() {
       <section className="mobile-app-shell min-h-screen lg:hidden">
         <header className="catholic-mobile__topbar">
           <Link href="/library/catholic/saints-devotions" className="catholic-mobile__icon-button" aria-label="Back">
-            â†
+            ←
           </Link>
           <h1>Feast Days</h1>
           <Link href="/library/settings" className="catholic-mobile__icon-button" aria-label="Settings">
-            âš™
+            ⚙
           </Link>
         </header>
 

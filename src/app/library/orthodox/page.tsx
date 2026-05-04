@@ -8,7 +8,7 @@ import { getFathersForTrack } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
   title: "Orthodox Bible Study & Theology",
-  description: "Study Eastern Orthodox Christianity â€” the Septuagint, Divine Liturgy, Orthodox saints, feast days, and the rich Eastern theological tradition.",
+  description: "Study Eastern Orthodox Christianity — the Septuagint, Divine Liturgy, Orthodox saints, feast days, and the rich Eastern theological tradition.",
   keywords: "Orthodox bible study, Eastern Orthodox, Orthodox theology, Septuagint, Orthodox church, early church",
   path: "/library/orthodox",
 });
@@ -198,7 +198,7 @@ export default function OrthodoxPage() {
       <main className="orthodox-mobile mobile-app-shell lg:hidden">
         <header className="orthodox-mobile__topbar">
           <Link href="/" className="orthodox-mobile__back" aria-label="Back home">
-            â€ą
+            ‹
           </Link>
           <span className="orthodox-mobile__cross">â¦</span>
           <h1>Orthodox Resources</h1>
@@ -227,7 +227,7 @@ export default function OrthodoxPage() {
                       <strong>{item.title}</strong>
                       <small>{item.detail}</small>
                     </span>
-                    <span>â€ş</span>
+                    <span>›</span>
                   </Link>
                 ))}
               </div>

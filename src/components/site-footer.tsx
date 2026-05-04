@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export default function SiteFooter() {
   return (
@@ -9,7 +9,7 @@ export default function SiteFooter() {
             <span className="web-footer__brand">One In Him</span>
             <span className="web-footer__domain">oneinhimbiblestudy.com</span>
             <p className="web-footer__tagline">
-              Bible Study &amp; Church History â€” free, for everyone.
+              Bible Study &amp; Church History &mdash; free, for everyone.
             </p>
           </div>
 
@@ -19,12 +19,12 @@ export default function SiteFooter() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="web-footer__app-btn-icon">âśť</span>
+            <span className="web-footer__app-btn-icon">✝</span>
             <span className="web-footer__app-btn-text">
               <strong>Install our Bible App</strong>
-              <span>Free â€” works on Android &amp; iPhone</span>
+              <span>Free &mdash; works on Android &amp; iPhone</span>
             </span>
-            <span className="web-footer__app-btn-arrow">â†—</span>
+            <span className="web-footer__app-btn-arrow">&#x2197;</span>
           </a>
         </div>
 
@@ -42,11 +42,10 @@ export default function SiteFooter() {
             <Link href="/privacy">Privacy</Link>
           </nav>
           <p className="web-footer__copy">
-            Â© {new Date().getFullYear()} One In Him. All content from public domain and freely redistributable sources.
+            &copy; {new Date().getFullYear()} One In Him. All content from public domain and freely redistributable sources.
           </p>
         </div>
       </div>
     </footer>
   );
 }
-

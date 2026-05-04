@@ -528,11 +528,11 @@ export default function StudyWorkspace({
         >
           <header className="kjv-mobile__topbar">
             <Link href="/" className="kjv-mobile__icon-button" aria-label="Back home">
-              â€ą
+              ‹
             </Link>
             <h1>KJV Bible + Strong&apos;s</h1>
             <Link href="/library/settings" className="kjv-mobile__icon-button" aria-label="Settings">
-              âš™
+              ⚙
             </Link>
           </header>
 
@@ -543,7 +543,7 @@ export default function StudyWorkspace({
               disabled={!previousChapterTarget}
               aria-label="Previous chapter"
             >
-              â€ą
+              ‹
             </button>
             <div>
               <span>â–±</span>
@@ -558,7 +558,7 @@ export default function StudyWorkspace({
               disabled={!nextChapterTarget}
               aria-label="Next chapter"
             >
-              â€ş
+              ›
             </button>
           </div>
 
@@ -742,7 +742,7 @@ export default function StudyWorkspace({
             href="/library"
             className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
           >
-            â† Back to Library
+            ← Back to Library
           </Link>
         </div>
 

@@ -3599,10 +3599,10 @@ html[data-theme="light"] .mobile-app-shell {
 .web-header__nav {
   display: none;
   align-items: center;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .web-header__nav {
     display: flex;
   }
@@ -3610,7 +3610,7 @@ html[data-theme="light"] .mobile-app-shell {
 
 .web-header__nav a {
   position: relative;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--color-muted);
   letter-spacing: 0.1em;
@@ -3670,7 +3670,7 @@ html[data-theme="light"] .mobile-app-shell {
   color: #080808;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .web-header__cta {
     display: inline-flex;
     align-items: center;
@@ -3711,7 +3711,7 @@ html[data-theme="light"] .mobile-app-shell {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .web-header__mobile-toggle {
     display: none;
   }
@@ -3730,7 +3730,7 @@ html[data-theme="light"] .mobile-app-shell {
   display: flex;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .web-header__mobile-nav {
     display: none !important;
   }

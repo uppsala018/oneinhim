@@ -5,7 +5,7 @@ import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
   title: "Help & Support",
-  description: "Get help with One In Him Bible Study â€” contact support, report issues, or find answers to common questions about the app and website.",
+  description: "Get help with One In Him Bible Study — contact support, report issues, or find answers to common questions about the app and website.",
   path: "/library/prayer-forum/support",
 });
 
@@ -13,7 +13,7 @@ export default function SupportPage() {
   return (
     <main className="mobile-app-shell donate-page">
       <header className="mobile-section-header">
-        <Link href="/library/prayer-forum" className="mobile-section-header__back" aria-label="Back">â€ą</Link>
+        <Link href="/library/prayer-forum" className="mobile-section-header__back" aria-label="Back">‹</Link>
         <div>
           <h1>Support</h1>
           <span>Contact &amp; Help</span>
@@ -26,7 +26,7 @@ export default function SupportPage() {
         <div className="donate-verse-card">
           <p className="donate-verse-ref">Admin</p>
           <p className="donate-verse-text" style={{ fontSize: "clamp(1.1rem, 4.5vw, 1.4rem)" }}>
-            RenĂ© M â€” Sweden
+            RenĂ© M — Sweden
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function SupportPage() {
         </div>
 
         <p className="donate-footer">
-          Response time may vary â€” this is a volunteer project.
+          Response time may vary — this is a volunteer project.
           Thank you for your patience and for using One In Him.
         </p>
 

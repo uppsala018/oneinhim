@@ -65,7 +65,7 @@ const devotionPaths = [
   },
   {
     title: "Feast Days",
-    icon: "âś¦",
+    icon: "✦",
     summary:
       "The liturgical calendar teaches the faith through the life of Christ, Mary, martyrs, apostles, pastors, virgins, and holy men and women.",
     study: ["Advent", "Christmas", "Lent", "Easter", "Saints' days"],
@@ -106,7 +106,7 @@ export default function CatholicSaintsDevotionsPage() {
       <main className="catholic-devotions-mobile mobile-app-shell lg:hidden">
         <header className="mobile-section-header">
           <Link href="/library/catholic/resources" aria-label="Back to Catholic Resources" className="mobile-section-header__back">
-            â€ą
+            ‹
           </Link>
           <div>
             <h1>Saints & Devotions</h1>

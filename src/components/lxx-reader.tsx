@@ -235,7 +235,7 @@ export default function LxxReader() {
     <main className="lxx-reader mobile-app-shell">
       <header className="lxx-reader__topbar">
         <Link href="/library/orthodox" className="lxx-reader__icon" aria-label="Back">
-          â€ą
+          ‹
         </Link>
         <div>
           <p>Brenton Septuagint</p>

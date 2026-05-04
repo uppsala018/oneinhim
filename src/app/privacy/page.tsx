@@ -13,7 +13,7 @@ export default function PrivacyPage() {
   return (
     <main className="mobile-app-shell donate-page">
       <header className="mobile-section-header">
-        <Link href="/" className="mobile-section-header__back" aria-label="Back">â€ą</Link>
+        <Link href="/" className="mobile-section-header__back" aria-label="Back">‹</Link>
         <div>
           <h1>Privacy Policy</h1>
           <span>One In Him</span>

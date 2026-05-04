@@ -88,7 +88,7 @@ function InlineSignIn() {
     <div className="forum-signin-card">
       <p className="forum-signin-card__title">Sign in to post</p>
       <p className="forum-signin-card__body">
-        No password needed â€” enter your email and we'll send a one-click sign-in link.
+        No password needed — enter your email and we'll send a one-click sign-in link.
       </p>
       <div className="forum-signin-card__row">
         <input
@@ -105,7 +105,7 @@ function InlineSignIn() {
           disabled={pending || !email.trim()}
           className="forum-signin-card__button"
         >
-          {pending ? "Sendingâ€¦" : "Send link"}
+          {pending ? "Sending…" : "Send link"}
         </button>
       </div>
       {error ? <p className="forum-signin-card__error">{error}</p> : null}
@@ -255,7 +255,7 @@ export default function PrayerForumBoard() {
 
       {/* Sign-in / user bar */}
       {!hasSupabaseEnv() ? (
-        <div className="forum-notice">Supabase not configured â€” posts will not save yet.</div>
+        <div className="forum-notice">Supabase not configured — posts will not save yet.</div>
       ) : userEmail ? (
         <div className="forum-user-bar">
           <span className="forum-user-bar__email">{userEmail}</span>
@@ -314,9 +314,9 @@ export default function PrayerForumBoard() {
             onChange={(e) => setPostText(e.target.value)}
             rows={5}
             placeholder={
-              category === "prayer" ? "Share your prayer requestâ€¦" :
-              category === "praise" ? "Share what God has doneâ€¦" :
-              "Ask your question or start a discussionâ€¦"
+              category === "prayer" ? "Share your prayer request…" :
+              category === "praise" ? "Share what God has done…" :
+              "Ask your question or start a discussion…"
             }
             className="forum-input forum-input--textarea"
           />
@@ -330,7 +330,7 @@ export default function PrayerForumBoard() {
               disabled={posting || !postText.trim()}
               className="forum-btn forum-btn--primary"
             >
-              {posting ? "Postingâ€¦" : "Post"}
+              {posting ? "Posting…" : "Post"}
             </button>
             <button
               type="button"
@@ -368,11 +368,11 @@ export default function PrayerForumBoard() {
 
       {/* Feed */}
       {loading ? (
-        <p className="forum-status">Loadingâ€¦</p>
+        <p className="forum-status">Loading…</p>
       ) : loadError ? (
         <p className="forum-status forum-status--error">{loadError}</p>
       ) : visiblePosts.length === 0 ? (
-        <p className="forum-status">Nothing here yet â€” be the first to post.</p>
+        <p className="forum-status">Nothing here yet — be the first to post.</p>
       ) : (
         <div className="forum-feed">
           {visiblePosts.map((post) => {

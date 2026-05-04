@@ -131,11 +131,11 @@ export default function CatholicRosaryPage() {
       <section className="mobile-app-shell min-h-screen lg:hidden">
         <header className="catholic-mobile__topbar">
           <Link href="/library/catholic/saints-devotions" className="catholic-mobile__icon-button" aria-label="Back">
-            â†
+            ←
           </Link>
           <h1>Rosary</h1>
           <Link href="/library/settings" className="catholic-mobile__icon-button" aria-label="Settings">
-            âš™
+            ⚙
           </Link>
         </header>
 

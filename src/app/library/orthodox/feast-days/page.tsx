@@ -6,7 +6,7 @@ import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
   title: "Orthodox Liturgical Calendar & Feast Days",
-  description: "The Eastern Orthodox liturgical calendar â€” Great Feasts, Pascha, fasts, and commemorations of saints throughout the Orthodox church year.",
+  description: "The Eastern Orthodox liturgical calendar — Great Feasts, Pascha, fasts, and commemorations of saints throughout the Orthodox church year.",
   keywords: "Orthodox feast days, Orthodox calendar, Pascha, Great Feasts, Orthodox liturgical year, Eastern Orthodox",
   path: "/library/orthodox/feast-days",
 });
@@ -61,11 +61,11 @@ export default function OrthodoxFeastDaysPage() {
       <section className="mobile-app-shell min-h-screen lg:hidden">
         <header className="orthodox-mobile__topbar">
           <Link href="/library/orthodox/saints-devotions" className="orthodox-mobile__back" aria-label="Back">
-            â†
+            ←
           </Link>
           <h1>Feast Days</h1>
           <Link href="/library/settings" className="orthodox-mobile__back" aria-label="Settings">
-            âš™
+            ⚙
           </Link>
         </header>
 

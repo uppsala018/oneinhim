@@ -93,7 +93,7 @@ export default function FathersMobileLibrary({ fathers }: { fathers: FatherProfi
     <main className="fathers-mobile mobile-app-shell lg:hidden">
       <header className="fathers-mobile__topbar">
         <Link href="/" aria-label="Back home">
-          â€ą
+          ‹
         </Link>
         <h1>Church Fathers</h1>
         <span>â¦</span>
@@ -142,7 +142,7 @@ export default function FathersMobileLibrary({ fathers }: { fathers: FatherProfi
               <p className="fathers-mobile-card__era">({father.era} AD)</p>
               <p className="fathers-mobile-card__summary">{shortSummary(father)}</p>
             </div>
-            <span className="fathers-mobile-card__arrow">â€ş</span>
+            <span className="fathers-mobile-card__arrow">›</span>
           </Link>
         ))}
       </section>

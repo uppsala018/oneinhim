@@ -91,7 +91,7 @@ export default function AuthControls() {
           disabled={pending}
           className="rounded-full border border-[var(--color-border)] px-3 py-1.5 text-xs text-[var(--color-ink)] whitespace-nowrap disabled:opacity-60"
         >
-          {pending ? "â€¦" : "Sign out"}
+          {pending ? "…" : "Sign out"}
         </button>
       </div>
     );
@@ -112,7 +112,7 @@ export default function AuthControls() {
         disabled={pending || !email.trim()}
         className="rounded-full bg-[linear-gradient(180deg,#f0cf84,#cba45b)] px-3 py-1.5 text-xs font-semibold text-[#0a1530] whitespace-nowrap disabled:opacity-60"
       >
-        {pending ? "â€¦" : "Sign In"}
+        {pending ? "…" : "Sign In"}
       </button>
     </div>
   );

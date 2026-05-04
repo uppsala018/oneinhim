@@ -6,7 +6,7 @@ import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
   title: "Protestant Bible Study Resources",
-  description: "Protestant study resources â€” KJV and Reformed Bible study, Reformation history, confessions of faith, and key Protestant theological texts.",
+  description: "Protestant study resources — KJV and Reformed Bible study, Reformation history, confessions of faith, and key Protestant theological texts.",
   keywords: "Protestant resources, Reformed theology, Protestant bible study, Reformation resources, christian history",
   path: "/library/protestant/resources",
 });
@@ -365,9 +365,9 @@ export default function ProtestantResourcesPage() {
       <main className="orthodox-mobile mobile-app-shell lg:hidden">
         <header className="orthodox-mobile__topbar">
           <Link href="/" className="orthodox-mobile__back" aria-label="Back home">
-            â€ą
+            ‹
           </Link>
-          <span className="orthodox-mobile__cross">âśť</span>
+          <span className="orthodox-mobile__cross">✝</span>
           <h1>Protestant Resources</h1>
         </header>
 
@@ -395,7 +395,7 @@ export default function ProtestantResourcesPage() {
                         <strong>{item.title}</strong>
                         <small>{item.detail}</small>
                       </span>
-                      <span>â€ş</span>
+                      <span>›</span>
                     </a>
                   ) : (
                     <Link key={`${section.title}-${item.title}`} href={item.href}>
@@ -403,7 +403,7 @@ export default function ProtestantResourcesPage() {
                         <strong>{item.title}</strong>
                         <small>{item.detail}</small>
                       </span>
-                      <span>â€ş</span>
+                      <span>›</span>
                     </Link>
                   ),
                 )}

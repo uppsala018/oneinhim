@@ -6,7 +6,7 @@ import { councilsLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
   title: "Ecumenical Councils of the Church",
-  description: "Study all seven Ecumenical Councils â€” Nicaea, Constantinople, Ephesus, Chalcedon and more. Learn what was decided and why each council still matters.",
+  description: "Study all seven Ecumenical Councils — Nicaea, Constantinople, Ephesus, Chalcedon and more. Learn what was decided and why each council still matters.",
   keywords: "ecumenical councils, Council of Nicaea, Council of Chalcedon, church councils, early church, church history",
   path: "/library/councils",
 });
@@ -16,11 +16,11 @@ export default function CouncilsPage() {
     <main className="councils-mobile mobile-app-shell">
       <header className="mobile-section-header">
         <Link href="/" aria-label="Back home" className="mobile-section-header__back">
-          â€ą
+          ‹
         </Link>
         <div>
           <h1>Ecumenical Councils</h1>
-          <span aria-hidden="true">â—† â”€ âś¦ â”€ â—†</span>
+          <span aria-hidden="true">◆ ─ ✦ ─ ◆</span>
         </div>
       </header>
 
@@ -32,7 +32,7 @@ export default function CouncilsPage() {
             </div>
             <Link href={`/library/councils/${council.slug}`} className="council-card">
               <div className="council-card__icon" aria-hidden="true">
-                â™ś
+                ♜
               </div>
               <div className="council-card__body">
                 <p>{council.year} AD</p>
@@ -42,7 +42,7 @@ export default function CouncilsPage() {
                   <li>{council.issue}</li>
                   <li>{council.attendance}</li>
                 </ul>
-                <span className="council-card__button">Read More â€ş</span>
+                <span className="council-card__button">Read More ›</span>
               </div>
             </Link>
           </article>
