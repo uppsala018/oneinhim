@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect } from "react";
 import { applyTheme, readPreferences } from "@/lib/user-preferences";
@@ -11,3 +11,4 @@ export default function PreferencesBoot() {
 
   return null;
 }
+

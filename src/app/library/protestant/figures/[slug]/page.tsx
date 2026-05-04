@@ -36,7 +36,7 @@ export default async function ProtestantFigurePage({
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-6xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <div className="flex flex-wrap gap-3">
           <Link
             href="/library/protestant"
@@ -102,7 +102,7 @@ export default async function ProtestantFigurePage({
                 {work.summary}
               </p>
 
-              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5">
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5">
                 <div className="flex flex-wrap gap-3 text-xs uppercase tracking-[0.18em] text-[var(--color-soft)]">
                   <span>{work.stats.sectionCount} sections</span>
                   <span>{work.stats.paragraphCount} paragraphs</span>

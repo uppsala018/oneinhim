@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import { historyLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
-  title: "Church History Timeline — 2000 Years of Christianity",
-  description: "A complete church history timeline — from the apostolic era through the Great Schism, Reformation, and Charismatic movement to the present day.",
+  title: "Church History Timeline â€” 2000 Years of Christianity",
+  description: "A complete church history timeline â€” from the apostolic era through the Great Schism, Reformation, and Charismatic movement to the present day.",
   keywords: "church history timeline, Christian history, early church history, reformation, Great Schism, church history",
   path: "/library/history",
 });
@@ -48,7 +48,7 @@ export default function HistoryHubPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <section className="rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
           <h1 className="font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)] md:text-5xl">
             A study hub for splits, continuities, councils, and modern renewal movements.
@@ -88,7 +88,7 @@ export default function HistoryHubPage() {
               <Link
                 key={topic.slug}
                 href={`/library/history/${topic.slug}`}
-                className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
               >
                 <p className="font-semibold text-[var(--color-ink)]">{topic.title}</p>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
@@ -102,3 +102,4 @@ export default function HistoryHubPage() {
     </>
   );
 }
+

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -8,7 +8,7 @@ import { protestantWorks } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
   title: "Protestant Confessions & Reformation Documents",
-  description: "Read the great Protestant confessions — the Augsburg Confession, Heidelberg Catechism, Westminster Confession, and other Reformation-era documents.",
+  description: "Read the great Protestant confessions â€” the Augsburg Confession, Heidelberg Catechism, Westminster Confession, and other Reformation-era documents.",
   keywords: "Protestant confessions, Augsburg Confession, Westminster Confession, Heidelberg Catechism, reformation documents",
   path: "/library/protestant/texts",
 });
@@ -181,7 +181,7 @@ export default function ProtestantTextsPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
           title="Confessions, catechisms, and doctrinal standards"
           body="The Protestant text hub keeps the major standards in one place so the tradition has real internal depth, not just historical labels."
@@ -209,7 +209,7 @@ export default function ProtestantTextsPage() {
                     <Link
                       key={work.slug}
                       href={`/library/protestant/texts/${work.slug}`}
-                      className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5"
+                      className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5"
                     >
                       <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-soft)]">
                         {work.tradition} - {work.yearLabel}
@@ -244,7 +244,7 @@ export default function ProtestantTextsPage() {
               <Link
                 key={work.slug}
                 href={`/library/protestant/texts/${work.slug}`}
-                className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5 transition hover:bg-[rgba(8,26,57,0.88)]"
+                className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5 transition hover:bg-[rgba(8,26,57,0.88)]"
               >
                 <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">
                   {work.category}
@@ -266,3 +266,4 @@ export default function ProtestantTextsPage() {
     </>
   );
 }
+

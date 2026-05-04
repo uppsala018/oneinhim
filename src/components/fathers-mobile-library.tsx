@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -93,14 +93,14 @@ export default function FathersMobileLibrary({ fathers }: { fathers: FatherProfi
     <main className="fathers-mobile mobile-app-shell lg:hidden">
       <header className="fathers-mobile__topbar">
         <Link href="/" aria-label="Back home">
-          ‹
+          â€ą
         </Link>
         <h1>Church Fathers</h1>
-        <span>☦</span>
+        <span>â¦</span>
       </header>
 
       <label className="fathers-mobile__search">
-        <span>⌕</span>
+        <span>âŚ•</span>
         <input
           value={query}
           onChange={(event) => setQuery(event.target.value)}
@@ -142,7 +142,7 @@ export default function FathersMobileLibrary({ fathers }: { fathers: FatherProfi
               <p className="fathers-mobile-card__era">({father.era} AD)</p>
               <p className="fathers-mobile-card__summary">{shortSummary(father)}</p>
             </div>
-            <span className="fathers-mobile-card__arrow">›</span>
+            <span className="fathers-mobile-card__arrow">â€ş</span>
           </Link>
         ))}
       </section>
@@ -151,3 +151,4 @@ export default function FathersMobileLibrary({ fathers }: { fathers: FatherProfi
     </main>
   );
 }
+

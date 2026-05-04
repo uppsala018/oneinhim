@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
   title: "Privacy Policy",
-  description: "Privacy policy for One In Him Bible Study — how we handle your data, what we collect, and your rights as a user of our free Bible study platform.",
+  description: "Privacy policy for One In Him Bible Study â€” how we handle your data, what we collect, and your rights as a user of our free Bible study platform.",
   path: "/privacy",
 });
 
@@ -13,7 +13,7 @@ export default function PrivacyPage() {
   return (
     <main className="mobile-app-shell donate-page">
       <header className="mobile-section-header">
-        <Link href="/" className="mobile-section-header__back" aria-label="Back">‹</Link>
+        <Link href="/" className="mobile-section-header__back" aria-label="Back">â€ą</Link>
         <div>
           <h1>Privacy Policy</h1>
           <span>One In Him</span>
@@ -39,15 +39,15 @@ export default function PrivacyPage() {
           <p>We collect only what is necessary for the app to function:</p>
           <ul>
             <li>
-              <strong>Email address</strong> — if you choose to sign in using a magic link.
+              <strong>Email address</strong> â€” if you choose to sign in using a magic link.
               Your email is used solely to authenticate you. We do not send marketing emails.
             </li>
             <li>
-              <strong>Prayer forum posts</strong> — the display name and text you submit
+              <strong>Prayer forum posts</strong> â€” the display name and text you submit
               to the Community forum. These are visible to all users of the app.
             </li>
             <li>
-              <strong>Study bookmarks and notes</strong> — saved locally on your device.
+              <strong>Study bookmarks and notes</strong> â€” saved locally on your device.
               If you are signed in, they are also synced to your account so you can access
               them across devices.
             </li>
@@ -125,3 +125,4 @@ export default function PrivacyPage() {
     </main>
   );
 }
+

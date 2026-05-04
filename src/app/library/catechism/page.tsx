@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -6,8 +6,8 @@ import SectionHeading from "@/components/section-heading";
 import { romanCatechismLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
-  title: "Roman Catechism — Catechism of the Council of Trent",
-  description: "Read the Roman Catechism (Catechism of Trent) online — the authoritative Catholic catechism from the Council of Trent, free and complete.",
+  title: "Roman Catechism â€” Catechism of the Council of Trent",
+  description: "Read the Roman Catechism (Catechism of Trent) online â€” the authoritative Catholic catechism from the Council of Trent, free and complete.",
   keywords: "Roman Catechism, Catechism of Trent, Catholic catechism, Council of Trent, Catholic doctrine, bible study",
   path: "/library/catechism",
 });
@@ -34,7 +34,7 @@ export default function CatechismPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
           title="The full Catechism of Trent is now a real library inside the app."
           body="This section carries the public-domain Catechism of the Council of Trent as a route-backed library. The modern Catechism of the Catholic Church can be read free online at the Vatican website, but the embedded full text here is the Roman Catechism of Trent."
@@ -49,7 +49,7 @@ export default function CatechismPage() {
               <a
                 key={part}
                 href={`#${toPartId(part)}`}
-                className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
               >
                 <p className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
                   {part}
@@ -86,7 +86,7 @@ export default function CatechismPage() {
                     <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
                       {entry.summary}
                     </p>
-                    <div className="mt-6 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4">
+                    <div className="mt-6 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4">
                       <p className="text-xs uppercase tracking-[0.22em] text-[var(--color-highlight)]">
                         Included Sections
                       </p>
@@ -110,3 +110,4 @@ export default function CatechismPage() {
     </>
   );
 }
+

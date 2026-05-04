@@ -37,7 +37,7 @@ export default async function ProtestantEntryPage({
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-6xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <div className="flex flex-wrap gap-3">
           <Link
             href="/library/protestant"
@@ -102,7 +102,7 @@ export default async function ProtestantEntryPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4 text-sm text-[var(--color-ink)]"
+                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4 text-sm text-[var(--color-ink)]"
                   >
                     {link.label}
                   </Link>
@@ -112,7 +112,7 @@ export default async function ProtestantEntryPage({
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4 text-sm text-[var(--color-ink)]"
+                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4 text-sm text-[var(--color-ink)]"
                   >
                     {link.label}
                   </a>

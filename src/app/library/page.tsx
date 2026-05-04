@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -6,7 +6,7 @@ import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
   title: "Scripture & Study Library",
-  description: "Browse the complete One In Him library — KJV Bible, Church Fathers, Ecumenical Councils, and Christian traditions from Catholic to Protestant.",
+  description: "Browse the complete One In Him library â€” KJV Bible, Church Fathers, Ecumenical Councils, and Christian traditions from Catholic to Protestant.",
   keywords: "bible study, christian resources, church history, early church, scripture library",
   path: "/library",
 });
@@ -100,7 +100,7 @@ const modules = [
     title: "Oriental Orthodox",
     href: "/library/oriental-orthodox",
     summary:
-      "Explore Oriental Orthodox Christianity — Ethiopian, Coptic, Armenian, and Syriac traditions with primary sources.",
+      "Explore Oriental Orthodox Christianity â€” Ethiopian, Coptic, Armenian, and Syriac traditions with primary sources.",
   },
   {
     title: "Settings",
@@ -114,7 +114,7 @@ export default function LibraryPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <div className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-highlight)]">
             Library
@@ -123,7 +123,7 @@ export default function LibraryPage() {
             Study Library
           </h1>
           <p className="mt-5 text-lg leading-8 text-[var(--color-muted)]">
-            Scripture readers, church fathers, councils, history, and tradition-specific study hubs — all in one place.
+            Scripture readers, church fathers, councils, history, and tradition-specific study hubs â€” all in one place.
           </p>
         </div>
 
@@ -148,3 +148,4 @@ export default function LibraryPage() {
     </>
   );
 }
+

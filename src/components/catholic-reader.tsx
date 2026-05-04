@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -326,16 +326,16 @@ export default function CatholicReader({
       <section className="catholic-mobile mobile-app-shell lg:hidden">
         <header className="catholic-mobile__topbar">
           <Link href="/" className="catholic-mobile__icon-button" aria-label="Back home">
-            ‹
+            â€ą
           </Link>
           <h1>Douay-Rheims Catholic Bible</h1>
           <Link href="/library/settings" className="catholic-mobile__icon-button" aria-label="Settings">
-            ⚙
+            âš™
           </Link>
         </header>
 
         <div className="catholic-mobile__selector">
-          <span>▱</span>
+          <span>â–±</span>
           <select
             value={selectedBookCode}
             onChange={(event) => {
@@ -391,11 +391,11 @@ export default function CatholicReader({
                 onClick={() => toggleBookmark(selectedVerse.reference)}
                 aria-label="Bookmark"
               >
-                ♡
+                â™ˇ
               </button>
               <button type="button" aria-label="Share"
                 onClick={() => void shareVerse(selectedVerse.reference, selectedVerse.text)}>
-                ⇧
+                â‡§
               </button>
             </div>
           </section>
@@ -436,7 +436,7 @@ export default function CatholicReader({
                   <div className="catholic-mobile-verse__actions">
                     <button type="button" onClick={() => toggleBookmark(verse.reference)}
                       className={bookmarkSet.has(verse.reference) ? "catholic-mobile-verse__actions-saved" : ""}>
-                      {bookmarkSet.has(verse.reference) ? "★ Saved" : "☆ Save"}
+                      {bookmarkSet.has(verse.reference) ? "â… Saved" : "â† Save"}
                     </button>
                     <button type="button" onClick={() => void shareVerse(verse.reference, verse.text)}>
                       Share
@@ -482,18 +482,18 @@ export default function CatholicReader({
           </section>
         ) : null}
 
-        <div className="catholic-mobile__divider">✣</div>
+        <div className="catholic-mobile__divider">âśŁ</div>
 
         {featuredStudy ? (
           <section className="catholic-mobile-catechism">
-            <div className="catholic-mobile-catechism__icon">☩</div>
+            <div className="catholic-mobile-catechism__icon">â©</div>
             <div>
               <h2>Roman Catechism Reference</h2>
               <p>
                 {featuredStudy.catechismReference} - {featuredStudy.catechismExcerpt}
               </p>
               <Link href={`/library/catholic/${featuredStudy.slug}`}>
-                Read Full Entry ›
+                Read Full Entry â€ş
               </Link>
             </div>
           </section>
@@ -501,9 +501,9 @@ export default function CatholicReader({
 
         <section className="catholic-mobile-crossrefs">
           <div className="catholic-mobile-crossrefs__title">
-            <span>☩</span>
+            <span>â©</span>
             <h2>Cross References</h2>
-            <span>▱</span>
+            <span>â–±</span>
           </div>
           <div>
             {visibleCrossReferences.slice(0, 5).map((reference) => (
@@ -512,21 +512,21 @@ export default function CatholicReader({
                 type="button"
                 className="catholic-mobile-crossrefs__row"
               >
-                <span>•</span>
+                <span>â€˘</span>
                 <strong>{reference}</strong>
                 <em>
                   {reference === selectedVerse?.reference
                     ? selectedVerse.text
                     : "Open related passage..."}
                 </em>
-                <span>›</span>
+                <span>â€ş</span>
               </button>
             ))}
           </div>
         </section>
 
         <label className="catholic-mobile__toggle">
-          <span>▱</span>
+          <span>â–±</span>
           <strong>Show Deuterocanonical Books</strong>
           <input
             type="checkbox"
@@ -555,13 +555,13 @@ export default function CatholicReader({
         <MobileBottomNav active="Home" />
       </section>
 
-      <section className="mx-auto hidden max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:block lg:px-12">
+      <section className="mx-auto hidden max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:block lg:px-12">
         <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-[var(--color-soft)]">
           <Link
             href="/library"
             className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
           >
-            ← Back to Library
+            â† Back to Library
           </Link>
         </div>
 
@@ -598,7 +598,7 @@ export default function CatholicReader({
                   }
                 }}
                 placeholder="Search the Douay-Rheims or enter John 1:1"
-                className="mt-4 w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
+                className="mt-4 w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
               />
 
               {searchTerm.trim() && searchLoading ? (
@@ -612,7 +612,7 @@ export default function CatholicReader({
                       key={`${result.kind}-${result.id}`}
                       type="button"
                       onClick={() => handleSearchSelection(result)}
-                      className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.58)] px-4 py-3 text-left transition hover:bg-[rgba(7,22,44,0.92)]"
+                      className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.58)] px-4 py-3 text-left transition hover:bg-[rgba(7,22,44,0.92)]"
                     >
                       <p className="font-semibold text-[var(--color-highlight)]">
                         {result.title}
@@ -631,7 +631,7 @@ export default function CatholicReader({
                 Saved
               </p>
               {progress?.tab === "catholic" && progress.reference ? (
-                <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.58)] px-4 py-3">
+                <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.58)] px-4 py-3">
                   <p className="text-xs uppercase tracking-[0.22em] text-[var(--color-soft)]">
                     Resume
                   </p>
@@ -647,7 +647,7 @@ export default function CatholicReader({
                   bookmarks.map((reference) => (
                     <div
                       key={reference}
-                      className="rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.58)] px-4 py-3 text-sm text-[var(--color-ink)]"
+                      className="rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.58)] px-4 py-3 text-sm text-[var(--color-ink)]"
                     >
                       {reference}
                     </div>
@@ -664,7 +664,7 @@ export default function CatholicReader({
                 href="https://www.catholicculture.org/"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-4 block rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.58)] px-4 py-4 transition hover:bg-[rgba(7,22,44,0.92)]"
+                className="mt-4 block rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.58)] px-4 py-4 transition hover:bg-[rgba(7,22,44,0.92)]"
               >
                 <p className="font-semibold text-[var(--color-ink)]">Catholic Culture</p>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
@@ -713,7 +713,7 @@ export default function CatholicReader({
                         setSelectedChapterNumber(1);
                         setPendingVerseNumber(null);
                       }}
-                      className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none"
+                      className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none"
                     >
                       {bookCatalog.map((book) => (
                         <option key={book.code} value={book.code}>
@@ -735,7 +735,7 @@ export default function CatholicReader({
                         setSelectedChapterNumber(Number(event.target.value));
                         setPendingVerseNumber(null);
                       }}
-                      className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none"
+                      className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none"
                     >
                       {chapterOptions.map((chapterNumber) => (
                         <option key={chapterNumber} value={chapterNumber}>
@@ -779,7 +779,7 @@ export default function CatholicReader({
                 ) : null}
 
                 {chapterData?.summary ? (
-                  <div className="mt-6 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.5)] p-5">
+                  <div className="mt-6 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.5)] p-5">
                     <p className="text-xs uppercase tracking-[0.22em] text-[var(--color-highlight)]">
                       Chapter Summary
                     </p>
@@ -808,8 +808,8 @@ export default function CatholicReader({
                         }}
                         className={`w-full rounded-[1.5rem] border p-5 text-left transition ${
                           selectedVerseId === verse.id
-                            ? "border-[var(--color-highlight)] bg-[rgba(10,28,55,0.96)]"
-                            : "border-[var(--color-border)] bg-[rgba(5,17,34,0.5)]"
+                            ? "border-[var(--color-highlight)] bg-[rgba(16,16,16,0.96)]"
+                            : "border-[var(--color-border)] bg-[rgba(10,10,10,0.5)]"
                         }`}
                       >
                         <p className="text-sm leading-8 text-[var(--color-ink)]">
@@ -890,7 +890,7 @@ export default function CatholicReader({
                       <Link
                         key={entry.slug}
                         href={`/library/catholic/${entry.slug}`}
-                        className="block rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.56)] p-4 transition hover:bg-[rgba(9,26,52,0.9)]"
+                        className="block rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.56)] p-4 transition hover:bg-[rgba(9,26,52,0.9)]"
                       >
                         <p className="font-semibold text-[var(--color-highlight)]">{entry.title}</p>
                         <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--color-soft)]">
@@ -917,7 +917,7 @@ export default function CatholicReader({
                       }))
                     }
                     placeholder={`Write notes for ${selectedNoteKey}`}
-                    className="mt-4 min-h-44 w-full rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.68)] px-4 py-4 text-sm leading-7 text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
+                    className="mt-4 min-h-44 w-full rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.68)] px-4 py-4 text-sm leading-7 text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
                   />
                 </div>
               </div>
@@ -928,3 +928,4 @@ export default function CatholicReader({
     </>
   );
 }
+

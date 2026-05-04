@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import AppHeader from "@/components/app-header";
 import SiteFooter from "@/components/site-footer";
 
 export const metadata: Metadata = buildMeta({
-  title: "Donate — Support One In Him Bible Study",
-  description: "Support One In Him — a free Bible study and church history app built for everyone. Your contribution helps keep all resources free and accessible.",
+  title: "Donate â€” Support One In Him Bible Study",
+  description: "Support One In Him â€” a free Bible study and church history app built for everyone. Your contribution helps keep all resources free and accessible.",
   path: "/donate",
 });
 
@@ -19,7 +19,7 @@ export default function DonatePage() {
 
           {/* Hero */}
           <div className="donate-web-hero">
-            <span className="donate-web-cross" aria-hidden="true">✝</span>
+            <span className="donate-web-cross" aria-hidden="true">âśť</span>
             <p className="donate-web-ref">John 17:21</p>
             <h1 className="donate-web-title">Support One In Him</h1>
             <p className="donate-web-sub">
@@ -30,7 +30,7 @@ export default function DonatePage() {
           {/* Verse */}
           <blockquote className="donate-web-verse">
             &ldquo;That they all may be one, as thou, Father, art in me,
-            and I in thee — that they also may be one in us.&rdquo;
+            and I in thee â€” that they also may be one in us.&rdquo;
           </blockquote>
 
           {/* Mission */}
@@ -40,7 +40,7 @@ export default function DonatePage() {
             </h2>
             <p className="donate-web-mission__body">
               Jesus did not pray that we would all agree on theology.
-              He prayed that we would be <em>one</em> — the same unity
+              He prayed that we would be <em>one</em> â€” the same unity
               that exists between the Father and the Son.
             </p>
             <p className="donate-web-mission__body">
@@ -64,7 +64,7 @@ export default function DonatePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              ☩ &nbsp; Donate via PayPal
+              â© &nbsp; Donate via PayPal
             </a>
             <p className="donate-web-note">
               Every contribution, however small, helps keep the app
@@ -79,3 +79,4 @@ export default function DonatePage() {
     </>
   );
 }
+

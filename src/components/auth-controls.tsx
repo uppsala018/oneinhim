@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import {
@@ -78,54 +78,43 @@ export default function AuthControls() {
   }
 
   if (!hasSupabaseEnv()) {
-    return (
-      <div className="text-right">
-        <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-soft)]">
-          Local mode
-        </p>
-        <p className="text-sm text-[var(--color-muted)]">Supabase env not loaded</p>
-      </div>
-    );
+    return null;
   }
 
   if (userEmail) {
     return (
-      <div className="flex flex-col items-end gap-2 text-right">
-        <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-soft)]">
-          Synced
-        </p>
-        <p className="text-sm text-[var(--color-muted)]">{userEmail}</p>
+      <div className="flex items-center gap-3">
+        <span className="hidden lg:block text-xs text-[var(--color-soft)] max-w-[9rem] truncate">{userEmail}</span>
         <button
           type="button"
           onClick={handleSignOut}
           disabled={pending}
-          className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-ink)] disabled:opacity-60"
+          className="rounded-full border border-[var(--color-border)] px-3 py-1.5 text-xs text-[var(--color-ink)] whitespace-nowrap disabled:opacity-60"
         >
-          {pending ? "Signing out..." : "Sign out"}
+          {pending ? "â€¦" : "Sign out"}
         </button>
-        {message ? <p className="max-w-56 text-xs text-[var(--color-soft)]">{message}</p> : null}
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col items-end gap-2">
+    <div className="flex items-center gap-2">
       <input
         type="email"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
-        placeholder="Email for magic link"
-        className="w-56 rounded-full border border-[var(--color-border)] bg-[rgba(5,17,34,0.78)] px-4 py-2 text-sm text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
+        placeholder="Your email"
+        className="w-40 rounded-full border border-[var(--color-border)] bg-transparent px-3 py-1.5 text-xs text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
       />
       <button
         type="button"
         onClick={handleMagicLink}
         disabled={pending || !email.trim()}
-        className="rounded-full bg-[linear-gradient(180deg,#f0cf84,#cba45b)] px-4 py-2 text-sm font-semibold text-[#0a1530] disabled:opacity-60"
+        className="rounded-full bg-[linear-gradient(180deg,#f0cf84,#cba45b)] px-3 py-1.5 text-xs font-semibold text-[#0a1530] whitespace-nowrap disabled:opacity-60"
       >
-        {pending ? "Sending..." : "Email Sign-In Link"}
+        {pending ? "â€¦" : "Sign In"}
       </button>
-      {message ? <p className="max-w-56 text-right text-xs text-[var(--color-soft)]">{message}</p> : null}
     </div>
   );
 }
+

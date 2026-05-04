@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
       "An installable Bible study and church history app covering Scripture, theology, church fathers, councils, and Christian traditions.",
     start_url: "/",
     display: "standalone",
-    background_color: "#041126",
+    background_color: "#0a0a0a",
     theme_color: "#081a39",
     orientation: "portrait",
     icons: [

@@ -1,4 +1,4 @@
-export default function SectionHeading({
+﻿export default function SectionHeading({
   eyebrow,
   title,
   body,
@@ -23,3 +23,4 @@ export default function SectionHeading({
     </div>
   );
 }
+

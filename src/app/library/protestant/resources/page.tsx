@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -6,7 +6,7 @@ import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
   title: "Protestant Bible Study Resources",
-  description: "Protestant study resources — KJV and Reformed Bible study, Reformation history, confessions of faith, and key Protestant theological texts.",
+  description: "Protestant study resources â€” KJV and Reformed Bible study, Reformation history, confessions of faith, and key Protestant theological texts.",
   keywords: "Protestant resources, Reformed theology, Protestant bible study, Reformation resources, christian history",
   path: "/library/protestant/resources",
 });
@@ -365,9 +365,9 @@ export default function ProtestantResourcesPage() {
       <main className="orthodox-mobile mobile-app-shell lg:hidden">
         <header className="orthodox-mobile__topbar">
           <Link href="/" className="orthodox-mobile__back" aria-label="Back home">
-            ‹
+            â€ą
           </Link>
-          <span className="orthodox-mobile__cross">✝</span>
+          <span className="orthodox-mobile__cross">âśť</span>
           <h1>Protestant Resources</h1>
         </header>
 
@@ -385,7 +385,7 @@ export default function ProtestantResourcesPage() {
               <div className="orthodox-mobile-card__head">
                 <span className="orthodox-mobile-card__icon">{section.icon}</span>
                 <h2>{section.title}</h2>
-                <span className="orthodox-mobile-card__chevron">⌄</span>
+                <span className="orthodox-mobile-card__chevron">âŚ„</span>
               </div>
               <div className="orthodox-mobile-card__items">
                 {section.items.map((item) =>
@@ -395,7 +395,7 @@ export default function ProtestantResourcesPage() {
                         <strong>{item.title}</strong>
                         <small>{item.detail}</small>
                       </span>
-                      <span>›</span>
+                      <span>â€ş</span>
                     </a>
                   ) : (
                     <Link key={`${section.title}-${item.title}`} href={item.href}>
@@ -403,7 +403,7 @@ export default function ProtestantResourcesPage() {
                         <strong>{item.title}</strong>
                         <small>{item.detail}</small>
                       </span>
-                      <span>›</span>
+                      <span>â€ş</span>
                     </Link>
                   ),
                 )}
@@ -423,7 +423,7 @@ export default function ProtestantResourcesPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <section className="rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-8">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
             Protestant Resources
@@ -455,7 +455,7 @@ export default function ProtestantResourcesPage() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                      className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                     >
                       <p className="font-semibold text-[var(--color-ink)]">{link.label}</p>
                       <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
@@ -468,7 +468,7 @@ export default function ProtestantResourcesPage() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                      className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                     >
                       <p className="font-semibold text-[var(--color-ink)]">{link.label}</p>
                       <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
@@ -485,3 +485,4 @@ export default function ProtestantResourcesPage() {
     </>
   );
 }
+

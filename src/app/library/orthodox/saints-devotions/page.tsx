@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -41,7 +41,7 @@ const saintGroups = [
 const devotionPaths = [
   {
     title: "Jesus Prayer",
-    icon: "†",
+    icon: "â€ ",
     summary:
       "The Jesus Prayer is a central Orthodox prayer of repentance, humility, and continual remembrance of Christ.",
     study: ["Lord Jesus Christ", "Son of God", "Have mercy on me", "Sinner"],
@@ -49,7 +49,7 @@ const devotionPaths = [
   },
   {
     title: "Akathists And Hymns",
-    icon: "♬",
+    icon: "â™¬",
     summary:
       "Akathists and hymnography are theology sung in prayer, linking doctrine to worship, memory, and praise.",
     study: ["Akathist", "Troparion", "Kontakion", "Canon"],
@@ -57,7 +57,7 @@ const devotionPaths = [
   },
   {
     title: "Icons And Holy Images",
-    icon: "◈",
+    icon: "â—",
     summary:
       "Icons confess the incarnation and honor the saints while keeping worship directed to God alone.",
     study: ["Incarnation", "Veneration", "Prototype", "Nicaea II"],
@@ -65,7 +65,7 @@ const devotionPaths = [
   },
   {
     title: "Relics And Feast Days",
-    icon: "✦",
+    icon: "âś¦",
     summary:
       "Relics, feasts, and memorials are part of Orthodox holy memory and the Church's life in time.",
     study: ["Martyr witness", "Liturgical calendar", "Synaxis", "Commemoration"],
@@ -106,7 +106,7 @@ export default function OrthodoxSaintsDevotionsPage() {
       <main className="orthodox-devotions-mobile mobile-app-shell lg:hidden">
         <header className="mobile-section-header">
           <Link href="/library/orthodox" aria-label="Back to Orthodox Resources" className="mobile-section-header__back">
-            ‹
+            â€ą
           </Link>
           <div>
             <h1>Saints & Devotions</h1>
@@ -161,7 +161,7 @@ export default function OrthodoxSaintsDevotionsPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Link
           href="/library/orthodox"
           className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
@@ -233,3 +233,4 @@ export default function OrthodoxSaintsDevotionsPage() {
     </>
   );
 }
+

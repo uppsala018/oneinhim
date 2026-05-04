@@ -37,7 +37,7 @@ export default async function CatholicStudyEntryPage({
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-6xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Link
           href="/library/catholic"
           className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
@@ -76,7 +76,7 @@ export default async function CatholicStudyEntryPage({
               {entry.verses.map((verse) => (
                 <article
                   key={verse.id}
-                  className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5"
+                  className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5"
                 >
                   <p className="text-sm leading-8 text-[var(--color-ink)]">
                     <span className="mr-3 font-[family-name:var(--font-display)] text-3xl text-[var(--color-highlight)]">
@@ -110,7 +110,7 @@ export default async function CatholicStudyEntryPage({
                 {entry.crossReferences.map((item) => (
                   <article
                     key={item.reference}
-                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                   >
                     <p className="font-semibold text-[var(--color-highlight)]">
                       {item.reference}

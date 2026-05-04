@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -99,7 +99,7 @@ function CardShelf({
         {cards.map((card) => (
           <article
             key={card.id}
-            className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.5)] p-5"
+            className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.5)] p-5"
           >
             <div className="flex items-center justify-between gap-4">
               <h4 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-highlight)]">
@@ -528,11 +528,11 @@ export default function StudyWorkspace({
         >
           <header className="kjv-mobile__topbar">
             <Link href="/" className="kjv-mobile__icon-button" aria-label="Back home">
-              ‹
+              â€ą
             </Link>
             <h1>KJV Bible + Strong&apos;s</h1>
             <Link href="/library/settings" className="kjv-mobile__icon-button" aria-label="Settings">
-              ⚙
+              âš™
             </Link>
           </header>
 
@@ -543,10 +543,10 @@ export default function StudyWorkspace({
               disabled={!previousChapterTarget}
               aria-label="Previous chapter"
             >
-              ‹
+              â€ą
             </button>
             <div>
-              <span>▱</span>
+              <span>â–±</span>
               <strong>
                 {chapterData?.book ?? selectedBook?.name ?? "Genesis"}{" "}
                 {chapterData?.chapter ?? selectedChapterNumber}
@@ -558,7 +558,7 @@ export default function StudyWorkspace({
               disabled={!nextChapterTarget}
               aria-label="Next chapter"
             >
-              ›
+              â€ş
             </button>
           </div>
 
@@ -637,7 +637,7 @@ export default function StudyWorkspace({
                       <button type="button"
                         className={`kjv-mobile-verse__quick-btn${bookmarkSet.has(verse.reference) ? " kjv-mobile-verse__quick-btn--saved" : ""}`}
                         onClick={() => toggleBookmark(verse.reference)}>
-                        {bookmarkSet.has(verse.reference) ? "★ Saved" : "☆ Save"}
+                        {bookmarkSet.has(verse.reference) ? "â… Saved" : "â† Save"}
                       </button>
                       <button type="button" className="kjv-mobile-verse__quick-btn"
                         onClick={() => void shareVerse(verse.reference, verse.text)}>
@@ -688,7 +688,7 @@ export default function StudyWorkspace({
                   {showStrongs && selectedVerseId === verse.id ? (
                     <div className="kjv-mobile-concordance">
                       <div className="kjv-mobile-concordance__header">
-                        <span>▰⌕</span>
+                        <span>â–°âŚ•</span>
                         <strong>Strong&apos;s Concordance</strong>
                         <button
                           type="button"
@@ -736,13 +736,13 @@ export default function StudyWorkspace({
         </section>
       ) : null}
 
-      <section className="mx-auto hidden max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <section className="mx-auto hidden max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-[var(--color-soft)]">
           <Link
             href="/library"
             className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
           >
-            ← Back to Library
+            â† Back to Library
           </Link>
         </div>
 
@@ -774,7 +774,7 @@ export default function StudyWorkspace({
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
                 placeholder="Search the full KJV, Strong's, fathers, history"
-                className="mt-4 w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
+                className="mt-4 w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
               />
 
               {normalizedSearchTerm && searchLoading ? (
@@ -788,7 +788,7 @@ export default function StudyWorkspace({
                       key={isRemoteSearchResult(result) ? `${result.kind}-${result.id}` : result.id}
                       type="button"
                       onClick={() => handleSearchSelection(result)}
-                      className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.58)] px-4 py-3 text-left transition hover:bg-[rgba(7,22,44,0.92)]"
+                      className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.58)] px-4 py-3 text-left transition hover:bg-[rgba(7,22,44,0.92)]"
                     >
                       <p className="font-semibold text-[var(--color-highlight)]">
                         {result.title}
@@ -807,7 +807,7 @@ export default function StudyWorkspace({
                 Saved
               </p>
               {progress?.reference ? (
-                <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.58)] px-4 py-3">
+                <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.58)] px-4 py-3">
                   <p className="text-xs uppercase tracking-[0.22em] text-[var(--color-soft)]">
                     Resume
                   </p>
@@ -823,7 +823,7 @@ export default function StudyWorkspace({
                   bookmarks.map((reference) => (
                     <div
                       key={reference}
-                      className="rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.58)] px-4 py-3 text-sm text-[var(--color-ink)]"
+                      className="rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.58)] px-4 py-3 text-sm text-[var(--color-ink)]"
                     >
                       {reference}
                     </div>
@@ -900,7 +900,7 @@ export default function StudyWorkspace({
                             setSelectedChapterNumber(1);
                             setPendingVerseNumber(null);
                           }}
-                          className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none"
+                          className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none"
                         >
                           {bookCatalog.map((book) => (
                             <option key={book.code} value={book.code}>
@@ -922,7 +922,7 @@ export default function StudyWorkspace({
                             setSelectedChapterNumber(Number(event.target.value));
                             setPendingVerseNumber(null);
                           }}
-                          className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(5,17,34,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none"
+                          className="w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.78)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none"
                         >
                           {chapterOptions.map((chapterNumber) => (
                             <option key={chapterNumber} value={chapterNumber}>
@@ -991,8 +991,8 @@ export default function StudyWorkspace({
                           }}
                           className={`w-full rounded-[1.5rem] border p-5 text-left transition ${
                             selectedVerseId === verse.id
-                              ? "border-[var(--color-highlight)] bg-[rgba(10,28,55,0.96)]"
-                              : "border-[var(--color-border)] bg-[rgba(5,17,34,0.5)]"
+                              ? "border-[var(--color-highlight)] bg-[rgba(16,16,16,0.96)]"
+                              : "border-[var(--color-border)] bg-[rgba(10,10,10,0.5)]"
                           }`}
                         >
                           <p className="text-sm leading-8 text-[var(--color-ink)]">
@@ -1051,7 +1051,7 @@ export default function StudyWorkspace({
                           {selectedEntry.definition}
                         </p>
                         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                          <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.56)] p-4">
+                          <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.56)] p-4">
                             <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-soft)]">
                               Lemma
                             </p>
@@ -1059,7 +1059,7 @@ export default function StudyWorkspace({
                               {selectedEntry.lemma}
                             </p>
                           </div>
-                          <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.56)] p-4">
+                          <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.56)] p-4">
                             <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-soft)]">
                               Root Note
                             </p>
@@ -1092,7 +1092,7 @@ export default function StudyWorkspace({
                         }))
                       }
                       placeholder={`Write notes for ${selectedNoteKey}`}
-                      className="mt-4 min-h-44 w-full rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.68)] px-4 py-4 text-sm leading-7 text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
+                      className="mt-4 min-h-44 w-full rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.68)] px-4 py-4 text-sm leading-7 text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
                     />
                   </div>
                 </div>
@@ -1130,8 +1130,8 @@ export default function StudyWorkspace({
                         onClick={() => setSelectedCatholicVerseId(verse.id)}
                         className={`w-full rounded-[1.5rem] border p-5 text-left transition ${
                           selectedCatholicVerseId === verse.id
-                            ? "border-[var(--color-highlight)] bg-[rgba(10,28,55,0.96)]"
-                            : "border-[var(--color-border)] bg-[rgba(5,17,34,0.5)]"
+                            ? "border-[var(--color-highlight)] bg-[rgba(16,16,16,0.96)]"
+                            : "border-[var(--color-border)] bg-[rgba(10,10,10,0.5)]"
                         }`}
                       >
                         <p className="text-sm leading-8 text-[var(--color-ink)]">
@@ -1166,7 +1166,7 @@ export default function StudyWorkspace({
                       {catholicReading.crossReferences.map((item) => (
                         <div
                           key={item.reference}
-                          className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.56)] p-4"
+                          className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.56)] p-4"
                         >
                           <p className="font-semibold text-[var(--color-highlight)]">
                             {item.reference}
@@ -1192,7 +1192,7 @@ export default function StudyWorkspace({
                         }))
                       }
                       placeholder={`Write notes for ${selectedNoteKey}`}
-                      className="mt-4 min-h-36 w-full rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.68)] px-4 py-4 text-sm leading-7 text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
+                      className="mt-4 min-h-36 w-full rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.68)] px-4 py-4 text-sm leading-7 text-[var(--color-ink)] outline-none placeholder:text-[var(--color-soft)]"
                     />
                   </div>
                 </div>
@@ -1220,7 +1220,7 @@ export default function StudyWorkspace({
                     Object.entries(notes).map(([reference, note]) => (
                       <article
                         key={reference}
-                        className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.56)] p-5"
+                        className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.56)] p-5"
                       >
                         <h3 className="font-semibold text-[var(--color-highlight)]">
                           {reference}
@@ -1240,3 +1240,4 @@ export default function StudyWorkspace({
     </>
   );
 }
+

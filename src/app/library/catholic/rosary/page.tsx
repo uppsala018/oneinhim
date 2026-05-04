@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
@@ -131,11 +131,11 @@ export default function CatholicRosaryPage() {
       <section className="mobile-app-shell min-h-screen lg:hidden">
         <header className="catholic-mobile__topbar">
           <Link href="/library/catholic/saints-devotions" className="catholic-mobile__icon-button" aria-label="Back">
-            ←
+            â†
           </Link>
           <h1>Rosary</h1>
           <Link href="/library/settings" className="catholic-mobile__icon-button" aria-label="Settings">
-            ⚙
+            âš™
           </Link>
         </header>
 
@@ -169,7 +169,7 @@ export default function CatholicRosaryPage() {
                   className={`rounded-[1.4rem] border p-4 text-left ${
                     selectedSet === set.key
                       ? "border-transparent bg-[linear-gradient(180deg,#f0cf84,#cba45b)] text-[#0a1530]"
-                      : "border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] text-[var(--color-ink)]"
+                      : "border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] text-[var(--color-ink)]"
                   }`}
                 >
                   <p className="font-[family-name:var(--font-display)] text-2xl">{set.title}</p>
@@ -188,7 +188,7 @@ export default function CatholicRosaryPage() {
             </h2>
             <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">{currentStep.detail}</p>
             {currentStep.decade ? (
-              <div className="mt-4 rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4">
+              <div className="mt-4 rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4">
                 <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-soft)]">Mystery</p>
                 <p className="mt-2 text-[var(--color-ink)]">{currentStep.decade}</p>
                 {currentStep.scripture ? (
@@ -237,7 +237,7 @@ export default function CatholicRosaryPage() {
                   className={`rounded-[1rem] border px-3 py-3 text-left text-sm ${
                     index === activeStep
                       ? "border-transparent bg-[linear-gradient(180deg,#f0cf84,#cba45b)] text-[#0a1530]"
-                      : "border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] text-[var(--color-ink)]"
+                      : "border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] text-[var(--color-ink)]"
                   }`}
                 >
                   <span className="block text-xs uppercase tracking-[0.18em] opacity-80">
@@ -253,7 +253,7 @@ export default function CatholicRosaryPage() {
         <MobileBottomNav active="Home" />
       </section>
 
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Link
           href="/library/catholic/saints-devotions"
           className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
@@ -277,3 +277,4 @@ export default function CatholicRosaryPage() {
     </>
   );
 }
+

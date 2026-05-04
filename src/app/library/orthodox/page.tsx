@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -8,7 +8,7 @@ import { getFathersForTrack } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
   title: "Orthodox Bible Study & Theology",
-  description: "Study Eastern Orthodox Christianity — the Septuagint, Divine Liturgy, Orthodox saints, feast days, and the rich Eastern theological tradition.",
+  description: "Study Eastern Orthodox Christianity â€” the Septuagint, Divine Liturgy, Orthodox saints, feast days, and the rich Eastern theological tradition.",
   keywords: "Orthodox bible study, Eastern Orthodox, Orthodox theology, Septuagint, Orthodox church, early church",
   path: "/library/orthodox",
 });
@@ -198,9 +198,9 @@ export default function OrthodoxPage() {
       <main className="orthodox-mobile mobile-app-shell lg:hidden">
         <header className="orthodox-mobile__topbar">
           <Link href="/" className="orthodox-mobile__back" aria-label="Back home">
-            ‹
+            â€ą
           </Link>
-          <span className="orthodox-mobile__cross">☦</span>
+          <span className="orthodox-mobile__cross">â¦</span>
           <h1>Orthodox Resources</h1>
         </header>
 
@@ -218,7 +218,7 @@ export default function OrthodoxPage() {
               <div className="orthodox-mobile-card__head">
                 <span className="orthodox-mobile-card__icon">{section.icon}</span>
                 <h2>{section.title}</h2>
-                <span className="orthodox-mobile-card__chevron">⌄</span>
+                <span className="orthodox-mobile-card__chevron">âŚ„</span>
               </div>
               <div className="orthodox-mobile-card__items">
                 {section.items.map((item) => (
@@ -227,7 +227,7 @@ export default function OrthodoxPage() {
                       <strong>{item.title}</strong>
                       <small>{item.detail}</small>
                     </span>
-                    <span>›</span>
+                    <span>â€ş</span>
                   </Link>
                 ))}
               </div>
@@ -246,7 +246,7 @@ export default function OrthodoxPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
           title="An Orthodox track now sits beside the Catholic and Protestant paths."
           body="This hub groups patristic texts, Orthodox-oriented catechetical material, and external resources for continued study. Shared fathers remain shared, but they are now easy to approach through an Orthodox reading path."
@@ -276,7 +276,7 @@ export default function OrthodoxPage() {
                 <Link
                   key={father.slug}
                   href={`/library/fathers/${father.slug}`}
-                  className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5"
+                  className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
@@ -316,7 +316,7 @@ export default function OrthodoxPage() {
                   <Link
                     key={href}
                     href={href}
-                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                   >
                     <p className="font-semibold text-[var(--color-ink)]">{label}</p>
                     <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">{detail}</p>
@@ -339,7 +339,7 @@ export default function OrthodoxPage() {
                   <Link
                     key={href}
                     href={href}
-                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                   >
                     <p className="font-semibold text-[var(--color-ink)]">{label}</p>
                     <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">{detail}</p>
@@ -359,7 +359,7 @@ export default function OrthodoxPage() {
                     href={resource.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="block rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                    className="block rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                   >
                     <p className="font-semibold text-[var(--color-ink)]">{resource.title}</p>
                     <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
@@ -375,3 +375,4 @@ export default function OrthodoxPage() {
     </>
   );
 }
+

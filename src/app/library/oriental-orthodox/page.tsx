@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import AppHeader from "@/components/app-header";
 import SectionHeading from "@/components/section-heading";
@@ -6,8 +6,8 @@ import Link from "next/link";
 import { orientalOrthodoxLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
-  title: "Oriental Orthodox — Coptic, Ethiopian & Syriac",
-  description: "Study Oriental Orthodox Christianity — Coptic, Ethiopian, Armenian, and Syriac traditions, texts, and theology from the ancient pre-Chalcedonian churches.",
+  title: "Oriental Orthodox â€” Coptic, Ethiopian & Syriac",
+  description: "Study Oriental Orthodox Christianity â€” Coptic, Ethiopian, Armenian, and Syriac traditions, texts, and theology from the ancient pre-Chalcedonian churches.",
   keywords: "Oriental Orthodox, Coptic church, Ethiopian Orthodox, Syriac Christianity, Armenian church, early church",
   path: "/library/oriental-orthodox",
 });
@@ -37,7 +37,7 @@ export default function OrientalOrthodoxPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
           title="A dedicated Oriental Orthodox page is now part of the Orthodox study side."
           body="This section is the base for expanding beyond Greek and Byzantine material into the Oriental Orthodox family, giving that tradition a clear place to grow inside the app."
@@ -57,7 +57,7 @@ export default function OrientalOrthodoxPage() {
                   <Link
                     key={entry.slug}
                     href={`/library/oriental-orthodox/${entry.slug}`}
-                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5"
+                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
@@ -112,7 +112,7 @@ export default function OrientalOrthodoxPage() {
                     href={resource.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="block rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                    className="block rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                   >
                     <p className="font-semibold text-[var(--color-ink)]">{resource.title}</p>
                     <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
@@ -128,3 +128,4 @@ export default function OrientalOrthodoxPage() {
     </>
   );
 }
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
@@ -76,7 +76,7 @@ function InlineSignIn() {
   if (sent) {
     return (
       <div className="forum-signin-card">
-        <p className="forum-signin-card__title">Check your email ✓</p>
+        <p className="forum-signin-card__title">Check your email âś“</p>
         <p className="forum-signin-card__body">
           We sent a sign-in link to <strong>{email}</strong>. Open it to join the conversation.
         </p>
@@ -88,7 +88,7 @@ function InlineSignIn() {
     <div className="forum-signin-card">
       <p className="forum-signin-card__title">Sign in to post</p>
       <p className="forum-signin-card__body">
-        No password needed — enter your email and we'll send a one-click sign-in link.
+        No password needed â€” enter your email and we'll send a one-click sign-in link.
       </p>
       <div className="forum-signin-card__row">
         <input
@@ -105,7 +105,7 @@ function InlineSignIn() {
           disabled={pending || !email.trim()}
           className="forum-signin-card__button"
         >
-          {pending ? "Sending…" : "Send link"}
+          {pending ? "Sendingâ€¦" : "Send link"}
         </button>
       </div>
       {error ? <p className="forum-signin-card__error">{error}</p> : null}
@@ -248,14 +248,14 @@ export default function PrayerForumBoard() {
       {/* Warning banner */}
       {restriction?.status === "warned" && !warningDismissed && (
         <div className="forum-notice" style={{ borderColor: "rgba(229,197,122,0.4)", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "0.5rem" }}>
-          <span>⚠ You have received a warning from the admin.{restriction.reason ? ` "${restriction.reason}"` : ""}</span>
+          <span>âš  You have received a warning from the admin.{restriction.reason ? ` "${restriction.reason}"` : ""}</span>
           <button type="button" onClick={() => setWarningDismissed(true)} style={{ flexShrink: 0, color: "var(--color-soft)", fontSize: "0.8rem", textDecoration: "underline" }}>Dismiss</button>
         </div>
       )}
 
       {/* Sign-in / user bar */}
       {!hasSupabaseEnv() ? (
-        <div className="forum-notice">Supabase not configured — posts will not save yet.</div>
+        <div className="forum-notice">Supabase not configured â€” posts will not save yet.</div>
       ) : userEmail ? (
         <div className="forum-user-bar">
           <span className="forum-user-bar__email">{userEmail}</span>
@@ -314,9 +314,9 @@ export default function PrayerForumBoard() {
             onChange={(e) => setPostText(e.target.value)}
             rows={5}
             placeholder={
-              category === "prayer" ? "Share your prayer request…" :
-              category === "praise" ? "Share what God has done…" :
-              "Ask your question or start a discussion…"
+              category === "prayer" ? "Share your prayer requestâ€¦" :
+              category === "praise" ? "Share what God has doneâ€¦" :
+              "Ask your question or start a discussionâ€¦"
             }
             className="forum-input forum-input--textarea"
           />
@@ -330,7 +330,7 @@ export default function PrayerForumBoard() {
               disabled={posting || !postText.trim()}
               className="forum-btn forum-btn--primary"
             >
-              {posting ? "Posting…" : "Post"}
+              {posting ? "Postingâ€¦" : "Post"}
             </button>
             <button
               type="button"
@@ -362,17 +362,17 @@ export default function PrayerForumBoard() {
           className="forum-tab forum-tab--refresh"
           aria-label="Refresh"
         >
-          ↻
+          â†»
         </button>
       </div>
 
       {/* Feed */}
       {loading ? (
-        <p className="forum-status">Loading…</p>
+        <p className="forum-status">Loadingâ€¦</p>
       ) : loadError ? (
         <p className="forum-status forum-status--error">{loadError}</p>
       ) : visiblePosts.length === 0 ? (
-        <p className="forum-status">Nothing here yet — be the first to post.</p>
+        <p className="forum-status">Nothing here yet â€” be the first to post.</p>
       ) : (
         <div className="forum-feed">
           {visiblePosts.map((post) => {
@@ -397,7 +397,7 @@ export default function PrayerForumBoard() {
 
                 {post.admin_reply && (
                   <div className="forum-card__admin-reply">
-                    <p className="forum-card__admin-reply-label">Admin ✓</p>
+                    <p className="forum-card__admin-reply-label">Admin âś“</p>
                     <p className="forum-card__admin-reply-text">{post.admin_reply}</p>
                   </div>
                 )}
@@ -410,7 +410,7 @@ export default function PrayerForumBoard() {
                     className="forum-card__pray-btn"
                     title={userEmail ? undefined : "Sign in to pray"}
                   >
-                    🙏 {post.amen_count > 0 ? post.amen_count : ""} Amen
+                    đź™Ź {post.amen_count > 0 ? post.amen_count : ""} Amen
                   </button>
                   {isOwn && post.status === "open" && (
                     <button
@@ -430,3 +430,4 @@ export default function PrayerForumBoard() {
     </div>
   );
 }
+

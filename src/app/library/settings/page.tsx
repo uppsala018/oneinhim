@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -59,11 +59,11 @@ export default function SettingsPage() {
       <section className="mobile-app-shell min-h-screen">
         <header className="kjv-mobile__topbar">
           <Link href="/library" className="kjv-mobile__icon-button" aria-label="Back to library">
-            ←
+            â†
           </Link>
           <h1>Settings</h1>
           <Link href="/" className="kjv-mobile__icon-button" aria-label="Home">
-            ⌂
+            âŚ‚
           </Link>
         </header>
 
@@ -84,7 +84,7 @@ export default function SettingsPage() {
                   className={`rounded-[1.5rem] border p-4 text-left transition ${
                     preferences.theme === option.value
                       ? "border-transparent bg-[linear-gradient(180deg,#f0cf84,#cba45b)] text-[#0a1530]"
-                      : "border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] text-[var(--color-ink)]"
+                      : "border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] text-[var(--color-ink)]"
                   }`}
                 >
                   <p className="font-[family-name:var(--font-display)] text-2xl">{option.label}</p>
@@ -110,7 +110,7 @@ export default function SettingsPage() {
                 className={`rounded-[1.5rem] border p-5 text-left transition ${
                   preferences.showStrongs
                     ? "border-transparent bg-[linear-gradient(180deg,#f0cf84,#cba45b)] text-[#0a1530]"
-                    : "border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] text-[var(--color-ink)]"
+                    : "border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] text-[var(--color-ink)]"
                 }`}
               >
                 <p className="font-[family-name:var(--font-display)] text-2xl">Strong&apos;s On</p>
@@ -127,7 +127,7 @@ export default function SettingsPage() {
                 className={`rounded-[1.5rem] border p-5 text-left transition ${
                   !preferences.showStrongs
                     ? "border-transparent bg-[linear-gradient(180deg,#f0cf84,#cba45b)] text-[#0a1530]"
-                    : "border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] text-[var(--color-ink)]"
+                    : "border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] text-[var(--color-ink)]"
                 }`}
               >
                 <p className="font-[family-name:var(--font-display)] text-2xl">Strong&apos;s Off</p>
@@ -153,7 +153,7 @@ export default function SettingsPage() {
               className={`mt-5 rounded-[1.5rem] border px-5 py-4 text-left transition ${
                 preferences.compactReader
                   ? "border-transparent bg-[linear-gradient(180deg,#f0cf84,#cba45b)] text-[#0a1530]"
-                  : "border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] text-[var(--color-ink)]"
+                  : "border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] text-[var(--color-ink)]"
               }`}
             >
               <p className="font-[family-name:var(--font-display)] text-2xl">
@@ -186,3 +186,4 @@ export default function SettingsPage() {
     </>
   );
 }
+

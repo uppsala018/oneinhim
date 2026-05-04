@@ -40,7 +40,7 @@ export default async function FatherDetailPage({
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-6xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Link
           href="/library/fathers"
           className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
@@ -88,7 +88,7 @@ export default async function FatherDetailPage({
           </p>
         </section>
 
-        <section className="mt-10 overflow-hidden rounded-[2.4rem] border border-[rgba(230,190,120,0.45)] bg-[linear-gradient(145deg,rgba(230,190,120,0.12),rgba(8,24,46,0.82)_42%,rgba(5,17,34,0.94))] shadow-[0_24px_80px_rgba(0,0,0,0.22)]">
+        <section className="mt-10 overflow-hidden rounded-[2.4rem] border border-[rgba(230,190,120,0.45)] bg-[linear-gradient(145deg,rgba(230,190,120,0.12),rgba(10,10,10,0.82)_42%,rgba(10,10,10,0.94))] shadow-[0_24px_80px_rgba(0,0,0,0.22)]">
           <div className="border-b border-[var(--color-border)] p-7 sm:p-8">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
               Start Here
@@ -123,7 +123,7 @@ export default async function FatherDetailPage({
           </div>
 
           <div className="grid gap-5 p-6 sm:p-8 lg:grid-cols-2">
-            <div className="rounded-[1.7rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] p-5">
+            <div className="rounded-[1.7rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] p-5">
               <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
                 Suggested Reading Order
               </h3>
@@ -155,7 +155,7 @@ export default async function FatherDetailPage({
               </ol>
             </div>
 
-            <div className="rounded-[1.7rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] p-5">
+            <div className="rounded-[1.7rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] p-5">
               <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
                 Key Doctrines And Themes
               </h3>
@@ -173,7 +173,7 @@ export default async function FatherDetailPage({
               </div>
             </div>
 
-            <div className="rounded-[1.7rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] p-5">
+            <div className="rounded-[1.7rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] p-5">
               <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
                 Tradition Lens
               </h3>
@@ -191,7 +191,7 @@ export default async function FatherDetailPage({
               </div>
             </div>
 
-            <div className="rounded-[1.7rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] p-5">
+            <div className="rounded-[1.7rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] p-5">
               <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
                 Scripture And Terms
               </h3>
@@ -247,7 +247,7 @@ export default async function FatherDetailPage({
                 {work.summary}
               </p>
 
-              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5">
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5">
                 <div className="flex flex-wrap gap-3 text-xs uppercase tracking-[0.18em] text-[var(--color-soft)]">
                   <span>{work.stats.sectionCount} sections</span>
                   <span>{work.stats.paragraphCount} paragraphs</span>

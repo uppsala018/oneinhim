@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -12,7 +12,7 @@ import {
 
 export const metadata: Metadata = buildMeta({
   title: "Protestant Bible Study & Theology",
-  description: "Explore Protestant Christianity — the Reformation, Martin Luther, John Calvin, key confessions, Reformed theology, and Protestant scripture study.",
+  description: "Explore Protestant Christianity â€” the Reformation, Martin Luther, John Calvin, key confessions, Reformed theology, and Protestant scripture study.",
   keywords: "Protestant theology, reformation, Martin Luther, John Calvin, Protestant bible study, Reformed theology",
   path: "/library/protestant",
 });
@@ -23,7 +23,7 @@ export default function ProtestantPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
           title="A Protestant study path now sits alongside the Catholic and Orthodox tracks."
           body="This hub brings together the KJV reader, Strong's tools, Reformation history, and selected fathers and theologians that remained influential in Protestant reading traditions."
@@ -53,13 +53,13 @@ export default function ProtestantPage() {
                   <Link
                     key={figure.slug}
                     href={`/library/protestant/figures/${figure.slug}`}
-                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5"
+                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5"
                   >
                     <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
                       {figure.name}
                     </h3>
                     <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--color-soft)]">
-                      {figure.era} · {figure.tradition}
+                      {figure.era} Â· {figure.tradition}
                     </p>
                     <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
                       {figure.summary}
@@ -82,7 +82,7 @@ export default function ProtestantPage() {
                   <Link
                     key={href}
                     href={href}
-                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5"
+                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5"
                   >
                     <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
                       {label}
@@ -109,7 +109,7 @@ export default function ProtestantPage() {
                   <Link
                     key={entry.slug}
                     href={`/library/protestant/${entry.slug}`}
-                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5"
+                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5"
                   >
                     <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
                       {entry.title}
@@ -147,13 +147,13 @@ export default function ProtestantPage() {
                   <Link
                     key={work.slug}
                     href={`/library/protestant/texts/${work.slug}`}
-                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5"
+                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5"
                   >
                     <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
                       {work.title}
                     </h3>
                     <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--color-soft)]">
-                      {work.tradition} · {work.yearLabel}
+                      {work.tradition} Â· {work.yearLabel}
                     </p>
                     <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
                       {work.summary}
@@ -187,7 +187,7 @@ export default function ProtestantPage() {
                 <Link
                   key={father.slug}
                   href={`/library/fathers/${father.slug}`}
-                  className="block rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5"
+                  className="block rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
@@ -214,3 +214,4 @@ export default function ProtestantPage() {
     </>
   );
 }
+

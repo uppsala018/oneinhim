@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -235,14 +235,14 @@ export default function LxxReader() {
     <main className="lxx-reader mobile-app-shell">
       <header className="lxx-reader__topbar">
         <Link href="/library/orthodox" className="lxx-reader__icon" aria-label="Back">
-          ‹
+          â€ą
         </Link>
         <div>
           <p>Brenton Septuagint</p>
           <h1>Orthodox LXX Reader</h1>
         </div>
         <Link href="/library/orthodox/orthodox-canon-notes" className="lxx-reader__icon">
-          ☦
+          â¦
         </Link>
       </header>
 
@@ -404,7 +404,7 @@ export default function LxxReader() {
             <button type="button"
               className={`lxx-reader__action-btn${bookmarkSet.has(selectedVerse.reference ?? "") ? " lxx-reader__action-btn--active" : ""}`}
               onClick={() => toggleBookmark(selectedVerse.reference ?? "")}>
-              {bookmarkSet.has(selectedVerse.reference ?? "") ? "★ Saved" : "☆ Save"}
+              {bookmarkSet.has(selectedVerse.reference ?? "") ? "â… Saved" : "â† Save"}
             </button>
             <button type="button" className="lxx-reader__action-btn"
               onClick={() => void shareVerse(selectedVerse.reference ?? "", selectedVerse.text)}>
@@ -445,3 +445,4 @@ export default function LxxReader() {
     </main>
   );
 }
+

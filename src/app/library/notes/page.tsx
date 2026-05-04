@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -66,7 +66,7 @@ export default function NotesPage() {
   return (
     <main className="mobile-app-shell" style={{ paddingBottom: "7rem" }}>
       <header className="mobile-section-header">
-        <Link href="/" className="mobile-section-header__back" aria-label="Back">‹</Link>
+        <Link href="/" className="mobile-section-header__back" aria-label="Back">â€ą</Link>
         <div><h1>Saved</h1><span>Bookmarks &amp; Notes</span></div>
         <span />
       </header>
@@ -104,7 +104,7 @@ export default function NotesPage() {
                   <button type="button"
                     onClick={() => void copyBookmark(ref)}
                     style={{ border: "1px solid rgba(229,197,122,0.25)", borderRadius: 999, padding: "0.3rem 0.75rem", color: copied === ref ? "var(--color-highlight)" : "var(--color-soft)", fontSize: "0.76rem", cursor: "pointer" }}>
-                    {copied === ref ? "Copied ✓" : "Copy"}
+                    {copied === ref ? "Copied âś“" : "Copy"}
                   </button>
                   <button type="button"
                     onClick={() => removeBookmark(ref)}
@@ -145,3 +145,4 @@ export default function NotesPage() {
     </main>
   );
 }
+

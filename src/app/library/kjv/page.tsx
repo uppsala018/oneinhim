@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import StudyWorkspace from "@/components/study-workspace";
 
@@ -72,3 +72,4 @@ export default async function KJVPage({
     />
   );
 }
+

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -7,8 +7,8 @@ import SectionHeading from "@/components/section-heading";
 import { protestantFigures } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
-  title: "Reformation Figures — Luther, Calvin & the Reformers",
-  description: "Study the lives and writings of Protestant Reformation figures — Martin Luther, John Calvin, Zwingli, Wesley and the major Reformers.",
+  title: "Reformation Figures â€” Luther, Calvin & the Reformers",
+  description: "Study the lives and writings of Protestant Reformation figures â€” Martin Luther, John Calvin, Zwingli, Wesley and the major Reformers.",
   keywords: "Martin Luther, John Calvin, Protestant reformation, reformers, Protestant theology, church history",
   path: "/library/protestant/figures",
 });
@@ -144,9 +144,9 @@ export default function ProtestantFiguresPage() {
       <main className="orthodox-mobile mobile-app-shell lg:hidden">
         <header className="orthodox-mobile__topbar">
           <Link href="/library/protestant" className="orthodox-mobile__back" aria-label="Back to Protestant Resources">
-            ‹
+            â€ą
           </Link>
-          <span className="orthodox-mobile__cross">✝</span>
+          <span className="orthodox-mobile__cross">âśť</span>
           <h1>Protestant Figures</h1>
         </header>
 
@@ -164,7 +164,7 @@ export default function ProtestantFiguresPage() {
               <div className="orthodox-mobile-card__head">
                 <span className="orthodox-mobile-card__icon">{section.icon}</span>
                 <h2>{section.title}</h2>
-                <span className="orthodox-mobile-card__chevron">⌄</span>
+                <span className="orthodox-mobile-card__chevron">âŚ„</span>
               </div>
               <div className="orthodox-mobile-card__items">
                 {section.items.map((item) =>
@@ -174,7 +174,7 @@ export default function ProtestantFiguresPage() {
                         <strong>{item.title}</strong>
                         <small>{item.detail}</small>
                       </span>
-                      <span>›</span>
+                      <span>â€ş</span>
                     </a>
                   ) : (
                     <Link key={`${section.title}-${item.title}`} href={item.href}>
@@ -182,7 +182,7 @@ export default function ProtestantFiguresPage() {
                         <strong>{item.title}</strong>
                         <small>{item.detail}</small>
                       </span>
-                      <span>›</span>
+                      <span>â€ş</span>
                     </Link>
                   ),
                 )}
@@ -202,7 +202,7 @@ export default function ProtestantFiguresPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
           title="Reformers and Protestant theologians"
           body="Read Protestant figures through internal study profiles and primary texts, not only external links."
@@ -222,7 +222,7 @@ export default function ProtestantFiguresPage() {
                 {figure.name}
               </h2>
               <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--color-soft)]">
-                {figure.era} · {figure.region}
+                {figure.era} Â· {figure.region}
               </p>
               <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
                 {figure.summary}
@@ -244,3 +244,4 @@ export default function ProtestantFiguresPage() {
     </>
   );
 }
+

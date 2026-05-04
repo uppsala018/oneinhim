@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
-  title: "Catholic Theology — Creed, Trinity & Doctrine",
+  title: "Catholic Theology â€” Creed, Trinity & Doctrine",
   description: "Study Catholic theology including the Apostles' Creed, the Holy Trinity, and core Catholic doctrine. Free theological study resources.",
   keywords: "Catholic theology, Apostles Creed, Holy Trinity, Catholic doctrine, christian theology, bible study",
   path: "/library/catholic/theology",
@@ -66,7 +66,7 @@ export default function CatholicTheologyPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-6xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <div className="flex flex-wrap gap-3">
           <Link
             href="/library/catholic/resources"
@@ -108,7 +108,7 @@ export default function CatholicTheologyPage() {
                   <Link
                     key={href}
                     href={href}
-                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4 text-sm text-[var(--color-ink)]"
+                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4 text-sm text-[var(--color-ink)]"
                   >
                     {label}
                   </Link>
@@ -122,3 +122,4 @@ export default function CatholicTheologyPage() {
     </>
   );
 }
+

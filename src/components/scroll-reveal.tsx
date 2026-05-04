@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 
@@ -39,3 +39,4 @@ export default function ScrollReveal({ children, className = "", delay = 0 }: Sc
     </div>
   );
 }
+

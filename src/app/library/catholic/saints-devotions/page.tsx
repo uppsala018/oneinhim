@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -49,7 +49,7 @@ const devotionPaths = [
   },
   {
     title: "Rosary",
-    icon: "✢",
+    icon: "âś˘",
     summary:
       "The rosary is a biblical and contemplative prayer centered on the mysteries of Christ's life, death, and resurrection.",
     study: ["Joyful mysteries", "Sorrowful mysteries", "Glorious mysteries", "Luminous mysteries"],
@@ -57,7 +57,7 @@ const devotionPaths = [
   },
   {
     title: "Relics And Holy Memory",
-    icon: "☩",
+    icon: "â©",
     summary:
       "Catholic veneration of relics is tied to belief in the resurrection, the holiness of the body, and God's work through the saints.",
     study: ["Resurrection", "Martyr witness", "Sacred memory", "Intercession"],
@@ -65,7 +65,7 @@ const devotionPaths = [
   },
   {
     title: "Feast Days",
-    icon: "✦",
+    icon: "âś¦",
     summary:
       "The liturgical calendar teaches the faith through the life of Christ, Mary, martyrs, apostles, pastors, virgins, and holy men and women.",
     study: ["Advent", "Christmas", "Lent", "Easter", "Saints' days"],
@@ -106,7 +106,7 @@ export default function CatholicSaintsDevotionsPage() {
       <main className="catholic-devotions-mobile mobile-app-shell lg:hidden">
         <header className="mobile-section-header">
           <Link href="/library/catholic/resources" aria-label="Back to Catholic Resources" className="mobile-section-header__back">
-            ‹
+            â€ą
           </Link>
           <div>
             <h1>Saints & Devotions</h1>
@@ -161,7 +161,7 @@ export default function CatholicSaintsDevotionsPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Link
           href="/library/catholic/resources"
           className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
@@ -232,3 +232,4 @@ export default function CatholicSaintsDevotionsPage() {
     </>
   );
 }
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
@@ -46,7 +46,7 @@ export default function FatherWorkReader({
   return (
     <div className="mt-10 grid gap-6 lg:grid-cols-[19rem_minmax(0,1fr)]">
       <aside className="lg:sticky lg:top-24 lg:self-start">
-        <div className="rounded-[1.8rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.78)] p-5 shadow-2xl shadow-black/20">
+        <div className="rounded-[1.8rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.78)] p-5 shadow-2xl shadow-black/20">
           <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">
             Reader tools
           </p>
@@ -120,7 +120,7 @@ export default function FatherWorkReader({
         aria-label={`${father.name}, ${work.title}`}
       >
         {deferredQuery ? (
-          <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.62)] p-4 text-sm text-[var(--color-soft)]">
+          <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.62)] p-4 text-sm text-[var(--color-soft)]">
             Showing {visibleSections.length} matching sections for{" "}
             <span className="text-[var(--color-highlight)]">{query}</span>.
           </div>
@@ -231,3 +231,4 @@ export default function FatherWorkReader({
     </div>
   );
 }
+

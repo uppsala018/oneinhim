@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -7,8 +7,8 @@ import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SectionHeading from "@/components/section-heading";
 
 export const metadata: Metadata = buildMeta({
-  title: "The Protestant Reformation — History & Theology",
-  description: "A complete study of the Protestant Reformation — its causes, key figures, the break from Rome, and the theological legacy of Luther, Calvin and the Reformers.",
+  title: "The Protestant Reformation â€” History & Theology",
+  description: "A complete study of the Protestant Reformation â€” its causes, key figures, the break from Rome, and the theological legacy of Luther, Calvin and the Reformers.",
   keywords: "Protestant reformation, Martin Luther, reformation history, Protestant theology, church history, early church",
   path: "/library/protestant/reformation-era",
 });
@@ -176,7 +176,7 @@ export default function ProtestantReformationEraPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
           title="Origins of Protestant theology and ecclesial separation"
           body="The Reformation Era page collects the first major Protestant fracture points and shows how theology, authority, and worship developed into different confessional lines."
@@ -218,7 +218,7 @@ export default function ProtestantReformationEraPage() {
                   <Link
                     key={figure.slug}
                     href={`/library/protestant/figures/${figure.slug}`}
-                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-5"
+                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5"
                   >
                     <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
                       {figure.name}
@@ -248,7 +248,7 @@ export default function ProtestantReformationEraPage() {
                   <Link
                     key={href}
                     href={href}
-                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                   >
                     <p className="font-semibold text-[var(--color-ink)]">{label}</p>
                     <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">{detail}</p>
@@ -262,3 +262,4 @@ export default function ProtestantReformationEraPage() {
     </>
   );
 }
+

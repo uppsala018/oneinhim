@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -7,7 +7,7 @@ import SectionHeading from "@/components/section-heading";
 
 export const metadata: Metadata = buildMeta({
   title: "Catholic Study Resources",
-  description: "Catholic Bible study resources including the Roman Catechism, saints, sacraments, the Rosary, feast days, and Catholic theology — all free.",
+  description: "Catholic Bible study resources including the Roman Catechism, saints, sacraments, the Rosary, feast days, and Catholic theology â€” all free.",
   keywords: "Catholic bible study, Roman Catechism, Catholic saints, Catholic devotions, catechism of Trent",
   path: "/library/catholic/resources",
 });
@@ -351,7 +351,7 @@ export default function CatholicResourcesPage() {
         <MobileBottomNav active="Home" />
       </main>
 
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
           title="Catholic study hub for Bible, catechesis, saints, liturgy, and tradition"
           body="Catholic Resources now sits at the same depth as the Orthodox and Protestant tracks with numbered mobile sections and internal study pages."
@@ -373,7 +373,7 @@ export default function CatholicResourcesPage() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                      className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                     >
                       <p className="font-semibold text-[var(--color-ink)]">{link.label}</p>
                       <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
@@ -386,7 +386,7 @@ export default function CatholicResourcesPage() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4"
+                      className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                     >
                       <p className="font-semibold text-[var(--color-ink)]">{link.label}</p>
                       <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
@@ -403,3 +403,4 @@ export default function CatholicResourcesPage() {
     </>
   );
 }
+

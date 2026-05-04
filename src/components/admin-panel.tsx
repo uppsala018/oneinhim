@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useCallback, useEffect, useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase";
@@ -149,7 +149,7 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
       : { data: [] };
     const emailMap = new Map((profileData ?? []).map((p) => [p.id, p.email as string]));
 
-    setPosts(data.map((p) => ({ ...p, user_email: emailMap.get(p.user_id ?? "") ?? "—" })) as AdminPost[]);
+    setPosts(data.map((p) => ({ ...p, user_email: emailMap.get(p.user_id ?? "") ?? "â€”" })) as AdminPost[]);
     setLoading(false);
   }, []);
 
@@ -261,13 +261,13 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
         ))}
         <button type="button" style={{ ...tabStyle(false), marginLeft: "auto" }}
           onClick={() => { if (tab === "overview") void loadOverview(); if (tab === "members") void loadMembers(); if (tab === "forum") void loadForum(); }}>
-          ↻ Refresh
+          â†» Refresh
         </button>
       </div>
 
-      {loading && <p style={{ color: soft, fontSize: "0.88rem" }}>Loading…</p>}
+      {loading && <p style={{ color: soft, fontSize: "0.88rem" }}>Loadingâ€¦</p>}
 
-      {/* ── Overview ── */}
+      {/* â”€â”€ Overview â”€â”€ */}
       {tab === "overview" && stats && (
         <div style={{ display: "grid", gap: "0.75rem" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.6rem" }}>
@@ -286,17 +286,17 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
             <p style={{ margin: "0 0 0.5rem", color: gold, fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase" }}>External</p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
               <a href="https://play.google.com/console" target="_blank" rel="noopener noreferrer" style={{ ...btnStyle("ghost"), textDecoration: "none" }}>
-                Google Play Console ↗
+                Google Play Console â†—
               </a>
               <a href="https://vercel.com/dashboard" target="_blank" rel="noopener noreferrer" style={{ ...btnStyle("ghost"), textDecoration: "none" }}>
-                Vercel Dashboard ↗
+                Vercel Dashboard â†—
               </a>
             </div>
           </div>
         </div>
       )}
 
-      {/* ── Members ── */}
+      {/* â”€â”€ Members â”€â”€ */}
       {tab === "members" && !loading && (
         <div style={{ display: "grid", gap: "0.6rem" }}>
           {members.length === 0 && <p style={{ color: muted, fontSize: "0.88rem" }}>No members yet.</p>}
@@ -306,7 +306,7 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
                 <div>
                   <p style={{ margin: 0, color: inkColor, fontSize: "0.88rem", fontWeight: 600 }}>{m.email}</p>
                   <p style={{ margin: "0.2rem 0 0", color: soft, fontSize: "0.72rem" }}>
-                    Joined {timeAgo(m.created_at)} · Last seen {timeAgo(m.last_seen_at)}
+                    Joined {timeAgo(m.created_at)} Â· Last seen {timeAgo(m.last_seen_at)}
                   </p>
                 </div>
                 <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", alignItems: "center" }}>
@@ -325,7 +325,7 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
         </div>
       )}
 
-      {/* ── Forum ── */}
+      {/* â”€â”€ Forum â”€â”€ */}
       {tab === "forum" && !loading && (
         <div style={{ display: "grid", gap: "0.7rem" }}>
           {posts.length === 0 && <p style={{ color: muted, fontSize: "0.88rem" }}>No posts yet.</p>}
@@ -360,12 +360,12 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
                     value={replyText}
                     onChange={(e) => setReplyText(e.target.value)}
                     rows={3}
-                    placeholder="Write your admin reply…"
+                    placeholder="Write your admin replyâ€¦"
                     style={{ width: "100%", border: "1px solid rgba(229,197,122,0.25)", borderRadius: "0.75rem", background: "rgba(4,17,38,0.7)", padding: "0.6rem 0.8rem", color: inkColor, fontSize: "0.88rem", outline: "none", resize: "vertical", fontFamily: "inherit" }}
                   />
                   <div style={{ display: "flex", gap: "0.4rem" }}>
                     <button type="button" style={btnStyle("primary")} disabled={replyPending || !replyText.trim()} onClick={() => void handleAdminReply(p.id)}>
-                      {replyPending ? "Saving…" : "Post reply"}
+                      {replyPending ? "Savingâ€¦" : "Post reply"}
                     </button>
                     <button type="button" style={btnStyle("ghost")} onClick={() => { setReplyTarget(null); setReplyText(""); }}>Cancel</button>
                   </div>
@@ -380,7 +380,7 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
         </div>
       )}
 
-      {/* ── Restrict modal ── */}
+      {/* â”€â”€ Restrict modal â”€â”€ */}
       {restrictTarget && (
         <div style={{ position: "fixed", inset: 0, zIndex: 100, background: "rgba(4,17,38,0.88)", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.5rem" }}>
           <div style={{ width: "100%", maxWidth: "28rem", border: "1.5px solid rgba(229,197,122,0.35)", borderRadius: "1.6rem", background: "#06172e", padding: "1.5rem", display: "grid", gap: "0.85rem" }}>
@@ -404,13 +404,13 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
               value={restrictReason}
               onChange={(e) => setRestrictReason(e.target.value)}
               rows={2}
-              placeholder="Reason (shown to user)…"
+              placeholder="Reason (shown to user)â€¦"
               style={{ border: "1px solid rgba(229,197,122,0.25)", borderRadius: "0.75rem", background: "rgba(4,17,38,0.7)", padding: "0.6rem 0.8rem", color: inkColor, fontSize: "0.88rem", outline: "none", resize: "vertical", fontFamily: "inherit" }}
             />
 
             <div style={{ display: "flex", gap: "0.5rem" }}>
               <button type="button" style={btnStyle("primary")} disabled={restrictPending} onClick={() => void handleRestrict()}>
-                {restrictPending ? "Saving…" : "Apply"}
+                {restrictPending ? "Savingâ€¦" : "Apply"}
               </button>
               <button type="button" style={btnStyle("ghost")} onClick={() => setRestrictTarget(null)}>Cancel</button>
             </div>
@@ -420,3 +420,4 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
     </section>
   );
 }
+

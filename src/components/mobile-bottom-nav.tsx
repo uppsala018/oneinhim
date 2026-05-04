@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 function HomeIcon() {
   return (
@@ -63,3 +63,4 @@ export default function MobileBottomNav({ active = "Home" }: { active?: string }
     </nav>
   );
 }
+

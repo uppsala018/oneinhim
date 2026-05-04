@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -6,7 +6,7 @@ import { orthodoxDivineLiturgyGuide } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
   title: "The Divine Liturgy of St. John Chrysostom",
-  description: "Study the Orthodox Divine Liturgy of St. John Chrysostom — the central act of worship in Eastern Orthodox Christianity with full text and commentary.",
+  description: "Study the Orthodox Divine Liturgy of St. John Chrysostom â€” the central act of worship in Eastern Orthodox Christianity with full text and commentary.",
   keywords: "Divine Liturgy, Orthodox liturgy, St John Chrysostom, Eastern Orthodox worship, church history",
   path: "/library/orthodox/divine-liturgy",
 });
@@ -15,7 +15,7 @@ export default function DivineLiturgyGuidePage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-6xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Link
           href="/library/orthodox"
           className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
@@ -56,7 +56,7 @@ export default function DivineLiturgyGuidePage() {
               </div>
 
               <div className="mt-5 grid gap-4 lg:grid-cols-3">
-                <div className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] p-4">
+                <div className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] p-4">
                   <h3 className="font-semibold text-[var(--color-highlight)]">
                     Liturgical Action
                   </h3>
@@ -64,7 +64,7 @@ export default function DivineLiturgyGuidePage() {
                     {step.liturgicalAction}
                   </p>
                 </div>
-                <div className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] p-4">
+                <div className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] p-4">
                   <h3 className="font-semibold text-[var(--color-highlight)]">
                     Meaning
                   </h3>
@@ -72,7 +72,7 @@ export default function DivineLiturgyGuidePage() {
                     {step.meaning}
                   </p>
                 </div>
-                <div className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.48)] p-4">
+                <div className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] p-4">
                   <h3 className="font-semibold text-[var(--color-highlight)]">
                     Study Prompt
                   </h3>
@@ -112,3 +112,4 @@ export default function DivineLiturgyGuidePage() {
     </>
   );
 }
+

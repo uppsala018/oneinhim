@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -7,8 +7,8 @@ import SectionHeading from "@/components/section-heading";
 import { fathersLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
-  title: "Church Fathers — Patristic Writings Library",
-  description: "Read the early church fathers — Ignatius of Antioch, Justin Martyr, Origen, Augustine, Chrysostom and more. Free patristic writings from every era.",
+  title: "Church Fathers â€” Patristic Writings Library",
+  description: "Read the early church fathers â€” Ignatius of Antioch, Justin Martyr, Origen, Augustine, Chrysostom and more. Free patristic writings from every era.",
   keywords: "church fathers, patristic writings, early church fathers, Augustine, Chrysostom, Ignatius of Antioch, christian history",
   path: "/library/fathers",
 });
@@ -21,7 +21,7 @@ export default function FathersPage() {
       <div className="hidden lg:block">
         <AppHeader />
       </div>
-      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <SectionHeading
           title="Patristic texts are now organized as a full-text library."
           body="Open a father, choose a work, and read the full document chapter by chapter."
@@ -79,7 +79,7 @@ export default function FathersPage() {
                 ))}
               </div>
 
-              <div className="mt-6 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4">
+              <div className="mt-6 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4">
                 <p className="text-xs uppercase tracking-[0.22em] text-[var(--color-highlight)]">
                   Included Works
                 </p>
@@ -105,3 +105,4 @@ export default function FathersPage() {
     </>
   );
 }
+

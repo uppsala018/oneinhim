@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import PwaBoot from "@/components/pwa-boot";
 import PreferencesBoot from "@/components/preferences-boot";
@@ -60,3 +60,4 @@ export default function RootLayout({
     </html>
   );
 }
+

@@ -40,7 +40,7 @@ export default async function OrthodoxStudyEntryPage({
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-6xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Link
           href="/library/orthodox"
           className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
@@ -96,7 +96,7 @@ export default async function OrthodoxStudyEntryPage({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4 text-sm text-[var(--color-ink)]"
+                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4 text-sm text-[var(--color-ink)]"
                   >
                     {link.label}
                   </Link>
@@ -106,7 +106,7 @@ export default async function OrthodoxStudyEntryPage({
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4 text-sm text-[var(--color-ink)]"
+                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4 text-sm text-[var(--color-ink)]"
                   >
                     {link.label}
                   </a>

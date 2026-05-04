@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -6,7 +6,7 @@ import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
   title: "The Seven Sacraments of the Catholic Church",
-  description: "A complete guide to the seven Catholic sacraments — Baptism, Eucharist, Confirmation, Penance, Anointing, Holy Orders and Matrimony.",
+  description: "A complete guide to the seven Catholic sacraments â€” Baptism, Eucharist, Confirmation, Penance, Anointing, Holy Orders and Matrimony.",
   keywords: "Catholic sacraments, baptism, Eucharist, confirmation, Catholic church, sacramental theology",
   path: "/library/catholic/sacraments",
 });
@@ -72,7 +72,7 @@ export default function CatholicSacramentsPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-6xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <div className="flex flex-wrap gap-3">
           <Link
             href="/library/catholic/resources"
@@ -110,7 +110,7 @@ export default function CatholicSacramentsPage() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(5,17,34,0.52)] p-4 text-sm text-[var(--color-ink)]"
+                    className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4 text-sm text-[var(--color-ink)]"
                   >
                     {link.label}
                   </Link>
@@ -124,3 +124,4 @@ export default function CatholicSacramentsPage() {
     </>
   );
 }
+

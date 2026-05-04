@@ -261,7 +261,7 @@ html[data-theme="light"] .mobile-app-shell {
   grid-template-columns: repeat(4, 1fr);
   padding-bottom: env(safe-area-inset-bottom);
   border-top: 1px solid rgba(229, 197, 122, 0.14);
-  background: rgba(4, 14, 32, 0.96);
+  background: rgba(10, 10, 10, 0.96);
   box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.38);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -329,7 +329,7 @@ html[data-theme="light"] .mobile-app-shell {
   grid-template-columns: 3.2rem 1fr 3.2rem;
   align-items: center;
   border-bottom: 1px solid rgba(229, 197, 122, 0.18);
-  background: rgba(4, 17, 38, 0.92);
+  background: rgba(10, 10, 10, 0.92);
   padding: 0.8rem 1.15rem;
   text-align: center;
   backdrop-filter: blur(16px);
@@ -362,8 +362,8 @@ html[data-theme="light"] .mobile-app-shell {
 .councils-mobile {
   background:
     radial-gradient(circle at 18% 6%, rgba(229, 197, 122, 0.11), transparent 18rem),
-    linear-gradient(180deg, rgba(4, 17, 38, 0.94), rgba(4, 17, 38, 0.98)),
-    #041126;
+    linear-gradient(180deg, rgba(10, 10, 10, 0.94), rgba(10, 10, 10, 0.98)),
+    var(--color-bg);
 }
 
 .councils-timeline {
@@ -413,11 +413,11 @@ html[data-theme="light"] .mobile-app-shell {
   place-items: center;
   border: 2px solid var(--color-highlight);
   border-radius: 999px;
-  background: #071936;
+  background: var(--color-bg);
   color: var(--color-highlight);
   font-family: var(--font-display), serif;
   font-size: 1.45rem;
-  box-shadow: 0 0 0 0.24rem rgba(4, 17, 38, 0.92);
+  box-shadow: 0 0 0 0.24rem rgba(10, 10, 10, 0.92);
 }
 
 .council-card {
@@ -490,8 +490,8 @@ html[data-theme="light"] .mobile-app-shell {
 .council-detail {
   background:
     radial-gradient(circle at 50% 0%, rgba(229, 197, 122, 0.13), transparent 18rem),
-    linear-gradient(180deg, rgba(4, 17, 38, 0.95), rgba(4, 17, 38, 0.98)),
-    #041126;
+    linear-gradient(180deg, rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.98)),
+    var(--color-bg);
   padding-right: 1.15rem;
   padding-left: 1.15rem;
 }
@@ -681,8 +681,8 @@ html[data-theme="light"] .mobile-app-shell {
   overflow-x: hidden;
   background:
     radial-gradient(circle at 50% 0%, rgba(229, 197, 122, 0.12), transparent 18rem),
-    linear-gradient(180deg, rgba(4, 17, 38, 0.96), rgba(4, 17, 38, 0.99)),
-    #041126;
+    linear-gradient(180deg, rgba(10, 10, 10, 0.96), rgba(10, 10, 10, 0.99)),
+    var(--color-bg);
 }
 
 .history-tabs {
@@ -692,7 +692,7 @@ html[data-theme="light"] .mobile-app-shell {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-bottom: 1px solid rgba(229, 197, 122, 0.22);
-  background: rgba(4, 17, 38, 0.94);
+  background: rgba(10, 10, 10, 0.94);
   backdrop-filter: blur(16px);
 }
 
@@ -920,7 +920,7 @@ html[data-theme="light"] .mobile-app-shell {
   position: relative;
   border: 1px solid rgba(229, 197, 122, 0.32);
   border-radius: 1rem;
-  background: rgba(4, 17, 38, 0.58);
+  background: rgba(10, 10, 10, 0.58);
   padding: 0.75rem;
   text-decoration: none;
 }
@@ -936,8 +936,8 @@ html[data-theme="light"] .mobile-app-shell {
   content: "";
   border: 1.5px solid var(--color-highlight);
   border-radius: 999px;
-  background: #071936;
-  box-shadow: 0 0 0 0.22rem #071936;
+  background: var(--color-bg);
+  box-shadow: 0 0 0 0.22rem var(--color-bg);
 }
 
 .history-tradition-event strong,
@@ -981,7 +981,7 @@ html[data-theme="light"] .mobile-app-shell {
 
 .history-tradition-split {
   border-color: rgba(229, 197, 122, 0.58);
-  background: linear-gradient(145deg, rgba(229, 197, 122, 0.11), rgba(4, 17, 38, 0.58));
+  background: linear-gradient(145deg, rgba(229, 197, 122, 0.11), rgba(10, 10, 10, 0.58));
 }
 
 .history-tradition-lines {
@@ -1270,7 +1270,7 @@ html[data-theme="light"] .mobile-app-shell {
   place-items: center;
   border: 1.5px solid var(--color-highlight);
   border-radius: 999px;
-  background: #071936;
+  background: var(--color-bg);
   color: var(--color-highlight);
   font-family: var(--font-display), serif;
   font-size: 1.22rem;
@@ -1391,8 +1391,8 @@ html[data-theme="light"] .mobile-app-shell {
   overflow-x: hidden;
   background:
     radial-gradient(circle at 50% 0%, rgba(229, 197, 122, 0.14), transparent 18rem),
-    linear-gradient(180deg, rgba(4, 17, 38, 0.95), rgba(4, 17, 38, 0.99)),
-    #041126;
+    linear-gradient(180deg, rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.99)),
+    var(--color-bg);
 }
 
 .catholic-devotions-hero {
@@ -1517,8 +1517,8 @@ html[data-theme="light"] .mobile-app-shell {
   overflow-x: hidden;
   background:
     radial-gradient(circle at 50% 0%, rgba(229, 197, 122, 0.14), transparent 18rem),
-    linear-gradient(180deg, rgba(4, 17, 38, 0.95), rgba(4, 17, 38, 0.99)),
-    #041126;
+    linear-gradient(180deg, rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.99)),
+    var(--color-bg);
 }
 
 .orthodox-devotions-hero {
@@ -1651,9 +1651,9 @@ html[data-theme="light"] .mobile-app-shell {
 
 .orthodox-mobile {
   background:
-    linear-gradient(180deg, rgba(3, 15, 33, 0.62), rgba(4, 17, 38, 0.98) 34rem),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.62), rgba(10, 10, 10, 0.98) 34rem),
     radial-gradient(circle at top, rgba(104, 72, 40, 0.35), transparent 34rem),
-    #041126;
+    var(--color-bg);
 }
 
 .orthodox-mobile__topbar {
@@ -1666,7 +1666,7 @@ html[data-theme="light"] .mobile-app-shell {
   align-items: center;
   gap: 0.55rem;
   border-bottom: 1px solid rgba(229, 197, 122, 0.18);
-  background: rgba(4, 17, 38, 0.94);
+  background: rgba(10, 10, 10, 0.94);
   padding: 0 1rem;
   backdrop-filter: blur(16px);
 }
@@ -1809,7 +1809,7 @@ html[data-theme="light"] .mobile-app-shell {
   margin: 0.9rem 1rem 0;
   border: 1px solid rgba(229, 197, 122, 0.32);
   border-radius: 1.2rem;
-  background: rgba(5, 17, 34, 0.64);
+  background: rgba(10, 10, 10, 0.64);
   padding: 1rem;
 }
 
@@ -1829,17 +1829,17 @@ html[data-theme="light"] .mobile-app-shell {
 .lxx-reader {
   padding: 0 1rem 6.5rem;
   background:
-    linear-gradient(180deg, rgba(4, 17, 38, 0.88), rgba(4, 17, 38, 0.98)),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.88), rgba(10, 10, 10, 0.98)),
     radial-gradient(circle at top right, rgba(92, 69, 35, 0.34), transparent 26rem),
-    #041126;
+    var(--color-bg);
 }
 
 .fathers-mobile {
   padding: 0 1rem 6.8rem;
   background:
-    linear-gradient(180deg, rgba(4, 17, 38, 0.92), rgba(4, 17, 38, 0.98)),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.92), rgba(10, 10, 10, 0.98)),
     radial-gradient(circle at top, rgba(28, 61, 106, 0.55), transparent 34rem),
-    #041126;
+    var(--color-bg);
 }
 
 .fathers-mobile__topbar {
@@ -2005,7 +2005,7 @@ html[data-theme="light"] .mobile-app-shell {
   gap: 0.6rem;
   margin: 0 -1rem;
   border-bottom: 1px solid rgba(229, 197, 122, 0.2);
-  background: rgba(4, 17, 38, 0.94);
+  background: rgba(10, 10, 10, 0.94);
   padding: 0 1rem;
   backdrop-filter: blur(16px);
 }
@@ -2058,7 +2058,7 @@ html[data-theme="light"] .mobile-app-shell {
   width: 100%;
   border: 1px solid rgba(229, 197, 122, 0.38);
   border-radius: 1rem;
-  background: rgba(5, 17, 34, 0.78);
+  background: rgba(10, 10, 10, 0.78);
   color: var(--color-ink);
   padding: 0.85rem 1rem;
   outline: none;
@@ -2079,7 +2079,7 @@ html[data-theme="light"] .mobile-app-shell {
   gap: 0.35rem;
   border: 1px solid rgba(229, 197, 122, 0.28);
   border-radius: 1rem;
-  background: rgba(4, 17, 38, 0.98);
+  background: rgba(10, 10, 10, 0.98);
   padding: 0.4rem;
 }
 
@@ -2232,7 +2232,7 @@ html[data-theme="light"] .mobile-app-shell {
   grid-template-columns: 3.5rem 1fr 3.5rem;
   align-items: center;
   border-bottom: 1px solid rgba(159, 176, 203, 0.18);
-  background: rgba(4, 17, 38, 0.92);
+  background: rgba(10, 10, 10, 0.92);
   padding: 0 0.85rem;
   backdrop-filter: blur(16px);
 }
@@ -2259,7 +2259,7 @@ html[data-theme="light"] .mobile-app-shell {
   grid-template-columns: 4.5rem 1fr 4.5rem;
   align-items: center;
   border-bottom: 1px solid rgba(159, 176, 203, 0.18);
-  background: rgba(5, 22, 49, 0.7);
+  background: var(--color-panel);
 }
 
 .kjv-mobile__chapterbar div {
@@ -2297,7 +2297,7 @@ html[data-theme="light"] .mobile-app-shell {
   min-width: 0;
   border: 1px solid rgba(229, 197, 122, 0.36);
   border-radius: 999px;
-  background: rgba(5, 17, 34, 0.76);
+  background: rgba(10, 10, 10, 0.76);
   color: var(--color-ink);
   padding: 0.75rem 0.9rem;
   font-size: 0.95rem;
@@ -2368,7 +2368,7 @@ html[data-theme="light"] .mobile-app-shell {
   overflow: hidden;
   border: 2px solid rgba(229, 197, 122, 0.78);
   border-radius: 1.3rem;
-  background: rgba(5, 22, 49, 0.76);
+  background: var(--color-panel);
   box-shadow: inset 0 0 24px rgba(35, 73, 121, 0.24);
 }
 
@@ -2507,7 +2507,7 @@ html[data-theme="light"] .mobile-app-shell {
   gap: 0.55rem;
   border: 1.5px solid rgba(229, 197, 122, 0.62);
   border-radius: 1rem;
-  background: rgba(5, 22, 49, 0.68);
+  background: var(--color-panel);
   padding: 0 0.75rem;
 }
 
@@ -2592,7 +2592,7 @@ html[data-theme="light"] .mobile-app-shell {
 .catholic-mobile-verse__note {
   border: 1px solid rgba(229, 197, 122, 0.36);
   border-radius: 1rem;
-  background: rgba(5, 17, 34, 0.56);
+  background: rgba(10, 10, 10, 0.56);
 }
 
 .catholic-mobile__study-chip {
@@ -2754,7 +2754,7 @@ html[data-theme="light"] .mobile-app-shell {
   overflow: hidden;
   border: 1.5px solid rgba(229, 197, 122, 0.64);
   border-radius: 1.25rem;
-  background: rgba(5, 22, 49, 0.72);
+  background: var(--color-panel);
   padding: 1rem;
 }
 
@@ -2918,8 +2918,8 @@ html[data-theme="light"] .mobile-app-shell {
 .donate-page {
   background:
     radial-gradient(circle at 50% 8%, rgba(229, 197, 122, 0.1), transparent 22rem),
-    linear-gradient(180deg, rgba(4, 17, 38, 0.96), rgba(4, 17, 38, 0.99)),
-    #041126;
+    linear-gradient(180deg, rgba(10, 10, 10, 0.96), rgba(10, 10, 10, 0.99)),
+    var(--color-bg);
 }
 
 .donate-body {
@@ -3190,7 +3190,7 @@ html[data-theme="light"] .mobile-app-shell {
   min-width: 0;
   border: 1px solid rgba(229, 197, 122, 0.28);
   border-radius: 999px;
-  background: rgba(4, 17, 38, 0.72);
+  background: rgba(10, 10, 10, 0.72);
   padding: 0.65rem 1rem;
   color: var(--color-ink);
   font-size: 0.9rem;
@@ -3319,7 +3319,7 @@ html[data-theme="light"] .mobile-app-shell {
   width: 100%;
   border: 1px solid rgba(229, 197, 122, 0.24);
   border-radius: 1rem;
-  background: rgba(4, 17, 38, 0.7);
+  background: rgba(10, 10, 10, 0.7);
   padding: 0.72rem 1rem;
   color: var(--color-ink);
   font-size: 0.9rem;

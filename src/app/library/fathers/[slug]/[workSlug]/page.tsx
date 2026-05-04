@@ -46,7 +46,7 @@ export default async function FatherWorkPage({
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-6xl px-6 pt-[100px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <div className="flex flex-wrap gap-3">
           <Link
             href="/library/fathers"
