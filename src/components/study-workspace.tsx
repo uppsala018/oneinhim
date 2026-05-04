@@ -546,7 +546,7 @@ export default function StudyWorkspace({
               ‹
             </button>
             <div>
-              <span>â–±</span>
+              <span>▷</span>
               <strong>
                 {chapterData?.book ?? selectedBook?.name ?? "Genesis"}{" "}
                 {chapterData?.chapter ?? selectedChapterNumber}

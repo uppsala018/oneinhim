@@ -47,7 +47,7 @@ export default function SupportPage() {
           href="mailto:hyu.ai.app@gmail.com"
           className="donate-button"
         >
-          âś‰ &nbsp;hyu.ai.app@gmail.com
+          ✉ &nbsp;hyu.ai.app@gmail.com
         </a>
 
         <div className="support-topics">

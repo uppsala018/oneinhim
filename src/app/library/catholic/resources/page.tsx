@@ -7,7 +7,7 @@ import SectionHeading from "@/components/section-heading";
 
 export const metadata: Metadata = buildMeta({
   title: "Catholic Study Resources",
-  description: "Catholic Bible study resources including the Roman Catechism, saints, sacraments, the Rosary, feast days, and Catholic theology â€” all free.",
+  description: "Catholic Bible study resources including the Roman Catechism, saints, sacraments, the Rosary, feast days, and Catholic theology — all free.",
   keywords: "Catholic bible study, Roman Catechism, Catholic saints, Catholic devotions, catechism of Trent",
   path: "/library/catholic/resources",
 });

@@ -57,7 +57,7 @@ const devotionPaths = [
   },
   {
     title: "Relics And Holy Memory",
-    icon: "â©",
+    icon: "☩",
     summary:
       "Catholic veneration of relics is tied to belief in the resurrection, the holiness of the body, and God's work through the saints.",
     study: ["Resurrection", "Martyr witness", "Sacred memory", "Intercession"],

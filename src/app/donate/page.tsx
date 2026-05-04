@@ -64,7 +64,7 @@ export default function DonatePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              â© &nbsp; Donate via PayPal
+              ☩ &nbsp; Donate via PayPal
             </a>
             <p className="donate-web-note">
               Every contribution, however small, helps keep the app

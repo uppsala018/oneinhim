@@ -261,7 +261,7 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
         ))}
         <button type="button" style={{ ...tabStyle(false), marginLeft: "auto" }}
           onClick={() => { if (tab === "overview") void loadOverview(); if (tab === "members") void loadMembers(); if (tab === "forum") void loadForum(); }}>
-          â†» Refresh
+          ↻ Refresh
         </button>
       </div>
 
@@ -306,7 +306,7 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
                 <div>
                   <p style={{ margin: 0, color: inkColor, fontSize: "0.88rem", fontWeight: 600 }}>{m.email}</p>
                   <p style={{ margin: "0.2rem 0 0", color: soft, fontSize: "0.72rem" }}>
-                    Joined {timeAgo(m.created_at)} Â· Last seen {timeAgo(m.last_seen_at)}
+                    Joined {timeAgo(m.created_at)} · Last seen {timeAgo(m.last_seen_at)}
                   </p>
                 </div>
                 <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", alignItems: "center" }}>

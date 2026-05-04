@@ -362,7 +362,7 @@ export default function PrayerForumBoard() {
           className="forum-tab forum-tab--refresh"
           aria-label="Refresh"
         >
-          â†»
+          ↻
         </button>
       </div>
 

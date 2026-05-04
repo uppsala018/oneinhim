@@ -5,8 +5,8 @@ import AppHeader from "@/components/app-header";
 import { historyLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
-  title: "Church History Timeline â€” 2000 Years of Christianity",
-  description: "A complete church history timeline â€” from the apostolic era through the Great Schism, Reformation, and Charismatic movement to the present day.",
+  title: "Church History Timeline — 2000 Years of Christianity",
+  description: "A complete church history timeline — from the apostolic era through the Great Schism, Reformation, and Charismatic movement to the present day.",
   keywords: "church history timeline, Christian history, early church history, reformation, Great Schism, church history",
   path: "/library/history",
 });

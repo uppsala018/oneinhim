@@ -8,7 +8,7 @@ import { protestantWorks } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
   title: "Protestant Confessions & Reformation Documents",
-  description: "Read the great Protestant confessions â€” the Augsburg Confession, Heidelberg Catechism, Westminster Confession, and other Reformation-era documents.",
+  description: "Read the great Protestant confessions — the Augsburg Confession, Heidelberg Catechism, Westminster Confession, and other Reformation-era documents.",
   keywords: "Protestant confessions, Augsburg Confession, Westminster Confession, Heidelberg Catechism, reformation documents",
   path: "/library/protestant/texts",
 });

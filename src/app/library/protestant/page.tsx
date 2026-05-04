@@ -12,7 +12,7 @@ import {
 
 export const metadata: Metadata = buildMeta({
   title: "Protestant Bible Study & Theology",
-  description: "Explore Protestant Christianity â€” the Reformation, Martin Luther, John Calvin, key confessions, Reformed theology, and Protestant scripture study.",
+  description: "Explore Protestant Christianity — the Reformation, Martin Luther, John Calvin, key confessions, Reformed theology, and Protestant scripture study.",
   keywords: "Protestant theology, reformation, Martin Luther, John Calvin, Protestant bible study, Reformed theology",
   path: "/library/protestant",
 });
@@ -59,7 +59,7 @@ export default function ProtestantPage() {
                       {figure.name}
                     </h3>
                     <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--color-soft)]">
-                      {figure.era} Â· {figure.tradition}
+                      {figure.era} · {figure.tradition}
                     </p>
                     <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
                       {figure.summary}
@@ -153,7 +153,7 @@ export default function ProtestantPage() {
                       {work.title}
                     </h3>
                     <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--color-soft)]">
-                      {work.tradition} Â· {work.yearLabel}
+                      {work.tradition} · {work.yearLabel}
                     </p>
                     <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
                       {work.summary}

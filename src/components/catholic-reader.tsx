@@ -335,7 +335,7 @@ export default function CatholicReader({
         </header>
 
         <div className="catholic-mobile__selector">
-          <span>â–±</span>
+          <span>▷</span>
           <select
             value={selectedBookCode}
             onChange={(event) => {
@@ -391,11 +391,11 @@ export default function CatholicReader({
                 onClick={() => toggleBookmark(selectedVerse.reference)}
                 aria-label="Bookmark"
               >
-                â™ˇ
+                ♡
               </button>
               <button type="button" aria-label="Share"
                 onClick={() => void shareVerse(selectedVerse.reference, selectedVerse.text)}>
-                â‡§
+                ⇧
               </button>
             </div>
           </section>
@@ -486,7 +486,7 @@ export default function CatholicReader({
 
         {featuredStudy ? (
           <section className="catholic-mobile-catechism">
-            <div className="catholic-mobile-catechism__icon">â©</div>
+            <div className="catholic-mobile-catechism__icon">☩</div>
             <div>
               <h2>Roman Catechism Reference</h2>
               <p>
@@ -501,9 +501,9 @@ export default function CatholicReader({
 
         <section className="catholic-mobile-crossrefs">
           <div className="catholic-mobile-crossrefs__title">
-            <span>â©</span>
+            <span>☩</span>
             <h2>Cross References</h2>
-            <span>â–±</span>
+            <span>▷</span>
           </div>
           <div>
             {visibleCrossReferences.slice(0, 5).map((reference) => (
@@ -512,7 +512,7 @@ export default function CatholicReader({
                 type="button"
                 className="catholic-mobile-crossrefs__row"
               >
-                <span>â€˘</span>
+                <span>‘</span>
                 <strong>{reference}</strong>
                 <em>
                   {reference === selectedVerse?.reference
@@ -526,7 +526,7 @@ export default function CatholicReader({
         </section>
 
         <label className="catholic-mobile__toggle">
-          <span>â–±</span>
+          <span>▷</span>
           <strong>Show Deuterocanonical Books</strong>
           <input
             type="checkbox"

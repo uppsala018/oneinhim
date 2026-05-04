@@ -7,8 +7,8 @@ import SectionHeading from "@/components/section-heading";
 import { fathersLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
-  title: "Church Fathers â€” Patristic Writings Library",
-  description: "Read the early church fathers â€” Ignatius of Antioch, Justin Martyr, Origen, Augustine, Chrysostom and more. Free patristic writings from every era.",
+  title: "Church Fathers — Patristic Writings Library",
+  description: "Read the early church fathers — Ignatius of Antioch, Justin Martyr, Origen, Augustine, Chrysostom and more. Free patristic writings from every era.",
   keywords: "church fathers, patristic writings, early church fathers, Augustine, Chrysostom, Ignatius of Antioch, christian history",
   path: "/library/fathers",
 });

@@ -222,7 +222,7 @@ export default function ProtestantFiguresPage() {
                 {figure.name}
               </h2>
               <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[var(--color-soft)]">
-                {figure.era} Â· {figure.region}
+                {figure.era} · {figure.region}
               </p>
               <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
                 {figure.summary}

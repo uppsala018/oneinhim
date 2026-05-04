@@ -7,8 +7,8 @@ import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SectionHeading from "@/components/section-heading";
 
 export const metadata: Metadata = buildMeta({
-  title: "The Protestant Reformation â€” History & Theology",
-  description: "A complete study of the Protestant Reformation â€” its causes, key figures, the break from Rome, and the theological legacy of Luther, Calvin and the Reformers.",
+  title: "The Protestant Reformation — History & Theology",
+  description: "A complete study of the Protestant Reformation — its causes, key figures, the break from Rome, and the theological legacy of Luther, Calvin and the Reformers.",
   keywords: "Protestant reformation, Martin Luther, reformation history, Protestant theology, church history, early church",
   path: "/library/protestant/reformation-era",
 });

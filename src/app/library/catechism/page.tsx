@@ -6,8 +6,8 @@ import SectionHeading from "@/components/section-heading";
 import { romanCatechismLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
-  title: "Roman Catechism â€” Catechism of the Council of Trent",
-  description: "Read the Roman Catechism (Catechism of Trent) online â€” the authoritative Catholic catechism from the Council of Trent, free and complete.",
+  title: "Roman Catechism — Catechism of the Council of Trent",
+  description: "Read the Roman Catechism (Catechism of Trent) online — the authoritative Catholic catechism from the Council of Trent, free and complete.",
   keywords: "Roman Catechism, Catechism of Trent, Catholic catechism, Council of Trent, Catholic doctrine, bible study",
   path: "/library/catechism",
 });

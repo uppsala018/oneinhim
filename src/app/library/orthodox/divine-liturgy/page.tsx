@@ -6,7 +6,7 @@ import { orthodoxDivineLiturgyGuide } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
   title: "The Divine Liturgy of St. John Chrysostom",
-  description: "Study the Orthodox Divine Liturgy of St. John Chrysostom â€” the central act of worship in Eastern Orthodox Christianity with full text and commentary.",
+  description: "Study the Orthodox Divine Liturgy of St. John Chrysostom — the central act of worship in Eastern Orthodox Christianity with full text and commentary.",
   keywords: "Divine Liturgy, Orthodox liturgy, St John Chrysostom, Eastern Orthodox worship, church history",
   path: "/library/orthodox/divine-liturgy",
 });

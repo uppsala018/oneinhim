@@ -6,8 +6,8 @@ import Link from "next/link";
 import { orientalOrthodoxLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
-  title: "Oriental Orthodox â€” Coptic, Ethiopian & Syriac",
-  description: "Study Oriental Orthodox Christianity â€” Coptic, Ethiopian, Armenian, and Syriac traditions, texts, and theology from the ancient pre-Chalcedonian churches.",
+  title: "Oriental Orthodox — Coptic, Ethiopian & Syriac",
+  description: "Study Oriental Orthodox Christianity — Coptic, Ethiopian, Armenian, and Syriac traditions, texts, and theology from the ancient pre-Chalcedonian churches.",
   keywords: "Oriental Orthodox, Coptic church, Ethiopian Orthodox, Syriac Christianity, Armenian church, early church",
   path: "/library/oriental-orthodox",
 });
