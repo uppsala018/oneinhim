@@ -28,8 +28,8 @@ export default function ProtestantPage() {
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Protestant" }]} />
         <h1 className="sr-only">Protestant Bible Study &amp; Theology</h1>
         <SectionHeading
-          title="A Protestant study path now sits alongside the Catholic and Orthodox tracks."
-          body="This hub brings together the KJV reader, Strong's tools, Reformation history, and selected fathers and theologians that remained influential in Protestant reading traditions."
+          title="Protestant Scripture study, reformers, and theology."
+          body="Start with the KJV and Strong's concordance, follow the Reformation through Luther, Calvin, and Wesley, and read the major Protestant confessions — Augsburg, Heidelberg, Westminster, and the Thirty-Nine Articles. Shared early church fathers are included where they shaped Protestant reading and doctrine."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.52fr_0.48fr]">

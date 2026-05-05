@@ -251,8 +251,8 @@ export default function OrthodoxPage() {
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Orthodox" }]} />
         <h1 className="sr-only">Orthodox Bible Study &amp; Theology</h1>
         <SectionHeading
-          title="An Orthodox track now sits beside the Catholic and Protestant paths."
-          body="This hub groups patristic texts, Orthodox-oriented catechetical material, and external resources for continued study. Shared fathers remain shared, but they are now easy to approach through an Orthodox reading path."
+          title="Orthodox Scripture, liturgy, theology, and the Fathers."
+          body="Study the Septuagint alongside the Greek Fathers, enter the Divine Liturgy through annotated study guides, and follow Orthodox saints from the apostolic era to the present. Chrysostom, Basil, Gregory of Nazianzus, and Cyril of Jerusalem are here in full — read within the Eastern theological tradition."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.58fr_0.42fr]">

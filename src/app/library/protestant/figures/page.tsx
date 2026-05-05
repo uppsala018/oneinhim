@@ -213,7 +213,7 @@ export default function ProtestantFiguresPage() {
             <Link
               key={figure.slug}
               href={`/library/protestant/figures/${figure.slug}`}
-              className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 transition hover:bg-[rgba(8,26,57,0.88)]"
+              className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 transition hover:bg-[rgba(16,16,16,0.88)]"
             >
               <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">
                 {figure.tradition}

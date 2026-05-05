@@ -122,7 +122,11 @@ export default function LibraryPage() {
             Study Library
           </h1>
           <p className="mt-5 text-lg leading-8 text-[var(--color-muted)]">
-            Scripture readers, church fathers, councils, history, and tradition-specific study hubs — all in one place.
+            Free Bible study covering the King James Version with Strong&apos;s concordance,
+            the Douay-Rheims Catholic Bible and RSV-CE, the Brenton Septuagint, early Church Fathers
+            in full text, all seven Ecumenical Councils, the Roman Catechism of Trent, 2000 years of
+            Church History, and dedicated study tracks for Catholic, Orthodox, Oriental Orthodox,
+            and Protestant traditions.
           </p>
         </div>
 
@@ -131,7 +135,7 @@ export default function LibraryPage() {
             <Link
               key={module.href}
               href={module.href}
-              className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 transition hover:bg-[rgba(8,26,57,0.88)]"
+              className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 transition hover:bg-[rgba(16,16,16,0.88)]"
             >
               <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--color-highlight)]">
                 {module.title}

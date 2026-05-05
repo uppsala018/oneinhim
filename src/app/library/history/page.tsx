@@ -66,7 +66,7 @@ export default function HistoryHubPage() {
             <Link
               key={card.href}
               href={card.href}
-              className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 transition hover:bg-[rgba(8,26,57,0.88)] md:p-6"
+              className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 transition hover:bg-[rgba(16,16,16,0.88)] md:p-6"
             >
               <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
                 Church History

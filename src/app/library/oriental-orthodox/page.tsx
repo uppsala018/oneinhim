@@ -42,8 +42,8 @@ export default function OrientalOrthodoxPage() {
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Oriental Orthodox" }]} />
         <h1 className="sr-only">Oriental Orthodox Christianity — Texts &amp; Study</h1>
         <SectionHeading
-          title="A dedicated Oriental Orthodox page is now part of the Orthodox study side."
-          body="This section is the base for expanding beyond Greek and Byzantine material into the Oriental Orthodox family, giving that tradition a clear place to grow inside the app."
+          title="Coptic, Ethiopian, Armenian, and Syriac Christian texts."
+          body="The Oriental Orthodox churches — the Coptic Church of Alexandria, the Ethiopian Orthodox Tewahedo Church, the Armenian Apostolic Church, and the Syriac Orthodox Church — are among the oldest Christian communities in the world. This section collects their primary texts, theological traditions, and distinct liturgical heritage."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.56fr_0.44fr]">

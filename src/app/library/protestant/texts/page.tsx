@@ -244,7 +244,7 @@ export default function ProtestantTextsPage() {
               <Link
                 key={work.slug}
                 href={`/library/protestant/texts/${work.slug}`}
-                className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5 transition hover:bg-[rgba(8,26,57,0.88)]"
+                className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5 transition hover:bg-[rgba(16,16,16,0.88)]"
               >
                 <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">
                   {work.category}
