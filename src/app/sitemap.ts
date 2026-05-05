@@ -23,7 +23,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/", 1.0, "weekly"),
     url("/library", 0.9, "weekly"),
 
-    // Scripture
+    // Bibles hub
+    url("/library/bibles", 0.9, "weekly"),
+
+    // Scripture readers
     url("/library/kjv", 0.9),
     url("/library/catholic", 0.8),
     url("/library/orthodox/lxx", 0.8),

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import AuthControls from "@/components/auth-controls";
 
 const navLinks = [
-  { label: "Scripture", href: "/library/kjv" },
+  { label: "Bibles", href: "/library/bibles" },
   { label: "Fathers", href: "/library/fathers" },
   { label: "Councils", href: "/library/councils" },
   { label: "Traditions", href: "/library" },
