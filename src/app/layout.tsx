@@ -13,6 +13,12 @@ const SITE_SCHEMA = {
       "@id": "https://www.oneinhimbiblestudy.com/#organization",
       name: "One In Him Bible Study",
       url: "https://www.oneinhimbiblestudy.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.oneinhimbiblestudy.com/assets/art/icon-512.png",
+        width: 512,
+        height: 512,
+      },
       description:
         "Free Bible study platform covering KJV + Strong's concordance, Church Fathers, Ecumenical Councils, Roman Catechism, and 2000 years of Christian history.",
     },
@@ -49,6 +55,7 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.oneinhimbiblestudy.com"),
   title: {
     default: "One In Him Bible Study | KJV, Church Fathers & Church History",
     template: "%s | One In Him Bible Study",
@@ -70,6 +77,30 @@ export const metadata: Metadata = {
   icons: {
     icon: "/assets/art/icon-192.png",
     apple: "/assets/art/icon-192.png",
+  },
+  openGraph: {
+    title: "One In Him Bible Study | KJV, Church Fathers & Church History",
+    description:
+      "Free Bible study with KJV + Strong's concordance, Church Fathers, Ecumenical Councils, Roman Catechism, and complete Church History.",
+    url: "https://www.oneinhimbiblestudy.com",
+    siteName: "One In Him Bible Study",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/assets/art/hero-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "One In Him Bible Study — KJV, Church Fathers & Church History",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "One In Him Bible Study | KJV, Church Fathers & Church History",
+    description:
+      "Free Bible study with KJV + Strong's concordance, Church Fathers, Ecumenical Councils, Roman Catechism, and complete Church History.",
+    images: ["/assets/art/hero-banner.png"],
   },
 };
 

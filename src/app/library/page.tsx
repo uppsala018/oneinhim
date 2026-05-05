@@ -4,6 +4,7 @@ import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
 
 export const metadata: Metadata = buildMeta({
   title: "Scripture & Study Library",
@@ -111,9 +112,35 @@ const modules = [
   },
 ];
 
+const LIBRARY_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://www.oneinhimbiblestudy.com/library/#page",
+  url: "https://www.oneinhimbiblestudy.com/library",
+  name: "Scripture & Study Library — One In Him Bible Study",
+  description:
+    "Free Bible study library covering KJV + Strong's, Church Fathers, Ecumenical Councils, Roman Catechism, and Christian tradition study hubs.",
+  isPartOf: { "@id": "https://www.oneinhimbiblestudy.com/#website" },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "KJV Bible + Strong's Concordance", url: "https://www.oneinhimbiblestudy.com/library/kjv" },
+      { "@type": "ListItem", position: 2, name: "Church Fathers", url: "https://www.oneinhimbiblestudy.com/library/fathers" },
+      { "@type": "ListItem", position: 3, name: "Ecumenical Councils", url: "https://www.oneinhimbiblestudy.com/library/councils" },
+      { "@type": "ListItem", position: 4, name: "Roman Catechism", url: "https://www.oneinhimbiblestudy.com/library/catechism" },
+      { "@type": "ListItem", position: 5, name: "Catholic Bible — Douay-Rheims", url: "https://www.oneinhimbiblestudy.com/library/catholic" },
+      { "@type": "ListItem", position: 6, name: "Orthodox Study", url: "https://www.oneinhimbiblestudy.com/library/orthodox" },
+      { "@type": "ListItem", position: 7, name: "Protestant Study", url: "https://www.oneinhimbiblestudy.com/library/protestant" },
+      { "@type": "ListItem", position: 8, name: "Oriental Orthodox", url: "https://www.oneinhimbiblestudy.com/library/oriental-orthodox" },
+      { "@type": "ListItem", position: 9, name: "Church History Timeline", url: "https://www.oneinhimbiblestudy.com/library/history" },
+    ],
+  },
+};
+
 export default function LibraryPage() {
   return (
     <>
+      <JsonLd data={LIBRARY_SCHEMA} />
       <AppHeader />
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library" }]} />

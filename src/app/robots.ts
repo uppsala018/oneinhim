@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/library/settings", "/api/"],
+        disallow: ["/library/settings", "/library/notes", "/api/"],
       },
     ],
     sitemap: "https://www.oneinhimbiblestudy.com/sitemap.xml",

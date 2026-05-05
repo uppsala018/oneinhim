@@ -59,6 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // History
     url("/library/history", 0.9),
+    url("/library/history/timeline", 0.8),
     ...historyLibrary.map((h) => url(`/library/history/${h.slug}`, 0.7)),
 
     // Protestant
