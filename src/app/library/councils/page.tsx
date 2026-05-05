@@ -67,12 +67,6 @@ export default function CouncilsPage() {
     <JsonLd data={breadcrumbSchema} />
     <JsonLd data={councilsFaqSchema} />
     <main className="councils-mobile mobile-app-shell">
-      <div className="sr-only">
-        <h2>Common questions about the Ecumenical Councils</h2>
-        <p><strong>What are the Ecumenical Councils?</strong> Ecumenical Councils are formal assemblies of bishops convened to define doctrine and address heresies. Seven are recognized by both Catholic and Orthodox churches.</p>
-        <p><strong>What did the Council of Nicaea decide?</strong> Nicaea (325 AD) defined the full divinity of Christ against Arianism and produced the Nicene Creed, declaring the Son to be of the same substance as the Father.</p>
-        <p><strong>Which traditions accept the councils?</strong> All seven are accepted by the Catholic and Eastern Orthodox churches. The Oriental Orthodox accept the first three. Most Protestants accept at least the first four on Trinitarian doctrine.</p>
-      </div>
       <header className="mobile-section-header">
         <Link href="/" aria-label="Back home" className="mobile-section-header__back">
           ‹
@@ -82,6 +76,26 @@ export default function CouncilsPage() {
           <span aria-hidden="true">◆ ─ ✦ ─ ◆</span>
         </div>
       </header>
+
+      <section className="px-4 pt-6 pb-5 border-b border-[var(--color-border)]">
+        <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">Church History</p>
+        <h2 className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
+          The Seven Ecumenical Councils
+        </h2>
+        <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+          From 325 to 787 AD, the Church gathered seven times in formal council to define the
+          faith against serious theological errors. These seven councils — Nicaea, Constantinople,
+          Ephesus, Chalcedon, and three more — settled the Church&apos;s core teaching on the
+          Trinity and the person of Christ. Every question they addressed arose from a real
+          crisis: bishops who disagreed, emperors who took sides, and congregations whose
+          worship and salvation hung on the answer. Catholic and Eastern Orthodox churches
+          accept all seven as fully ecumenical. Most Protestant traditions accept at least the
+          first four. The Oriental Orthodox churches — Coptic, Armenian, Ethiopian, Syriac —
+          accept the first three and consider Chalcedon (451) a departure from Cyril&apos;s
+          theology. Each council page gives the historical background, the theological
+          controversy, key figures, and what was decided.
+        </p>
+      </section>
 
       <section className="councils-timeline" aria-label="Seven ecumenical councils">
         {councilsLibrary.map((council) => (

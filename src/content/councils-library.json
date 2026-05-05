@@ -5,83 +5,110 @@
     "title": "First Council of Nicaea",
     "shortTitle": "Nicaea I",
     "year": "325",
-    "location": "Nicaea",
-    "calledBy": "Emperor Constantine",
-    "attendance": "Traditionally remembered as 318 bishops",
-    "issue": "Arianism and the full divinity of the Son",
-    "summary": "The first ecumenical council answered the claim that the Son was a creature and confessed that the Son is truly God from God.",
-    "outcome": "Produced the Nicene Creed's confession of the Son as begotten, not made, and of one essence with the Father.",
-    "whyItMatters": "Nicaea protects the gospel itself: if Christ is not truly God, then worship, salvation, baptism, and prayer lose their Christian center.",
+    "location": "Nicaea, Bithynia (modern Turkey)",
+    "calledBy": "Emperor Constantine I",
+    "attendance": "Traditionally remembered as 318 bishops; historians estimate 200–300",
+    "issue": "Arianism — whether the Son of God is truly divine or the highest of created beings",
+    "summary": "The First Council of Nicaea (325 AD) was the Church's first formal gathering of bishops from across the known world, convened by Emperor Constantine just twelve years after Christianity was legalized. It met to answer the teaching of Arius of Alexandria, who argued that the Son of God was made by the Father before time and was therefore not co-eternal with him. The council decisively rejected Arianism and produced the original Nicene Creed, confessing the Son as homoousios — of one substance — with the Father. It also ruled on the date of Easter, resolved the Meletian schism in Egypt, and set norms for church order.",
+    "outcome": "The council produced the Nicene Creed confessing the Son as 'true God from true God, begotten not made, of one substance with the Father.' It formally condemned Arius and his supporters and exiled them. It also established the method for calculating Easter based on the spring equinox, refusing to follow the Jewish calendar directly, and addressed the Meletian schism in Egypt caused by bishops who had lapsed under persecution.",
+    "whyItMatters": "Nicaea is the foundation of all subsequent Christian orthodoxy. If the Son is a creature — however exalted — then Christian worship is misdirected, baptism is into something less than God, and salvation is not genuinely divine in origin. The council's word homoousios ('one substance') became the test of Trinitarian faith for every subsequent generation. The controversy did not end with the council: Arianism spread widely, especially among Germanic peoples, and Athanasius of Alexandria was exiled five times defending Nicaea. The Nicene faith was only fully consolidated at the Council of Constantinople (381). Nicaea remains the doctrinal reference point for Catholic, Orthodox, and classical Protestant Christianity.",
     "teachingText": {
-      "title": "Core Nicene confession",
+      "title": "What Nicaea confessed and why it used the word it did",
       "paragraphs": [
-        "The council confessed Jesus Christ as the Son of God, begotten from the Father, true God from true God, begotten not made, and of one essence with the Father.",
-        "It rejected the claim that there was a time when the Son was not, or that the Son belongs to the order of created things."
+        "Arius was a presbyter in Alexandria under Bishop Alexander. Around 318 AD he began teaching that the Son, though supremely exalted above all creation, was still a creature — brought into being by the Father before all ages but not co-eternal with him. His famous slogan was: 'There was a time when the Son was not.' The Son, for Arius, was the Father's first and greatest act of creation, the instrument through whom everything else was made.",
+        "Alexander of Alexandria condemned Arius at a regional council around 320 AD. The controversy spread rapidly as Arius found allies, especially Eusebius of Nicomedia (a well-connected bishop close to the imperial court) and many clergy trained in the theological school of Antioch. By the time Constantine convened Nicaea, the dispute had engulfed the eastern Church.",
+        "The council's decisive word was homoousios — 'of one substance' or 'of one being' with the Father. This Greek term was controversial because it does not appear in Scripture and had been used awkwardly by earlier theologians. But Athanasius (present as a young deacon assisting Alexander) and the council's framers chose it precisely because it could not be reinterpreted to allow Arianism. Homoiousios ('of similar substance') — proposed by some as a compromise — was rejected as too easily meaning 'like God' rather than 'truly God.'",
+        "The creed produced at Nicaea confessed Christ as 'true God from true God, begotten not made, of one substance with the Father, through whom all things were made.' The phrase 'begotten not made' draws a sharp distinction: the Son's origin from the Father is not the same kind of origination as creation. He does not come into existence as creatures do; he is eternally from the Father in a way proper to divinity alone.",
+        "The council also added anathemas at the end of the creed, explicitly condemning the Arian positions: 'those who say there was when he was not, and that he was not before he came to be, and that he came to be from nothing, or who say the Son of God is of another hypostasis or substance, or is subject to change or alteration.' This was unprecedented — a creed with built-in heresy markers.",
+        "Beyond doctrine, Nicaea established important church order: it set the precedence of major sees (Rome, Alexandria, Antioch), regulated readmission of the lapsed, addressed the Meletian schism, and ruled that Easter should be celebrated on the same Sunday across the Church, independent of the Jewish Passover calendar."
       ]
     },
     "controversy": {
-      "title": "The Arian controversy",
+      "title": "The Arian crisis: historical background and political entanglement",
       "paragraphs": [
-        "Arius wanted to preserve the uniqueness of the Father by saying the Son was exalted above creation but still made. The council judged that this destroyed Christian worship and salvation.",
-        "The central question was not abstract philosophy. Christians prayed to Christ, were baptized into his name, and trusted him for salvation. Nicaea insisted that this only makes sense if the Son is truly God."
+        "Arianism was not simply a mistake by an obscure presbyter. It addressed a genuine theological question: How can the Son be genuinely divine if there is only one God? Arius's answer — the Son is a supremely exalted creature — seemed to protect monotheism. His position had appeal among people trained in Middle Platonic philosophy, where the supreme divine principle was so transcendent that it could not directly touch the material world. A subordinate mediating figure solved this problem neatly.",
+        "Alexander of Alexandria's counter-argument was that Arius had destroyed salvation. Christians are baptized into the name of the Son. They pray to Christ. They trust his death for forgiveness and his resurrection for eternal life. If the Son is not truly God — the same God as the Father — then Christian worship is idolatry and Christian salvation is delusion. The stakes were not philosophical but soteriological: what kind of God saves us?",
+        "Constantine became involved for primarily political reasons. He had just unified the Roman Empire after years of civil war. A divided Church was a problem for imperial unity. He sent his theological adviser Hosius of Cordoba to mediate, but the dispute proved too deep for letters. Constantine then called a council — the first ever convened by an emperor — at his own expense, paying bishops' travel and accommodation.",
+        "At the council itself, the debate was fierce. Arius's allies, led by Eusebius of Nicomedia, initially proposed a creed using only biblical language — but it was rejected by the council majority as allowing Arian reinterpretation. The council then adopted homoousios over the objections of those who feared it implied Sabellianism (collapsing Father and Son into one being). Eusebius of Caesarea, the great church historian, tried to find a middle path but eventually signed the final creed under imperial pressure.",
+        "The aftermath was turbulent. Constantine eventually readmitted Arius and turned against Athanasius, who was first exiled in 335. Over the next fifty years, the Arian position enjoyed imperial support under emperors Constantius II and Valens. Athanasius's phrase captures the era: Athanasius contra mundum — Athanasius against the world. The Nicene faith survived not through imperial favor but through the patient theological work of Athanasius and, later, the Cappadocian Fathers (Basil, Gregory of Nazianzus, Gregory of Nyssa).",
+        "The council's full vindication came at Constantinople in 381. The phrase often attributed to the period — that the great churches recited the Nicene Creed each Sunday — actually developed gradually over the following century. But by the end of the 4th century, Nicaea had become the non-negotiable doctrinal foundation of orthodox Christianity across Catholic and Eastern churches."
       ]
     },
     "reception": [
       {
         "tradition": "Catholic",
-        "note": "Received as the first ecumenical council and a foundation for Trinitarian doctrine, creed, worship, and later catechesis."
+        "note": "Received as the first ecumenical council and the definitive foundation of Trinitarian doctrine. The Nicene-Constantinopolitan Creed (combining Nicaea with the 381 expansion) is recited at every Sunday Mass. Thomas Aquinas, the medieval councils, and Vatican I all treat Nicaea's homoousios as permanently binding doctrine."
       },
       {
-        "tradition": "Orthodox",
-        "note": "Received as the decisive conciliar confession of the Son's full divinity, defended especially through Athanasius and the Cappadocians."
+        "tradition": "Eastern Orthodox",
+        "note": "Received as the 'First and Holy Ecumenical Council' and celebrated liturgically. Nicaea is understood as the Church's victory over the first great heresy. Athanasius of Alexandria, who defended Nicaea through five exiles, is called 'the Great' and 'the Father of Orthodoxy.' The Nicene Creed without the Filioque remains central to Orthodox worship."
       },
       {
         "tradition": "Protestant",
-        "note": "Classical Protestant traditions generally receive Nicaea as a faithful summary of biblical Trinitarian doctrine."
+        "note": "Classical Protestant confessions (Lutheran, Reformed, Anglican) explicitly affirm Nicaea. The Augsburg Confession, Westminster Confession, and Thirty-Nine Articles treat homoousios as faithful biblical teaching. Calvin devoted significant energy in his Institutes to defending Nicene Trinitarianism against both Catholic and radical Protestant objections."
       },
       {
         "tradition": "Oriental Orthodox",
-        "note": "Received as fully ecumenical and foundational for the shared pre-Chalcedonian faith."
+        "note": "Received as the first fully ecumenical council and foundational for Christological faith. The Coptic, Armenian, Ethiopian, Syriac, and Malankara churches all affirm the homoousios and the Nicene Creed as the essential confession of Christ's divinity."
       }
     ],
     "keyTerms": [
       {
         "term": "Arianism",
-        "definition": "The teaching associated with Arius that the Son was made and therefore not eternal God in the same sense as the Father."
+        "definition": "The teaching of Arius that the Son was created by the Father before all ages — supremely exalted above all creatures but not co-eternal with the Father. The council condemned it as incompatible with Christian worship and salvation."
       },
       {
         "term": "Homoousios",
-        "definition": "Of one essence; the word used to confess that the Son shares the same divine being as the Father."
+        "definition": "Greek: 'of one substance' or 'of one being.' The key word of the Nicene Creed, confessing that the Son shares the same divine being as the Father — not merely similar being (homoiousios), but the same."
+      },
+      {
+        "term": "Homoiousios",
+        "definition": "Greek: 'of similar substance.' The semi-Arian compromise position rejected at Nicaea. The difference of one Greek letter (iota) from homoousios represents an enormous theological gulf."
       },
       {
         "term": "Begotten, not made",
-        "definition": "The Son is eternally from the Father, not a creature brought into existence."
+        "definition": "The Nicene phrase distinguishing the Son's eternal origin from the Father from the creation of all other beings. The Son is not created; his 'coming from' the Father is the eternal generation proper to the divine life, not the contingent act of creation."
+      },
+      {
+        "term": "Eusebius of Nicomedia",
+        "definition": "The leading Arian bishop at the Council of Nicaea, who initially refused to sign the creed and was exiled. He later became influential with Emperor Constantine and was instrumental in the rehabilitation of Arius and the exiling of Athanasius."
+      },
+      {
+        "term": "Athanasian Controversy",
+        "definition": "The decades-long conflict after Nicaea between Nicene defenders (led by Athanasius) and various Arian and semi-Arian parties supported by different emperors. Athanasius was exiled five times but returned each time and never abandoned the homoousios."
+      },
+      {
+        "term": "Soteriological argument",
+        "definition": "The argument from salvation: because Christians trust the Son for salvation and pray to him as God, he must be truly God. If the Son is a creature, Christian worship is misdirected and salvation is not genuinely divine."
       }
     ],
     "studyPath": [
       {
-        "title": "The crisis",
-        "detail": "The Church had to answer whether Jesus Christ is truly divine or the greatest of created beings."
+        "title": "Understand what Arius actually taught",
+        "detail": "Arius was not denying that Jesus was special. He believed the Son was the highest being God created, the instrument of all further creation, worthy of great honor — just not co-eternal, co-equal God. Understanding this makes the council's answer sharper."
       },
       {
-        "title": "The confession",
-        "detail": "The council used precise language to guard biblical worship of the Son."
+        "title": "Grasp the soteriological stakes",
+        "detail": "The council's argument was not philosophical but practical: if the Son is not truly God, then the salvation Christians receive through him and the God they worship in him are both fraudulent. The faith of every baptized Christian was at stake."
       },
       {
-        "title": "The reception",
-        "detail": "The council did not end the controversy instantly; Athanasius and later fathers defended its meaning."
+        "title": "Learn the word homoousios and why it was necessary",
+        "detail": "Biblical language alone could be reinterpreted by Arians. The council chose homoousios precisely because it drew a line that could not be redrawn. Understanding the debate over this single Greek word unlocks the entire Nicene controversy."
+      },
+      {
+        "title": "Follow the post-Nicaea conflict",
+        "detail": "Nicaea did not settle the dispute. Arianism flourished for fifty years with imperial support. Reading Athanasius's writings (especially On the Incarnation and Against the Arians) shows how the Nicene faith was defended and what was at stake."
+      },
+      {
+        "title": "Read the Cappadocians",
+        "detail": "Basil the Great, Gregory of Nazianzus, and Gregory of Nyssa completed the Nicene theological synthesis in the generation before Constantinople I (381). Their work on the Trinity — one substance, three persons — became the permanent grammar of Trinitarian theology."
       }
     ],
-    "scriptureConnections": ["John 1:1-18", "John 20:28", "Colossians 1:15-20", "Hebrews 1:1-4"],
+    "scriptureConnections": ["John 1:1-18", "John 10:30", "John 20:28", "Colossians 1:15-20", "Hebrews 1:1-4", "Philippians 2:5-11"],
     "relatedLinks": [
-      {
-        "label": "Athanasius",
-        "href": "/library/fathers/athanasius"
-      },
-      {
-        "label": "Council history topic",
-        "href": "/library/history/nicaea"
-      }
+      { "label": "Athanasius — Church Father", "href": "/library/fathers/athanasius" },
+      { "label": "Nicaea history page", "href": "/library/history/nicaea" },
+      { "label": "Council of Constantinople (381)", "href": "/library/councils/constantinople-381" }
     ]
   },
   {
@@ -90,83 +117,109 @@
     "title": "First Council of Constantinople",
     "shortTitle": "Constantinople I",
     "year": "381",
-    "location": "Constantinople",
+    "location": "Constantinople (modern Istanbul, Turkey)",
     "calledBy": "Emperor Theodosius I",
-    "attendance": "About 150 bishops",
-    "issue": "The Holy Spirit, Nicene faith, and lingering Arian controversy",
-    "summary": "Constantinople reaffirmed Nicaea and clarified the Church's confession of the Holy Spirit as Lord and giver of life.",
-    "outcome": "Expanded the creed's language about the Holy Spirit and strengthened Nicene Trinitarian doctrine.",
-    "whyItMatters": "This council completes the classic Trinitarian confession used in worship: Father, Son, and Holy Spirit are glorified together.",
+    "attendance": "About 150 bishops, predominantly from the East",
+    "issue": "The divinity of the Holy Spirit; Apollinarianism; completion of the Nicene Creed",
+    "summary": "The First Council of Constantinople met fifty-six years after Nicaea to complete what Nicaea had begun. The Nicene Creed's article on the Holy Spirit was minimal; decades of controversy had produced new heresies denying the Spirit's full divinity and questioning whether Christ possessed a complete human nature. Emperor Theodosius I — a convinced Nicene orthodox Christian who had just made Nicene Christianity the official religion of the Empire — convened the council. It expanded the creed's third article, confessed the Spirit as Lord and giver of life, and condemned several heresies. The Nicene-Constantinopolitan Creed produced here is the text used in Christian worship to this day.",
+    "outcome": "The council expanded the Nicene Creed to include the full third article: 'And in the Holy Spirit, the Lord and giver of life, who proceeds from the Father, who with the Father and the Son is worshiped and glorified, who has spoken through the prophets.' It condemned Arianism, Apollinarianism, Macedonianism (denial of the Spirit's divinity), and Eunomianism (a radical Arianism). Canon 3 elevated the bishop of Constantinople to second place of honor after Rome — a decision that later generated significant conflict.",
+    "whyItMatters": "Constantinople I completes the classic Trinitarian confession. It answers a question Nicaea had left open: is the Holy Spirit truly divine, co-equal with the Father and the Son? The answer matters because Christian life is lived in the Spirit — prayer, baptism, new birth, sanctification all involve the Spirit's direct divine work. If the Spirit is a creature or an impersonal force, then the God Christians encounter in prayer and sacrament is not the true God. The creed produced here — still called the 'Nicene Creed' in most churches — is the only creed confessed by virtually every branch of Christianity: Catholic, Orthodox, Protestant, Anglican.",
     "teachingText": {
-      "title": "The Spirit confessed as Lord",
+      "title": "Completing the Trinitarian confession: Father, Son, and Holy Spirit",
       "paragraphs": [
-        "The council confessed the Holy Spirit as the Lord and giver of life, who proceeds from the Father, and who with the Father and the Son is worshiped and glorified.",
-        "It also reaffirmed the Church's faith in one holy catholic and apostolic Church, one baptism for the forgiveness of sins, the resurrection of the dead, and the life of the world to come."
+        "By 381 AD, the Nicene faith was threatened from two new directions. First, the Pneumatomachians (literally 'Spirit-fighters'), also called Macedonians after their leading figure, accepted the Son's full divinity but denied the same status to the Holy Spirit. They argued the Spirit was a creature — perhaps the highest, but not co-equal God. Second, Apollinarius of Laodicea, an ardent defender of Nicaea, had pushed Christological unity so far that he taught Christ had no human mind or rational soul — the divine Logos substituted for these. This seemed to solve the problem of how Christ could be one person, but it denied that he was fully human.",
+        "The council's primary theological work came through the Cappadocian Fathers, especially Gregory of Nazianzus, who was appointed bishop of Constantinople and presided over the council's early sessions. Gregory's 'Theological Orations,' preached in Constantinople the year before the council, provided the theological framework. He argued that the Spirit's full divinity was implied by the Spirit's role in Scripture and Christian experience: the Spirit gives life, sanctifies, and is the agent of deification. These are divine works that no creature can perform.",
+        "The critical phrase about the Spirit — 'the Lord and giver of life, who proceeds from the Father' — carefully distinguished the Spirit's origin from the Father (procession) from the Son's origin (generation), while asserting full divine status. The Spirit is not a second Son but is equally Lord and equally God. The phrase 'who with the Father and the Son is worshiped and glorified' was particularly significant: it meant the Church's doxology (glory be to the Father, and to the Son, and to the Holy Spirit) was a confession of Trinitarian equality, not merely of sequential honor.",
+        "Against Apollinarianism, the council invoked Gregory of Nazianzus's maxim: 'What has not been assumed has not been healed.' If Christ did not assume a human rational soul and mind, then human minds are not redeemed. The full humanity of Christ — including his rational soul — is required for salvation to reach the whole of humanity. The council condemned Apollinarianism as destroying Christ's saving work.",
+        "Gregory of Nazianzus resigned the presidency of the council midway through, citing conflict with the Egyptian and Macedonian delegations who had arrived late. He was replaced by Nectarius, a layman and senator, who was rapidly ordained bishop of Constantinople — an unusual move that shows how politically charged the council was. Gregory's farewell sermon, the 'Valedictory Oration,' is one of the finest pieces of early Christian rhetoric.",
+        "Canon 3 of the council granted the bishop of Constantinople the second place of honor after the bishop of Rome 'because Constantinople is new Rome.' This canonical precedence, based on political status, conflicted with Rome's claim to primacy based on apostolic foundation (Peter and Paul). It became a major source of tension between East and West in subsequent centuries and contributed to the Great Schism of 1054."
       ]
     },
     "controversy": {
-      "title": "The Holy Spirit controversy",
+      "title": "The Holy Spirit controversy: who is the Paraclete?",
       "paragraphs": [
-        "Some accepted strong language about the Son while resisting the full divinity of the Holy Spirit. The council answered that the Spirit is not a creature or servant power.",
-        "The Church's worship was central to the argument: the Spirit is glorified together with Father and Son, and Christian life depends on the Spirit's divine work."
+        "The Pneumatomachian position had a certain theological logic. After the brutal Arian controversy, some theologians were cautious about strong ontological language. They could accept that the Son was homoousios with the Father because Scripture spoke so directly of the Son's divine identity. But the Spirit seemed different — more like a divine power or activity than a distinct divine person. Calling the Spirit 'God' and 'Lord' coequal with Father and Son felt to them like innovation without scriptural basis.",
+        "Basil the Great's treatise On the Holy Spirit (written around 375) was the decisive pre-council theological response. Basil refused to say explicitly that the Spirit is 'God' (to avoid inflammatory language), but argued exhaustively from Scripture and liturgy that the Spirit receives divine honor, performs divine works, and is glorified with the Father and Son. The logic was: the Spirit is named alongside Father and Son in baptism (Matt 28:19), in the apostolic blessing (2 Cor 13:14), and in the divine indwelling — if the Spirit is a creature, all of these are misdirected.",
+        "The political context was also decisive. Emperor Theodosius I came from the western, thoroughly Nicene tradition of Spain. In 380 he issued the Edict of Thessalonica declaring Nicene Christianity the official religion of the Empire. The council thus had imperial backing of a thoroughly orthodox kind — a sharp contrast to the previous half-century of Arian-favoring emperors. This gave the council the political security to make definitive statements.",
+        "The Eunomians, a radical Arian group led by Eunomius of Cyzicus, had also developed a sophisticated philosophical theology in which the Son was not merely subordinate but essentially unlike the Father (anomoios). The council condemned this 'anomoean' Arianism as well, strengthening the victory of homoousios theology.",
+        "The Filioque controversy — whether the Spirit proceeds 'from the Father and the Son' or 'from the Father alone' — was not an issue at the council. The creed said 'who proceeds from the Father.' The Western addition of 'and the Son' (Filioque) developed in the Latin church over the following centuries and became one of the central theological disputes between Rome and Constantinople. Eastern Orthodox theology insists the council's language 'from the Father' must be preserved, as it locates the Spirit's procession in the monarchy of the Father."
       ]
     },
     "reception": [
       {
         "tradition": "Catholic",
-        "note": "Received as the completion of the Nicene-Constantinopolitan Creed used in liturgy and catechesis."
+        "note": "Received as the second ecumenical council. The Nicene-Constantinopolitan Creed is central to Catholic liturgy and catechesis. The council's condemnation of Apollinarianism is treated as definitively protecting Christ's full humanity. Canon 3 on Constantinople's status was initially resisted by Rome but the council itself is fully received."
       },
       {
-        "tradition": "Orthodox",
-        "note": "Received as a central council for Trinitarian faith, especially the confession of the Spirit in worship."
+        "tradition": "Eastern Orthodox",
+        "note": "Received as the 'Second Holy Ecumenical Council.' The creed produced here — without the Filioque — is the Orthodox creed recited at every Divine Liturgy. The council's confession of the Spirit is celebrated on Pentecost Sunday. Gregory of Nazianzus, its primary theologian, is called 'the Theologian' — a title shared only with the apostle John."
       },
       {
         "tradition": "Protestant",
-        "note": "Received by classical Protestant confessions as a faithful expression of biblical Trinitarian doctrine."
+        "note": "Received by classical Protestant traditions as authoritative. The Nicene-Constantinopolitan Creed is used in Lutheran, Anglican, and many Reformed liturgies. The council's Trinitarian teaching is treated as the standard interpretation of New Testament revelation. The condemnation of Apollinarianism is essential to Protestant Christology."
       },
       {
         "tradition": "Oriental Orthodox",
-        "note": "Received as part of the shared ecumenical inheritance before the Chalcedonian division."
+        "note": "Received as ecumenical by the Coptic, Armenian, Ethiopian, and Syriac churches, as it belongs to the pre-Chalcedonian consensus. The Oriental Orthodox churches use a form of the Nicene Creed and fully affirm the Spirit's divinity as defined here."
       }
     ],
     "keyTerms": [
       {
-        "term": "Pneumatomachians",
-        "definition": "Opponents of the divinity of the Holy Spirit."
+        "term": "Pneumatomachians / Macedonians",
+        "definition": "Greek 'Spirit fighters' — those who denied the full divinity and personhood of the Holy Spirit. They accepted the Son's homoousios but treated the Spirit as a creature. Named after Macedonius of Constantinople, though his precise views are disputed."
       },
       {
-        "term": "Nicene faith",
-        "definition": "The confession that the Son is truly God, now clarified together with the divinity of the Spirit."
+        "term": "Apollinarianism",
+        "definition": "The teaching of Apollinarius of Laodicea that Christ had a human body and soul but not a human rational mind (nous) — the divine Logos substituted for the human mind. Condemned by the council as incompatible with full human salvation."
+      },
+      {
+        "term": "Eunomianism",
+        "definition": "A radical Arian theology taught by Eunomius of Cyzicus, holding that the Son was essentially unlike (anomoios) the Father. Condemned as going beyond even Arianism in denying the Son any real divine dignity."
+      },
+      {
+        "term": "Filioque",
+        "definition": "Latin: 'and from the Son.' A later Western addition to the creed stating the Spirit proceeds 'from the Father and the Son.' The council's original text says 'from the Father' only. The Filioque became a major point of dispute between East and West."
+      },
+      {
+        "term": "Procession",
+        "definition": "The theological term for the Spirit's origin from the Father, distinguishing it from the Son's generation. Both terms describe eternal relations within the Trinity, not temporal events."
+      },
+      {
+        "term": "What has not been assumed has not been healed",
+        "definition": "Gregory of Nazianzus's theological axiom against Apollinarianism. If Christ did not take on a human rational soul, then human rationality is not redeemed by the incarnation. Full salvation requires full assumption of humanity."
       },
       {
         "term": "Doxology",
-        "definition": "A form of praise that reveals the Church's doctrine through worship."
+        "definition": "A formula of praise — 'Glory be to the Father, and to the Son, and to the Holy Spirit' — which the council treated as doctrinal evidence: the Church's worship already confessed the Spirit's equality with Father and Son."
       }
     ],
     "studyPath": [
       {
-        "title": "Reaffirm Nicaea",
-        "detail": "The council guarded Nicaea against reinterpretations that weakened Christ's divinity."
+        "title": "Understand why Nicaea left the Spirit question open",
+        "detail": "The 325 creed said only 'and in the Holy Spirit' with no expansion. The theological work on the Spirit's full divinity happened in the generation between Nicaea and Constantinople. Knowing this gap shows why the 381 council was necessary."
       },
       {
-        "title": "Confess the Spirit",
-        "detail": "The Spirit is not an impersonal force but Lord, giver of life, and worthy of worship."
+        "title": "Read Basil the Great's On the Holy Spirit",
+        "detail": "This is the key pre-council text. Basil builds the case for the Spirit's full divinity from Scripture and liturgy without using explosive philosophical language. It is the theological foundation for Constantinople I."
       },
       {
-        "title": "Read the Cappadocians",
-        "detail": "Basil, Gregory Nazianzen, and Gregory Nyssa provide the theological background."
+        "title": "Study Gregory of Nazianzus's Theological Orations",
+        "detail": "Five sermons preached in Constantinople before the council, they are among the finest theological writing of the early Church. The Fourth and Fifth Orations on the Son and Spirit are essential reading."
+      },
+      {
+        "title": "Grasp the Apollinarian error and its refutation",
+        "detail": "Apollinarius meant to protect the unity of Christ but ended up with a Christ who was not fully human. Gregory Nazianzen's 'What has not been assumed has not been healed' is the permanent answer to any Christology that shortchanges Christ's full humanity."
+      },
+      {
+        "title": "Note the Filioque for later study",
+        "detail": "The council said the Spirit proceeds 'from the Father.' The Western addition 'and the Son' was added at the Council of Toledo (589) and became the source of the Great Schism controversy. Understanding the council's original text is essential for East-West ecumenical history."
       }
     ],
-    "scriptureConnections": ["Matthew 28:19", "John 14:16-17", "Acts 5:3-4", "2 Corinthians 13:14"],
+    "scriptureConnections": ["Matthew 28:19", "John 14:16-17", "John 15:26", "Acts 5:3-4", "Romans 8:9-11", "2 Corinthians 13:14"],
     "relatedLinks": [
-      {
-        "label": "Basil the Great",
-        "href": "/library/fathers/basil-great"
-      },
-      {
-        "label": "Gregory Nazianzen",
-        "href": "/library/fathers/gregory-nazianzen"
-      }
+      { "label": "Basil the Great — Church Father", "href": "/library/fathers/basil-great" },
+      { "label": "Gregory of Nazianzus — Church Father", "href": "/library/fathers/gregory-nazianzen" },
+      { "label": "First Council of Nicaea (325)", "href": "/library/councils/nicaea-325" }
     ]
   },
   {
@@ -175,83 +228,114 @@
     "title": "Council of Ephesus",
     "shortTitle": "Ephesus",
     "year": "431",
-    "location": "Ephesus",
+    "location": "Ephesus (modern Turkey)",
     "calledBy": "Emperor Theodosius II",
-    "attendance": "About 200 bishops",
-    "issue": "Nestorian controversy and the unity of Christ's person",
-    "summary": "Ephesus defended the unity of Christ and confessed Mary as Theotokos because the one born of her is truly God the Son incarnate.",
-    "outcome": "Rejected Nestorian division of Christ and affirmed Theotokos as a Christological confession.",
-    "whyItMatters": "The title Theotokos is not mainly about Mary in isolation; it protects the truth that Jesus is one divine person, not two subjects loosely joined.",
+    "attendance": "About 200 bishops; Syrian delegation arrived late and formed a counter-synod",
+    "issue": "Whether Mary can be called Theotokos; the unity of Christ's person against Nestorianism",
+    "summary": "The Council of Ephesus (431) met amid one of the bitterest theological conflicts of the ancient Church — the feud between Cyril of Alexandria and Nestorius of Constantinople. At stake was whether the Virgin Mary could properly be called Theotokos (God-bearer) and, behind that title, whether the man Jesus and the eternal divine Son were truly one person or two subjects joined together. Cyril argued for the unity of the person of Christ; Nestorius feared that Theotokos confused the divine and human in Christ. The council sided decisively with Cyril, deposed Nestorius, and affirmed Theotokos as the correct Christological title. The result was a formal rupture with the Assyrian Church of the East, which followed the theology associated with Nestorius.",
+    "outcome": "The council deposed and exiled Nestorius, patriarch of Constantinople, and formally condemned his teaching. It affirmed Theotokos as the proper title for Mary on the grounds that the child she bore was the eternal Son of God incarnate. Cyril of Alexandria's twelve anathemas were broadly endorsed. A counter-synod convened by the late-arriving Syrian bishops condemned Cyril in turn, leading to a temporary double condemnation before imperial arbitration. The 'Formula of Union' in 433 reached a compromise between Cyril and John of Antioch that papered over differences without fully resolving them.",
+    "whyItMatters": "The title Theotokos is a Christological statement, not primarily a Marian one. It declares that the child born of Mary is not a human person who later became closely united with the divine Son — he is the divine Son, who took on flesh and was born of a woman. The council protects the unity of Christ: one person, not two. If there were two subjects in Christ — a human Jesus and a divine Son — then the one who died on the cross was not God, and the salvation won in his death would not be God's own gift. Ephesus anchors the Christian claim that 'God so loved the world that he gave his only Son' (John 3:16) means exactly what it says.",
     "teachingText": {
-      "title": "Theotokos and the one Christ",
+      "title": "Theotokos, the two schools, and the unity of the incarnate Son",
       "paragraphs": [
-        "The council affirmed that Mary may rightly be called Theotokos because the child born of her is the eternal Word made flesh.",
-        "It rejected language that separated the man Jesus from the divine Son as though two subjects acted side by side."
+        "Behind the Ephesus controversy lay two different schools of Christology that had developed within Christianity during the 4th century. The Antiochene school, centered in Syria, emphasized the full reality of Christ's humanity. Theologians trained in Antioch were alert to any language that seemed to confuse or absorb Christ's human nature into his divinity. They tended to describe the relationship of divinity and humanity in Christ using words like 'conjunction,' 'indwelling,' or 'association.'",
+        "The Alexandrian school, centered in Egypt, emphasized the unity of the person of Christ. For Cyril of Alexandria, the great champion of this school, you could never speak of 'the man Jesus' and 'the divine Son' as though they were two separate subjects who cooperated. The subject of everything Christ did — being born, eating, weeping, suffering, dying, rising — was the eternal divine Son. Cyril's technical phrase was hypostatic union: the union of natures in one hypostasis (person, subject).",
+        "Nestorius was trained in Antioch and became patriarch of Constantinople in 428. When a controversy broke out in Constantinople over whether the title Theotokos should be used for Mary, he entered the debate on the Antiochene side. He preferred Christotokos ('Christ-bearer') because he felt Theotokos implied that Mary bore the divine nature as such — which seemed to him theologically careless. Cyril fired back that Nestorius's caution about Theotokos revealed a fatal division of Christ's person.",
+        "Cyril's twelve anathemas, circulated before the council, sharpened the conflict. They condemned anyone who divided the Word from the man Jesus into two sons, or who denied that Mary was truly Theotokos, or who attributed Christ's sufferings only to 'the assumed man' rather than to the Word himself. The anathemas were fighting words. John of Antioch and other Syrian bishops saw them as Apollinarian — as if Cyril were collapsing Christ's humanity into his divinity. The scene was set for confrontation.",
+        "The council opened on June 22, 431, before the Syrian delegation loyal to Nestorius had arrived. Cyril, presiding, had the council seat Nestorius three times and depose him on the third non-appearance. When John of Antioch and the Syrian bishops arrived days later, they formed their own counter-synod that condemned Cyril and deposed him. For a brief period, both Cyril and Nestorius were condemned — a theological paradox that could only be resolved by imperial intervention.",
+        "Emperor Theodosius II eventually decided in favor of the majority (Cyril's) council, and Nestorius was exiled to Egypt, where he spent his remaining years writing a defense of his theology (the 'Book of Heraclides,' which only survived in a Syriac translation discovered in 1895). The lasting rupture was with the Assyrian Church of the East, which never accepted the council's judgment and still does not — maintaining the tradition of Theodore of Mopsuestia and a Christology emphasizing Christ's two natures as two qnome (subjects)."
       ]
     },
     "controversy": {
-      "title": "The Nestorian controversy",
+      "title": "One person or two subjects? The heart of the Nestorian controversy",
       "paragraphs": [
-        "Nestorius feared that calling Mary Theotokos confused Christ's divinity with his humanity. Cyril of Alexandria argued that refusing the title divided the one Christ.",
-        "The issue was salvation: the one who is born, suffers, dies, and rises is the eternal Son acting in and through his assumed humanity."
+        "The controversy went far beyond the word Theotokos. The real question was: who is the subject of everything the Gospels record about Jesus? When the Gospels say the Word became flesh (John 1:14), was the Word himself born of a woman, grew hungry, wept at Lazarus's tomb, suffered on the cross? Or was it more accurate to say the man Jesus did these things while the divine Son dwelt within him, remaining impassible and untouched by what the human nature experienced?",
+        "Cyril's core argument was that the exchange of properties (communicatio idiomatum) requires a single subject. You can say 'God was born,' 'God suffered,' 'God died' — not because divinity as such was born or suffered or died, but because the subject who was born and suffered and died was the divine Son acting in and through his assumed humanity. If you insist on two subjects — the man and the Son — then you cannot say 'God was born' at Bethlehem or 'the Lord of glory was crucified' (1 Cor 2:8). Salvation becomes the work of a man who was very closely united with God, not God's own personal act of redemption.",
+        "Nestorius's defenders argued (and modern scholars largely agree) that he was not trying to divide Christ into two persons in the crude sense. His concern was to protect the integrity of the two natures — especially the full reality of Christ's humanity. He feared that saying 'God was born' or 'God suffered' would slide into the kind of language that confused the divine and human. His preferred term prosopon ('person' in the sense of 'face' or 'role') was intended to describe the unity of Christ's activity without saying the two natures were ontologically fused.",
+        "The political dimension was also significant. Cyril was the patriarch of Alexandria — the second see in the East — and Nestorius was the patriarch of Constantinople. There was genuine institutional rivalry between the two cities. Cyril also had the backing of Pope Celestine I, who had already condemned Nestorius at a Roman synod in 430. Cyril's willingness to open the council before the Syrians arrived, and his use of the council to press his own twelve anathemas, gave the proceedings a partisan character that troubled many observers.",
+        "The aftermath illustrates how theological disputes and communion fractures can outlast their original disputes. The Assyrian Church of the East — which never accepted Ephesus — has historically been called 'Nestorian,' but modern ecumenical dialogue between Rome, Constantinople, and the Assyrian Church has recognized that much of the dispute involved terminology and political suspicion as much as irreconcilable theological positions. Pope John Paul II and Patriarch Mar Dinkha IV signed a common Christological declaration in 1994, agreeing that both traditions confess one Lord Jesus Christ, truly God and truly man."
       ]
     },
     "reception": [
       {
         "tradition": "Catholic",
-        "note": "Received as ecumenical and central for Christology and Marian doctrine understood through Christ."
+        "note": "Received as the third ecumenical council and authoritative for both Christology and Marian doctrine. Theotokos is affirmed as a genuine doctrinal title for Mary, understood Christologically. Cyril's theology of the hypostatic union is foundational for Aquinas and later Catholic Christology. The council is celebrated on June 22."
       },
       {
-        "tradition": "Orthodox",
-        "note": "Received as a defining council for the unity of Christ and the liturgical confession of Theotokos."
+        "tradition": "Eastern Orthodox",
+        "note": "Received as the Third Holy Ecumenical Council. Theotokos is one of the most significant titles in Orthodox theology and hymnography — Mary is consistently called 'Theotokos' in every Divine Liturgy. Cyril of Alexandria is venerated as a major Doctor of the Church. The council's Christology is foundational for Orthodox theology of deification (theosis): only if the Son truly took on our nature can he truly deify it."
       },
       {
         "tradition": "Protestant",
-        "note": "Many classical Protestant traditions accept the Christological point, even where later Marian devotion is treated differently."
+        "note": "Many classical Protestant traditions accept the Christological substance of Ephesus — that Jesus Christ is one person, the eternal Son incarnate — while some traditions are more reserved about Marian language. Luther himself defended Theotokos as a correct Christological title. The Chalcedonian Definition, which builds on Ephesus, is broadly accepted across classical Protestantism."
       },
       {
         "tradition": "Oriental Orthodox",
-        "note": "Received as ecumenical and deeply important for the Cyrilline confession of the incarnate Word."
+        "note": "Received as fully ecumenical and central to faith. The Oriental Orthodox churches are sometimes called 'Cyrilline' in their Christology — they strongly affirm the hypostatic union and consider themselves the true heirs of Cyril's theology. They rejected Chalcedon later partly because they feared it reintroduced Nestorian categories, not because they departed from Ephesus."
       }
     ],
     "keyTerms": [
       {
         "term": "Theotokos",
-        "definition": "God-bearer; Mary is mother of the incarnate Son, who is truly God."
+        "definition": "Greek: 'God-bearer' or 'Mother of God.' The title affirmed at Ephesus for Mary. Not primarily about Mary but about Christ: the one born of her is truly God the Son incarnate, not a human person indwelt by God."
+      },
+      {
+        "term": "Christotokos",
+        "definition": "Greek: 'Christ-bearer.' Nestorius's preferred alternative to Theotokos, emphasizing that Mary bore the Christ (the anointed one) in his humanity. The council rejected this as implicitly dividing the person of Christ."
+      },
+      {
+        "term": "Hypostatic Union",
+        "definition": "Cyril's key phrase: the union of the divine and human natures in one hypostasis (person, subject). The eternal Son is the single personal subject of everything Christ experienced in both his divine and human natures."
       },
       {
         "term": "Nestorianism",
-        "definition": "A Christological error associated with dividing Christ's humanity and divinity too sharply."
+        "definition": "The Christological position associated with Nestorius: the tendency to speak of Christ as if the divine Son and the man Jesus were two subjects joined in close moral or functional unity rather than one person. Whether Nestorius himself held this in its crude form is debated by historians."
       },
       {
-        "term": "Hypostatic unity",
-        "definition": "The unity of Christ's person: the eternal Son is the subject of both divine and human actions."
+        "term": "Communicatio Idiomatum",
+        "definition": "Latin: 'exchange of properties.' The theological principle that, because Christ is one person, the properties of either nature can be predicated of the one subject. Thus: 'God was born,' 'God suffered,' 'the Lord of glory was crucified.'",
+        "detail": ""
+      },
+      {
+        "term": "Alexandrian School",
+        "definition": "The theological tradition associated with Alexandria, Egypt, emphasizing the unity of Christ's person and the divine Word as the single subject of the incarnate life. Key figures: Athanasius, Cyril of Alexandria, Dioscorus."
+      },
+      {
+        "term": "Antiochene School",
+        "definition": "The theological tradition associated with Antioch, Syria, emphasizing the full reality and integrity of Christ's two natures. Key figures: Theodore of Mopsuestia, Nestorius, Theodoret of Cyrrhus. Stronger on the humanity of Christ; cautious about language that seemed to mix natures."
+      },
+      {
+        "term": "Formula of Union (433)",
+        "definition": "The compromise agreement between Cyril and John of Antioch after the council, using language acceptable to both sides. It affirmed two natures in one person and Theotokos, but was interpreted differently by each side. It foreshadowed but did not fully achieve the Chalcedonian definition."
       }
     ],
     "studyPath": [
       {
-        "title": "Begin with Christ",
-        "detail": "The debate is about who Jesus is, not only about Marian language."
+        "title": "Understand the two schools before reading the council",
+        "detail": "Alexandrian and Antiochene Christology had different strengths and dangers. Knowing both helps you see why each side feared the other and why the council's answer was necessary but not final."
       },
       {
-        "title": "Understand Theotokos",
-        "detail": "The title guards the unity of the incarnate Son."
+        "title": "Read Cyril's 'On the Unity of Christ'",
+        "detail": "Cyril's dialogue is the clearest statement of his Christology — why the Word must be the single personal subject of everything Christ does. Shorter than his commentaries and more accessible."
       },
       {
-        "title": "Trace later tensions",
-        "detail": "Ephesus is crucial background for Chalcedon and later Eastern divisions."
+        "title": "Grasp the communicatio idiomatum",
+        "detail": "The exchange of properties — saying 'God was born,' 'God suffered' — is the practical outworking of the council's Christology. If you cannot say this, the gospel is fundamentally changed: it is no longer God himself who came to save us."
+      },
+      {
+        "title": "Trace the rupture with the Assyrian Church of the East",
+        "detail": "The Assyrian Church rejected the council and maintained the theological tradition of Theodore of Mopsuestia. Understanding them shows that Ephesus created a lasting division that modern ecumenical dialogue is still working to heal."
+      },
+      {
+        "title": "Connect to Chalcedon (451)",
+        "detail": "Ephesus established the unity of Christ's person; Chalcedon twenty years later had to explain how that one person has two complete natures. Ephesus without Chalcedon risks absorbing the humanity into the divinity; Chalcedon without Ephesus risks dividing the person. Both councils are needed together."
       }
     ],
-    "scriptureConnections": ["Luke 1:35", "John 1:14", "Galatians 4:4", "Colossians 2:9"],
+    "scriptureConnections": ["Luke 1:35", "Luke 1:43", "John 1:14", "John 3:16", "Galatians 4:4", "1 Corinthians 2:8", "Colossians 2:9"],
     "relatedLinks": [
-      {
-        "label": "Catholic resources",
-        "href": "/library/catholic/resources"
-      },
-      {
-        "label": "Church Fathers",
-        "href": "/library/fathers"
-      }
+      { "label": "Cyril of Jerusalem — Church Father", "href": "/library/fathers/cyril-jerusalem" },
+      { "label": "Council of Chalcedon (451)", "href": "/library/councils/chalcedon-451" },
+      { "label": "Oriental Orthodox texts", "href": "/library/oriental-orthodox" }
     ]
   },
   {
@@ -260,83 +344,109 @@
     "title": "Council of Chalcedon",
     "shortTitle": "Chalcedon",
     "year": "451",
-    "location": "Chalcedon",
-    "calledBy": "Emperor Marcian",
-    "attendance": "About 520 bishops",
-    "issue": "How to confess Christ as fully God and fully man",
-    "summary": "Chalcedon gave classic language for confessing one and the same Christ in two natures, divine and human.",
-    "outcome": "Defined Christ as one person in two natures, without confusion, change, division, or separation.",
-    "whyItMatters": "Chalcedon protects both sides of salvation: only true God can save, and only true man can heal humanity from within.",
+    "location": "Chalcedon (modern Kadıköy, Istanbul, Turkey)",
+    "calledBy": "Emperor Marcian and Empress Pulcheria",
+    "attendance": "About 520 bishops — the largest council to that point",
+    "issue": "How Christ can be fully God and fully human; the errors of Eutyches and the legacy of Ephesus",
+    "summary": "The Council of Chalcedon (451) met twenty years after Ephesus and is the most theologically precise — and the most divisive — of the seven ecumenical councils. It was convened after a scandalous council at Ephesus in 449 (called the 'Robber Synod' by Pope Leo I) had rehabilitated the condemned archimandrite Eutyches, who taught that Christ's humanity was absorbed into his divinity at the incarnation. The new emperors Marcian and Pulcheria called a fresh council, which repudiated the 449 Synod, produced the Chalcedonian Definition — the most precise patristic statement of Christ's identity — and deposed and tried the key participants in the Robber Synod. It was the first major council at which both Rome and the East cooperated fully. It is also the council whose reception permanently divided Eastern Christendom: the Oriental Orthodox churches (Coptic, Armenian, Syriac, Ethiopian) rejected it and have never accepted it as ecumenical.",
+    "outcome": "The council produced the Chalcedonian Definition confessing Christ as 'one and the same Son, our Lord Jesus Christ, complete in divinity and complete in humanity, truly God and truly man... acknowledged in two natures, without confusion, without change, without division, without separation.' It condemned Eutychianism and reasserted the condemnation of Nestorianism. It accepted Pope Leo I's Tome as a theological statement consistent with Nicaea and Ephesus. Canon 28 elevated Constantinople to equal honor with Rome — provoking the protest of the papal legates and beginning a century of East-West tension. It deposed Dioscorus of Alexandria, who had presided over the Robber Synod.",
+    "whyItMatters": "Chalcedon protects the full reality of both sides of Christ's person. Christ must be truly God — or there is no divine redemption. Christ must be truly human — or humanity is not genuinely healed and restored from within. The four negative adverbs of the definition ('without confusion, without change, without division, without separation') are a masterpiece of theological precision: they rule out both Eutychianism (mixing the natures) and Nestorianism (dividing the person) in a single sentence. Chalcedon's definition became the permanent standard of Christological orthodoxy for Catholic, Eastern Orthodox, and classical Protestant Christianity. The council's rejection by the Oriental Orthodox churches created a division that still exists — and whose repair is one of the major projects of modern ecumenical theology.",
     "teachingText": {
-      "title": "The Chalcedonian definition",
+      "title": "The Chalcedonian Definition and its four negative adverbs",
       "paragraphs": [
-        "The council confessed one and the same Son, our Lord Jesus Christ, complete in divinity and complete in humanity, truly God and truly man.",
-        "It taught that Christ is acknowledged in two natures without confusion, without change, without division, and without separation."
+        "After Ephesus (431), the Church had affirmed the unity of Christ's person — one subject, the eternal Son. But a new problem emerged from within the Alexandrian tradition. Eutyches, a venerable archimandrite (monastic superior) in Constantinople with close connections to the imperial court, pushed Cyrilline Christology to an extreme. He taught that Christ had two natures before the incarnation but only one after — as if the human nature was absorbed into the divine like a drop of honey dissolving in the sea. His phrase: 'I confess that our Lord was of two natures before the union, but after the union I confess one nature.'",
+        "Eutyches was condemned at a local council in Constantinople in 448 by Patriarch Flavian. But he appealed to Emperor Theodosius II and to Pope Leo I, and the emperor convened a council at Ephesus in 449. This council, presided over by Dioscorus of Alexandria, rehabilitated Eutyches, deposed Flavian (who died soon afterward, possibly from mistreatment), and silenced the papal legates. Leo I, furious, called it the Latrocinium — the 'Robber Synod' or 'Council of Bandits.' It was the nadir of conciliar history.",
+        "Theodosius II died in 450 after falling from his horse. His sister Pulcheria became empress and married the military general Marcian, who convened a new council. The assembled bishops at Chalcedon repudiated the 449 proceedings and proceeded to the theological work. Leo's Tome — a letter to Flavian from 449 spelling out the two-natures Christology — was read and acclaimed: 'Peter has spoken through Leo!' The Eastern bishops who had signed under duress at the 449 synod now enthusiastically endorsed the Tome.",
+        "The Chalcedonian Definition was crafted carefully. The positive statement: 'one and the same Son, our Lord Jesus Christ, complete in divinity and complete in humanity, truly God and truly man, of a rational soul and body, consubstantial with the Father as regards his divinity, and the same consubstantial with us as regards his humanity.' The crucial phrase: 'acknowledged in two natures, without confusion, without change, without division, without separation.' The four adverbs function as a boundary fence: the first two (without confusion, without change) rule out Eutychianism; the last two (without division, without separation) rule out Nestorianism.",
+        "The definition carefully avoids saying the two natures become one. After the union, there are still two natures — but they belong to one person, one hypostasis (subject). This was Cyril's legacy: the person is one. But each nature retains its own properties and operations. The human nature does not cease to be human; the divine nature does not cease to be divine. The union is personal, not natural — 'hypostatic,' not 'physical.'",
+        "Canon 28 was explosive. It granted Constantinople equal privilege with Rome, citing the city's status as the seat of the emperor and senate. Rome's legates protested vigorously — Roman primacy was founded on Peter, not politics. Pope Leo I eventually accepted the council's doctrinal definition but explicitly rejected Canon 28, which he considered an infringement of apostolic tradition. This canon became a major point of contention between Rome and Constantinople for centuries."
       ]
     },
     "controversy": {
-      "title": "The one person and two natures controversy",
+      "title": "The Oriental Orthodox rejection and the enduring Chalcedonian divide",
       "paragraphs": [
-        "After Ephesus, the Church still had to explain how Christ's divinity and humanity remain real without dividing him into two sons.",
-        "Chalcedon rejected both confusion and separation. It guarded the full reality of Christ's humanity and divinity while insisting there is one personal subject: the eternal Son."
+        "The Oriental Orthodox rejection of Chalcedon was not simply a matter of obstinacy. For the Coptic, Syriac, Armenian, and Ethiopian churches, the council appeared to betray the legacy of Cyril of Alexandria. Cyril's formula — 'one nature of God the Word incarnate' (mia physis tou theou logou sesarkomene) — had been the language of Ephesus. Chalcedon's 'two natures' seemed to undo Cyril and rehabilitate Nestorian categories. Dioscorus of Alexandria, deposed by the council, became a martyr figure for the Oriental Orthodox. He was seen as the defender of Cyrilline orthodoxy against a council manipulated by Rome and Constantinople.",
+        "The term 'Monophysitism' (one-nature-ism) has been applied to the Oriental Orthodox position, but it is increasingly recognized as a polemical label rather than an accurate description. The Oriental Orthodox do not teach that Christ has only a divine nature or that his humanity was absorbed. Their preferred term is 'Miaphysitism' — from Cyril's phrase 'one nature' (mia physis) — meaning one united nature that is both divine and human without confusion, not a single nature replacing the other. Modern ecumenical dialogue has concluded that many of the differences are terminological rather than substantive.",
+        "The political dimension cannot be ignored. Chalcedon coincided with a period of intense political rivalry between the great patriarchal sees — Rome, Constantinople, Alexandria, and Antioch. Dioscorus's deposition was partly theological and partly political: he had overreached at the Robber Synod. The elevation of Constantinople in Canon 28 was bitterly resented by Alexandria, which had claimed second-place status in the East. These political grievances compounded the theological ones.",
+        "In the aftermath of Chalcedon, the Byzantine Empire spent the next two centuries trying to find a formula that would reconcile the Oriental Orthodox while maintaining Chalcedonian orthodoxy. The Henotikon of Emperor Zeno (482), the Three Chapters controversy (553, addressed by Constantinople II), and Monothelitism (addressed by Constantinople III) were all partially motivated by the desire to heal the Chalcedonian rupture. None succeeded.",
+        "Modern ecumenical dialogues have made significant progress. The Joint Commission between the Catholic Church and the Oriental Orthodox churches, and various bilateral dialogues between Eastern Orthodox and Oriental Orthodox churches, have produced agreed Christological statements since the 1970s. The 1990 agreed statement between the Eastern Orthodox and Oriental Orthodox theological commissions stated: 'We are close to each other in the understanding of... our Lord Jesus Christ... In him divinity and humanity are united without confusion, without change, without division, without separation.' Many theologians on both sides now believe the Chalcedonian divide is not an irreconcilable theological difference but a tragic misunderstanding amplified by political conflict and linguistic divergence."
       ]
     },
     "reception": [
       {
         "tradition": "Catholic",
-        "note": "Received as the fourth ecumenical council and a permanent standard for Christological orthodoxy."
+        "note": "Received as the fourth ecumenical council and permanently binding. The Chalcedonian Definition is the standard reference point for all Catholic Christology. Thomas Aquinas's Christology in the Summa Theologiae is built on Chalcedon's framework. Canon 28 was rejected by Rome but the council's doctrine is fully authoritative. Pope Leo I's Tome, endorsed by the council, is treated as a normative patristic statement."
       },
       {
-        "tradition": "Orthodox",
-        "note": "Received by Eastern Orthodoxy as ecumenical and foundational for the confession of Christ in two natures."
+        "tradition": "Eastern Orthodox",
+        "note": "Received as the Fourth Holy Ecumenical Council and foundational for Orthodox Christology. The 'two natures' language is confessed in the Liturgy, hymnography, and icons. The council's insistence on the full reality of Christ's humanity is essential to Orthodox theosis theology: only if Christ took on real human nature can that nature be deified. Canon 28 is treated as establishing Constantinople's canonical dignity."
       },
       {
         "tradition": "Protestant",
-        "note": "Classical Protestant traditions generally affirm Chalcedonian Christology as essential Christian doctrine."
+        "note": "Classical Protestant traditions fully affirm the Chalcedonian Definition. It is referenced in the Augsburg Confession, the Heidelberg Catechism, and the Westminster Confession. Luther's Christology was deeply Chalcedonian. The 'communication of attributes' in Lutheran theology — extending even to a certain 'ubiquity' of Christ's body — is a further development of Chalcedonian categories."
       },
       {
         "tradition": "Oriental Orthodox",
-        "note": "Not received as ecumenical by Oriental Orthodox churches; modern dialogue often notes that many disputes involved language, trust, and political conflict as well as doctrine."
+        "note": "Not received as ecumenical. The Coptic, Armenian, Ethiopian, Syriac, and Malankara churches reject Chalcedon's 'two natures' as a departure from Cyrilline Christology. They accept the first three ecumenical councils. Modern dialogue has significantly narrowed the theological gap, with many scholars on both sides believing the difference is terminological rather than doctrinal."
       }
     ],
     "keyTerms": [
       {
-        "term": "Two natures",
-        "definition": "Christ is fully divine and fully human."
+        "term": "Eutychianism",
+        "definition": "The teaching that Christ's humanity was absorbed into his divinity at the incarnation, resulting in one fused nature. Named after Eutyches of Constantinople. Condemned by Chalcedon as teaching 'confusion' and 'change' of the natures."
       },
       {
-        "term": "One person",
-        "definition": "The divine and human natures belong to one and the same Son."
+        "term": "Two Natures, One Person",
+        "definition": "The Chalcedonian formula: Christ is one person (hypostasis) in two complete natures — divine and human — without confusion, change, division, or separation."
       },
       {
-        "term": "Monophysitism",
-        "definition": "A label often used for views that collapse Christ's humanity and divinity into one nature; the historical use is complex."
+        "term": "Leo's Tome",
+        "definition": "Pope Leo I's letter to Patriarch Flavian of Constantinople (449), presenting a clear two-natures Christology. Endorsed at Chalcedon with the acclamation 'Peter has spoken through Leo.' A foundational document of Western Christology."
+      },
+      {
+        "term": "Robber Synod (Latrocinium)",
+        "definition": "The council at Ephesus in 449, convened by Emperor Theodosius II, that rehabilitated Eutyches, deposed Flavian of Constantinople, and silenced Roman legates. Called 'Latrocinium' (Council of Bandits) by Pope Leo I. Repudiated by Chalcedon."
+      },
+      {
+        "term": "Miaphysitism",
+        "definition": "The Christological position of the Oriental Orthodox churches: 'one united nature' of the incarnate Word (Cyril's mia physis tou theou logou sesarkomene), understood to mean a single nature that is both divine and human, not a fusion eliminating one or the other."
+      },
+      {
+        "term": "The Four Adverbs",
+        "definition": "The four negative terms of the Chalcedonian Definition: without confusion, without change, without division, without separation. The first two rule out Eutychianism; the last two rule out Nestorianism. They define the limits within which Christological language must operate."
+      },
+      {
+        "term": "Dioscorus of Alexandria",
+        "definition": "Patriarch of Alexandria who presided over the Robber Synod (449) and was deposed at Chalcedon. Venerated as a martyr by the Coptic Church and Oriental Orthodoxy generally, as a defender of Cyrilline theology against what they saw as Chalcedonian Nestorianism."
       }
     ],
     "studyPath": [
       {
-        "title": "Read the definition",
-        "detail": "The four negative phrases prevent both mixing and splitting Christ."
+        "title": "Read the Chalcedonian Definition in full",
+        "detail": "The definition is short but every phrase matters. The four negative adverbs are a masterpiece of theological precision. Reading them in order — what they exclude and why — is the best introduction to Chalcedonian Christology."
       },
       {
-        "title": "Connect to salvation",
-        "detail": "Christ's full divinity and full humanity are necessary for redemption."
+        "title": "Understand the Eutychian error",
+        "detail": "Eutyches was not crudely denying Christ's humanity. He was pushing Alexandrian unity-language too far. Understanding what he actually said — and why it was wrong — shows why the council needed to specify 'without confusion, without change.'"
       },
       {
-        "title": "Study later reception",
-        "detail": "Chalcedon shaped Catholic, Eastern Orthodox, and Oriental Orthodox history in different ways."
+        "title": "Study the Robber Synod",
+        "detail": "The 449 Latrocinium is the dark backdrop that makes Chalcedon necessary. It shows how conciliar authority can be abused — and why the formal conditions for a genuine ecumenical council matter."
+      },
+      {
+        "title": "Engage with the Oriental Orthodox perspective",
+        "detail": "Reading Oriental Orthodox Christology — their use of Cyril's 'one nature' language and their critique of Chalcedon — is essential for understanding the council's ongoing legacy and for appreciating the depth of the post-451 division."
+      },
+      {
+        "title": "Connect to Councils V and VI",
+        "detail": "Chalcedon raised further questions that Constantinople II and III had to answer: Does 'one person' mean one operation (Constantinople II debate) and one will (Constantinople III)? Chalcedon is the middle point in a three-council sequence on Christology."
       }
     ],
-    "scriptureConnections": ["John 1:14", "Philippians 2:5-11", "Hebrews 2:14-18", "1 John 4:2"],
+    "scriptureConnections": ["John 1:14", "Philippians 2:5-11", "Hebrews 2:14-18", "Hebrews 4:15", "1 John 4:2", "Romans 8:3"],
     "relatedLinks": [
-      {
-        "label": "Leo the Great",
-        "href": "/library/fathers/leo-great"
-      },
-      {
-        "label": "Oriental Orthodox studies",
-        "href": "/library/oriental-orthodox"
-      }
+      { "label": "Council of Ephesus (431)", "href": "/library/councils/ephesus-431" },
+      { "label": "Constantinople II (553)", "href": "/library/councils/constantinople-553" },
+      { "label": "Oriental Orthodox studies", "href": "/library/oriental-orthodox" }
     ]
   },
   {
@@ -347,81 +457,101 @@
     "year": "553",
     "location": "Constantinople",
     "calledBy": "Emperor Justinian I",
-    "attendance": "About 165 bishops",
-    "issue": "Chalcedonian reception, anti-Nestorian clarification, and the Three Chapters",
-    "summary": "The fifth council sought to show that Chalcedon did not authorize Nestorian division and that orthodox Christology remained faithful to Cyril.",
-    "outcome": "Condemned the Three Chapters and clarified the interpretation of Chalcedon in an anti-Nestorian direction.",
-    "whyItMatters": "This council matters because it shows how councils are received and interpreted, not merely announced.",
+    "attendance": "About 165 bishops, almost entirely Eastern",
+    "issue": "The Three Chapters — posthumous condemnation of three Antiochene theologians to reassure Oriental Orthodox churches; Origenism",
+    "summary": "The Second Council of Constantinople (553) was the most politically fraught of the seven ecumenical councils. Emperor Justinian I — the great Byzantine legislator, reconqueror of North Africa and Italy, and builder of Hagia Sophia — had a lifelong interest in theology and sought to use conciliar authority to win the Oriental Orthodox back to imperial communion by clarifying that Chalcedon did not rehabilitate Nestorianism. The 'Three Chapters' — the writings and persons of Theodore of Mopsuestia, Theodoret of Cyrrhus, and Ibas of Edessa — had been accepted at Chalcedon but were associated with Antiochene Nestorianizing tendencies. Justinian sought to condemn them posthumously. Pope Vigilius was summoned to Constantinople, mistreated, eventually capitulated, and signed the condemnation, then recanted, then signed again — an embarrassing episode that tested the limits of both papal authority and imperial power.",
+    "outcome": "The council condemned the Three Chapters — the works and persons of Theodore of Mopsuestia (posthumously), certain writings of Theodoret of Cyrrhus, and a letter attributed to Ibas of Edessa. It issued fourteen anathemas against 'three chapters' defenders and one anathema against Origen's cosmological speculations. It reaffirmed Chalcedon while insisting on a Cyrilline, anti-Nestorian reading of it. Western churches, especially in North Africa and northern Italy, went into schism over the condemnation, seeing it as a posthumous reversal of Chalcedon. The schism lasted decades.",
+    "whyItMatters": "Constantinople II matters for two reasons beyond its specific rulings. First, it demonstrates the Church's need to interpret its own councils — Chalcedon was not self-interpreting. The question of how to receive and apply a previous council's teaching is ongoing, not settled once for all. Second, the Vigilius affair raises serious questions about the relationship between imperial power and ecclesial authority: can an emperor coerce a council? Can a pope under duress make binding conciliar decisions? These questions reverberate in later church-state conflicts and in debates over papal authority that continue to the present.",
     "teachingText": {
-      "title": "Interpreting Chalcedon through Ephesus",
+      "title": "Why Chalcedon needed interpretation — and who had the right to do it",
       "paragraphs": [
-        "The council insisted that the confession of two natures must never be used to divide Christ into two persons or two sons.",
-        "It defended the continuity between Ephesus and Chalcedon by reading Chalcedon in a Cyrilline, anti-Nestorian direction."
+        "Justinian's project began from a genuine theological observation: Chalcedon had endorsed Leo's Tome and used language ('two natures') that resonated with the Antiochene school. But Chalcedon had also maintained that it was faithful to Ephesus and Cyril. The Oriental Orthodox rejected this claim — for them, 'two natures' was inherently Nestorian. Justinian believed that if he could show Chalcedon was incompatible with the three Antiochene figures most associated with Nestorian tendencies, the Oriental Orthodox might return to communion.",
+        "Theodore of Mopsuestia (died 428) was the greatest Antiochene theologian — teacher of Nestorius and master of biblical exegesis. His Christology emphasized the distinction of natures and was suspected (fairly or not) of dividing Christ into two persons. Theodoret of Cyrrhus had attacked Cyril's twelve anathemas and defended Nestorius, though he eventually accepted Chalcedon and was reconciled to the Church. Ibas of Edessa had written a letter dismissing Cyril and sympathizing with Nestorius before being reconciled at Chalcedon.",
+        "The problem for Justinian was that all three had died in communion with the Church — condemning them posthumously seemed to reverse Chalcedon's judgment, which had accepted Theodoret and Ibas after their reconciliations. Pope Vigilius, summoned from Rome to Constantinople in 547, resisted. He fled to sanctuary in a church, was dragged out, took sanctuary again, issued competing documents, was threatened and pressured, and finally consented to the condemnation in 553 — only to recant again after returning to the West. He died on the journey home.",
+        "The council's doctrinal substance, apart from the Three Chapters affair, included a set of important Christological clarifications. The council affirmed the 'theopaschite' formula: 'One of the Trinity suffered in the flesh' — a phrase Justinian strongly supported and which emphasized that the divine Son himself was the subject of Christ's suffering, in the Cyrilline tradition. It also condemned various speculations associated with Origen: the pre-existence of souls, the teaching that all rational beings would eventually be restored (apokatastasis), and the idea that the resurrection would involve spiritual rather than physical bodies.",
+        "The condemnation of Origenism at this council is significant separately. Origen of Alexandria (died c.254) was the greatest early Christian biblical scholar and theologian. His speculative theology, especially about the pre-existence of souls, their fall into bodies, and the universal restoration of all things, had been debated for two centuries. By the 6th century, these ideas had attracted Justinian's particular hostility. The council's condemnation of 'Origenism' was not a condemnation of Origen as a person or of his exegetical work, but of specific theological positions that had become attached to his name."
       ]
     },
     "controversy": {
-      "title": "The Three Chapters controversy",
+      "title": "The Vigilius affair and the limits of imperial theology",
       "paragraphs": [
-        "The Three Chapters involved writings and figures suspected of preserving Nestorian tendencies. Condemning them was meant to reassure those who feared Chalcedon had weakened Ephesus.",
-        "The controversy also showed how imperial politics, regional mistrust, and theological precision could become entangled."
+        "The story of Pope Vigilius at Constantinople II is one of the most uncomfortable episodes in early Christian history. Vigilius had become pope in 537 partly through Empress Theodora's influence and had made secret commitments to the Monophysite cause. When Justinian began his campaign against the Three Chapters in the 540s, Vigilius first issued a private condemnation (the Iudicatum, 548), then retracted it under Western pressure, then was brought to Constantinople where he endured years of pressure, threats, and isolation.",
+        "At one point Vigilius took refuge in a church and had to cling to an altar while soldiers tried to drag him out. He fled across the Bosphorus to Chalcedon. He issued multiple contradictory documents. His final capitulation — signing the condemnation at the council — was given under conditions that many Western observers considered coercion rather than genuine consent. He died without returning to Rome.",
+        "The Western reaction was severe. North African bishops, who had the strongest tradition of resisting imperial theological interference since the time of Tertullian and Cyprian, went into schism. Churches in northern Italy — the 'Aquileian schism' — refused to accept the council and remained in schism for over a century. The Franks and some other Western churches were also troubled. From their perspective, the council had reversed a judgment of Chalcedon under imperial pressure — exactly what Chalcedon had condemned in the Robber Synod of 449.",
+        "The theological legacy of the council is more positive than its political history suggests. Its Cyrilline reading of Chalcedon — 'one of the Trinity suffered in the flesh' — became standard Catholic and Orthodox theology. Its reaffirmation that Chalcedon was compatible with Ephesus and Cyril helped stabilize the Christological tradition even though it failed to win the Oriental Orthodox back to communion. And its condemnation of Origenist speculations drew theological boundaries that remain influential."
       ]
     },
     "reception": [
       {
         "tradition": "Catholic",
-        "note": "Received as the fifth ecumenical council, though its reception in parts of the West was difficult at first."
+        "note": "Received as the fifth ecumenical council, though its reception in the West was contested for decades due to the Vigilius affair and the Western schisms it caused. The council's Christological clarifications are fully authoritative. The condemnation of the Three Chapters is accepted. The Vigilius affair is treated as an embarrassing but non-invalidating circumstance — a pope's personal inconsistency does not invalidate a council's doctrine."
       },
       {
-        "tradition": "Orthodox",
-        "note": "Received as ecumenical and important for an anti-Nestorian reading of Chalcedon."
+        "tradition": "Eastern Orthodox",
+        "note": "Received as the Fifth Holy Ecumenical Council with relatively little controversy. The council's Cyrilline reading of Chalcedon and its theopaschite formula align with Eastern Orthodox Christological instincts. The condemnation of Origenism is accepted as protecting the resurrection faith against speculative cosmology."
       },
       {
         "tradition": "Protestant",
-        "note": "Usually treated as part of the classical conciliar inheritance, though less emphasized than the first four councils."
+        "note": "Generally received as part of the classical conciliar inheritance, though it receives less emphasis than the first four councils. The Origenism condemnation has been treated as authoritative on bodily resurrection. Protestant historians have often used the Vigilius affair as evidence of the dangers of imperial interference in theology."
       },
       {
         "tradition": "Oriental Orthodox",
-        "note": "Not received as ecumenical, since it belongs to the post-Chalcedonian council sequence."
+        "note": "Not received as ecumenical, as it falls within the post-Chalcedonian council sequence. Interestingly, the council's attempt to interpret Chalcedon in a Cyrilline direction was motivated partly by the desire to win Oriental Orthodox acceptance — but it did not achieve this, partly because Justinian's methods eroded trust."
       }
     ],
     "keyTerms": [
       {
-        "term": "Three Chapters",
-        "definition": "Writings and authors associated with positions judged too close to Nestorian division."
+        "term": "The Three Chapters",
+        "definition": "The works of Theodore of Mopsuestia (his person and all his writings), certain writings of Theodoret of Cyrrhus attacking Cyril, and a letter attributed to Ibas of Edessa. All three were associated with the Antiochene Christological tradition and suspected of Nestorianizing tendencies."
       },
       {
-        "term": "Cyrilline Christology",
-        "definition": "The Christological emphasis associated with Cyril of Alexandria on the unity of the incarnate Word."
+        "term": "Theodore of Mopsuestia",
+        "definition": "Died 428 — the greatest Antiochene theologian, teacher of Nestorius, and master of literal-historical biblical exegesis. His Christology emphasized the integrity of Christ's two natures in ways that Alexandrian critics found too close to dividing the person. The council condemned him posthumously."
       },
       {
-        "term": "Reception",
-        "definition": "The process by which the Church understands, defends, and applies a council's teaching."
+        "term": "Theopaschite Formula",
+        "definition": "'One of the Trinity suffered in the flesh' — the formula strongly supported by Justinian and affirmed by the council. It insists that the divine Son himself (not just an assumed human nature) was the subject of Christ's passion and death, in the Cyrilline tradition."
+      },
+      {
+        "term": "Origenism",
+        "definition": "A cluster of speculative theological positions associated with Origen of Alexandria: the pre-existence and fall of souls, the ultimate salvation of all rational beings (apokatastasis), and a spiritual resurrection without physical bodies. The council condemned these positions without condemning Origen's exegetical work."
+      },
+      {
+        "term": "Apokatastasis",
+        "definition": "Greek: 'restoration of all things.' Origen's teaching that all rational beings — including demons — would eventually be restored to God. Condemned by the council as incompatible with the finality of judgment and the eternal consequences of human choice."
+      },
+      {
+        "term": "Aquileian Schism",
+        "definition": "The schism of northern Italian churches (centered on Aquileia) that refused to accept Constantinople II's condemnation of the Three Chapters, seeing it as a reversal of Chalcedon. The schism lasted from approximately 557 to 700 AD."
       }
     ],
     "studyPath": [
       {
-        "title": "Return to Ephesus",
-        "detail": "The council cannot be understood apart from the earlier defense of Christ's unity."
+        "title": "Understand Justinian's political-theological project",
+        "detail": "Justinian was not simply an emperor imposing his will. He had genuine theological convictions and a coherent strategy. Understanding what he was trying to achieve — and why it failed — illuminates both the council and the limits of imperial theology."
       },
       {
-        "title": "Read Chalcedon carefully",
-        "detail": "Constantinople II insists that two natures does not mean two Sons."
+        "title": "Study Theodore of Mopsuestia's Christology",
+        "detail": "Theodore was a great biblical scholar who has been largely inaccessible in the West until modern critical editions. Engaging with his actual theology — rather than the polemical image of him — helps evaluate whether the council's condemnation was just."
       },
       {
-        "title": "Watch reception",
-        "detail": "The council caused controversy because it touched earlier compromises and regional trust."
+        "title": "Trace the Vigilius affair as a case study in church-state relations",
+        "detail": "The Vigilius episode is one of the most extreme cases of imperial pressure on a council in church history. Studying it illuminates questions about when papal decisions are binding, what counts as free consent, and how ecclesial authority relates to imperial power."
+      },
+      {
+        "title": "Read the theopaschite formula in context",
+        "detail": "'One of the Trinity suffered in the flesh' — understanding why this phrase was important to Justinian and to the Cyrilline tradition shows the continuing impact of Ephesus and the question of what the council's positive theological contribution was."
+      },
+      {
+        "title": "Explore the Origen condemnation separately",
+        "detail": "The condemnation of Origenism is a significant moment in early Christian intellectual history. Reading what Origen actually said (especially in On First Principles) alongside the council's anathemas shows the complexity of the tradition and the difficulty of evaluating speculative theology."
       }
     ],
-    "scriptureConnections": ["John 1:14", "Colossians 2:9", "Hebrews 1:3", "1 Timothy 3:16"],
+    "scriptureConnections": ["John 1:14", "Colossians 2:9", "1 Corinthians 15:35-44", "Acts 3:21", "Philippians 3:21"],
     "relatedLinks": [
-      {
-        "label": "Council of Ephesus",
-        "href": "/library/councils/ephesus-431"
-      },
-      {
-        "label": "Council of Chalcedon",
-        "href": "/library/councils/chalcedon-451"
-      }
+      { "label": "Council of Ephesus (431)", "href": "/library/councils/ephesus-431" },
+      { "label": "Council of Chalcedon (451)", "href": "/library/councils/chalcedon-451" },
+      { "label": "Constantinople III (680)", "href": "/library/councils/constantinople-680" }
     ]
   },
   {
@@ -429,84 +559,109 @@
     "order": 6,
     "title": "Third Council of Constantinople",
     "shortTitle": "Constantinople III",
-    "year": "680-681",
-    "location": "Constantinople",
+    "year": "680–681",
+    "location": "Constantinople — held in the domed hall (Trullus) of the imperial palace",
     "calledBy": "Emperor Constantine IV",
-    "attendance": "About 170 bishops",
-    "issue": "Monothelitism and Christ's human will",
-    "summary": "The sixth council confessed that Christ has both a divine will and a human will, corresponding to his two natures.",
-    "outcome": "Rejected monothelitism and affirmed that Christ's human will is real, obedient, and not swallowed up by his divinity.",
-    "whyItMatters": "If Christ lacks a human will, then human obedience is not healed. The council protects the full humanity of the Savior.",
+    "attendance": "About 170 bishops, with strong papal representation",
+    "issue": "Monothelitism — whether Christ has one will or two wills corresponding to his two natures",
+    "summary": "The Third Council of Constantinople met fifty years after the death of Maximus the Confessor — the monk and theologian who had suffered exile, mutilation, and death defending Christ's two wills against the imperial-sponsored compromise of Monothelitism. The council vindicated Maximus's theology and condemned Monothelitism as a continuation of Nestorian and Eutychian errors into the domain of Christ's will. Remarkably, it condemned Pope Honorius I posthumously — the only case of a pope being condemned by an ecumenical council — for a letter that seemed to endorse 'one will' in Christ. The council's definition of Christ's two wills and two operations became the permanent completion of the Chalcedonian Christological synthesis.",
+    "outcome": "The council condemned Monothelitism and its leaders: Patriarch Sergius of Constantinople, Patriarch Cyrus of Alexandria, Pope Honorius I of Rome, and others. It defined that Christ has two natural wills and two natural operations — divine and human — that are perfectly united in the one person without opposition or confusion. Christ's human will freely and perfectly obeys the Father's will without being destroyed or overridden by his divine will. The council formally rehabilitated Maximus the Confessor and vindicated his suffering.",
+    "whyItMatters": "The Gethsemane scene is the council's theological center: 'Father, not my will but yours be done' (Luke 22:42). For Christ to say this with genuine human meaning, he must have a real human will — distinct from the Father's will and capable of alignment with it. If he had only a divine will, the prayer would be meaningless, a performance rather than a real act of human obedience. The council extends Gregory of Nazianzus's axiom from nature to will: 'What has not been assumed has not been healed' — if Christ lacks a human will, human willing itself is unredeemed. Human disobedience (Adam's will turning from God) is healed only by human obedience (Christ's will perfectly aligned with God). The council thus completes the Christological synthesis: one person, two natures, two wills, two operations — perfectly one in the unified act of the Son.",
     "teachingText": {
-      "title": "Two wills in the one Christ",
+      "title": "Two wills, one obedience: how the council completes Chalcedon",
       "paragraphs": [
-        "The council confessed two natural wills and two natural operations in Christ, divine and human, united without opposition in the one person of the Son.",
-        "Christ's human will is not abolished by his divinity; it is perfectly obedient to the Father."
+        "Chalcedon (451) had defined Christ as one person in two natures. But 'two natures' raised an immediate further question: if Christ has two natures — divine and human — does he have two natural operations (energies) and two natural wills? The Alexandrian tradition was suspicious: two wills seemed to imply two subjects, sliding back toward Nestorianism. Some theologians proposed the formula 'one energy' (Monenergism) or 'one will' (Monothelitism) as a way to protect Chalcedonian unity.",
+        "Monothelitism was not simply a theological error invented by its proponents. It was a political compromise designed by Patriarch Sergius of Constantinople and approved by Emperor Heraclius in the Ekthesis of 638 to win Oriental Orthodox communities (who were mostly Monophysite) back to imperial communion, particularly in Egypt and Syria — territories under urgent threat from the Persian and then Islamic invasions. The political stakes were enormous. The theological compromise seemed manageable.",
+        "Maximus the Confessor (580–662) was the one theologian who refused to accept the compromise. A highly educated monk and former imperial secretary, Maximus understood that 'one will' was not merely a formula but a theological position with devastating consequences. He developed the key distinction: Christ's human will is not a separate center of decision-making (which would imply two subjects) but it is a genuine faculty of the human nature — and it freely, perfectly, and joyfully wills what the divine will wills. The unity is not the unity of one will but the unity of two wills in perfect agreement.",
+        "For this position, Maximus was arrested, tried for treason (opposing the imperial theological policy), had his tongue cut out and his right hand amputated, and was exiled to Georgia where he died in 662. He is venerated as 'the Confessor' and one of the greatest theologians in Christian history. The council of 680 vindicated him fully and adopted his theological framework almost entirely.",
+        "The condemnation of Pope Honorius I was unprecedented and remains theologically significant. Honorius had written a letter to Patriarch Sergius in 634 using the phrase 'one will' in a context that seemed to support Monothelitism. Whether he meant to endorse the heresy or simply to advocate theological peace by discouraging debate is disputed. The council condemned him for 'allowing the stainless rule of the apostolic tradition to be soiled.' This condemnation has been used in debates about papal infallibility: how can the council condemn a pope if popes are infallible? The First Vatican Council (1870) distinguished between a pope speaking ex cathedra in formal definitions of faith and a pope writing personal letters — only the former falls under the infallibility charism."
       ]
     },
     "controversy": {
-      "title": "The monothelite controversy",
+      "title": "The political origins of Monothelitism and the suffering of Maximus",
       "paragraphs": [
-        "Monothelitism attempted to preserve unity in Christ by teaching one will. The council judged that this damaged the reality of Christ's humanity.",
-        "The biblical center is Gethsemane: Christ truly wills as man, and his human obedience heals human disobedience."
+        "To understand why Monothelitism developed, you have to understand the catastrophe facing the Byzantine Empire in the early 7th century. In 614, the Persians captured Jerusalem and carried off the True Cross. Egypt was lost to Persia in 618. The Arab conquests beginning in 634 would take Syria, Palestine, and Egypt permanently. These were the heartlands of Oriental Orthodox Christianity — Monophysite territory that had been in schism from Constantinople since Chalcedon in 451.",
+        "If the Byzantines could reunite the Chalcedonian and Monophysite churches, they would have a more unified Christian population in these territories. Monothelitism was the theological price tag: accept Chalcedon's two natures but agree that the one person has only one will. This seemed to satisfy the Monophysite concern for unity while maintaining the two-natures language. Patriarch Cyrus of Alexandria implemented the policy in Egypt with significant success — many Coptic Christians temporarily returned to communion. Then the Arab conquest overwhelmed the whole project before it could be tested.",
+        "The condemnation of the compromise took place after the political emergency had passed. By 680, the Arab conquests had permanently settled the question of reuniting the Oriental Orthodox — the eastern provinces were no longer Byzantine. Emperor Constantine IV, who had been working on normalizing relations with Rome after decades of conflict, convened the council partly to restore East-West theological communion. The condemnation of Monothelitism served this diplomatic purpose while also vindicating the theological tradition of Maximus.",
+        "The council's treatment of Maximus's legacy was moving. The man who had been mutilated and exiled for his theology was posthumously vindicated as a confessor and defender of orthodoxy. His formula — 'Christ's human will is not contrary to the divine will but follows it, cleaving to it and moved by it freely, not under compulsion' — was adopted as the council's teaching.",
+        "The council also condemned Patriarch Macarius of Antioch, who was a practicing Monothelite present at the council. Unlike the posthumous condemnations, Macarius was deposed in person — one of the few occasions where a sitting patriarch was tried and removed by an ecumenical council."
       ]
     },
     "reception": [
       {
         "tradition": "Catholic",
-        "note": "Received as the sixth ecumenical council and an important clarification of Chalcedonian Christology."
+        "note": "Received as the sixth ecumenical council and essential for Christology. The posthumous condemnation of Pope Honorius I is acknowledged and has been addressed in Catholic theology through the distinction between informal papal letters and formal ex cathedra definitions. The council's Christology is authoritative. Maximus the Confessor is venerated as a Doctor of the Church."
       },
       {
-        "tradition": "Orthodox",
-        "note": "Received as ecumenical and central for the theology of Christ's real human obedience."
+        "tradition": "Eastern Orthodox",
+        "note": "Received as the Sixth Holy Ecumenical Council and theologically central. Maximus the Confessor is one of the most revered theologians in Orthodox history — his vision of human will freely aligned with the divine will is foundational for Orthodox anthropology and the theology of theosis. The council completes the Chalcedonian definition for Orthodox theology."
       },
       {
         "tradition": "Protestant",
-        "note": "Accepted in classical Christology where the full humanity and full divinity of Christ are confessed."
+        "note": "Accepted in classical Christology where the full humanity — including human willing — is affirmed. Luther's and Calvin's insistence on Christ's genuine human suffering and intercession presupposes the reality of Christ's human will. The condemnation of Honorius I has been cited in Protestant polemics against papal infallibility."
       },
       {
         "tradition": "Oriental Orthodox",
-        "note": "Not received as ecumenical in the Oriental Orthodox communion because it belongs to the post-Chalcedonian sequence."
+        "note": "Not received as ecumenical. The Oriental Orthodox churches are not bound by the post-Chalcedonian council sequence. However, many Oriental Orthodox theologians would affirm the substance of the council's teaching about Christ's full humanity and the reality of his human willing — since this was also Cyril's position."
       }
     ],
     "keyTerms": [
       {
         "term": "Monothelitism",
-        "definition": "The teaching that Christ has only one will."
+        "definition": "The teaching that Christ has only one will — the divine will — in order to preserve the unity of his person. Condemned by the council as denying the full reality of Christ's human nature, including human willing."
       },
       {
         "term": "Dyothelitism",
-        "definition": "The confession that Christ has two wills, divine and human, united in one person."
+        "definition": "The orthodox teaching defined at the council: Christ has two natural wills — divine and human — corresponding to his two natures, united without opposition in the one person. The human will freely and perfectly follows the divine will."
       },
       {
-        "term": "Human obedience",
-        "definition": "Christ heals human willing by freely obeying the Father as man."
+        "term": "Monenergism",
+        "definition": "The predecessor of Monothelitism: the teaching of 'one energy' or 'one operation' in Christ, proposed by Patriarch Sergius before the Ekthesis. Condemned along with Monothelitism as denying Christ's full human nature."
+      },
+      {
+        "term": "Maximus the Confessor",
+        "definition": "Monk and theologian (580–662) who resisted Monothelitism at the cost of his tongue and right hand, dying in exile. Vindicated by the council and venerated as 'the Confessor.' His theology of two wills in perfect union became the council's framework."
+      },
+      {
+        "term": "Honorius I",
+        "definition": "Pope of Rome 625–638, whose letter to Patriarch Sergius used the phrase 'one will' in a way condemned by the council as supporting Monothelitism. The only pope to be condemned by an ecumenical council. The condemnation has been significant in debates over papal infallibility."
+      },
+      {
+        "term": "Gethsemane Argument",
+        "definition": "The council's central scriptural argument: Christ's prayer 'Father, not my will but yours be done' (Luke 22:42) requires a genuine human will distinct from the Father's will and capable of free obedience to it. Without a human will, the prayer would have no real meaning."
+      },
+      {
+        "term": "Ekthesis (638)",
+        "definition": "The imperial document issued by Emperor Heraclius at Patriarch Sergius's suggestion, imposing Monothelitism on the Church as the required theological formula. Condemned by Popes Severinus and John IV. Later repudiated by Emperor Constans II who replaced it with the Typos (648), forbidding all theological discussion of wills and energies."
       }
     ],
     "studyPath": [
       {
-        "title": "Start at Gethsemane",
-        "detail": "Christ's prayer shows a real human will obedient to the Father."
+        "title": "Begin at Gethsemane",
+        "detail": "Luke 22:42 — 'Father, not my will but yours be done.' Read this passage with the question: does Christ have a genuine human will here, or is this a kind of theatrical gesture? The council's answer is that the human will is absolutely real and its free obedience to the Father is what heals human disobedience."
       },
       {
-        "title": "Connect to Chalcedon",
-        "detail": "Two natures imply the real operations proper to each nature."
+        "title": "Read Maximus the Confessor's Opuscula Theologica et Polemica",
+        "detail": "Maximus's short theological and polemical writings are the most direct source of the council's theology. His distinction between natural will (thelema physikon) and gnomic will (thelema gnomikon) is the key philosophical breakthrough of the controversy."
       },
       {
-        "title": "Study salvation",
-        "detail": "What Christ assumes, he heals; that includes human willing."
+        "title": "Understand the political origins of Monothelitism",
+        "detail": "Monothelitism was not born in a theological library but in the crisis of the Byzantine Empire facing Persia and Islam. Understanding this helps you evaluate the intentions of its proponents — they were trying to save the Church's unity under extreme duress, not simply inventing heresy."
+      },
+      {
+        "title": "Study the Honorius I condemnation carefully",
+        "detail": "The condemnation of a pope by a council is theologically significant. Engage with how Catholic theology has interpreted this — the distinction between formal definitional acts and personal letters — and what Orthodox and Protestant theologians have made of it."
+      },
+      {
+        "title": "Connect to salvation and human anthropology",
+        "detail": "The council's deepest implication is for anthropology: if Christ's human will is genuinely healed through perfect obedience, then human willing — historically the site of Adam's fall — is capable of redemption. The council completes the doctrine of salvation by addressing the will, not just the nature."
       }
     ],
-    "scriptureConnections": ["Matthew 26:39", "Luke 22:42", "John 6:38", "Hebrews 5:7-9"],
+    "scriptureConnections": ["Matthew 26:39", "Luke 22:42", "John 6:38", "John 4:34", "Hebrews 5:7-9", "Hebrews 10:5-7"],
     "relatedLinks": [
-      {
-        "label": "Council of Chalcedon",
-        "href": "/library/councils/chalcedon-451"
-      },
-      {
-        "label": "John Damascus",
-        "href": "/library/fathers/john-damascus"
-      }
+      { "label": "Council of Chalcedon (451)", "href": "/library/councils/chalcedon-451" },
+      { "label": "Constantinople II (553)", "href": "/library/councils/constantinople-553" },
+      { "label": "Nicaea II (787)", "href": "/library/councils/nicaea-787" }
     ]
   },
   {
@@ -515,83 +670,113 @@
     "title": "Second Council of Nicaea",
     "shortTitle": "Nicaea II",
     "year": "787",
-    "location": "Nicaea",
-    "calledBy": "Empress Irene and Emperor Constantine VI",
-    "attendance": "About 350 bishops",
-    "issue": "Iconoclasm and the veneration of holy images",
-    "summary": "The seventh council defended the veneration of icons by grounding Christian images in the reality of the incarnation.",
-    "outcome": "Distinguished worship due to God alone from the honor shown to icons, saints, and holy images.",
-    "whyItMatters": "Nicaea II argues that because the Word truly became visible flesh, Christian art can confess the incarnation rather than deny it.",
+    "location": "Nicaea (modern Iznik, Turkey)",
+    "calledBy": "Empress Irene acting as regent for her son Emperor Constantine VI",
+    "attendance": "About 350 bishops and numerous monks",
+    "issue": "Iconoclasm — whether Christian images of Christ, Mary, and saints may be venerated, or whether they are idolatry",
+    "summary": "The Second Council of Nicaea (787) ended the first period of Byzantine iconoclasm — a sixty-year campaign of image destruction launched by emperors who believed that the veneration of icons was idolatry condemned by Scripture. The council defended the veneration of holy images through a rigorous theological argument rooted in the incarnation: because the eternal, invisible God truly became visible human flesh in Jesus Christ, it is both possible and appropriate to represent him in art. The council carefully distinguished the worship (latria) owed to God alone from the honor (proskunesis, dulia) that may be shown to holy images, saints, and created things associated with God. It is the last council accepted as fully ecumenical by both Catholic and Orthodox Christianity.",
+    "outcome": "The council formally reversed the Iconoclast council of Hiereia (754), which had condemned icons. It defined that holy images of Christ, the Theotokos, angels, and saints may be venerated in churches, homes, and public spaces. It carefully taught that the honor given to an icon passes to the prototype — the person represented — and is not directed at the material of the image itself. It restored many of the bishops and monks who had been persecuted or forced to renounce icons. The council's theological framework was provided largely by the monk Tarasius, the newly appointed patriarch of Constantinople, and by the writings of John of Damascus, who had died decades earlier but whose three Treatises on Holy Images were central to the council's reasoning.",
+    "whyItMatters": "Nicaea II is not mainly about art. It is about the incarnation and what it means for the material world. Iconoclasm, at its theological core, was a form of docetism: if Christ cannot be depicted, it may be because he was not truly and fully human — because his humanity was a kind of appearance or vehicle rather than real flesh, bones, and human experience. The council's defense of images is a defense of the full reality of the incarnation. If God truly became visible human flesh, then a portrait of that flesh is not idolatry but a confession of faith. The council also addresses the broader question of matter, creation, and redemption: does the material world participate in the life of God? Can wood, paint, water, bread, wine, oil — created things — become vehicles of divine presence and grace? The council's answer, rooted in the incarnation, is yes.",
     "teachingText": {
-      "title": "The defense of holy icons",
+      "title": "The incarnational defense of icons: why images confess the faith",
       "paragraphs": [
-        "The council taught that holy images of Christ, the Mother of God, angels, and saints may be set forth for veneration, remembrance, and instruction.",
-        "It distinguished the worship owed to God alone from the honor shown to an image, teaching that the honor given to the image passes to the prototype."
+        "The iconoclast controversy had deep roots. Emperor Leo III issued his first edicts against icons in 726–730, and his son Constantine V pursued iconoclasm aggressively, convening his own council at Hiereia in 754 which condemned icons as idolatry. The persecution of icon-venerators was serious: monks had their faces painted with tar, nuns were forced to marry, relics were thrown into the sea. The iconoclast emperors were not simply acting out of philistine anti-art sentiment — they had a theological argument.",
+        "The iconoclast theological argument ran as follows: The Old Testament explicitly forbids the making and worship of images (Exodus 20:4-5). The God of the Old Testament was invisible and could not be depicted. No prophet or apostle commanded the making of images. The veneration of icons appears to be exactly the kind of image-worship the prophets condemned. Additionally, the Christological argument: if you make an image of Christ, you either depict only his humanity (which divides him into two persons) or you claim to capture his divinity in paint (which is impossible and blasphemous).",
+        "John of Damascus (676–749) provided the decisive refutation before the council met. Writing from Muslim-controlled Palestine — safely beyond the reach of Byzantine iconoclast emperors — he published three Treatises on Holy Images that became the theological foundation of Nicaea II's position. His central argument was incarnational: the prohibition of images in the Old Testament was appropriate because God had not yet become visible. When the eternal Word took on human flesh — truly visible, touchable, physical human flesh — the prohibition was transformed. You are not depicting God in his invisible divine nature; you are depicting the human face that God assumed. A portrait of Christ is a confession that 'the Word became flesh and dwelt among us.'",
+        "John's second argument was about honor and worship. He distinguished: latria — the absolute worship owed to God alone — from proskunesis timētikē — the relative honor that may be given to holy persons and things. When a Christian venerates an icon, the honor passes to the person depicted, just as honor given to a royal portrait reaches the king. This distinction — latria for God, dulia or proskunesis for saints and images — became the permanent framework for Catholic and Orthodox theology of images.",
+        "The council also addressed the argument from Christology directly. If making an image of Christ divides his natures (by depicting only humanity) or confounds them (by claiming to depict divinity in matter), the council answered: we depict the one person, the incarnate Son, in his assumed humanity. The image is of the hypostasis — the person — not of either nature taken separately. Because the Son truly became the man Jesus, the man Jesus can be truly depicted. An image of Christ no more divides the natures than the incarnation itself divides them.",
+        "The council was presided over by Patriarch Tarasius of Constantinople — controversially, he had been a layman until his appointment days before the council — and Empress Irene, who was regent for her young son Constantine VI. Pope Hadrian I's legates attended and his letter endorsing the restoration of icons was read. The council restored hundreds of bishops and monks who had been persecuted for venerating icons and required former iconoclast clergy to sign a recantation."
       ]
     },
     "controversy": {
-      "title": "The iconoclast controversy",
+      "title": "Iconoclasm: imperial theology, Islamic influence, and the Triumph of Orthodoxy",
       "paragraphs": [
-        "Iconoclasts argued that religious images violated biblical commands against idolatry. Defenders answered that the incarnation changed the question: the invisible God had truly become visible in Christ.",
-        "The debate was not merely about art. It concerned matter, worship, memory, saints, and whether Christian images confess or deny the Word made flesh."
+        "The origins of Byzantine iconoclasm are debated by historians. Emperor Leo III's theological motivations likely included: genuine religious conviction that icons had become idols in popular piety; influence from Jewish and Islamic criticism of Christian image-worship (both Judaism and Islam forbade images of God); and possibly the impact of natural disasters — an eruption of the volcanic island Thera in 726 — which some saw as divine punishment for idolatry. The Arab conquests had given Islam enormous prestige, and its iconoclasm was one of its distinctive features.",
+        "Constantine V (ruled 741–775) was the most theologically sophisticated of the iconoclast emperors. His Peuseis (Questions) developed a systematic Christological argument against icons: any image of Christ either depicts only the humanity (Nestorian, dividing the person) or claims to circumscribe and depict the divinity united to the humanity (which is impossible — the divine nature cannot be depicted). The only consistent conclusion is that no image of Christ can be legitimate. Constantine convened the Council of Hiereia in 754 — attended by 338 bishops but without the Roman or Eastern patriarchal representatives — which condemned icons. He then suppressed monasteries, executed several leading monks, and desecrated relics.",
+        "The iconophile (icon-defending) response also developed over this period. Beyond John of Damascus's theological work, the monks — especially those of the Studite monastery in Constantinople, later led by Theodore the Studite — became the principal defenders of icons. The monks argued for the independence of the Church's spiritual authority from imperial decree: emperors have no right to define theology. This argument laid important foundations for later medieval church-state conflicts.",
+        "After Constantine V's death, his successors were less committed to iconoclasm. Empress Irene, regent for her young son, was personally an iconophile and worked systematically to restore icon veneration. The council she convened at Nicaea in 787 reversed the Hiereia council definitively. But iconoclasm returned: a second iconoclast period ran from 814 to 843 under emperors Leo V, Michael II, and Theophilus. The final restoration of icons on the first Sunday of Lent 843 is celebrated in Eastern Orthodoxy as the 'Triumph of Orthodoxy' (or 'Triumph of the Icons') to this day.",
+        "The Western reception of Nicaea II was complicated by a translation error. Charlemagne's court received a defective Latin translation that made the council appear to mandate the worship of images rather than their veneration. Charlemagne's theologians produced the Libri Carolini, a detailed refutation of what they thought the council had said. This misunderstanding contributed to a long-running disagreement between Rome and the Frankish church about the theology of images. Later medieval Western theology, following the correct translation, fully accepted the council's distinction between worship and veneration."
       ]
     },
     "reception": [
       {
         "tradition": "Catholic",
-        "note": "Received as the seventh ecumenical council and foundational for the legitimate use of sacred images."
+        "note": "Received as the seventh and last ecumenical council of the ancient Church. Its theology of image veneration is foundational for Catholic practice of icons, religious art, statues, and sacred images. The council's distinction between latria (worship) and dulia (veneration) is standard Catholic sacramental theology. The Second Vatican Council cited Nicaea II in its Constitution on the Sacred Liturgy. The council is celebrated on October 11."
       },
       {
-        "tradition": "Orthodox",
-        "note": "Received as the triumph of Orthodoxy over iconoclasm and central to Orthodox liturgical and devotional life."
+        "tradition": "Eastern Orthodox",
+        "note": "Received as the Seventh Holy Ecumenical Council, and its restoration is celebrated on the first Sunday of Lent as the 'Triumph of Orthodoxy.' Icons are not merely artistic decoration in Orthodox theology but theological statements — they confess the incarnation and participate in the holiness of the person depicted. The Triumph of Orthodoxy service includes a procession of icons and a reading of the anathemas against iconoclasm. Icons are called 'windows to heaven.'"
       },
       {
         "tradition": "Protestant",
-        "note": "Reception varies widely; some Protestants accept its Christological logic while rejecting or limiting image veneration."
+        "note": "Reception varies widely across Protestant traditions. Reformed and Calvinist traditions (following Zwingli and Calvin) reject image veneration and often the liturgical use of images entirely, citing Exodus 20 and the Second Commandment. Lutheran, Anglican, and many evangelical traditions are more permissive about religious art while rejecting formal veneration. The council's distinction between worship and veneration is accepted in principle by many; whether veneration of images is appropriate practice is the disputed question."
       },
       {
         "tradition": "Oriental Orthodox",
-        "note": "Not received as ecumenical in the Oriental Orthodox communion, though many Oriental Orthodox traditions have rich iconographic practice."
+        "note": "Not received as ecumenical in the formal council sequence, as it belongs to the post-Chalcedonian tradition. However, all Oriental Orthodox churches — Coptic, Armenian, Ethiopian, Syriac, Malankara — have rich traditions of sacred art and iconography that reflect the same theological principles the council articulated. The Coptic icon tradition and Ethiopian church painting are among the world's oldest living traditions of Christian sacred art."
       }
     ],
     "keyTerms": [
       {
         "term": "Iconoclasm",
-        "definition": "The rejection or destruction of religious images."
+        "definition": "Greek: 'image-breaking.' The theological position and imperial policy that religious images of Christ, Mary, and saints are idolatry condemned by Scripture and must be destroyed. The first Byzantine iconoclast period ran from 726 to 787; the second from 814 to 843."
       },
       {
-        "term": "Veneration",
-        "definition": "Honor shown to holy persons or images; distinct from worship owed to God alone."
+        "term": "Iconophile / Iconodule",
+        "definition": "Greek: 'image-lover' / 'image-servant.' Those who defended the veneration of icons — as distinct from iconoclasts. The terms are sometimes used interchangeably."
+      },
+      {
+        "term": "Latria",
+        "definition": "Greek/Latin: the absolute worship due to God alone — adoration, sacrifice, the Mass. Distinguished by the council from the honor given to saints and images. Directing latria to a created thing, including an icon, would be idolatry."
+      },
+      {
+        "term": "Dulia / Proskunesis",
+        "definition": "The relative honor or veneration that may be given to created holy things — icons, saints, relics — without constituting idolatry. The honor passes to the person depicted or honored, not to the material object as such."
       },
       {
         "term": "Prototype",
-        "definition": "The person represented by an image; honor passes to the one depicted, not to wood or paint as such."
+        "definition": "The person depicted in an image. The council's crucial teaching: when you venerate an icon, the honor 'goes up' to the prototype — the actual person of Christ, Mary, or the saint — not to wood and paint as such."
+      },
+      {
+        "term": "John of Damascus",
+        "definition": "Monk and theologian (676–749) who wrote the three Treatises on Holy Images from Muslim-controlled Palestine, safely beyond Byzantine imperial reach. His incarnational argument — that images of Christ are possible and appropriate because God truly became visible flesh — provided the theological framework for Nicaea II."
+      },
+      {
+        "term": "Triumph of Orthodoxy",
+        "definition": "The celebration on the first Sunday of Lent 843 when icons were finally and permanently restored after the second iconoclast period. Still celebrated in Eastern Orthodoxy on the first Sunday of Lent every year, with a procession of icons and the reading of the Synodikon of Orthodoxy."
+      },
+      {
+        "term": "Council of Hiereia (754)",
+        "definition": "The iconoclast council convened by Emperor Constantine V, attended by 338 bishops, which condemned icons. Not recognized as ecumenical because it lacked representatives from Rome, Alexandria, Antioch, and Jerusalem. Repudiated by Nicaea II."
       }
     ],
     "studyPath": [
       {
-        "title": "Begin with the incarnation",
-        "detail": "The defense of icons begins with the Word becoming visible."
+        "title": "Begin with the incarnational argument",
+        "detail": "John of Damascus's central claim: the prohibition of images was for the era when God was invisible; the incarnation transforms the question. Read John 1:14 — 'the Word became flesh' — and ask: if this is literally true, can the flesh the Word assumed be depicted? This is the council's foundation."
       },
       {
-        "title": "Distinguish worship and honor",
-        "detail": "The council separates adoration of God from veneration of holy images."
+        "title": "Understand the iconoclast argument seriously",
+        "detail": "The iconoclasts had genuine theological concerns — about idolatry, about the Second Commandment, about the Christological problems of depicting Christ. Constantine V's Christological argument was sophisticated. Engaging with it shows why the council's answer had to be carefully calibrated."
       },
       {
-        "title": "Connect to devotion",
-        "detail": "Icons teach, remember, and direct attention toward Christ and his saints."
+        "title": "Read John of Damascus's Three Treatises on Holy Images",
+        "detail": "The most important pre-council text. The first treatise is the most accessible. John builds his defense of images from Scripture, patristic citation, and the incarnational logic that the Word's true humanity makes depiction possible."
+      },
+      {
+        "title": "Study the distinction between latria and dulia",
+        "detail": "This distinction is the council's key analytical move. It allows for a non-idolatrous honor of images and saints by insisting the honor is relative, not absolute, and passes to the person rather than the material. Understanding it is essential for engaging with Protestant objections to image veneration."
+      },
+      {
+        "title": "Connect to the broader theology of matter and creation",
+        "detail": "The council's defense of icons implies a theology of matter: the material world can be sanctified, can bear the presence of the holy, can participate in divine grace. This connects to sacramental theology, to the doctrine of the resurrection of the body, and to the Orthodox concept of the 'transfiguration of the world.' The council's logic extends well beyond the specific question of icons."
       }
     ],
-    "scriptureConnections": ["Exodus 25:18-22", "John 1:14", "Colossians 1:15", "Hebrews 1:3"],
+    "scriptureConnections": ["Exodus 25:18-22", "John 1:14", "Colossians 1:15", "Hebrews 1:3", "2 Corinthians 4:4", "John 14:9"],
     "relatedLinks": [
-      {
-        "label": "John Damascus",
-        "href": "/library/fathers/john-damascus"
-      },
-      {
-        "label": "Icons and iconography",
-        "href": "/library/orthodox/icons-and-iconography"
-      }
+      { "label": "Constantinople III (680)", "href": "/library/councils/constantinople-680" },
+      { "label": "Orthodox study hub", "href": "/library/orthodox" },
+      { "label": "Church History Timeline", "href": "/library/history/timeline" }
     ]
   }
 ]
