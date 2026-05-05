@@ -2,6 +2,7 @@
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
 import { historyLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
@@ -49,6 +50,7 @@ export default function HistoryHubPage() {
     <>
       <AppHeader />
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Church History" }]} />
         <section className="rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
           <h1 className="font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)] md:text-5xl">
             A study hub for splits, continuities, councils, and modern renewal movements.

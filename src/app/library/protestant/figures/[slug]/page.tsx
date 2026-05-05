@@ -3,6 +3,8 @@ import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
 import { getProtestantFigure, protestantFigures } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -33,24 +35,27 @@ export default async function ProtestantFigurePage({
     notFound();
   }
 
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: figure.name,
+    description: `Study the life and theology of ${figure.name} — Protestant Reformer and key figure in the history of Protestant Christianity.`,
+    url: `https://www.oneinhimbiblestudy.com/library/protestant/figures/${slug}`,
+    knowsAbout: ["Christianity", "Theology", "Protestant Reformation", figure.tradition],
+  };
+
   return (
     <>
+      <JsonLd data={personSchema} />
       <AppHeader />
       <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/library/protestant"
-            className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
-          >
-            Back to Protestant
-          </Link>
-          <Link
-            href="/library/protestant/figures"
-            className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
-          >
-            Browse figures
-          </Link>
-        </div>
+        <Breadcrumb items={[
+          { label: "Home", href: "/" },
+          { label: "Library", href: "/library" },
+          { label: "Protestant", href: "/library/protestant" },
+          { label: "Figures", href: "/library/protestant/figures" },
+          { label: figure.name },
+        ]} />
 
         <section className="mt-8 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-8">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">

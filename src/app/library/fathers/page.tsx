@@ -2,6 +2,7 @@
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
 import FathersMobileLibrary from "@/components/fathers-mobile-library";
 import SectionHeading from "@/components/section-heading";
 import { fathersLibrary } from "@/lib/content";
@@ -22,6 +23,8 @@ export default function FathersPage() {
         <AppHeader />
       </div>
       <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Church Fathers" }]} />
+        <h1 className="sr-only">Church Fathers — Patristic Writings Library</h1>
         <SectionHeading
           title="Patristic texts are now organized as a full-text library."
           body="Open a father, choose a work, and read the full document chapter by chapter."

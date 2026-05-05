@@ -2,6 +2,7 @@
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
 import { romanCatechismLibrary } from "@/lib/content";
 
@@ -35,6 +36,8 @@ export default function CatechismPage() {
     <>
       <AppHeader />
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Roman Catechism" }]} />
+        <h1 className="sr-only">Roman Catechism — Catechism of the Council of Trent</h1>
         <SectionHeading
           title="The full Catechism of Trent is now a real library inside the app."
           body="This section carries the public-domain Catechism of the Council of Trent as a route-backed library. The modern Catechism of the Catholic Church can be read free online at the Vatican website, but the embedded full text here is the Roman Catechism of Trent."

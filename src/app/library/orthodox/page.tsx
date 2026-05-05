@@ -2,6 +2,7 @@
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SectionHeading from "@/components/section-heading";
 import { getFathersForTrack } from "@/lib/content";
@@ -247,6 +248,8 @@ export default function OrthodoxPage() {
       </main>
 
       <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Orthodox" }]} />
+        <h1 className="sr-only">Orthodox Bible Study &amp; Theology</h1>
         <SectionHeading
           title="An Orthodox track now sits beside the Catholic and Protestant paths."
           body="This hub groups patristic texts, Orthodox-oriented catechetical material, and external resources for continued study. Shared fathers remain shared, but they are now easy to approach through an Orthodox reading path."

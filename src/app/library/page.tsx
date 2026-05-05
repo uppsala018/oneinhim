@@ -3,6 +3,7 @@ import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+import Breadcrumb from "@/components/breadcrumb";
 
 export const metadata: Metadata = buildMeta({
   title: "Scripture & Study Library",
@@ -115,11 +116,9 @@ export default function LibraryPage() {
     <>
       <AppHeader />
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library" }]} />
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-highlight)]">
-            Library
-          </p>
-          <h1 className="mt-4 font-[family-name:var(--font-display)] text-5xl text-[var(--color-ink)]">
+          <h1 className="font-[family-name:var(--font-display)] text-5xl text-[var(--color-ink)]">
             Study Library
           </h1>
           <p className="mt-5 text-lg leading-8 text-[var(--color-muted)]">

@@ -3,6 +3,8 @@ import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
 import { fathersLibrary, getFatherProfile } from "@/lib/content";
 import { getFatherStudyGuide } from "@/lib/father-study-guides";
 
@@ -37,16 +39,26 @@ export default async function FatherDetailPage({
 
   const studyGuide = getFatherStudyGuide(father);
 
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: father.name,
+    description: father.summary ?? `Church father from the ${father.era} era.`,
+    url: `https://www.oneinhimbiblestudy.com/library/fathers/${slug}`,
+    knowsAbout: ["Christianity", "Theology", "Early Church", father.tradition],
+  };
+
   return (
     <>
+      <JsonLd data={personSchema} />
       <AppHeader />
       <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <Link
-          href="/library/fathers"
-          className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
-        >
-          Back to Fathers
-        </Link>
+        <Breadcrumb items={[
+          { label: "Home", href: "/" },
+          { label: "Library", href: "/library" },
+          { label: "Church Fathers", href: "/library/fathers" },
+          { label: father.name },
+        ]} />
 
         <section className="mt-8 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-8">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">

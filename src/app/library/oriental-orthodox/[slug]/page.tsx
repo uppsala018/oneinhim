@@ -3,6 +3,7 @@ import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
 import {
   getOrientalOrthodoxEntry,
   orientalOrthodoxLibrary,
@@ -41,14 +42,12 @@ export default async function OrientalOrthodoxEntryPage({
     <>
       <AppHeader />
       <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/library/oriental-orthodox"
-            className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
-          >
-            Back to Oriental Orthodox
-          </Link>
-        </div>
+        <Breadcrumb items={[
+          { label: "Home", href: "/" },
+          { label: "Library", href: "/library" },
+          { label: "Oriental Orthodox", href: "/library/oriental-orthodox" },
+          { label: entry.title },
+        ]} />
 
         <section className="mt-8 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-8">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">

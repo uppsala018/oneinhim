@@ -3,6 +3,8 @@ import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
 import { getCatechismEntry, romanCatechismLibrary } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -34,16 +36,28 @@ export default async function CatechismEntryPage({
     notFound();
   }
 
+  const bookSchema = {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    name: entry.title,
+    description: entry.summary ?? `Read ${entry.title} from the Roman Catechism of the Council of Trent.`,
+    url: `https://www.oneinhimbiblestudy.com/library/catechism/${slug}`,
+    inLanguage: "en",
+    genre: "Religious Text",
+    isPartOf: { "@type": "BookSeries", name: "Roman Catechism of the Council of Trent" },
+  };
+
   return (
     <>
+      <JsonLd data={bookSchema} />
       <AppHeader />
       <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <Link
-          href="/library/catechism"
-          className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
-        >
-          Back to Catechism
-        </Link>
+        <Breadcrumb items={[
+          { label: "Home", href: "/" },
+          { label: "Library", href: "/library" },
+          { label: "Catechism", href: "/library/catechism" },
+          { label: entry.title },
+        ]} />
 
         <section className="mt-8 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-8">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">

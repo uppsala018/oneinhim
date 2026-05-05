@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JsonLd from "@/components/json-ld";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import { councilsLibrary, getCouncilTopic } from "@/lib/content";
 
@@ -34,8 +35,33 @@ export default async function CouncilDetailPage({
     notFound();
   }
 
+  const eventSchema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: council.title,
+    startDate: council.year ? String(council.year) : undefined,
+    location: { "@type": "Place", name: council.location ?? "Unknown" },
+    description: council.summary ?? `Study the ${council.title} — decisions, doctrine, and historical significance.`,
+    url: `https://www.oneinhimbiblestudy.com/library/councils/${slug}`,
+    organizer: { "@type": "Organization", name: "One In Him Bible Study" },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.oneinhimbiblestudy.com" },
+      { "@type": "ListItem", position: 2, name: "Library", item: "https://www.oneinhimbiblestudy.com/library" },
+      { "@type": "ListItem", position: 3, name: "Ecumenical Councils", item: "https://www.oneinhimbiblestudy.com/library/councils" },
+      { "@type": "ListItem", position: 4, name: council.title },
+    ],
+  };
+
   return (
-    <main className="council-detail mobile-app-shell">
+    <>
+      <JsonLd data={eventSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <main className="council-detail mobile-app-shell">
       <header className="mobile-section-header">
         <Link href="/library/councils" aria-label="Back to councils" className="mobile-section-header__back">
           ‹
@@ -169,5 +195,6 @@ export default async function CouncilDetailPage({
 
       <MobileBottomNav active="Home" />
     </main>
+    </>
   );
 }

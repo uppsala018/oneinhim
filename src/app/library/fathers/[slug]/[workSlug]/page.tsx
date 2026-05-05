@@ -3,6 +3,8 @@ import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
 import FatherWorkReader from "@/components/father-work-reader";
 import { fathersLibrary, getFatherProfile, getFatherWork } from "@/lib/content";
 
@@ -43,17 +45,31 @@ export default async function FatherWorkPage({
   const nextWork =
     workIndex >= 0 && workIndex < father.works.length - 1 ? father.works[workIndex + 1] : null;
 
+  const bookSchema = {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    name: work.title,
+    author: { "@type": "Person", name: father.name },
+    description: `Read ${work.title} by ${father.name}. Early church patristic text from the ${father.era} era.`,
+    url: `https://www.oneinhimbiblestudy.com/library/fathers/${slug}/${workSlug}`,
+    inLanguage: "en",
+    genre: "Religious Text",
+    isPartOf: { "@type": "BookSeries", name: `Writings of ${father.name}` },
+  };
+
   return (
     <>
+      <JsonLd data={bookSchema} />
       <AppHeader />
       <main className="mx-auto max-w-6xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/library/fathers"
-            className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"
-          >
-            Back to Fathers
-          </Link>
+        <Breadcrumb items={[
+          { label: "Home", href: "/" },
+          { label: "Library", href: "/library" },
+          { label: "Church Fathers", href: "/library/fathers" },
+          { label: father.name, href: `/library/fathers/${slug}` },
+          { label: work.title },
+        ]} />
+        <div className="mt-4 flex flex-wrap gap-3 hidden">
           <Link
             href={`/library/fathers/${father.slug}`}
             className="inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-soft)]"

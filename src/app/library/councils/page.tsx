@@ -2,6 +2,7 @@
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+import JsonLd from "@/components/json-ld";
 import { councilsLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
@@ -11,8 +12,20 @@ export const metadata: Metadata = buildMeta({
   path: "/library/councils",
 });
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.oneinhimbiblestudy.com" },
+    { "@type": "ListItem", position: 2, name: "Library", item: "https://www.oneinhimbiblestudy.com/library" },
+    { "@type": "ListItem", position: 3, name: "Ecumenical Councils", item: "https://www.oneinhimbiblestudy.com/library/councils" },
+  ],
+};
+
 export default function CouncilsPage() {
   return (
+    <>
+    <JsonLd data={breadcrumbSchema} />
     <main className="councils-mobile mobile-app-shell">
       <header className="mobile-section-header">
         <Link href="/" aria-label="Back home" className="mobile-section-header__back">
@@ -51,6 +64,7 @@ export default function CouncilsPage() {
 
       <MobileBottomNav active="Home" />
     </main>
+    </>
   );
 }
 

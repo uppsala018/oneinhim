@@ -21,13 +21,23 @@ export default async function CatholicPage({
   const params = await searchParams;
 
   return (
-    <CatholicReader
-      initialReference={{
-        book: params.book,
-        chapter: params.chapter,
-        verse: params.verse,
-      }}
-    />
+    <>
+      <div className="sr-only">
+        <h1>Catholic Bible — Douay-Rheims &amp; RSV-CE Online Reader</h1>
+        <p>
+          Read the complete Douay-Rheims Catholic Bible and RSV-CE with the full deuterocanonical
+          books — Tobit, Judith, 1 and 2 Maccabees, Wisdom, Sirach, and Baruch. Free online Catholic
+          scripture study with notes and bookmarks. Covers the full Catholic canon of 73 books.
+        </p>
+      </div>
+      <CatholicReader
+        initialReference={{
+          book: params.book,
+          chapter: params.chapter,
+          verse: params.verse,
+        }}
+      />
+    </>
   );
 }
 

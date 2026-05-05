@@ -62,14 +62,25 @@ export default async function KJVPage({
   const bookCatalog = await getBookCatalog();
 
   return (
-    <StudyWorkspace
-      initialTab="reader"
-      initialReference={{
-        book: normalizeKjvBookCode(params.book, bookCatalog),
-        chapter: params.chapter,
-        verse: params.verse,
-      }}
-    />
+    <>
+      <div className="sr-only">
+        <h1>KJV Bible with Strong&apos;s Concordance — Free Online Bible Study</h1>
+        <p>
+          Read the complete King James Version Bible with integrated Strong&apos;s concordance numbers.
+          Click any word to see the original Hebrew or Greek definition, cross-references, and study
+          notes. Covers the full Old and New Testament with 66 books. Free to use for Bible study,
+          research, and personal devotion.
+        </p>
+      </div>
+      <StudyWorkspace
+        initialTab="reader"
+        initialReference={{
+          book: normalizeKjvBookCode(params.book, bookCatalog),
+          chapter: params.chapter,
+          verse: params.verse,
+        }}
+      />
+    </>
   );
 }
 

@@ -60,6 +60,45 @@ a {
   text-decoration: none;
 }
 
+/* Breadcrumb navigation */
+.breadcrumb-nav {
+  margin-bottom: 1.5rem;
+}
+.breadcrumb-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb-nav__item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.breadcrumb-nav__link {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+.breadcrumb-nav__link:hover {
+  color: var(--color-highlight);
+}
+.breadcrumb-nav__current {
+  font-size: 0.75rem;
+  color: var(--color-soft);
+  letter-spacing: 0.05em;
+}
+.breadcrumb-nav__sep {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  opacity: 0.5;
+}
+
 img {
   max-width: 100%;
   display: block;

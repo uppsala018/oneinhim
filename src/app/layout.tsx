@@ -2,7 +2,38 @@
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import PwaBoot from "@/components/pwa-boot";
 import PreferencesBoot from "@/components/preferences-boot";
+import JsonLd from "@/components/json-ld";
 import "./globals.css";
+
+const SITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.oneinhimbiblestudy.com/#organization",
+      name: "One In Him Bible Study",
+      url: "https://www.oneinhimbiblestudy.com",
+      description:
+        "Free Bible study platform covering KJV + Strong's concordance, Church Fathers, Ecumenical Councils, Roman Catechism, and 2000 years of Christian history.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.oneinhimbiblestudy.com/#website",
+      url: "https://www.oneinhimbiblestudy.com",
+      name: "One In Him Bible Study",
+      publisher: { "@id": "https://www.oneinhimbiblestudy.com/#organization" },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate:
+            "https://www.oneinhimbiblestudy.com/library/kjv?verse={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
+};
 
 const display = Cormorant_Garamond({
   variable: "--font-display",
@@ -18,10 +49,15 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "One In Him Biblestudy & Church History",
+  title: {
+    default: "One In Him Bible Study | KJV, Church Fathers & Church History",
+    template: "%s | One In Him Bible Study",
+  },
   description:
-    "An installable Bible study and church history app covering Scripture, theology, church fathers, councils, and Christian traditions.",
-  applicationName: "One In Him Biblestudy & Church History",
+    "Free Bible study with KJV + Strong's concordance, Church Fathers, Ecumenical Councils, Roman Catechism, and complete Church History — all free, all in one place.",
+  keywords:
+    "bible study, KJV bible, Strong's concordance, church fathers, church history, ecumenical councils, early church, Roman Catechism",
+  applicationName: "One In Him Bible Study",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -53,6 +89,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <JsonLd data={SITE_SCHEMA} />
         <PwaBoot />
         <PreferencesBoot />
         {children}

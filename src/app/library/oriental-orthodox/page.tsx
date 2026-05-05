@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
 import Link from "next/link";
 import { orientalOrthodoxLibrary } from "@/lib/content";
@@ -38,6 +39,8 @@ export default function OrientalOrthodoxPage() {
     <>
       <AppHeader />
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Oriental Orthodox" }]} />
+        <h1 className="sr-only">Oriental Orthodox Christianity — Texts &amp; Study</h1>
         <SectionHeading
           title="A dedicated Oriental Orthodox page is now part of the Orthodox study side."
           body="This section is the base for expanding beyond Greek and Byzantine material into the Oriental Orthodox family, giving that tradition a clear place to grow inside the app."

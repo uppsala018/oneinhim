@@ -3,6 +3,7 @@ import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import SiteFooter from "@/components/site-footer";
 import ScrollReveal from "@/components/scroll-reveal";
+import JsonLd from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "One In Him Bible Study | KJV, Church Fathers & Church History",
@@ -116,9 +117,22 @@ const traditionCards = [
   },
 ];
 
+const HOME_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.oneinhimbiblestudy.com/#webpage",
+  url: "https://www.oneinhimbiblestudy.com",
+  name: "One In Him Bible Study | KJV, Church Fathers & Church History",
+  description:
+    "Free Bible study with KJV + Strong's, Douay-Rheims, Church Fathers, Ecumenical Councils and complete Church History — all free.",
+  isPartOf: { "@id": "https://www.oneinhimbiblestudy.com/#website" },
+  about: { "@id": "https://www.oneinhimbiblestudy.com/#organization" },
+};
+
 export default function Home() {
   return (
     <>
+      <JsonLd data={HOME_SCHEMA} />
       <AppHeader />
 
       <main>

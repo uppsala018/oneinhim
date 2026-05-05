@@ -2,6 +2,7 @@
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
 import SectionHeading from "@/components/section-heading";
 import {
   getFathersForTrack,
@@ -24,6 +25,8 @@ export default function ProtestantPage() {
     <>
       <AppHeader />
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Protestant" }]} />
+        <h1 className="sr-only">Protestant Bible Study &amp; Theology</h1>
         <SectionHeading
           title="A Protestant study path now sits alongside the Catholic and Orthodox tracks."
           body="This hub brings together the KJV reader, Strong's tools, Reformation history, and selected fathers and theologians that remained influential in Protestant reading traditions."
