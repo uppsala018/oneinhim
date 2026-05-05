@@ -76,7 +76,7 @@ function InlineSignIn() {
   if (sent) {
     return (
       <div className="forum-signin-card">
-        <p className="forum-signin-card__title">Check your email âś“</p>
+        <p className="forum-signin-card__title">Check your email ✓</p>
         <p className="forum-signin-card__body">
           We sent a sign-in link to <strong>{email}</strong>. Open it to join the conversation.
         </p>
@@ -248,7 +248,7 @@ export default function PrayerForumBoard() {
       {/* Warning banner */}
       {restriction?.status === "warned" && !warningDismissed && (
         <div className="forum-notice" style={{ borderColor: "rgba(229,197,122,0.4)", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "0.5rem" }}>
-          <span>âš  You have received a warning from the admin.{restriction.reason ? ` "${restriction.reason}"` : ""}</span>
+          <span>⚠ You have received a warning from the admin.{restriction.reason ? ` "${restriction.reason}"` : ""}</span>
           <button type="button" onClick={() => setWarningDismissed(true)} style={{ flexShrink: 0, color: "var(--color-soft)", fontSize: "0.8rem", textDecoration: "underline" }}>Dismiss</button>
         </div>
       )}
@@ -397,7 +397,7 @@ export default function PrayerForumBoard() {
 
                 {post.admin_reply && (
                   <div className="forum-card__admin-reply">
-                    <p className="forum-card__admin-reply-label">Admin âś“</p>
+                    <p className="forum-card__admin-reply-label">Admin ✓</p>
                     <p className="forum-card__admin-reply-text">{post.admin_reply}</p>
                   </div>
                 )}
@@ -410,7 +410,7 @@ export default function PrayerForumBoard() {
                     className="forum-card__pray-btn"
                     title={userEmail ? undefined : "Sign in to pray"}
                   >
-                    đź™Ź {post.amen_count > 0 ? post.amen_count : ""} Amen
+                    🙏 {post.amen_count > 0 ? post.amen_count : ""} Amen
                   </button>
                   {isOwn && post.status === "open" && (
                     <button
