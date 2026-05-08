@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import PwaBoot from "@/components/pwa-boot";
 import PreferencesBoot from "@/components/preferences-boot";
 import JsonLd from "@/components/json-ld";
+import BetaReportWidget from "@/components/beta-report-widget";
 import "./globals.css";
 
 const SITE_SCHEMA = {
@@ -124,8 +125,8 @@ export default function RootLayout({
         <PwaBoot />
         <PreferencesBoot />
         {children}
+        <BetaReportWidget />
       </body>
     </html>
   );
 }
-
