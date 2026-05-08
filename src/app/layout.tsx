@@ -5,6 +5,7 @@ import PreferencesBoot from "@/components/preferences-boot";
 import JsonLd from "@/components/json-ld";
 import BetaReportWidget from "@/components/beta-report-widget";
 import "./globals.css";
+import "@/lib/firebase-client";
 
 const SITE_SCHEMA = {
   "@context": "https://schema.org",
