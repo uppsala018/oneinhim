@@ -40,7 +40,7 @@ function LoginContent() {
   const [message, setMessage] = useState('');
   const searchParams = useSearchParams();
   const router = useRouter();
-  const next = searchParams.get('next') || '/beta-dashboard';
+  const next = searchParams.get('next') || '/library/prayer-forum';
 
   const handleEmailSignIn = async (e: React.FormEvent) => {
     e.preventDefault();

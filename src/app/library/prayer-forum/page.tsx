@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
-import PrayerForumBoard from "@/components/prayer-forum-board";
+import PrayerForumContent from "./prayer-forum-content";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
@@ -39,12 +39,9 @@ export default function PrayerForumPage() {
         </p>
       </section>
 
-      <div className="px-4 pt-4 pb-2">
-        <PrayerForumBoard />
-      </div>
+      <PrayerForumContent />
 
       <MobileBottomNav />
     </main>
   );
 }
-

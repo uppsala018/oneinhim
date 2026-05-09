@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { db, isFirebaseConfigured } from "@/lib/firebase-client";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import Link from "next/link";
 
 export default function BetaTesterPage() {
   const [formData, setFormData] = useState({
@@ -84,7 +85,16 @@ export default function BetaTesterPage() {
         {status === "success" ? (
           <div className="rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-6 text-[var(--color-ink)]">
             <h2 className="text-2xl font-semibold mb-2">Thanks for signing up!</h2>
-            <p>We&apos;ll be in touch soon with beta testing details.</p>
+            <p className="mb-4">We&apos;ll be in touch soon with beta testing details. In the meantime, here&apos;s what you can do next:</p>
+            <ul className="list-disc pl-5 mb-6 space-y-2">
+              <li>Visit the beta dashboard to track progress and updates.</li>
+              <li>Test the site on desktop, tablet, and mobile devices.</li>
+              <li>Report bugs, issues, confusing parts, design problems, and ideas.</li>
+              <li>Be honest and specific in your feedback — it helps us improve!</li>
+            </ul>
+            <Link href="/login?next=/beta-dashboard" className="inline-flex rounded-full border border-[var(--color-border)] px-6 py-3 text-[var(--color-ink)] font-medium hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] hover:border-[var(--color-gold)] transition-colors">
+              Go to Beta Dashboard
+            </Link>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
