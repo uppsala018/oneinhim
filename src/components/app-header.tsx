@@ -77,8 +77,7 @@ export default function AppHeader() {
             Beta testers wanted
           </Link>
           {user ? (
-            <div className="hidden md:flex items-center gap-4 ml-4">
-              <span className="text-sm text-[var(--color-ink)]">{user.email}</span>
+            <div className="hidden md:flex items-center ml-4">
               <button
                 onClick={handleSignOut}
                 className="text-sm text-red-500 hover:text-red-600 font-medium"
@@ -91,7 +90,7 @@ export default function AppHeader() {
               href="/login"
               className="hidden md:block text-sm text-[var(--color-ink)] hover:text-[var(--color-gold)] ml-4"
             >
-              Sign in / Sign up
+              Sign in
             </Link>
           )}
           <button
@@ -120,25 +119,22 @@ export default function AppHeader() {
           Explore Library
         </Link>
         {user ? (
-          <>
-            <span className="px-4 py-2 text-sm text-[var(--color-ink)]">{user.email}</span>
-            <button
-              onClick={() => {
-                handleSignOut();
-                setMobileOpen(false);
-              }}
-              className="px-4 py-2 text-sm text-red-500 hover:text-red-600 text-left w-full"
-            >
-              Sign out
-            </button>
-          </>
+          <button
+            onClick={() => {
+              handleSignOut();
+              setMobileOpen(false);
+            }}
+            className="px-4 py-2 text-sm text-red-500 hover:text-red-600 text-left w-full"
+          >
+            Sign out
+          </button>
         ) : (
           <Link
             href="/login"
             onClick={() => setMobileOpen(false)}
             className="px-4 py-2 text-sm text-[var(--color-ink)] hover:text-[var(--color-gold)]"
           >
-            Sign in / Sign up
+            Sign in
           </Link>
         )}
       </nav>

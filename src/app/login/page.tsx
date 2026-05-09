@@ -6,6 +6,8 @@ import { auth, db } from '../../lib/firebase-client';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendEmailVerification } from 'firebase/auth';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 
+const ADMIN_EMAIL = 'mosegaard622@gmail.com';
+
 const syncUserToFirestore = async (user: any, provider: string) => {
   if (!db) return;
   const userRef = doc(db, 'users', user.uid);
@@ -40,7 +42,6 @@ function LoginContent() {
   const [message, setMessage] = useState('');
   const searchParams = useSearchParams();
   const router = useRouter();
-  const next = searchParams.get('next') || '/library/prayer-forum';
 
   const handleEmailSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,7 +63,8 @@ function LoginContent() {
       await syncUserToFirestore(user, 'email');
       setStatus('success');
       setMessage('Login successful! Redirecting...');
-      router.push(next);
+      const redirectPath = user.email === ADMIN_EMAIL ? '/admin/beta' : (searchParams.get('next') || '/library/prayer-forum');
+      router.push(redirectPath);
     } catch (error: any) {
       setStatus('error');
       switch (error.code) {
@@ -139,7 +141,8 @@ function LoginContent() {
       await syncUserToFirestore(user, 'google');
       setStatus('success');
       setMessage('Login successful! Redirecting...');
-      router.push(next);
+      const redirectPath = user.email === ADMIN_EMAIL ? '/admin/beta' : (searchParams.get('next') || '/library/prayer-forum');
+      router.push(redirectPath);
     } catch (error: any) {
       setStatus('error');
       if (error.code === 'auth/popup-closed-by-user') {
