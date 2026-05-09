@@ -81,9 +81,9 @@ export default function AdminBetaPage() {
       return;
     }
 
-    // Check if Firestore database is available
-    if (!db) {
-      setError('Database connection is unavailable. Please ensure Firebase is properly configured.');
+    const firestoreDb = db;
+    if (!firestoreDb) {
+      setError("Firebase is not configured. Please try again later.");
       setLoading(false);
       return;
     }
@@ -93,15 +93,15 @@ export default function AdminBetaPage() {
         setLoading(true);
         setError(null);
 
-        const usersSnap = await getDocs(collection(db, 'users'));
+        const usersSnap = await getDocs(collection(firestoreDb, 'users'));
         const usersData = usersSnap.docs.map(doc => ({ ...doc.data() } as UserDoc));
         setUsers(usersData);
 
-        const betaTestersSnap = await getDocs(collection(db, 'beta_testers'));
+        const betaTestersSnap = await getDocs(collection(firestoreDb, 'beta_testers'));
         const betaTestersData = betaTestersSnap.docs.map(doc => ({ ...doc.data() } as BetaTesterDoc));
         setBetaTesters(betaTestersData);
 
-        const feedbackSnap = await getDocs(collection(db, 'beta_feedback'));
+        const feedbackSnap = await getDocs(collection(firestoreDb, 'beta_feedback'));
         const feedbackData = feedbackSnap.docs.map(doc => ({ id: doc.id, ...doc.data() } as FeedbackDoc));
         setFeedback(feedbackData);
 
@@ -130,12 +130,13 @@ export default function AdminBetaPage() {
   }, [currentUser, isAdmin]);
 
   const handleUpdateFeedbackStatus = async (feedbackId: string, newStatus: string) => {
-    if (!db) {
-      setError('Database connection is unavailable. Cannot update feedback status.');
+    const firestoreDb = db;
+    if (!firestoreDb) {
+      setError('Firebase is not configured. Cannot update feedback status.');
       return;
     }
     try {
-      await updateDoc(doc(db, 'beta_feedback', feedbackId), { status: newStatus });
+      await updateDoc(doc(firestoreDb, 'beta_feedback', feedbackId), { status: newStatus });
       setFeedback(prev => prev.map(f => 
         f.id === feedbackId ? { ...f, status: newStatus as FeedbackDoc['status'] } : f
       ));
