@@ -58,16 +58,35 @@ export default function AdminBetaPage() {
   const router = useRouter();
 
   useEffect(() => {
+    // Guard against null auth instance
+    if (!auth) {
+      setCurrentUser(null);
+      setIsAdmin(false);
+      setLoading(false);
+      return;
+    }
+
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setIsAdmin(user?.email === ADMIN_EMAIL);
       setLoading(false);
     });
+
     return () => unsubscribe();
   }, []);
 
   useEffect(() => {
-    if (!currentUser || !isAdmin || !db) return;
+    // Only proceed if user is logged in and has admin privileges
+    if (!currentUser || !isAdmin) {
+      return;
+    }
+
+    // Check if Firestore database is available
+    if (!db) {
+      setError('Database connection is unavailable. Please ensure Firebase is properly configured.');
+      setLoading(false);
+      return;
+    }
 
     const fetchData = async () => {
       try {
@@ -111,7 +130,10 @@ export default function AdminBetaPage() {
   }, [currentUser, isAdmin]);
 
   const handleUpdateFeedbackStatus = async (feedbackId: string, newStatus: string) => {
-    if (!db) return;
+    if (!db) {
+      setError('Database connection is unavailable. Cannot update feedback status.');
+      return;
+    }
     try {
       await updateDoc(doc(db, 'beta_feedback', feedbackId), { status: newStatus });
       setFeedback(prev => prev.map(f => 
