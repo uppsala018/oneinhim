@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { auth } from '../../lib/firebase-client';
-import { sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink } from 'firebase/auth';
+import { sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 function LoginContent() {
   const [email, setEmail] = useState('');
@@ -70,6 +70,30 @@ function LoginContent() {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    if (!auth) {
+      setStatus('error');
+      setMessage('Firebase is not configured. Please contact support.');
+      return;
+    }
+
+    setStatus('loading');
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      setStatus('success');
+      setMessage('Login successful! Redirecting...');
+      router.push(next);
+    } catch (error: any) {
+      setStatus('error');
+      if (error.code === 'auth/popup-closed-by-user') {
+        setMessage('Google sign-in was cancelled. Please try again.');
+      } else {
+        setMessage(`Google sign-in failed: ${error.message}`);
+      }
+    }
+  };
+
   return (
     <main style={{ maxWidth: '600px', margin: '2rem auto', padding: '0 1rem' }}>
       <h1 style={{ color: '#FFD700', fontFamily: 'sans-serif', marginBottom: '0.5rem' }}>Log in</h1>
@@ -90,35 +114,16 @@ function LoginContent() {
       )}
 
       {mode !== 'finish' && (
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <label htmlFor="email" style={{ color: '#FFFFFF', fontFamily: 'sans-serif' }}>
-            Email address
-          </label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            style={{
-              padding: '0.75rem',
-              borderRadius: '4px',
-              border: '1px solid #333',
-              backgroundColor: '#1a1a1a',
-              color: '#FFFFFF',
-              fontFamily: 'sans-serif',
-              fontSize: '1rem',
-            }}
-            placeholder="you@example.com"
-          />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <button
-            type="submit"
+            type="button"
+            onClick={handleGoogleSignIn}
             disabled={status === 'loading'}
             style={{
               padding: '0.75rem 1.5rem',
-              backgroundColor: '#FFD700',
-              color: '#000000',
-              border: 'none',
+              backgroundColor: '#1a1a1a',
+              color: '#FFFFFF',
+              border: '1px solid #FFD700',
               borderRadius: '4px',
               cursor: 'pointer',
               fontFamily: 'sans-serif',
@@ -128,9 +133,57 @@ function LoginContent() {
               alignSelf: 'flex-start',
             }}
           >
-            {status === 'loading' ? 'Sending...' : 'Send magic link'}
+            Continue with Google
           </button>
-        </form>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '0.5rem 0' }}>
+            <div style={{ flex: 1, height: '1px', backgroundColor: '#333' }} />
+            <span style={{ color: '#FFFFFF', fontFamily: 'sans-serif', fontSize: '0.875rem' }}>Or continue with email</span>
+            <div style={{ flex: 1, height: '1px', backgroundColor: '#333' }} />
+          </div>
+
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <label htmlFor="email" style={{ color: '#FFFFFF', fontFamily: 'sans-serif' }}>
+              Email address
+            </label>
+            <input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              style={{
+                padding: '0.75rem',
+                borderRadius: '4px',
+                border: '1px solid #333',
+                backgroundColor: '#1a1a1a',
+                color: '#FFFFFF',
+                fontFamily: 'sans-serif',
+                fontSize: '1rem',
+              }}
+              placeholder="you@example.com"
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              style={{
+                padding: '0.75rem 1.5rem',
+                backgroundColor: '#FFD700',
+                color: '#000000',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontFamily: 'sans-serif',
+                fontWeight: 'bold',
+                fontSize: '1rem',
+                opacity: status === 'loading' ? 0.7 : 1,
+                alignSelf: 'flex-start',
+              }}
+            >
+              {status === 'loading' ? 'Sending...' : 'Send magic link'}
+            </button>
+          </form>
+        </div>
       )}
 
       {mode === 'finish' && status === 'success' && (
