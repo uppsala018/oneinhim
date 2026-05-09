@@ -45,3 +45,4 @@ imports/vendor/
 
 # claude code working files
 .claude/
+.aider*
