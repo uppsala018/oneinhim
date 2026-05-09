@@ -10,6 +10,12 @@ export default function PrayerForumContent() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!auth) {
+      setUser(null);
+      setLoading(false);
+      return;
+    }
+
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setUser(user ? { email: user.email } : null);
       setLoading(false);
