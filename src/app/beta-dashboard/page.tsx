@@ -34,16 +34,16 @@ export default function BetaDashboardPage() {
     setSuccess(false);
 
     if (!formData.title.trim()) {
-      setError("Titel krävs.");
+      setError("Title is required.");
       return;
     }
     if (!formData.description.trim()) {
-      setError("Beskrivning krävs.");
+      setError("Description is required.");
       return;
     }
 
     if (!isFirebaseConfigured || !db) {
-      setError("Feedback-överföring är för närvarande inte tillgänglig. Firebase är inte konfigurerat.");
+      setError("Feedback submission is currently unavailable. Firebase is not configured.");
       return;
     }
 
@@ -74,11 +74,11 @@ export default function BetaDashboardPage() {
         userEmail: "",
       });
     } catch (err: any) {
-      console.error("Fel vid inskickning av feedback:", err);
+      console.error("Error submitting feedback:", err);
       if (err.code === "permission-denied") {
-        setError("Tyvärr kan vi inte spara din feedback just nu. Behörighet nekad. Försök igen senare eller kontakta support.");
+        setError("Unfortunately, we cannot save your feedback right now. Permission denied. Try again later or contact support.");
       } else {
-        setError(`Kunde inte skicka feedback: ${err.message || "Okänt fel"}`);
+        setError(`Could not submit feedback: ${err.message || "Unknown error"}`);
       }
     } finally {
       setSubmitting(false);
@@ -88,105 +88,260 @@ export default function BetaDashboardPage() {
   return (
     <>
       <AppHeader />
-      <main style={{ backgroundColor: "#000", color: "#fff", minHeight: "100vh", padding: "2rem" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <h1 style={{ color: "#FFD700", fontSize: "2.5rem", marginBottom: "1rem" }}>Beta Tester Panel</h1>
-          <p style={{ color: "#ccc", fontSize: "1.1rem", marginBottom: "2rem" }}>
-            Välkommen till beta-testpanelen! Som beta-testare kan du rapportera buggar, problem, idéer och lämna ärlig feedback för att hjälpa oss förbättra plattformen.
+      <main style={{ 
+        backgroundColor: "var(--color-bg)", 
+        color: "var(--color-ink)", 
+        minHeight: "100vh", 
+        padding: "calc(var(--header-height) + 2rem) 2rem 2rem",
+        maxWidth: "72rem",
+        margin: "0 auto",
+      }}>
+        <div style={{ maxWidth: "48rem", margin: "0 auto" }}>
+          <h1 style={{ 
+            color: "var(--color-highlight)", 
+            fontFamily: "var(--font-display)", 
+            fontSize: "clamp(2rem, 5vw, 2.5rem)", 
+            marginBottom: "1rem",
+            fontWeight: 600,
+            lineHeight: 1.1,
+          }}>
+            Beta Tester Dashboard
+          </h1>
+          <p style={{ 
+            color: "var(--color-muted)", 
+            fontSize: "1.1rem", 
+            marginBottom: "2rem",
+            lineHeight: 1.7,
+            fontFamily: "var(--font-body)",
+          }}>
+            Welcome to the beta tester dashboard! As a beta tester, you can report bugs, issues, ideas, and provide honest feedback to help us improve the platform.
           </p>
 
           {success && (
-            <div style={{ backgroundColor: "#1a1a1a", border: "1px solid #FFD700", padding: "1rem", marginBottom: "2rem", borderRadius: "4px" }}>
-              Tack för din feedback! Ditt bidrag har tagits emot.
+            <div style={{ 
+              backgroundColor: "var(--color-panel)", 
+              border: "1px solid var(--color-highlight)", 
+              padding: "1rem", 
+              marginBottom: "2rem", 
+              borderRadius: "1rem",
+              color: "var(--color-ink)",
+              fontFamily: "var(--font-body)",
+            }}>
+              Thank you for your feedback! Your submission has been received.
             </div>
           )}
 
           {error && (
-            <div style={{ backgroundColor: "#1a1a1a", border: "1px solid #ff4444", padding: "1rem", marginBottom: "2rem", borderRadius: "4px", color: "#ff4444" }}>
+            <div style={{ 
+              backgroundColor: "var(--color-panel)", 
+              border: "1px solid #e6a5a5", 
+              padding: "1rem", 
+              marginBottom: "2rem", 
+              borderRadius: "1rem", 
+              color: "#e6a5a5",
+              fontFamily: "var(--font-body)",
+            }}>
               {error}
             </div>
           )}
 
           {!isFirebaseConfigured && (
-            <div style={{ backgroundColor: "#1a1a1a", border: "1px solid #ff4444", padding: "1rem", marginBottom: "2rem", borderRadius: "4px", color: "#ff4444" }}>
-              Firebase är inte konfigurerat. Feedback-överföring är inte tillgänglig.
+            <div style={{ 
+              backgroundColor: "var(--color-panel)", 
+              border: "1px solid #e6a5a5", 
+              padding: "1rem", 
+              marginBottom: "2rem", 
+              borderRadius: "1rem", 
+              color: "#e6a5a5",
+              fontFamily: "var(--font-body)",
+            }}>
+              Firebase is not configured. Feedback submission is unavailable.
             </div>
           )}
 
-          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.5rem", fontFamily: "var(--font-body)" }}>
             <div>
-              <label htmlFor="type" style={{ color: "#FFD700", display: "block", marginBottom: "0.5rem" }}>Feedback-typ *</label>
+              <label htmlFor="type" style={{ 
+                color: "var(--color-highlight)", 
+                display: "block", 
+                marginBottom: "0.5rem",
+                fontFamily: "var(--font-body)",
+                fontSize: "0.75rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}>Feedback Type *</label>
               <select
                 id="type"
                 value={formData.type}
                 onChange={(e) => setFormData((prev) => ({ ...prev, type: e.target.value }))}
-                style={{ backgroundColor: "#1a1a1a", border: "1px solid #FFD700", color: "#fff", padding: "0.5rem", width: "100%", borderRadius: "4px" }}
+                style={{ 
+                  width: "100%",
+                  border: "1px solid rgba(229, 197, 122, 0.38)",
+                  borderRadius: "1rem",
+                  background: "rgba(10, 10, 10, 0.78)",
+                  color: "var(--color-ink)",
+                  padding: "0.85rem 1rem",
+                  outline: "none",
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.95rem",
+                }}
                 required
               >
-                <option value="bug">Bugg</option>
-                <option value="issue">Problem</option>
-                <option value="idea">Idé</option>
-                <option value="general_feedback">Allmän feedback</option>
+                <option value="bug">Bug</option>
+                <option value="issue">Issue</option>
+                <option value="idea">Idea</option>
+                <option value="general_feedback">General Feedback</option>
               </select>
             </div>
 
             <div>
-              <label htmlFor="title" style={{ color: "#FFD700", display: "block", marginBottom: "0.5rem" }}>Titel *</label>
+              <label htmlFor="title" style={{ 
+                color: "var(--color-highlight)", 
+                display: "block", 
+                marginBottom: "0.5rem",
+                fontFamily: "var(--font-body)",
+                fontSize: "0.75rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}>Title *</label>
               <input
                 type="text"
                 id="title"
                 value={formData.title}
                 onChange={(e) => setFormData((prev) => ({ ...prev, title: e.target.value }))}
-                style={{ backgroundColor: "#1a1a1a", border: "1px solid #FFD700", color: "#fff", padding: "0.5rem", width: "100%", borderRadius: "4px" }}
+                style={{ 
+                  width: "100%",
+                  border: "1px solid rgba(229, 197, 122, 0.38)",
+                  borderRadius: "1rem",
+                  background: "rgba(10, 10, 10, 0.78)",
+                  color: "var(--color-ink)",
+                  padding: "0.85rem 1rem",
+                  outline: "none",
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.95rem",
+                }}
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="description" style={{ color: "#FFD700", display: "block", marginBottom: "0.5rem" }}>Beskrivning *</label>
+              <label htmlFor="description" style={{ 
+                color: "var(--color-highlight)", 
+                display: "block", 
+                marginBottom: "0.5rem",
+                fontFamily: "var(--font-body)",
+                fontSize: "0.75rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}>Description *</label>
               <textarea
                 id="description"
                 value={formData.description}
                 onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
                 rows={5}
-                style={{ backgroundColor: "#1a1a1a", border: "1px solid #FFD700", color: "#fff", padding: "0.5rem", width: "100%", borderRadius: "4px", resize: "vertical" }}
+                style={{ 
+                  width: "100%",
+                  border: "1px solid rgba(229, 197, 122, 0.38)",
+                  borderRadius: "1rem",
+                  background: "rgba(10, 10, 10, 0.78)",
+                  color: "var(--color-ink)",
+                  padding: "0.85rem 1rem",
+                  outline: "none",
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.95rem",
+                  resize: "vertical",
+                }}
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="pageUrl" style={{ color: "#FFD700", display: "block", marginBottom: "0.5rem" }}>Sid-URL</label>
+              <label htmlFor="pageUrl" style={{ 
+                color: "var(--color-highlight)", 
+                display: "block", 
+                marginBottom: "0.5rem",
+                fontFamily: "var(--font-body)",
+                fontSize: "0.75rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}>Page URL</label>
               <input
                 type="text"
                 id="pageUrl"
                 value={formData.pageUrl}
                 onChange={(e) => setFormData((prev) => ({ ...prev, pageUrl: e.target.value }))}
-                style={{ backgroundColor: "#1a1a1a", border: "1px solid #FFD700", color: "#fff", padding: "0.5rem", width: "100%", borderRadius: "4px" }}
-                placeholder="t.ex. https://oneinhimbiblestudy.com/library/kjv"
+                style={{ 
+                  width: "100%",
+                  border: "1px solid rgba(229, 197, 122, 0.38)",
+                  borderRadius: "1rem",
+                  background: "rgba(10, 10, 10, 0.78)",
+                  color: "var(--color-ink)",
+                  padding: "0.85rem 1rem",
+                  outline: "none",
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.95rem",
+                }}
+                placeholder="e.g. https://oneinhimbiblestudy.com/library/kjv"
               />
             </div>
 
             <div>
-              <label htmlFor="deviceType" style={{ color: "#FFD700", display: "block", marginBottom: "0.5rem" }}>Enhetstyp</label>
+              <label htmlFor="deviceType" style={{ 
+                color: "var(--color-highlight)", 
+                display: "block", 
+                marginBottom: "0.5rem",
+                fontFamily: "var(--font-body)",
+                fontSize: "0.75rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}>Device Type</label>
               <input
                 type="text"
                 id="deviceType"
                 value={formData.deviceType}
                 onChange={(e) => setFormData((prev) => ({ ...prev, deviceType: e.target.value }))}
-                style={{ backgroundColor: "#1a1a1a", border: "1px solid #FFD700", color: "#fff", padding: "0.5rem", width: "100%", borderRadius: "4px" }}
-                placeholder="t.ex. Dator, Mobil, Surfplatta"
+                style={{ 
+                  width: "100%",
+                  border: "1px solid rgba(229, 197, 122, 0.38)",
+                  borderRadius: "1rem",
+                  background: "rgba(10, 10, 10, 0.78)",
+                  color: "var(--color-ink)",
+                  padding: "0.85rem 1rem",
+                  outline: "none",
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.95rem",
+                }}
+                placeholder="e.g. Desktop, Mobile, Tablet"
               />
             </div>
 
             <div>
-              <label htmlFor="userEmail" style={{ color: "#FFD700", display: "block", marginBottom: "0.5rem" }}>E-post (valfritt)</label>
+              <label htmlFor="userEmail" style={{ 
+                color: "var(--color-highlight)", 
+                display: "block", 
+                marginBottom: "0.5rem",
+                fontFamily: "var(--font-body)",
+                fontSize: "0.75rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}>Email (optional)</label>
               <input
                 type="email"
                 id="userEmail"
                 value={formData.userEmail}
                 onChange={(e) => setFormData((prev) => ({ ...prev, userEmail: e.target.value }))}
-                style={{ backgroundColor: "#1a1a1a", border: "1px solid #FFD700", color: "#fff", padding: "0.5rem", width: "100%", borderRadius: "4px" }}
-                placeholder="din.epost@exempel.com"
+                style={{ 
+                  width: "100%",
+                  border: "1px solid rgba(229, 197, 122, 0.38)",
+                  borderRadius: "1rem",
+                  background: "rgba(10, 10, 10, 0.78)",
+                  color: "var(--color-ink)",
+                  padding: "0.85rem 1rem",
+                  outline: "none",
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.95rem",
+                }}
+                placeholder="your.email@example.com"
               />
             </div>
 
@@ -194,19 +349,23 @@ export default function BetaDashboardPage() {
               type="submit"
               disabled={submitting || !isFirebaseConfigured}
               style={{
-                backgroundColor: "#FFD700",
-                color: "#000",
-                padding: "0.75rem 1.5rem",
+                background: "var(--color-highlight)",
+                color: "#080808",
+                padding: "0.9rem 1.4rem",
                 border: "none",
-                borderRadius: "4px",
+                borderRadius: "999px",
                 cursor: submitting ? "not-allowed" : "pointer",
                 opacity: submitting ? 0.7 : 1,
                 fontSize: "1rem",
                 fontWeight: "bold",
                 alignSelf: "flex-start",
+                fontFamily: "var(--font-body)",
+                letterSpacing: "0.06em",
+                boxShadow: "0 8px 32px rgba(201, 168, 76, 0.22)",
+                transition: "transform 180ms ease, box-shadow 180ms ease",
               }}
             >
-              {submitting ? "Skickar..." : "Skicka feedback"}
+              {submitting ? "Submitting..." : "Submit Feedback"}
             </button>
           </form>
         </div>
