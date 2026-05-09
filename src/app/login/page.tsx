@@ -3,7 +3,7 @@
 import { useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { auth } from '../../lib/firebase-client';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendEmailVerification } from 'firebase/auth';
 
 function LoginContent() {
   const [email, setEmail] = useState('');
@@ -63,10 +63,17 @@ function LoginContent() {
 
     setStatus('loading');
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      setStatus('success');
-      setMessage('Account created successfully! Redirecting...');
-      router.push(next);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      // Send email verification after successful account creation
+      try {
+        await sendEmailVerification(userCredential.user);
+        setStatus('success');
+        setMessage('Account created. Please check your email and verify your address before continuing.');
+      } catch (verificationError: any) {
+        // Account was created but verification email failed to send
+        setStatus('error');
+        setMessage('Account created, but we were unable to send the verification email. Please try signing in later to resend the verification email.');
+      }
     } catch (error: any) {
       setStatus('error');
       switch (error.code) {
