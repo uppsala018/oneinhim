@@ -2,8 +2,36 @@
 
 import { useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { auth } from '../../lib/firebase-client';
+import { auth, db } from '../../lib/firebase-client';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendEmailVerification } from 'firebase/auth';
+import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+
+const syncUserToFirestore = async (user: any, provider: string) => {
+  if (!db) return;
+  const userRef = doc(db, 'users', user.uid);
+  try {
+    const userSnap = await getDoc(userRef);
+    const baseData = {
+      uid: user.uid,
+      email: user.email || '',
+      displayName: user.displayName || '',
+      provider: provider,
+      lastLoginAt: serverTimestamp(),
+    };
+    if (userSnap.exists()) {
+      // Uppdatera befintlig användare, skriv inte över createdAt
+      await setDoc(userRef, baseData, { merge: true });
+    } else {
+      // Ny användare, sätt createdAt
+      await setDoc(userRef, {
+        ...baseData,
+        createdAt: serverTimestamp(),
+      });
+    }
+  } catch (error) {
+    console.error('Error syncing user to Firestore:', error);
+  }
+};
 
 function LoginContent() {
   const [email, setEmail] = useState('');
@@ -29,7 +57,9 @@ function LoginContent() {
 
     setStatus('loading');
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      await syncUserToFirestore(user, 'email');
       setStatus('success');
       setMessage('Login successful! Redirecting...');
       router.push(next);
@@ -64,13 +94,15 @@ function LoginContent() {
     setStatus('loading');
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      // Send email verification after successful account creation
+      const user = userCredential.user;
+      await syncUserToFirestore(user, 'email');
+      // Skicka e-postverifiering efter lyckad kontoskapning
       try {
         await sendEmailVerification(userCredential.user);
         setStatus('success');
         setMessage('Account created. Please check your email and verify your address before continuing.');
       } catch (verificationError: any) {
-        // Account was created but verification email failed to send
+        // Kontot skapades men verifieringsmeddelandet kunde inte skickas
         setStatus('error');
         setMessage('Account created, but we were unable to send the verification email. Please try signing in later to resend the verification email.');
       }
@@ -102,7 +134,9 @@ function LoginContent() {
     setStatus('loading');
     const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
+      const userCredential = await signInWithPopup(auth, provider);
+      const user = userCredential.user;
+      await syncUserToFirestore(user, 'google');
       setStatus('success');
       setMessage('Login successful! Redirecting...');
       router.push(next);
