@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { auth } from '../../lib/firebase-client';
 import { sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink } from 'firebase/auth';
 
-export default function LoginPage() {
+function LoginContent() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -137,5 +137,18 @@ export default function LoginPage() {
         <div style={{ color: '#4CAF50', margin: '1rem 0' }}>Omdirigerar till {next}...</div>
       )}
     </main>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <main style={{ maxWidth: '600px', margin: '2rem auto', padding: '0 1rem' }}>
+        <h1 style={{ color: '#FFD700', fontFamily: 'sans-serif', marginBottom: '0.5rem' }}>Logga in</h1>
+        <div style={{ color: '#FFD700', fontFamily: 'sans-serif', margin: '1rem 0' }}>Laddar inloggningssida...</div>
+      </main>
+    }>
+      <LoginContent />
+    </Suspense>
   );
 }
