@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { db } from "@/lib/firebase-client";
+import { db, isFirebaseConfigured } from "@/lib/firebase-client";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 export default function BetaTesterPage() {
@@ -26,6 +26,14 @@ export default function BetaTesterPage() {
     e.preventDefault();
     setStatus("submitting");
     setErrorMsg("");
+
+    // Kontrollera om Firebase är korrekt konfigurerat och tillgängligt
+    if (!isFirebaseConfigured || !db) {
+      setStatus("error");
+      setErrorMsg("Beta signup is temporarily unavailable. Please try again later.");
+      return;
+    }
+
     try {
       await addDoc(collection(db, "beta_testers"), {
         Name: formData.name,
@@ -67,6 +75,12 @@ export default function BetaTesterPage() {
           </p>
         </div>
 
+        {!isFirebaseConfigured && (
+          <div className="rounded-md border border-red-300 bg-red-50 p-6 text-red-700 mb-8">
+            Beta signup is temporarily unavailable. Please try again later.
+          </div>
+        )}
+
         {status === "success" ? (
           <div className="rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-6 text-[var(--color-ink)]">
             <h2 className="text-2xl font-semibold mb-2">Thanks for signing up!</h2>
@@ -85,7 +99,8 @@ export default function BetaTesterPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-2 text-[var(--color-ink)] placeholder:text-[var(--color-ink)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]"
+                disabled={!isFirebaseConfigured}
+                className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-2 text-[var(--color-ink)] placeholder:text-[var(--color-ink)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)] disabled:opacity-50 disabled:cursor-not-allowed"
                 placeholder="Your full name"
               />
             </div>
@@ -101,7 +116,8 @@ export default function BetaTesterPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-2 text-[var(--color-ink)] placeholder:text-[var(--color-ink)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]"
+                disabled={!isFirebaseConfigured}
+                className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-2 text-[var(--color-ink)] placeholder:text-[var(--color-ink)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)] disabled:opacity-50 disabled:cursor-not-allowed"
                 placeholder="your@email.com"
               />
             </div>
@@ -117,7 +133,8 @@ export default function BetaTesterPage() {
                 value={formData.country}
                 onChange={handleChange}
                 required
-                className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-2 text-[var(--color-ink)] placeholder:text-[var(--color-ink)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)]"
+                disabled={!isFirebaseConfigured}
+                className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-2 text-[var(--color-ink)] placeholder:text-[var(--color-ink)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)] disabled:opacity-50 disabled:cursor-not-allowed"
                 placeholder="Your country"
               />
             </div>
@@ -129,7 +146,8 @@ export default function BetaTesterPage() {
                 name="interestedGooglePlay"
                 checked={formData.interestedGooglePlay}
                 onChange={handleChange}
-                className="h-4 w-4 rounded border-[var(--color-border)] bg-[var(--color-paper)] text-[var(--color-gold)] focus:ring-[var(--color-gold)]"
+                disabled={!isFirebaseConfigured}
+                className="h-4 w-4 rounded border-[var(--color-border)] bg-[var(--color-paper)] text-[var(--color-gold)] focus:ring-[var(--color-gold)] disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <label htmlFor="interestedGooglePlay" className="text-sm text-[var(--color-ink)]">
                 I&apos;m interested in Google Play beta testing
@@ -142,7 +160,7 @@ export default function BetaTesterPage() {
 
             <button
               type="submit"
-              disabled={status === "submitting"}
+              disabled={status === "submitting" || !isFirebaseConfigured}
               className="inline-flex rounded-full border border-[var(--color-border)] px-6 py-3 text-[var(--color-ink)] font-medium hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] hover:border-[var(--color-gold)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {status === "submitting" ? "Signing up..." : "Sign Up as Beta Tester"}
