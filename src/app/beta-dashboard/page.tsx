@@ -117,6 +117,34 @@ export default function BetaDashboardPage() {
             Welcome to the beta tester dashboard! As a beta tester, you can report bugs, issues, ideas, and provide honest feedback to help us improve the platform.
           </p>
 
+          <div style={{ marginBottom: "2rem" }}>
+            <h2 style={{ 
+              color: "var(--color-highlight)", 
+              fontFamily: "var(--font-display)", 
+              fontSize: "clamp(1.5rem, 3vw, 2rem)", 
+              marginBottom: "1rem",
+              fontWeight: 600,
+              lineHeight: 1.1,
+            }}>
+              How to Test
+            </h2>
+            <ul style={{ 
+              color: "var(--color-muted)", 
+              fontSize: "1.1rem", 
+              lineHeight: 1.7,
+              fontFamily: "var(--font-body)",
+              paddingLeft: "1.5rem",
+              margin: 0,
+            }}>
+              <li>Test the site on desktop, tablet, and mobile if possible.</li>
+              <li>Look for bugs, broken links, confusing pages, layout issues, spelling mistakes, login problems, and anything that feels unclear.</li>
+              <li>Be honest and specific.</li>
+              <li>Include the page URL when reporting an issue.</li>
+              <li>Ideas and suggestions are welcome, not only bugs.</li>
+              <li>Google Play beta testing will come later.</li>
+            </ul>
+          </div>
+
           {success && (
             <div style={{ 
               backgroundColor: "var(--color-panel)", 
