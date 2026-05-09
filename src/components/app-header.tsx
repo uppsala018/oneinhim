@@ -1,8 +1,10 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import AuthControls from "@/components/auth-controls";
+import { auth, isFirebaseConfigured } from "@/lib/firebase-client";
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { useRouter } from "next/navigation";
 
 const navLinks = [
   { label: "Bibles", href: "/library/bibles" },
@@ -12,18 +14,40 @@ const navLinks = [
   { label: "History", href: "/library/history" },
   { label: "Prayer Forum", href: "/library/prayer-forum" },
   { label: "Donate", href: "/donate" },
-  { label: "Sign in / Sign up", href: "/login" },
 ];
 
 export default function AppHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isFirebaseConfigured || !auth) {
+      setUser(null);
+      return;
+    }
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return unsubscribe;
+  }, []);
+
+  const handleSignOut = async () => {
+    if (!isFirebaseConfigured || !auth) return;
+    try {
+      await signOut(auth);
+      router.push("/");
+    } catch (err) {
+      console.error("Failed to sign out:", err);
+    }
+  };
 
   return (
     <header className={`web-header${scrolled ? " web-header--scrolled" : ""}`}>
@@ -51,9 +75,24 @@ export default function AppHeader() {
           <Link href="/beta-tester" className="text-sm text-red-500 hover:text-red-600 ml-4">
             Beta testers wanted
           </Link>
-          <div className="hidden md:block">
-            <AuthControls />
-          </div>
+          {user ? (
+            <div className="hidden md:flex items-center gap-4 ml-4">
+              <span className="text-sm text-[var(--color-ink)]">{user.email}</span>
+              <button
+                onClick={handleSignOut}
+                className="text-sm text-red-500 hover:text-red-600 font-medium"
+              >
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <Link
+              href="/login"
+              className="hidden md:block text-sm text-[var(--color-ink)] hover:text-[var(--color-gold)] ml-4"
+            >
+              Sign in / Sign up
+            </Link>
+          )}
           <button
             className={`web-header__mobile-toggle${mobileOpen ? " web-header__mobile-toggle--open" : ""}`}
             onClick={() => setMobileOpen((v) => !v)}
@@ -79,6 +118,28 @@ export default function AppHeader() {
         <Link href="/library" onClick={() => setMobileOpen(false)}>
           Explore Library
         </Link>
+        {user ? (
+          <>
+            <span className="px-4 py-2 text-sm text-[var(--color-ink)]">{user.email}</span>
+            <button
+              onClick={() => {
+                handleSignOut();
+                setMobileOpen(false);
+              }}
+              className="px-4 py-2 text-sm text-red-500 hover:text-red-600 text-left w-full"
+            >
+              Sign out
+            </button>
+          </>
+        ) : (
+          <Link
+            href="/login"
+            onClick={() => setMobileOpen(false)}
+            className="px-4 py-2 text-sm text-[var(--color-ink)] hover:text-[var(--color-gold)]"
+          >
+            Sign in / Sign up
+          </Link>
+        )}
       </nav>
     </header>
   );
