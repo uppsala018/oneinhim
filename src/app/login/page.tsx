@@ -22,19 +22,19 @@ function LoginContent() {
         const storedEmail = localStorage.getItem('emailForSignIn');
         if (!storedEmail) {
           setStatus('error');
-          setMessage('E-postadress hittades inte. Försök logga in igen.');
+          setMessage('Email address not found. Please try logging in again.');
           return;
         }
         signInWithEmailLink(auth, storedEmail, window.location.href)
           .then(() => {
             localStorage.removeItem('emailForSignIn');
             setStatus('success');
-            setMessage('Inloggning lyckades! Omdirigerar...');
+            setMessage('Login successful! Redirecting...');
             router.push(next);
           })
           .catch((error) => {
             setStatus('error');
-            setMessage(`Inloggning misslyckades: ${error.message}`);
+            setMessage(`Login failed: ${error.message}`);
           });
       }
     }
@@ -44,12 +44,12 @@ function LoginContent() {
     e.preventDefault();
     if (!email) {
       setStatus('error');
-      setMessage('Vänligen ange en giltig e-postadress.');
+      setMessage('Please enter a valid email address.');
       return;
     }
     if (!auth) {
       setStatus('error');
-      setMessage('Firebase är inte konfigurerat. Kontakta support.');
+      setMessage('Firebase is not configured. Please contact support.');
       return;
     }
 
@@ -63,22 +63,22 @@ function LoginContent() {
       await sendSignInLinkToEmail(auth, email, actionCodeSettings);
       localStorage.setItem('emailForSignIn', email);
       setStatus('success');
-      setMessage(`Magic-länk skickad till ${email}. Kolla din inkorg.`);
+      setMessage(`Magic link sent to ${email}. Check your inbox.`);
     } catch (error: any) {
       setStatus('error');
-      setMessage(`Kunde inte skicka magic-länk: ${error.message}`);
+      setMessage(`Could not send magic link: ${error.message}`);
     }
   };
 
   return (
     <main style={{ maxWidth: '600px', margin: '2rem auto', padding: '0 1rem' }}>
-      <h1 style={{ color: '#FFD700', fontFamily: 'sans-serif', marginBottom: '0.5rem' }}>Logga in</h1>
+      <h1 style={{ color: '#FFD700', fontFamily: 'sans-serif', marginBottom: '0.5rem' }}>Log in</h1>
       <p style={{ color: '#FFFFFF', fontFamily: 'sans-serif', marginBottom: '1.5rem' }}>
-        Ange din e-postadress för att få en magic-länk för lösenordsfri inloggning.
+        Enter your email address to receive a magic link for passwordless login.
       </p>
 
       {mode === 'finish' && status === 'loading' && (
-        <div style={{ color: '#FFD700', margin: '1rem 0' }}>Slutför inloggning...</div>
+        <div style={{ color: '#FFD700', margin: '1rem 0' }}>Completing login...</div>
       )}
 
       {status === 'success' && mode !== 'finish' && (
@@ -92,7 +92,7 @@ function LoginContent() {
       {mode !== 'finish' && (
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <label htmlFor="email" style={{ color: '#FFFFFF', fontFamily: 'sans-serif' }}>
-            E-postadress
+            Email address
           </label>
           <input
             id="email"
@@ -109,7 +109,7 @@ function LoginContent() {
               fontFamily: 'sans-serif',
               fontSize: '1rem',
             }}
-            placeholder="du@example.com"
+            placeholder="you@example.com"
           />
           <button
             type="submit"
@@ -128,13 +128,13 @@ function LoginContent() {
               alignSelf: 'flex-start',
             }}
           >
-            {status === 'loading' ? 'Skickar...' : 'Skicka magic-länk'}
+            {status === 'loading' ? 'Sending...' : 'Send magic link'}
           </button>
         </form>
       )}
 
       {mode === 'finish' && status === 'success' && (
-        <div style={{ color: '#4CAF50', margin: '1rem 0' }}>Omdirigerar till {next}...</div>
+        <div style={{ color: '#4CAF50', margin: '1rem 0' }}>Redirecting to {next}...</div>
       )}
     </main>
   );
@@ -144,8 +144,8 @@ export default function LoginPage() {
   return (
     <Suspense fallback={
       <main style={{ maxWidth: '600px', margin: '2rem auto', padding: '0 1rem' }}>
-        <h1 style={{ color: '#FFD700', fontFamily: 'sans-serif', marginBottom: '0.5rem' }}>Logga in</h1>
-        <div style={{ color: '#FFD700', fontFamily: 'sans-serif', margin: '1rem 0' }}>Laddar inloggningssida...</div>
+        <h1 style={{ color: '#FFD700', fontFamily: 'sans-serif', marginBottom: '0.5rem' }}>Log in</h1>
+        <div style={{ color: '#FFD700', fontFamily: 'sans-serif', margin: '1rem 0' }}>Loading login page...</div>
       </main>
     }>
       <LoginContent />
