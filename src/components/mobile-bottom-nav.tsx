@@ -34,11 +34,20 @@ function SettingsIcon() {
   );
 }
 
+function BetaIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <text x="12" y="16" textAnchor="middle" fontSize="14" fill="currentColor" stroke="none">β</text>
+    </svg>
+  );
+}
+
 const items = [
   { href: "/", icon: HomeIcon, label: "Home" },
   { href: "/library", icon: SearchIcon, label: "Library" },
   { href: "/library/notes", icon: BookmarkIcon, label: "Bookmarks" },
   { href: "/library/settings", icon: SettingsIcon, label: "Settings" },
+  { href: "/beta-tester", icon: BetaIcon, label: "Beta" },
 ];
 
 export default function MobileBottomNav({ active = "Home" }: { active?: string }) {
@@ -63,4 +72,3 @@ export default function MobileBottomNav({ active = "Home" }: { active?: string }
     </nav>
   );
 }
-

@@ -12,6 +12,7 @@ const navLinks = [
   { label: "History", href: "/library/history" },
   { label: "Prayer Forum", href: "/library/prayer-forum" },
   { label: "Donate", href: "/donate" },
+  { label: "Beta", href: "/beta-tester" },
 ];
 
 export default function AppHeader() {
@@ -34,7 +35,11 @@ export default function AppHeader() {
 
         <nav className="web-header__nav" aria-label="Main navigation">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href}>
+            <Link 
+              key={link.href} 
+              href={link.href}
+              className={link.label === "Beta" ? "text-sm opacity-70" : ""}
+            >
               {link.label}
             </Link>
           ))}
@@ -76,4 +81,3 @@ export default function AppHeader() {
     </header>
   );
 }
-
