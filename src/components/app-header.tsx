@@ -12,7 +12,7 @@ const navLinks = [
   { label: "History", href: "/library/history" },
   { label: "Prayer Forum", href: "/library/prayer-forum" },
   { label: "Donate", href: "/donate" },
-  { label: "Beta", href: "/beta-tester" },
+  { label: "Sign in / Sign up", href: "/login" },
 ];
 
 export default function AppHeader() {
@@ -38,7 +38,6 @@ export default function AppHeader() {
             <Link 
               key={link.href} 
               href={link.href}
-              className={link.label === "Beta" ? "text-sm opacity-70" : ""}
             >
               {link.label}
             </Link>
@@ -48,6 +47,9 @@ export default function AppHeader() {
         <div className="web-header__actions">
           <Link href="/library" className="web-header__cta">
             Explore Library
+          </Link>
+          <Link href="/beta-tester" className="text-sm text-red-500 hover:text-red-600 ml-4">
+            Beta testers wanted
           </Link>
           <div className="hidden md:block">
             <AuthControls />
