@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { auth, isFirebaseConfigured } from "@/lib/firebase-client";
 import { signOut, onAuthStateChanged } from "firebase/auth";
+import type { User } from "firebase/auth";
 import { useRouter } from "next/navigation";
 
 const navLinks = [
@@ -19,7 +20,7 @@ const navLinks = [
 export default function AppHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
   useEffect(() => {
