@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+﻿import FirebaseForumCategories from "@/components/firebase-forum-categories";
+import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import PrayerForumContent from "./prayer-forum-content";
@@ -39,9 +40,11 @@ export default function PrayerForumPage() {
         </p>
       </section>
 
-      <PrayerForumContent />
+<FirebaseForumCategories />
 
-      <MobileBottomNav />
+<PrayerForumContent />
+
+<MobileBottomNav />
     </main>
   );
 }
