@@ -13,6 +13,14 @@ const navLinks = [
   { href: "/user-panel/profile", label: "Edit Profile" },
 ];
 
+const socialLinkLabels = {
+  youtube: "YouTube",
+  facebook: "Facebook",
+  instagram: "Instagram",
+  x: "X",
+  tiktok: "TikTok",
+};
+
 function SignInPrompt() {
   return (
     <section className="mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 py-10">
@@ -92,6 +100,11 @@ export default function UserPanelClient() {
     return <SignInPrompt />;
   }
 
+  const socialLinks = profile?.socialLinks
+    ? Object.entries(profile.socialLinks).filter(([, value]) => value.trim())
+    : [];
+  const hasProfileLinks = Boolean(profile?.websiteUrl) || socialLinks.length > 0;
+
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-28 pt-6 sm:px-6 lg:px-8">
       <nav className="flex flex-wrap gap-3 text-sm text-[var(--color-muted)]">
@@ -148,6 +161,38 @@ export default function UserPanelClient() {
               <p className="mt-1 line-clamp-4 leading-6 text-[var(--color-muted)]">
                 {profile?.bio || "No bio saved yet."}
               </p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-soft)]">
+                Links
+              </p>
+              {hasProfileLinks ? (
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {profile?.websiteUrl && (
+                    <a
+                      href={profile.websiteUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border border-[var(--color-border)] px-3 py-1.5 text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+                    >
+                      Website
+                    </a>
+                  )}
+                  {socialLinks.map(([key, value]) => (
+                    <a
+                      key={key}
+                      href={value}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border border-[var(--color-border)] px-3 py-1.5 text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+                    >
+                      {socialLinkLabels[key as keyof typeof socialLinkLabels]}
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <p className="mt-1 text-[var(--color-soft)]">No links saved yet.</p>
+              )}
             </div>
           </div>
         )}
