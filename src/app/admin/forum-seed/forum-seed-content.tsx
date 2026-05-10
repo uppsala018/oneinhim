@@ -28,6 +28,31 @@ function categoryDescription(title: string, parent?: string) {
   return `${title} discussions for the One In Him community.`;
 }
 
+function AdminNav() {
+  return (
+    <nav aria-label="Admin navigation" className="flex flex-wrap gap-3">
+      <Link
+        href="/"
+        className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-ink)]"
+      >
+        Home
+      </Link>
+      <Link
+        href="/admin/beta"
+        className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-ink)]"
+      >
+        Admin dashboard
+      </Link>
+      <Link
+        href="/library/prayer-forum"
+        className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-ink)]"
+      >
+        Forum
+      </Link>
+    </nav>
+  );
+}
+
 export default function ForumSeedContent() {
   const { user, loading } = useAuth();
   const [status, setStatus] = useState("");
@@ -111,6 +136,7 @@ export default function ForumSeedContent() {
   if (loading) {
     return (
       <main className="mobile-app-shell px-4 py-8">
+        <AdminNav />
         <p className="text-sm text-[var(--color-muted)]">Checking admin access...</p>
       </main>
     );
@@ -119,6 +145,7 @@ export default function ForumSeedContent() {
   if (!admin) {
     return (
       <main className="mobile-app-shell px-4 py-8">
+        <AdminNav />
         <h1 className="text-2xl font-semibold text-[var(--color-ink)]">
           Admin only
         </h1>
@@ -137,9 +164,7 @@ export default function ForumSeedContent() {
 
   return (
     <main className="mobile-app-shell px-4 py-8">
-      <Link href="/library/prayer-forum" className="text-sm text-[var(--color-highlight)]">
-        Back to forum
-      </Link>
+      <AdminNav />
       <section className="mt-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)] p-5">
         <h1 className="text-2xl font-semibold text-[var(--color-ink)]">
           Forum category seed

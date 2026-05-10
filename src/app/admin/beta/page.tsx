@@ -38,6 +38,28 @@ type FeedbackDoc = {
 const ADMIN_EMAIL = 'mosegaard622@gmail.com';
 const FEEDBACK_STATUSES = ['new', 'reviewed', 'planned', 'fixed', 'closed'] as const;
 
+function AdminNav() {
+  const linkStyle: React.CSSProperties = {
+    color: '#FFD700',
+    textDecoration: 'none',
+    border: '1px solid #333',
+    borderRadius: '999px',
+    padding: '0.45rem 0.9rem',
+    display: 'inline-flex',
+  };
+
+  return (
+    <nav
+      aria-label="Admin navigation"
+      style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}
+    >
+      <Link href="/" style={linkStyle}>Home</Link>
+      <Link href="/admin/beta" style={linkStyle}>Admin dashboard</Link>
+      <Link href="/admin/forum-seed" style={linkStyle}>Forum seed</Link>
+    </nav>
+  );
+}
+
 export default function AdminBetaPage() {
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -158,6 +180,7 @@ export default function AdminBetaPage() {
   if (loading) {
     return (
       <main style={{ maxWidth: '1200px', margin: '2rem auto', padding: '0 1rem', color: '#FFFFFF' }}>
+        <AdminNav />
         <h1 style={{ color: '#FFD700', fontFamily: 'sans-serif' }}>Loading admin panel...</h1>
       </main>
     );
@@ -166,6 +189,7 @@ export default function AdminBetaPage() {
   if (!currentUser) {
     return (
       <main style={{ maxWidth: '600px', margin: '2rem auto', padding: '0 1rem', color: '#FFFFFF', fontFamily: 'sans-serif' }}>
+        <AdminNav />
         <h1 style={{ color: '#FFD700', marginBottom: '1rem' }}>Admin Access Required</h1>
         <p style={{ margin: '1rem 0' }}>Please log in to access this page.</p>
         <Link
@@ -192,6 +216,7 @@ export default function AdminBetaPage() {
   if (!isAdmin) {
     return (
       <main style={{ maxWidth: '600px', margin: '2rem auto', padding: '0 1rem', color: '#FFFFFF', fontFamily: 'sans-serif' }}>
+        <AdminNav />
         <h1 style={{ color: '#F44336', marginBottom: '1rem' }}>Access Denied</h1>
         <p>You do not have permission to view this page.</p>
       </main>
@@ -200,6 +225,7 @@ export default function AdminBetaPage() {
 
   return (
     <main style={{ maxWidth: '1200px', margin: '2rem auto', padding: '0 1rem', color: '#FFFFFF', fontFamily: 'sans-serif' }}>
+      <AdminNav />
       <h1 style={{ color: '#FFD700', marginBottom: '1.5rem' }}>Beta Admin Panel</h1>
 
       {error && (

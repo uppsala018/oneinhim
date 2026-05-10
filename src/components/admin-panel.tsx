@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import { createSupabaseBrowserClient } from "@/lib/supabase";
 
 const ADMIN_EMAIL = "mosegaard622@gmail.com";
@@ -249,6 +250,14 @@ export default function AdminPanel({ userEmail }: { userEmail: string }) {
 
   return (
     <section style={{ border, borderRadius: "1.6rem", background: panelBg, padding: "1.4rem" }}>
+      <div style={{ display: "flex", justifyContent: "flex-end", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+        <Link href="/" style={{ ...btnStyle("ghost"), textDecoration: "none" }}>
+          Home
+        </Link>
+        <Link href="/admin/beta" style={{ ...btnStyle("ghost"), textDecoration: "none" }}>
+          Admin dashboard
+        </Link>
+      </div>
       <p style={{ margin: 0, color: gold, fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase" }}>Admin Panel</p>
       <p style={{ margin: "0.2rem 0 1rem", color: muted, fontSize: "0.82rem" }}>Signed in as {userEmail}</p>
 
