@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase-client";
 import { useAuth } from "@/lib/use-auth";
-import { toProfileFormValues, type UserProfileFormValues } from "@/lib/user-profile";
+import { toUserProfile, type UserProfile } from "@/lib/user-profile";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -47,7 +47,7 @@ function SignInPrompt() {
 
 export default function UserPanelClient() {
   const { user, loading } = useAuth();
-  const [profile, setProfile] = useState<UserProfileFormValues | null>(null);
+  const [profile, setProfile] = useState<Partial<UserProfile> | null>(null);
   const [profileLoading, setProfileLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -67,7 +67,7 @@ export default function UserPanelClient() {
       try {
         const snapshot = await getDoc(doc(db, "users", user.uid));
         if (!cancelled) {
-          setProfile(toProfileFormValues(snapshot.data()));
+          setProfile(toUserProfile(snapshot.data()));
         }
       } catch (loadError) {
         console.error("Error loading user profile:", loadError);
@@ -104,6 +104,8 @@ export default function UserPanelClient() {
     ? Object.entries(profile.socialLinks).filter(([, value]) => value.trim())
     : [];
   const hasProfileLinks = Boolean(profile?.websiteUrl) || socialLinks.length > 0;
+  const shouldShowApprovedAvatar =
+    profile?.avatarStatus === "approved" && Boolean(profile.avatarApprovedURL);
 
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-28 pt-6 sm:px-6 lg:px-8">
@@ -116,15 +118,39 @@ export default function UserPanelClient() {
       </nav>
 
       <section className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
-        <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
-          Dashboard
-        </p>
-        <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)]">
-          User Panel
-        </h1>
-        <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
-          Signed in as <span className="text-[var(--color-ink)]">{user.email ?? "your account"}</span>
-        </p>
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+          <div className="grid h-20 w-20 shrink-0 place-items-center overflow-hidden rounded-full border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] text-3xl text-[var(--color-highlight)]">
+            {shouldShowApprovedAvatar ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={profile?.avatarApprovedURL}
+                alt=""
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <span aria-hidden="true">✝</span>
+            )}
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
+              Dashboard
+            </p>
+            <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)]">
+              User Panel
+            </h1>
+            <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+              Signed in as <span className="text-[var(--color-ink)]">{user.email ?? "your account"}</span>
+            </p>
+            {profile?.avatarStatus === "pending" && (
+              <p className="mt-2 text-sm text-[var(--color-highlight)]">
+                Profile image pending review
+              </p>
+            )}
+            {profile?.avatarStatus === "rejected" && (
+              <p className="mt-2 text-sm text-red-300">Profile image rejected</p>
+            )}
+          </div>
+        </div>
       </section>
 
       <section className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">

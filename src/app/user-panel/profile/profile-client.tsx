@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { type FormEvent, useEffect, useState } from "react";
+import { type ChangeEvent, type FormEvent, useEffect, useState } from "react";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
-import { db } from "@/lib/firebase-client";
+import { ref, uploadBytes } from "firebase/storage";
+import { db, storage } from "@/lib/firebase-client";
 import { useAuth } from "@/lib/use-auth";
 import {
   christianTraditions,
@@ -14,6 +15,9 @@ import {
 } from "@/lib/user-profile";
 
 const socialFields: Array<keyof SocialLinks> = ["youtube", "facebook", "instagram", "x", "tiktok"];
+const allowedAvatarTypes = ["image/jpeg", "image/png", "image/webp"];
+const avatarSizeLimitBytes = 2 * 1024 * 1024;
+const pendingAvatarPath = (uid: string) => `profile_images_pending/${uid}/avatar`;
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -67,6 +71,10 @@ export default function ProfileClient() {
   const [profileExists, setProfileExists] = useState(false);
   const [profileLoading, setProfileLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [avatarFile, setAvatarFile] = useState<File | null>(null);
+  const [avatarUploading, setAvatarUploading] = useState(false);
+  const [avatarMessage, setAvatarMessage] = useState("");
+  const [avatarError, setAvatarError] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
@@ -122,6 +130,79 @@ export default function ProfileClient() {
         [field]: value,
       },
     }));
+  }
+
+  function handleAvatarFileChange(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0] ?? null;
+    setAvatarMessage("");
+    setAvatarError("");
+
+    if (!file) {
+      setAvatarFile(null);
+      return;
+    }
+
+    if (!allowedAvatarTypes.includes(file.type)) {
+      setAvatarFile(null);
+      setAvatarError("Please choose a JPG, PNG, or WebP image.");
+      return;
+    }
+
+    if (file.size > avatarSizeLimitBytes) {
+      setAvatarFile(null);
+      setAvatarError("Please choose an image smaller than 2MB.");
+      return;
+    }
+
+    setAvatarFile(file);
+  }
+
+  async function handleAvatarUpload() {
+    if (!user || !db || !storage) {
+      setAvatarError("You must be signed in to upload a profile image.");
+      return;
+    }
+
+    if (!avatarFile) {
+      setAvatarError("Choose an image before uploading.");
+      return;
+    }
+
+    setAvatarUploading(true);
+    setAvatarMessage("");
+    setAvatarError("");
+
+    const avatarStoragePath = pendingAvatarPath(user.uid);
+
+    try {
+      await uploadBytes(ref(storage, avatarStoragePath), avatarFile, {
+        contentType: avatarFile.type,
+        customMetadata: {
+          uid: user.uid,
+          moderationStatus: "pending",
+        },
+      });
+
+      await setDoc(
+        doc(db, "users", user.uid),
+        {
+          uid: user.uid,
+          email: user.email ?? "",
+          avatarStatus: "pending",
+          avatarStoragePath,
+          updatedAt: serverTimestamp(),
+        },
+        { merge: true },
+      );
+
+      setAvatarFile(null);
+      setAvatarMessage("Profile image uploaded and pending review.");
+    } catch (uploadError) {
+      console.error("Error uploading profile image:", uploadError);
+      setAvatarError("Unable to upload your profile image right now.");
+    } finally {
+      setAvatarUploading(false);
+    }
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -201,6 +282,41 @@ export default function ProfileClient() {
         <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
           Signed in as <span className="text-[var(--color-ink)]">{user.email ?? "your account"}</span>
         </p>
+      </section>
+
+      <section className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+        <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
+          Profile Image
+        </p>
+        <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--color-ink)]">
+          Upload for review
+        </h2>
+        <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+          JPG, PNG, or WebP only. Max 2MB. Uploaded images are reviewed before they appear publicly.
+        </p>
+        <div className="mt-5 grid gap-3">
+          <input
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            onChange={handleAvatarFileChange}
+            className="w-full rounded-[0.75rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-3 text-sm text-[var(--color-ink)] file:mr-4 file:rounded-full file:border-0 file:bg-[var(--color-highlight)] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-[#080808]"
+          />
+          {avatarFile && (
+            <p className="text-sm text-[var(--color-muted)]">
+              Selected: {avatarFile.name}
+            </p>
+          )}
+          {avatarMessage && <p className="text-sm text-green-300">{avatarMessage}</p>}
+          {avatarError && <p className="text-sm text-red-300">{avatarError}</p>}
+          <button
+            type="button"
+            onClick={handleAvatarUpload}
+            disabled={avatarUploading || !avatarFile}
+            className="w-fit rounded-full bg-[var(--color-highlight)] px-6 py-3 text-sm font-semibold text-[#080808] disabled:opacity-60"
+          >
+            {avatarUploading ? "Uploading..." : "Upload Image"}
+          </button>
+        </div>
       </section>
 
       <form

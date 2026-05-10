@@ -25,9 +25,14 @@ export type UserProfileFormValues = {
   socialLinks: SocialLinks;
 };
 
+export type AvatarStatus = "none" | "pending" | "approved" | "rejected";
+
 export type UserProfile = UserProfileFormValues & {
   uid: string;
   email: string;
+  avatarStatus?: AvatarStatus;
+  avatarStoragePath?: string;
+  avatarApprovedURL?: string;
   role?: string;
   isBanned?: boolean;
   isRestricted?: boolean;
@@ -61,5 +66,16 @@ export function toProfileFormValues(data: Partial<UserProfile> | undefined): Use
       ...emptySocialLinks,
       ...(data?.socialLinks ?? {}),
     },
+  };
+}
+
+export function toUserProfile(data: Partial<UserProfile> | undefined): Partial<UserProfile> {
+  return {
+    ...toProfileFormValues(data),
+    uid: data?.uid ?? "",
+    email: data?.email ?? "",
+    avatarStatus: data?.avatarStatus ?? "none",
+    avatarStoragePath: data?.avatarStoragePath ?? "",
+    avatarApprovedURL: data?.avatarApprovedURL ?? "",
   };
 }
