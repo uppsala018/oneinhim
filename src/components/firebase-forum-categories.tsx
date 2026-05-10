@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "@/lib/firebase-client";
+import { useAuth } from "@/lib/use-auth";
 
 type ForumCategory = {
   id: string;
@@ -18,6 +19,7 @@ type ForumCategory = {
 };
 
 export default function FirebaseForumCategories() {
+  const { user } = useAuth();
   const [categories, setCategories] = useState<ForumCategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -93,7 +95,11 @@ export default function FirebaseForumCategories() {
         </div>
 
         <Link
-          href="/library/prayer-forum/new-thread"
+          href={
+            user
+              ? "/library/prayer-forum/new-thread"
+              : "/login?next=/library/prayer-forum/new-thread"
+          }
           className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-ink)]"
         >
           Start a discussion

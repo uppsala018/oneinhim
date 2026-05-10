@@ -1,55 +1,41 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { auth } from '@/lib/firebase-client';
-import Link from 'next/link';
-import PrayerForumBoard from '@/components/prayer-forum-board';
+import Link from "next/link";
+import { useAuth } from "@/lib/use-auth";
 
 export default function PrayerForumContent() {
-  const [user, setUser] = useState<null | { email: string | null }>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (!auth) {
-      setUser(null);
-      setLoading(false);
-      return;
-    }
-
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setUser(user ? { email: user.email } : null);
-      setLoading(false);
-    });
-    return () => unsubscribe();
-  }, []);
+  const { user, loading } = useAuth();
 
   if (loading) {
-    return <div className="px-4 pt-4 pb-2 text-[var(--color-muted)]">Loading...</div>;
-  }
-
-  if (!user) {
     return (
-      <div className="px-4 pt-4 pb-2">
-        <div className="rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] p-6 text-[var(--color-ink)]">
-          <h3 className="text-lg font-semibold mb-2">Sign in to participate</h3>
-          <p className="mb-4">Sign in to participate in the prayer forum.</p>
-          <Link
-            href="/login?next=/library/prayer-forum"
-            className="inline-flex rounded-full border border-[var(--color-border)] px-6 py-3 text-[var(--color-ink)] font-medium hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] hover:border-[var(--color-gold)] transition-colors"
-          >
-            Sign in / Sign up
-          </Link>
-        </div>
-      </div>
+      <section className="px-4 pt-4 pb-2 text-sm text-[var(--color-muted)]">
+        Checking sign-in status...
+      </section>
     );
   }
 
   return (
-    <div className="px-4 pt-4 pb-2">
-      <p className="mb-4 text-sm text-[var(--color-muted)]">
-        Signed in as {user.email}. You can participate in the forum below.
-      </p>
-      <PrayerForumBoard />
-    </div>
+    <section className="px-4 pt-4 pb-2">
+      <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)] p-5">
+        <h2 className="text-lg font-semibold text-[var(--color-ink)]">
+          {user ? "You are signed in" : "Sign in to participate"}
+        </h2>
+        <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
+          {user
+            ? `Signed in as ${user.email ?? "your account"}. You can start discussions and reply to threads.`
+            : "Anyone can read the forum. Sign in with Firebase Auth before starting a discussion or replying."}
+        </p>
+        <Link
+          href={
+            user
+              ? "/library/prayer-forum/new-thread"
+              : "/login?next=/library/prayer-forum/new-thread"
+          }
+          className="mt-4 inline-flex rounded-full border border-[var(--color-border)] px-5 py-2 text-sm font-medium text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+        >
+          Start a discussion
+        </Link>
+      </div>
+    </section>
   );
 }

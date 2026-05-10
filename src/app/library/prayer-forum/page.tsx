@@ -40,11 +40,11 @@ export default function PrayerForumPage() {
         </p>
       </section>
 
-<FirebaseForumCategories />
+      <PrayerForumContent />
 
-<PrayerForumContent />
+      <FirebaseForumCategories />
 
-<MobileBottomNav />
+      <MobileBottomNav />
     </main>
   );
 }
