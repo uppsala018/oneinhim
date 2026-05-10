@@ -125,7 +125,7 @@ export default function NewThreadContent({
         slug: `${slugify(title)}-${threadRef.id.slice(0, 8)}`,
         categoryId: selectedCategory.id,
         parentCategoryId: selectedCategory.parentId ?? null,
-        authorId: user.uid,
+        authorUid: user.uid,
         authorEmail: user.email ?? "",
         authorDisplayName,
         createdAt: serverTimestamp(),
@@ -138,10 +138,11 @@ export default function NewThreadContent({
         isDeleted: false,
       });
 
-      batch.set(postRef, {
-        threadId: threadRef.id,
-        content: content.trim(),
-        authorId: user.uid,
+     batch.set(postRef, {
+  threadId: threadRef.id,
+  categoryId: selectedCategory.id,
+  content: content.trim(),
+  authorUid: user.uid,
         authorEmail: user.email ?? "",
         authorDisplayName,
         createdAt: serverTimestamp(),
