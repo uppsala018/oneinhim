@@ -181,7 +181,7 @@ export default function ThreadPageContent({ threadId }: { threadId: string }) {
       await setDoc(doc(collection(db, "forum_posts")), {
         threadId,
         content: reply.trim(),
-        authorId: user.uid,
+        authorUid: user.uid,
         authorEmail: user.email ?? "",
         authorDisplayName: forumAuthorName(user.displayName, user.email),
         createdAt: serverTimestamp(),
