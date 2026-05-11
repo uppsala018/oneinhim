@@ -92,8 +92,8 @@ export default function AppHeader() {
         </nav>
 
         <div className="web-header__actions">
-          <Link href="/beta-tester" className="hidden 2xl:block text-sm text-red-500 hover:text-red-600 ml-4">
-            Do you want to become a beta-tester?
+          <Link href="/beta-tester" className="hidden xl:block text-sm text-red-500 hover:text-red-600 ml-4">
+            Join Beta
           </Link>
           {user ? (
             <div className="hidden md:flex items-center gap-3 ml-4">
@@ -151,7 +151,7 @@ export default function AppHeader() {
           </Link>
         ))}
         <Link href="/beta-tester" onClick={() => setMobileOpen(false)}>
-          Do you want to become a beta-tester?
+          Join Beta
         </Link>
         {user ? (
           <>
