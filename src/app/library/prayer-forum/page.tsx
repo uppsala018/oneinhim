@@ -3,11 +3,12 @@ import FirebaseLatestDiscussions from "@/components/firebase-latest-discussions"
 import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
+import AppHeader from "@/components/app-header";
 import PrayerForumContent from "./prayer-forum-content";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
-  title: "Christian Prayer Forum — Requests & Community",
+  title: "One In Him Biblestudy Online Community",
   description:
     "Share prayer requests, give praise, and ask questions in the One In Him prayer forum. A respectful space for the body of Christ.",
   keywords:
@@ -17,13 +18,19 @@ export const metadata: Metadata = buildMeta({
 
 export default function PrayerForumPage() {
   return (
-    <main className="mobile-app-shell" style={{ paddingBottom: "7rem" }}>
+    <>
+      <div className="hidden lg:block">
+        <AppHeader />
+      </div>
+      <main className="mobile-app-shell lg:pt-[var(--header-height)]" style={{ paddingBottom: "7rem" }}>
       <header className="mobile-section-header">
         <Link href="/" className="mobile-section-header__back" aria-label="Back">
           ‹
         </Link>
         <div>
-          <h1>Prayer Forum</h1>
+          <h1 style={{ fontSize: "clamp(1.25rem, 5vw, 2.5rem)", lineHeight: 1.05 }}>
+            One In Him Biblestudy Online Community
+          </h1>
           <span>Prayer · Praise · Discussion</span>
         </div>
         <Link
@@ -41,7 +48,7 @@ export default function PrayerForumPage() {
           Community
         </p>
         <h2 className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
-          Christian Prayer &amp; Community
+          One In Him Biblestudy Online Community
         </h2>
         <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
           Share prayer requests, give praise for answered prayer, and ask questions about faith
@@ -61,6 +68,7 @@ export default function PrayerForumPage() {
       <FirebaseForumCategories />
 
       <MobileBottomNav />
-    </main>
+      </main>
+    </>
   );
 }

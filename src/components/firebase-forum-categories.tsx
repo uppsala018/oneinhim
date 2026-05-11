@@ -106,14 +106,14 @@ export default function FirebaseForumCategories() {
         </Link>
       </div>
 
-      <div className="grid gap-4">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {topLevelCategories.map((category) => {
           const children = getChildren(category.id);
 
           return (
             <article
               key={category.id}
-              className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-paper)] p-5"
+              className="flex min-h-[14rem] flex-col rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5"
             >
               <Link
                 href={`/library/prayer-forum/category/${category.slug}`}
@@ -128,7 +128,7 @@ export default function FirebaseForumCategories() {
               </Link>
 
               {children.length > 0 && (
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-auto flex flex-wrap gap-2 pt-4">
                   {children.map((child) => (
                     <Link
                       key={child.id}

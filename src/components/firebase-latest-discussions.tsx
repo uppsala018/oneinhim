@@ -122,7 +122,7 @@ export default function FirebaseLatestDiscussions() {
         </h2>
       </div>
 
-      <div className="grid gap-3">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {latestThreads.map((thread) => {
           const category = categoryById.get(thread.categoryId);
           const activeDate = thread.lastReplyAt ?? thread.createdAt;
@@ -131,7 +131,7 @@ export default function FirebaseLatestDiscussions() {
             <Link
               key={thread.id}
               href={`/library/prayer-forum/thread/${thread.id}`}
-              className="block rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)] p-4 transition hover:border-[var(--color-highlight)]"
+              className="flex min-h-[11rem] flex-col rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 transition hover:border-[var(--color-highlight)]"
             >
               <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.12em] text-[var(--color-highlight)]">
                 {category ? <span>{category.title}</span> : null}
@@ -143,7 +143,7 @@ export default function FirebaseLatestDiscussions() {
                 {thread.title}
               </h3>
 
-              <p className="mt-2 text-xs leading-5 text-[var(--color-muted)]">
+              <p className="mt-auto pt-4 text-xs leading-5 text-[var(--color-muted)]">
                 {forumAuthorName(thread.authorDisplayName, thread.authorEmail)} ·{" "}
                 {thread.replyCount ?? 0} replies · Active{" "}
                 {formatForumDate(activeDate)}

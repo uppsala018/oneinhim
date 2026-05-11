@@ -92,10 +92,7 @@ export default function AppHeader() {
         </nav>
 
         <div className="web-header__actions">
-          <Link href="/library" className="web-header__cta">
-            Explore Library
-          </Link>
-          <Link href="/beta-tester" className="hidden xl:block text-sm text-red-500 hover:text-red-600 ml-4">
+          <Link href="/beta-tester" className="hidden 2xl:block text-sm text-red-500 hover:text-red-600 ml-4">
             Do you want to become a beta-tester?
           </Link>
           {user ? (
@@ -153,9 +150,6 @@ export default function AppHeader() {
             {link.label}
           </Link>
         ))}
-        <Link href="/library" onClick={() => setMobileOpen(false)}>
-          Explore Library
-        </Link>
         <Link href="/beta-tester" onClick={() => setMobileOpen(false)}>
           Do you want to become a beta-tester?
         </Link>

@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
+import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import JsonLd from "@/components/json-ld";
 import { councilsLibrary } from "@/lib/content";
@@ -66,7 +67,10 @@ export default function CouncilsPage() {
     <>
     <JsonLd data={breadcrumbSchema} />
     <JsonLd data={councilsFaqSchema} />
-    <main className="councils-mobile mobile-app-shell">
+    <div className="hidden lg:block">
+      <AppHeader />
+    </div>
+    <main className="councils-mobile mobile-app-shell lg:pt-[var(--header-height)]">
       <header className="mobile-section-header">
         <Link href="/" aria-label="Back home" className="mobile-section-header__back">
           ‹
@@ -97,29 +101,56 @@ export default function CouncilsPage() {
         </p>
       </section>
 
-      <section className="councils-timeline" aria-label="Seven ecumenical councils">
+      <section
+        className="grid gap-4 px-4 py-6 sm:grid-cols-2 xl:grid-cols-3"
+        aria-label="Seven ecumenical councils"
+      >
         {councilsLibrary.map((council) => (
-          <article key={council.slug} className="council-timeline-item">
-            <div className="council-timeline-item__marker">
-              <span>{council.order}</span>
+          <Link
+            key={council.slug}
+            href={`/library/councils/${council.slug}`}
+            className="flex min-h-[18rem] flex-col rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 transition hover:border-[var(--color-highlight)]"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">
+                  {council.year} AD
+                </p>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-[var(--color-ink)]">
+                  {council.title}
+                </h2>
+              </div>
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[var(--color-border)] text-sm text-[var(--color-highlight)]">
+                {council.order}
+              </span>
             </div>
-            <Link href={`/library/councils/${council.slug}`} className="council-card">
-              <div className="council-card__icon" aria-hidden="true">
-                ♜
-              </div>
-              <div className="council-card__body">
-                <p>{council.year} AD</p>
-                <h2>{council.title}</h2>
-                <ul>
-                  <li>{council.calledBy}</li>
-                  <li>{council.issue}</li>
-                  <li>{council.attendance}</li>
-                </ul>
-                <span className="council-card__button">Read More ›</span>
-              </div>
-            </Link>
-          </article>
+            <div className="mt-5 grid gap-3 text-sm leading-6 text-[var(--color-muted)]">
+              <p>{council.calledBy}</p>
+              <p>{council.issue}</p>
+              <p>{council.attendance}</p>
+            </div>
+            <span className="mt-auto pt-5 text-sm font-semibold text-[var(--color-highlight)]">
+              Read More →
+            </span>
+          </Link>
         ))}
+      </section>
+
+      <section className="px-4 pb-8">
+        <div className="grid gap-4 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 md:grid-cols-3">
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">
+              Study Flow
+            </p>
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
+              Read in order
+            </h2>
+          </div>
+          <p className="text-sm leading-7 text-[var(--color-muted)] md:col-span-2">
+            Start with Nicaea, then follow the councils chronologically. Each page keeps the same
+            pattern: background, controversy, key figures, and what the Church decided.
+          </p>
+        </div>
       </section>
 
       <MobileBottomNav active="Home" />
@@ -127,4 +158,3 @@ export default function CouncilsPage() {
     </>
   );
 }
-
