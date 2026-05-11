@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { auth, isFirebaseConfigured } from "@/lib/firebase-client";
+import { auth, db, isFirebaseConfigured } from "@/lib/firebase-client";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import { doc, getDoc } from "firebase/firestore";
 
 const navLinks = [
   { label: "Bibles", href: "/library/bibles" },
@@ -17,10 +18,16 @@ const navLinks = [
   { label: "Donate", href: "/donate" },
 ];
 
+type HeaderProfile = {
+  avatarStatus?: string;
+  avatarApprovedURL?: string;
+};
+
 export default function AppHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [user, setUser] = useState<User | null>(null);
+  const [profile, setProfile] = useState<HeaderProfile | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -32,10 +39,25 @@ export default function AppHeader() {
   useEffect(() => {
     if (!isFirebaseConfigured || !auth) {
       setUser(null);
+      setProfile(null);
       return;
     }
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      if (!currentUser || !db) {
+        setProfile(null);
+        return;
+      }
+
+      void getDoc(doc(db, "users", currentUser.uid))
+        .then((snapshot) => {
+          const data = snapshot.data() as HeaderProfile | undefined;
+          setProfile(data ?? null);
+        })
+        .catch((err) => {
+          console.error("Failed to load header profile:", err);
+          setProfile(null);
+        });
     });
     return unsubscribe;
   }, []);
@@ -73,11 +95,27 @@ export default function AppHeader() {
           <Link href="/library" className="web-header__cta">
             Explore Library
           </Link>
-          <Link href="/beta-tester" className="text-sm text-red-500 hover:text-red-600 ml-4">
-            Beta testers wanted
+          <Link href="/beta-tester" className="hidden xl:block text-sm text-red-500 hover:text-red-600 ml-4">
+            Do you want to become a beta-tester?
           </Link>
           {user ? (
-            <div className="hidden md:flex items-center ml-4">
+            <div className="hidden md:flex items-center gap-3 ml-4">
+              <Link
+                href="/user-panel"
+                aria-label="Open user panel"
+                className="grid h-9 w-9 place-items-center overflow-hidden rounded-full border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] text-sm text-[var(--color-highlight)] transition hover:border-[var(--color-highlight)]"
+              >
+                {profile?.avatarStatus === "approved" && profile.avatarApprovedURL ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={profile.avatarApprovedURL}
+                    alt=""
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <span aria-hidden="true">◎</span>
+                )}
+              </Link>
               <button
                 onClick={handleSignOut}
                 className="text-sm text-red-500 hover:text-red-600 font-medium"
@@ -118,16 +156,24 @@ export default function AppHeader() {
         <Link href="/library" onClick={() => setMobileOpen(false)}>
           Explore Library
         </Link>
+        <Link href="/beta-tester" onClick={() => setMobileOpen(false)}>
+          Do you want to become a beta-tester?
+        </Link>
         {user ? (
-          <button
-            onClick={() => {
-              handleSignOut();
-              setMobileOpen(false);
-            }}
-            className="px-4 py-2 text-sm text-red-500 hover:text-red-600 text-left w-full"
-          >
-            Sign out
-          </button>
+          <>
+            <Link href="/user-panel" onClick={() => setMobileOpen(false)}>
+              User Panel
+            </Link>
+            <button
+              onClick={() => {
+                handleSignOut();
+                setMobileOpen(false);
+              }}
+              className="px-4 py-2 text-sm text-red-500 hover:text-red-600 text-left w-full"
+            >
+              Sign out
+            </button>
+          </>
         ) : (
           <Link
             href="/login"

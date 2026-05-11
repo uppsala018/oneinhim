@@ -21,6 +21,8 @@ const socialLinkLabels = {
   tiktok: "TikTok",
 };
 
+const ADMIN_EMAIL = "mosegaard622@gmail.com";
+
 function SignInPrompt() {
   return (
     <section className="mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 py-10">
@@ -106,6 +108,8 @@ export default function UserPanelClient() {
   const hasProfileLinks = Boolean(profile?.websiteUrl) || socialLinks.length > 0;
   const shouldShowApprovedAvatar =
     profile?.avatarStatus === "approved" && Boolean(profile.avatarApprovedURL);
+  const isAdmin = profile?.role === "admin" || user.email === ADMIN_EMAIL;
+  const isBetaTester = profile?.role === "beta_tester";
 
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-28 pt-6 sm:px-6 lg:px-8">
@@ -223,6 +227,37 @@ export default function UserPanelClient() {
           </div>
         )}
       </section>
+
+      {(isBetaTester || isAdmin) && (
+        <section className="grid gap-3 sm:grid-cols-2">
+          {isBetaTester && (
+            <Link
+              href="/beta-dashboard"
+              className="rounded-[1rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-4 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+            >
+              <span className="block font-[family-name:var(--font-display)] text-2xl text-[var(--color-highlight)]">
+                Beta Panel
+              </span>
+              <span className="mt-2 block leading-6 text-[var(--color-muted)]">
+                Report bugs, issues, and ideas from beta testing.
+              </span>
+            </Link>
+          )}
+          {isAdmin && (
+            <Link
+              href="/admin/beta"
+              className="rounded-[1rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-4 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+            >
+              <span className="block font-[family-name:var(--font-display)] text-2xl text-[var(--color-highlight)]">
+                Admin Panel
+              </span>
+              <span className="mt-2 block leading-6 text-[var(--color-muted)]">
+                Open the admin dashboard for moderation and beta management.
+              </span>
+            </Link>
+          )}
+        </section>
+      )}
 
       <section className="grid gap-3 sm:grid-cols-3">
         {navLinks.map((link) => (
