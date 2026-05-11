@@ -391,7 +391,7 @@ html[data-theme="light"] .mobile-app-shell {
 }
 
 .mobile-section-header h1.site-page-title {
-  color: var(--color-ink);
+  color: var(--color-highlight);
   font-size: clamp(1.75rem, 6vw, 3rem);
   line-height: 1.04;
 }
@@ -3882,7 +3882,7 @@ html[data-theme="light"] .mobile-app-shell {
   font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 600;
   line-height: 1.05;
-  color: var(--color-ink);
+  color: var(--color-highlight);
   margin: 0 0 1.5rem;
   animation: fadeUp 1s 0.2s ease both;
 }
@@ -3961,7 +3961,7 @@ html[data-theme="light"] .mobile-app-shell {
   font-family: var(--font-display), serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
-  color: var(--color-ink);
+  color: var(--color-highlight);
   line-height: 1.1;
   margin: 0 0 1rem;
 }
@@ -3977,7 +3977,7 @@ html[data-theme="light"] .mobile-app-shell {
 .site-page-title,
 .site-section-title,
 .site-card-title {
-  color: var(--color-ink);
+  color: var(--color-highlight);
   font-family: var(--font-display), serif;
   font-weight: 600;
   letter-spacing: 0;
@@ -4051,7 +4051,7 @@ html[data-theme="light"] .mobile-app-shell {
   font-family: var(--font-display), serif;
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--color-ink);
+  color: var(--color-highlight);
   line-height: 1.2;
   transition: color 200ms ease;
 }
@@ -4434,7 +4434,7 @@ html[data-theme="light"] .mobile-app-shell {
   font-family: var(--font-display), serif;
   font-size: 1.35rem;
   font-weight: 600;
-  color: #F5F5F0;
+  color: var(--color-highlight);
   line-height: 1.2;
   margin: 0;
 }
