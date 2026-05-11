@@ -4322,6 +4322,14 @@ html[data-theme="light"] .mobile-app-shell {
   transform: translateY(0);
 }
 
+@media (max-width: 1023px) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ─── Hero cross watermark ────────────────────────────────────── */
 
 .web-hero__watermark {
