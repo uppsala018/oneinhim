@@ -76,17 +76,17 @@ export default function CouncilsPage() {
           ‹
         </Link>
         <div>
-          <h1>Ecumenical Councils</h1>
+          <h1 className="site-page-title">Ecumenical Councils</h1>
           <span aria-hidden="true">◆ ─ ✦ ─ ◆</span>
         </div>
       </header>
 
       <section className="px-4 pt-6 pb-5 border-b border-[var(--color-border)]">
-        <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">Church History</p>
-        <h2 className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
+        <p className="site-heading-kicker">Church History</p>
+        <h2 className="site-section-title mt-2">
           The Seven Ecumenical Councils
         </h2>
-        <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+        <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
           From 325 to 787 AD, the Church gathered seven times in formal council to define the
           faith against serious theological errors. These seven councils — Nicaea, Constantinople,
           Ephesus, Chalcedon, and three more — settled the Church&apos;s core teaching on the
@@ -113,10 +113,10 @@ export default function CouncilsPage() {
           >
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">
+                <p className="site-heading-kicker">
                   {council.year} AD
                 </p>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl leading-tight text-[var(--color-ink)]">
+                <h2 className="site-card-title mt-3">
                   {council.title}
                 </h2>
               </div>
@@ -139,10 +139,10 @@ export default function CouncilsPage() {
       <section className="px-4 pb-8">
         <div className="grid gap-4 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 md:grid-cols-3">
           <div>
-            <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">
+            <p className="site-heading-kicker">
               Study Flow
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
+            <h2 className="site-card-title mt-3">
               Read in order
             </h2>
           </div>

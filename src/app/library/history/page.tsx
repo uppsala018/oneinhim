@@ -52,10 +52,10 @@ export default function HistoryHubPage() {
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Church History" }]} />
         <section className="rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
-          <h1 className="font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)] md:text-5xl">
+          <h1 className="site-page-title">
             A study hub for splits, continuities, councils, and modern renewal movements.
           </h1>
-          <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--color-muted)]">
+          <p className="site-heading-lead mt-5 max-w-4xl">
             Start with the timeline, then move into the East-West Schism, Chalcedon, the
             Reformation, and the Charismatic movement as distinct study paths.
           </p>
@@ -68,10 +68,10 @@ export default function HistoryHubPage() {
               href={card.href}
               className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 transition hover:bg-[rgba(16,16,16,0.88)] md:p-6"
             >
-              <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
+              <p className="site-heading-kicker">
                 Church History
               </p>
-              <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)] md:text-3xl">
+              <h2 className="site-card-title mt-3">
                 {card.title}
               </h2>
               <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
@@ -82,7 +82,7 @@ export default function HistoryHubPage() {
         </section>
 
         <section className="mt-8 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 md:p-6">
-          <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">
+          <p className="site-heading-kicker">
             Study Links
           </p>
           <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
@@ -104,4 +104,3 @@ export default function HistoryHubPage() {
     </>
   );
 }
-

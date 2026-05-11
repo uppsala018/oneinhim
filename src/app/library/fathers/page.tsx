@@ -102,10 +102,10 @@ export default function FathersPage() {
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">
+                  <p className="site-heading-kicker">
                     {father.tradition}
                   </p>
-                  <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--color-ink)]">
+                  <h2 className="site-card-title mt-3">
                     {father.name}
                   </h2>
                 </div>
@@ -147,7 +147,7 @@ export default function FathersPage() {
               </div>
 
               <div className="mt-6 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4">
-                <p className="text-xs uppercase tracking-[0.22em] text-[var(--color-highlight)]">
+                <p className="site-heading-kicker">
                   Included Works
                 </p>
                 <ul className="mt-3 space-y-2 text-sm text-[var(--color-muted)]">
@@ -170,14 +170,14 @@ export default function FathersPage() {
         </div>
 
         <section className="mt-16 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-8">
-          <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-highlight)]">Common Questions</p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--color-ink)]">
+          <p className="site-heading-kicker">Common Questions</p>
+          <h2 className="site-section-title mt-3">
             About the Church Fathers
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {fathersFaq.map((item) => (
               <div key={item.question}>
-                <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-[var(--color-ink)]">
+                <h3 className="site-card-title text-xl">
                   {item.question}
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">{item.answer}</p>
@@ -189,4 +189,3 @@ export default function FathersPage() {
     </>
   );
 }
-

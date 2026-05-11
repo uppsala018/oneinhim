@@ -145,10 +145,10 @@ export default function LibraryPage() {
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library" }]} />
         <div className="max-w-3xl">
-          <h1 className="font-[family-name:var(--font-display)] text-5xl text-[var(--color-ink)]">
+          <h1 className="site-page-title">
             Study Library
           </h1>
-          <p className="mt-5 text-lg leading-8 text-[var(--color-muted)]">
+          <p className="site-heading-lead mt-5">
             Free Bible study covering the King James Version with Strong&apos;s concordance,
             the Douay-Rheims Catholic Bible and RSV-CE, the Brenton Septuagint, early Church Fathers
             in full text, all seven Ecumenical Councils, the Roman Catechism of Trent, 2000 years of
@@ -164,7 +164,7 @@ export default function LibraryPage() {
               href={module.href}
               className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 transition hover:bg-[rgba(16,16,16,0.88)]"
             >
-              <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--color-highlight)]">
+              <h2 className="site-card-title">
                 {module.title}
               </h2>
               <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
@@ -178,4 +178,3 @@ export default function LibraryPage() {
     </>
   );
 }
-

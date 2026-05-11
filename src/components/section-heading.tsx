@@ -14,10 +14,10 @@
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl leading-tight font-semibold text-[var(--color-ink)] sm:text-4xl">
+      <h2 className="site-section-title">
         {title}
       </h2>
-      <p className="text-base leading-7 text-[var(--color-muted)] sm:text-lg">
+      <p className="site-heading-lead">
         {body}
       </p>
     </div>

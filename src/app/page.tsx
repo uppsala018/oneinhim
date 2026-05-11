@@ -313,7 +313,7 @@ export default function Home() {
           <section className="web-mission" aria-labelledby="mission-heading">
             <div className="web-mission__inner">
               <p className="web-mission__eyebrow">Our Mission</p>
-              <h2 className="web-mission__title" id="mission-heading">
+              <h2 className="web-mission__title site-section-title" id="mission-heading">
                 One Church, One Truth, One Source
               </h2>
               <p className="web-mission__body">

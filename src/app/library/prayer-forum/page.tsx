@@ -28,7 +28,7 @@ export default function PrayerForumPage() {
           ‹
         </Link>
         <div>
-          <h1 style={{ fontSize: "clamp(1.25rem, 5vw, 2.5rem)", lineHeight: 1.05 }}>
+          <h1 className="site-page-title">
             One In Him Biblestudy Online Community
           </h1>
           <span>Prayer · Praise · Discussion</span>
@@ -44,13 +44,13 @@ export default function PrayerForumPage() {
       </header>
 
       <section className="border-b border-[var(--color-border)] px-4 pt-6 pb-4">
-        <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">
+        <p className="site-heading-kicker">
           Community
         </p>
-        <h2 className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
+        <h2 className="site-section-title mt-2">
           One In Him Biblestudy Online Community
         </h2>
-        <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
+        <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
           Share prayer requests, give praise for answered prayer, and ask questions about faith
           and Scripture. Post a prayer request and the community will pray alongside you. Share a
           praise report and encourage others in their walk. Ask a theological or practical question

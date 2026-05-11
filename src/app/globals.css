@@ -390,6 +390,12 @@ html[data-theme="light"] .mobile-app-shell {
   text-shadow: 0 3px 0 rgba(0, 0, 0, 0.24);
 }
 
+.mobile-section-header h1.site-page-title {
+  color: var(--color-ink);
+  font-size: clamp(1.75rem, 6vw, 3rem);
+  line-height: 1.04;
+}
+
 .mobile-section-header span {
   display: block;
   margin-top: 0.25rem;
@@ -3958,6 +3964,44 @@ html[data-theme="light"] .mobile-app-shell {
   color: var(--color-ink);
   line-height: 1.1;
   margin: 0 0 1rem;
+}
+
+.site-heading-kicker {
+  color: var(--color-highlight);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.site-page-title,
+.site-section-title,
+.site-card-title {
+  color: var(--color-ink);
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.site-page-title {
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  line-height: 1.04;
+}
+
+.site-section-title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.08;
+}
+
+.site-card-title {
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  line-height: 1.12;
+}
+
+.site-heading-lead {
+  color: var(--color-muted);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.75;
 }
 
 .web-section__lead {
