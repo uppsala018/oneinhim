@@ -57,7 +57,7 @@ async function deleteFileIfPossible(
 
 export const moderatePendingAvatar = onObjectFinalized(
   {
-    region: "us-central1",
+    region: "us-east1",
     maxInstances: 3,
     timeoutSeconds: 120,
     memory: "512MiB",
