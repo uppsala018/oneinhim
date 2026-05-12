@@ -1,11 +1,10 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
 import JsonLd from "@/components/json-ld";
 import FathersMobileLibrary from "@/components/fathers-mobile-library";
-import SectionHeading from "@/components/section-heading";
 import { fathersLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
@@ -81,79 +80,85 @@ export default function FathersPage() {
   return (
     <>
       <JsonLd data={FATHERS_FAQ} />
+
+      {/* Mobile / tablet: searchable list with custom topbar */}
       <FathersMobileLibrary fathers={fathersLibrary} />
 
+      {/* Desktop (≥1024px): centered polished layout */}
       <div className="hidden lg:block">
         <AppHeader />
       </div>
       <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Church Fathers" }]} />
-        <h1 className="sr-only">Church Fathers — Patristic Writings Library</h1>
-        <SectionHeading
-          title="Read the Church Fathers in full."
-          body="The early church writers — Ignatius, Justin Martyr, Origen, Athanasius, Augustine, Chrysostom, and more — available here as complete primary texts organized by author and work. Browse father profiles, read the included writings, and follow suggested reading orders tailored for Catholic, Orthodox, and Protestant study."
-        />
+        <Breadcrumb items={[
+          { label: "Home", href: "/" },
+          { label: "Library", href: "/library" },
+          { label: "Church Fathers" },
+        ]} />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        {/* Hero panel */}
+        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+            Patristics
+          </p>
+          <h1 className="site-page-title mt-3">Church Fathers</h1>
+          <p className="site-heading-lead mt-4 max-w-3xl">
+            The early church writers — Ignatius, Justin Martyr, Origen, Athanasius, Augustine,
+            Chrysostom, and more — available here as complete primary texts organized by author
+            and work. Browse father profiles, read the included writings, and follow suggested
+            reading orders tailored for Catholic, Orthodox, and Protestant study.
+          </p>
+        </section>
+
+        {/* Father cards */}
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {fathersLibrary.map((father) => (
             <article
               key={father.slug}
-              className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6"
+              className="flex flex-col rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 transition hover:border-[var(--color-highlight)]"
             >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="site-heading-kicker">
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
                     {father.tradition}
                   </p>
-                  <h2 className="site-card-title mt-3">
+                  <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold leading-tight text-[var(--color-ink)]">
                     {father.name}
                   </h2>
                 </div>
-                <span className="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--color-soft)]">
+                <span className="shrink-0 rounded-full border border-[var(--color-border)] px-2.5 py-0.5 text-xs uppercase tracking-[0.15em] text-[var(--color-soft)]">
                   {father.era}
                 </span>
               </div>
 
-              <div className="mt-4 flex flex-wrap gap-2">
-                <span className="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs uppercase tracking-[0.16em] text-[var(--color-soft)]">
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                <span className="rounded-full border border-[var(--color-border)] px-2.5 py-0.5 text-xs text-[var(--color-soft)]">
                   {father.stream === "shared" ? "Shared Catholic/Orthodox" : father.stream}
                 </span>
                 {father.studyTracks.map((track) => (
                   <span
                     key={`${father.slug}-${track}`}
-                    className="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs text-[var(--color-soft)]"
+                    className="rounded-full border border-[var(--color-border)] px-2.5 py-0.5 text-xs text-[var(--color-soft)]"
                   >
                     {track}
                   </span>
                 ))}
               </div>
 
-              <p className="mt-4 text-sm leading-7 text-[var(--color-muted)]">
+              <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
                 {father.summary}
               </p>
-              <p className="mt-3 text-sm leading-7 text-[var(--color-soft)]">
-                {father.region}
-              </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {father.themes.map((theme) => (
-                  <span
-                    key={theme}
-                    className="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs text-[var(--color-soft)]"
-                  >
-                    {theme}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-6 rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4">
-                <p className="site-heading-kicker">
+              <div className="mt-4 rounded-[1.25rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
                   Included Works
                 </p>
-                <ul className="mt-3 space-y-2 text-sm text-[var(--color-muted)]">
+                <ul className="mt-2 space-y-1 text-xs text-[var(--color-muted)]">
                   {father.works.map((work) => (
-                    <li key={work.slug}>
-                      {work.title} ({work.stats.sectionCount} sections, {work.stats.paragraphCount} paragraphs)
+                    <li key={work.slug} className="leading-5">
+                      {work.title}
+                      <span className="ml-1 text-[var(--color-soft)]">
+                        ({work.stats.sectionCount} sections)
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -161,23 +166,24 @@ export default function FathersPage() {
 
               <Link
                 href={`/library/fathers/${father.slug}`}
-                className="mt-6 inline-flex rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-highlight)]"
+                className="mt-auto pt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-highlight)] hover:underline"
               >
-                Open father
+                Read writings →
               </Link>
             </article>
           ))}
         </div>
 
-        <section className="mt-16 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-8">
-          <p className="site-heading-kicker">Common Questions</p>
-          <h2 className="site-section-title mt-3">
-            About the Church Fathers
-          </h2>
+        {/* FAQ */}
+        <section className="mt-14 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+            Common Questions
+          </p>
+          <h2 className="site-section-title mt-2">About the Church Fathers</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {fathersFaq.map((item) => (
               <div key={item.question}>
-                <h3 className="site-card-title text-xl">
+                <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold text-[var(--color-ink)]">
                   {item.question}
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-[var(--color-muted)]">{item.answer}</p>
