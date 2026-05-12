@@ -68,7 +68,7 @@ export default function FirebaseForumCategories() {
 
   if (loading) {
     return (
-      <section className="px-4 py-6">
+      <section className="py-6">
         <p className="text-sm text-[var(--color-muted)]">Loading forum categories...</p>
       </section>
     );
@@ -76,14 +76,14 @@ export default function FirebaseForumCategories() {
 
   if (error) {
     return (
-      <section className="px-4 py-6">
+      <section className="py-6">
         <p className="text-sm text-red-500">{error}</p>
       </section>
     );
   }
 
   return (
-    <section className="px-4 py-6">
+    <section className="py-6">
       <div className="mb-5 flex items-center justify-between gap-3">
         <div>
           <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">

@@ -8,15 +8,13 @@ export default function PrayerForumContent() {
 
   if (loading) {
     return (
-      <section className="px-4 pt-4 pb-2 text-sm text-[var(--color-muted)]">
-        Checking sign-in status...
-      </section>
+      <p className="text-sm text-[var(--color-muted)]">Checking sign-in status…</p>
     );
   }
 
   return (
-    <section className="px-4 pt-4 pb-2">
-      <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)] p-5">
+    <div className="rounded-2xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-5">
+      <div>
         <h2 className="text-lg font-semibold text-[var(--color-ink)]">
           {user ? "You are signed in" : "Sign in to participate"}
         </h2>
@@ -36,6 +34,6 @@ export default function PrayerForumContent() {
           Start a discussion
         </Link>
       </div>
-    </section>
+    </div>
   );
 }

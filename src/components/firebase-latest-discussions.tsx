@@ -77,7 +77,7 @@ export default function FirebaseLatestDiscussions() {
 
   if (loading) {
     return (
-      <section className="px-4 py-6">
+      <section className="py-6">
         <p className="text-sm text-[var(--color-muted)]">
           Loading latest discussions...
         </p>
@@ -87,7 +87,7 @@ export default function FirebaseLatestDiscussions() {
 
   if (error) {
     return (
-      <section className="px-4 py-6">
+      <section className="py-6">
         <p className="text-sm text-red-500">{error}</p>
       </section>
     );
@@ -95,7 +95,7 @@ export default function FirebaseLatestDiscussions() {
 
   if (latestThreads.length === 0) {
     return (
-      <section className="px-4 py-6">
+      <section className="py-6">
         <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)] p-5">
           <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">
             Forum
@@ -112,7 +112,7 @@ export default function FirebaseLatestDiscussions() {
   }
 
   return (
-    <section className="px-4 py-6">
+    <section className="py-6">
       <div className="mb-5">
         <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">
           Forum

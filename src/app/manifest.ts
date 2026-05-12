@@ -6,11 +6,14 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "One In Him",
     description:
       "An installable Bible study and church history app covering Scripture, theology, church fathers, councils, and Christian traditions.",
-    start_url: "/",
+    start_url: "/library",
     display: "standalone",
     background_color: "#0a0a0a",
-    theme_color: "#081a39",
-    orientation: "portrait",
+    theme_color: "#0a0a0a",
+    orientation: "portrait-primary",
+    scope: "/",
+    lang: "en",
+    categories: ["education", "books", "religion"],
     icons: [
       {
         src: "/assets/art/icon-48.png",

@@ -1,16 +1,17 @@
-import FirebaseForumCategories from "@/components/firebase-forum-categories";
-import FirebaseLatestDiscussions from "@/components/firebase-latest-discussions";
 import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
-import PrayerForumContent from "./prayer-forum-content";
+import Breadcrumb from "@/components/breadcrumb";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+import PrayerForumContent from "./prayer-forum-content";
+import FirebaseLatestDiscussions from "@/components/firebase-latest-discussions";
+import FirebaseForumCategories from "@/components/firebase-forum-categories";
 
 export const metadata: Metadata = buildMeta({
-  title: "One In Him Biblestudy Online Community",
+  title: "Prayer Forum — One In Him Community",
   description:
-    "Share prayer requests, give praise, and ask questions in the One In Him prayer forum. A respectful space for the body of Christ.",
+    "Share prayer requests, give praise, and ask questions in the One In Him prayer forum. Anyone can read. Sign in to participate.",
   keywords:
     "christian prayer forum, prayer requests, christian community, bible study community, prayer",
   path: "/library/prayer-forum",
@@ -19,56 +20,55 @@ export const metadata: Metadata = buildMeta({
 export default function PrayerForumPage() {
   return (
     <>
-      <div className="hidden lg:block">
-        <AppHeader />
-      </div>
-      <main className="mobile-app-shell lg:pt-[var(--header-height)]" style={{ paddingBottom: "7rem" }}>
-      <header className="mobile-section-header">
-        <Link href="/" className="mobile-section-header__back" aria-label="Back">
-          ‹
-        </Link>
-        <div>
-          <h1 className="site-page-title">
-            One In Him Biblestudy Online Community
-          </h1>
-          <span>Prayer · Praise · Discussion</span>
+      <AppHeader />
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Library", href: "/library" },
+            { label: "Prayer Forum" },
+          ]}
+        />
+
+        {/* Hero panel */}
+        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+            Community
+          </p>
+          <h1 className="site-page-title mt-3">Prayer Forum</h1>
+          <p className="site-heading-lead mt-4 max-w-3xl">
+            Share prayer requests, give praise for answered prayer, and ask questions about faith
+            and Scripture. Anyone can read and browse — sign in only when you want to start a
+            discussion or reply. This is a place for the body of Christ to carry one another&apos;s
+            burdens across Catholic, Orthodox, and Protestant traditions.
+          </p>
+          <div className="mt-6">
+            <PrayerForumContent />
+          </div>
+        </section>
+
+        {/* Latest discussions */}
+        <div className="mt-10">
+          <FirebaseLatestDiscussions />
         </div>
-        <Link
-          href="/library/prayer-forum/support"
-          className="mobile-section-header__back"
-          aria-label="Support"
-          style={{ fontSize: "1.5rem" }}
-        >
-          ?
-        </Link>
-      </header>
 
-      <section className="border-b border-[var(--color-border)] px-4 pt-6 pb-4">
-        <p className="site-heading-kicker">
-          Community
+        {/* Forum categories */}
+        <div className="mt-8">
+          <FirebaseForumCategories />
+        </div>
+
+        {/* Support link */}
+        <p className="mt-10 text-sm text-[var(--color-muted)]">
+          Questions or issues?{" "}
+          <Link
+            href="/library/prayer-forum/support"
+            className="text-[var(--color-highlight)] hover:underline"
+          >
+            Visit the support page
+          </Link>
         </p>
-        <h2 className="site-section-title mt-2">
-          One In Him Biblestudy Online Community
-        </h2>
-        <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
-          Share prayer requests, give praise for answered prayer, and ask questions about faith
-          and Scripture. Post a prayer request and the community will pray alongside you. Share a
-          praise report and encourage others in their walk. Ask a theological or practical question
-          and receive thoughtful, respectful responses from fellow believers across Catholic,
-          Orthodox, and Protestant traditions. This is a place for the body of Christ to carry
-          one another&apos;s burdens — not a debate space. All requests are treated with care. Post
-          with your name or anonymously. Sign in with your email to participate.
-        </p>
-      </section>
-
-      <PrayerForumContent />
-
-      <FirebaseLatestDiscussions />
-
-      <FirebaseForumCategories />
-
-      <MobileBottomNav />
       </main>
+      <MobileBottomNav active="Prayer Forum" />
     </>
   );
 }

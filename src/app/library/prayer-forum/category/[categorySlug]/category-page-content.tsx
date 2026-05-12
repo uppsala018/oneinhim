@@ -101,7 +101,7 @@ export default function CategoryPageContent({
 
   if (loading) {
     return (
-      <main className="mobile-app-shell px-4 py-8">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
         <p className="text-sm text-[var(--color-muted)]">Loading category...</p>
       </main>
     );
@@ -109,7 +109,7 @@ export default function CategoryPageContent({
 
   if (error) {
     return (
-      <main className="mobile-app-shell px-4 py-8">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
         <p className="text-sm text-red-500">{error}</p>
       </main>
     );
@@ -117,7 +117,7 @@ export default function CategoryPageContent({
 
   if (!category) {
     return (
-      <main className="mobile-app-shell px-4 py-8">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
         <Link
           href="/library/prayer-forum"
           className="text-sm text-[var(--color-highlight)]"
@@ -135,8 +135,8 @@ export default function CategoryPageContent({
   }
 
   return (
-    <main className="mobile-app-shell" style={{ paddingBottom: "7rem" }}>
-      <section className="border-b border-[var(--color-border)] px-4 pt-6 pb-5">
+    <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
+      <section className="border-b border-[var(--color-border)] pb-6 pt-4">
         <Link
           href="/library/prayer-forum"
           className="text-sm text-[var(--color-highlight)]"
@@ -156,7 +156,7 @@ export default function CategoryPageContent({
       </section>
 
       {childCategories.length > 0 && (
-        <section className="px-4 py-6">
+        <section className="py-6">
           <h2 className="text-lg font-semibold text-[var(--color-ink)]">
             Subcategories
           </h2>
@@ -179,7 +179,7 @@ export default function CategoryPageContent({
         </section>
       )}
 
-      <section className="px-4 pb-10">
+      <section className="pb-10 pt-6">
         <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)] p-5">
           <div className="flex items-center justify-between gap-3">
             <h2 className="text-lg font-semibold text-[var(--color-ink)]">

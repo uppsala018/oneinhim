@@ -1,3 +1,5 @@
+import AppHeader from "@/components/app-header";
+import MobileBottomNav from "@/components/mobile-bottom-nav";
 import ThreadPageContent from "./thread-page-content";
 
 export default async function ForumThreadPage({
@@ -6,5 +8,11 @@ export default async function ForumThreadPage({
   params: Promise<{ threadId: string }>;
 }) {
   const { threadId } = await params;
-  return <ThreadPageContent threadId={threadId} />;
+  return (
+    <>
+      <AppHeader />
+      <ThreadPageContent threadId={threadId} />
+      <MobileBottomNav />
+    </>
+  );
 }

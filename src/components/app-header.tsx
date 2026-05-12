@@ -96,30 +96,20 @@ export default function AppHeader() {
             Join Beta
           </Link>
           {user ? (
-            <div className="hidden md:flex items-center gap-3 ml-4">
-              <Link
-                href="/user-panel"
-                aria-label="Open user panel"
-                className="grid h-9 w-9 place-items-center overflow-hidden rounded-full border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] text-sm text-[var(--color-highlight)] transition hover:border-[var(--color-highlight)]"
-              >
+            <Link
+              href="/user-panel"
+              className="hidden md:inline-flex items-center gap-2 ml-4 text-sm text-[var(--color-ink)] hover:text-[var(--color-highlight)] transition-colors"
+            >
+              <span className="grid h-7 w-7 shrink-0 place-items-center overflow-hidden rounded-full border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] text-xs text-[var(--color-highlight)]">
                 {profile?.avatarStatus === "approved" && profile.avatarApprovedURL ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={profile.avatarApprovedURL}
-                    alt=""
-                    className="h-full w-full object-cover"
-                  />
+                  <img src={profile.avatarApprovedURL} alt="" className="h-full w-full object-cover" />
                 ) : (
                   <span aria-hidden="true">◎</span>
                 )}
-              </Link>
-              <button
-                onClick={handleSignOut}
-                className="text-sm text-red-500 hover:text-red-600 font-medium"
-              >
-                Sign out
-              </button>
-            </div>
+              </span>
+              User Panel
+            </Link>
           ) : (
             <Link
               href="/login"

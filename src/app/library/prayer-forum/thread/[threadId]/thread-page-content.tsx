@@ -222,7 +222,7 @@ export default function ThreadPageContent({ threadId }: { threadId: string }) {
 
   if (loading || authLoading) {
     return (
-      <main className="mobile-app-shell px-4 py-8">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
         <p className="text-sm text-[var(--color-muted)]">Loading thread...</p>
       </main>
     );
@@ -230,7 +230,7 @@ export default function ThreadPageContent({ threadId }: { threadId: string }) {
 
   if (error) {
     return (
-      <main className="mobile-app-shell px-4 py-8">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
         <p className="text-sm text-red-400">{error}</p>
       </main>
     );
@@ -238,7 +238,7 @@ export default function ThreadPageContent({ threadId }: { threadId: string }) {
 
   if (!thread || (thread.isDeleted && !admin)) {
     return (
-      <main className="mobile-app-shell px-4 py-8">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
         <Link href="/library/prayer-forum" className="text-sm text-[var(--color-highlight)]">
           Back to forum
         </Link>
@@ -250,7 +250,7 @@ export default function ThreadPageContent({ threadId }: { threadId: string }) {
   }
 
   return (
-    <main className="mobile-app-shell px-4 py-8" style={{ paddingBottom: "7rem" }}>
+    <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
       <Link href="/library/prayer-forum" className="text-sm text-[var(--color-highlight)]">
         Back to forum
       </Link>

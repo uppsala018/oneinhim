@@ -1,3 +1,5 @@
+import AppHeader from "@/components/app-header";
+import MobileBottomNav from "@/components/mobile-bottom-nav";
 import CategoryPageContent from "./category-page-content";
 
 export default async function ForumCategoryPage({
@@ -6,6 +8,11 @@ export default async function ForumCategoryPage({
   params: Promise<{ categorySlug: string }>;
 }) {
   const { categorySlug } = await params;
-
-  return <CategoryPageContent categorySlug={categorySlug} />;
+  return (
+    <>
+      <AppHeader />
+      <CategoryPageContent categorySlug={categorySlug} />
+      <MobileBottomNav />
+    </>
+  );
 }

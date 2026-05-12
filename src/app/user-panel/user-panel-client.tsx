@@ -3,14 +3,21 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/lib/firebase-client";
+import { db, auth, isFirebaseConfigured } from "@/lib/firebase-client";
+import { signOut } from "firebase/auth";
 import { useAuth } from "@/lib/use-auth";
+import { useRouter } from "next/navigation";
 import { toUserProfile, type UserProfile } from "@/lib/user-profile";
 
-const navLinks = [
-  { href: "/", label: "Home" },
+const mainNavLinks = [
+  { href: "/library/bibles", label: "Bibles" },
+  { href: "/library/fathers", label: "Church Fathers" },
+  { href: "/library/councils", label: "Councils" },
+  { href: "/library", label: "Library" },
+  { href: "/library/history", label: "History" },
   { href: "/library/prayer-forum", label: "Prayer Forum" },
-  { href: "/user-panel/profile", label: "Edit Profile" },
+  { href: "/donate", label: "Donate" },
+  { href: "/", label: "Home" },
 ];
 
 const socialLinkLabels = {
@@ -52,6 +59,17 @@ export default function UserPanelClient() {
   const [profile, setProfile] = useState<Partial<UserProfile> | null>(null);
   const [profileLoading, setProfileLoading] = useState(true);
   const [error, setError] = useState("");
+  const router = useRouter();
+
+  const handleSignOut = async () => {
+    if (!isFirebaseConfigured || !auth) return;
+    try {
+      await signOut(auth);
+      router.push("/");
+    } catch (err) {
+      console.error("Failed to sign out:", err);
+    }
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -112,9 +130,9 @@ export default function UserPanelClient() {
   const isBetaTester = profile?.role === "beta_tester";
 
   return (
-    <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-28 pt-6 sm:px-6 lg:px-8">
+    <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-28 pt-6 sm:px-6 lg:px-8 lg:pb-14">
       <nav className="flex flex-wrap gap-3 text-sm text-[var(--color-muted)]">
-        {navLinks.map((link) => (
+        {mainNavLinks.map((link) => (
           <Link key={link.href} href={link.href} className="hover:text-[var(--color-highlight)]">
             {link.label}
           </Link>
@@ -259,16 +277,36 @@ export default function UserPanelClient() {
         </section>
       )}
 
-      <section className="grid gap-3 sm:grid-cols-3">
-        {navLinks.map((link) => (
+      {/* Full site navigation */}
+      <section className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+        <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-highlight)]">Navigate</h2>
+        <div className="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {mainNavLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-3 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
-            key={link.href}
-            href={link.href}
-            className="rounded-[1rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-3 text-sm font-medium text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+            href="/user-panel/profile"
+            className="rounded-xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-3 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
           >
-            {link.label}
+            Edit Profile
           </Link>
-        ))}
+        </div>
+      </section>
+
+      {/* Account actions */}
+      <section className="flex flex-wrap gap-3">
+        <button
+          onClick={handleSignOut}
+          className="rounded-full border border-[var(--color-border)] px-5 py-2 text-sm text-[var(--color-muted)] transition hover:border-red-400 hover:text-red-400"
+        >
+          Sign out
+        </button>
       </section>
     </main>
   );
