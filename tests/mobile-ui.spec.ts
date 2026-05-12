@@ -164,6 +164,27 @@ test('mobile header: hamburger visible, Join Beta in mobile nav', async ({ page,
   await page.screenshot({ path: path.join(screenshotDir, `header-open-${t}.png`) });
 });
 
+// ── /library page: desktop + mobile screenshots ─────────────────────────────
+
+test('/library page: all four sections visible', async ({ page, browserName, viewport }) => {
+  await page.goto('/library');
+  await page.waitForLoadState('networkidle');
+
+  const t = tag(browserName, viewport);
+
+  // All 4 section headings must exist
+  for (const heading of ['Read the Word', 'Fathers & Councils', 'Every Branch of the Church', 'Prayer & Tools']) {
+    await expect(page.locator('h2').filter({ hasText: heading }).first()).toBeVisible();
+  }
+
+  // All library cards must be visible and have opacity 1
+  const cards = page.locator('.library-card');
+  const count = await cards.count();
+  expect(count).toBeGreaterThan(12);
+
+  await page.screenshot({ path: path.join(screenshotDir, `library-${t}.png`), fullPage: true });
+});
+
 // ── /library/fathers mobile: no garbled characters ──────────────────────────
 
 test('fathers page mobile: no garbled characters visible', async ({ page, browserName, viewport }) => {

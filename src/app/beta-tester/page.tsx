@@ -7,6 +7,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import AppHeader from "@/components/app-header";
 
 export default function BetaTesterPage() {
   const [formData, setFormData] = useState({
@@ -71,6 +72,8 @@ export default function BetaTesterPage() {
   };
 
   return (
+    <>
+    <AppHeader />
     <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
       <div className="max-w-3xl">
         {authLoading ? (
@@ -205,5 +208,6 @@ export default function BetaTesterPage() {
         )}
       </div>
     </main>
+    </>
   );
 }

@@ -4393,6 +4393,152 @@ html[data-theme="light"] .mobile-app-shell {
   opacity: 0.035;
 }
 
+/* ─── Library page layout ────────────────────────────────────── */
+
+.library-intro {
+  max-width: 42rem;
+  margin-top: 2rem;
+}
+
+.library-intro__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+}
+
+.library-intro__title {
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  font-weight: 600;
+  color: var(--color-highlight);
+  line-height: 1.04;
+  margin-top: 0.6rem;
+}
+
+.library-intro__lead {
+  color: var(--color-muted);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.75;
+  margin-top: 1.25rem;
+}
+
+.library-section {
+  margin-top: 4.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+.library-section__header {
+  max-width: 36rem;
+  margin-bottom: 2rem;
+}
+
+.library-section__eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+}
+
+.library-section__title {
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 600;
+  color: var(--color-highlight);
+  line-height: 1.08;
+  margin-top: 0.5rem;
+}
+
+.library-grid {
+  display: grid;
+  gap: 0.875rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .library-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .library-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.library-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  background: var(--color-panel);
+  text-decoration: none;
+  transition:
+    border-color 200ms ease,
+    background 200ms ease,
+    transform 200ms ease;
+}
+
+.library-card:hover {
+  border-color: rgba(201, 168, 76, 0.38);
+  background: rgba(16, 16, 16, 0.92);
+  transform: translateY(-1px);
+}
+
+.library-card__icon {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: var(--color-highlight);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.library-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.library-card__title {
+  font-family: var(--font-display), serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-highlight);
+  line-height: 1.2;
+}
+
+.library-card__desc {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--color-muted);
+}
+
+.library-card__arrow {
+  flex-shrink: 0;
+  color: var(--color-soft);
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+  opacity: 0.5;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.library-card:hover .library-card__arrow {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
 /* ─── Feature cards (5 hero sections) ────────────────────────── */
 
 .feature-grid {

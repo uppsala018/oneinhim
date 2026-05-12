@@ -4,6 +4,7 @@ import AppHeader from "@/components/app-header";
 import SiteFooter from "@/components/site-footer";
 import ScrollReveal from "@/components/scroll-reveal";
 import JsonLd from "@/components/json-ld";
+import PwaInstallButton from "@/components/pwa-install-button";
 
 export const metadata: Metadata = {
   title: "One In Him Bible Study | KJV, Church Fathers & Church History",
@@ -163,14 +164,7 @@ export default function Home() {
               <Link href="/library" className="cta-primary">
                 Explore the Library
               </Link>
-              <a
-                href="https://bible-study-virid.vercel.app"
-                className="cta-secondary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Install the App
-              </a>
+              <PwaInstallButton className="cta-secondary" />
             </div>
           </div>
 
