@@ -201,7 +201,7 @@ export default function OrthodoxPage() {
           <Link href="/" className="orthodox-mobile__back" aria-label="Back home">
             ‹
           </Link>
-          <span className="orthodox-mobile__cross">â¦</span>
+          <span className="orthodox-mobile__cross">☦</span>
           <h1>Orthodox Resources</h1>
         </header>
 
@@ -219,7 +219,7 @@ export default function OrthodoxPage() {
               <div className="orthodox-mobile-card__head">
                 <span className="orthodox-mobile-card__icon">{section.icon}</span>
                 <h2>{section.title}</h2>
-                <span className="orthodox-mobile-card__chevron">âŚ„</span>
+                <span className="orthodox-mobile-card__chevron">›</span>
               </div>
               <div className="orthodox-mobile-card__items">
                 {section.items.map((item) => (

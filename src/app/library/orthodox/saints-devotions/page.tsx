@@ -41,7 +41,7 @@ const saintGroups = [
 const devotionPaths = [
   {
     title: "Jesus Prayer",
-    icon: "â€ ",
+    icon: "†",
     summary:
       "The Jesus Prayer is a central Orthodox prayer of repentance, humility, and continual remembrance of Christ.",
     study: ["Lord Jesus Christ", "Son of God", "Have mercy on me", "Sinner"],
@@ -49,7 +49,7 @@ const devotionPaths = [
   },
   {
     title: "Akathists And Hymns",
-    icon: "â™¬",
+    icon: "♪",
     summary:
       "Akathists and hymnography are theology sung in prayer, linking doctrine to worship, memory, and praise.",
     study: ["Akathist", "Troparion", "Kontakion", "Canon"],
@@ -57,7 +57,7 @@ const devotionPaths = [
   },
   {
     title: "Icons And Holy Images",
-    icon: "â—",
+    icon: "◉",
     summary:
       "Icons confess the incarnation and honor the saints while keeping worship directed to God alone.",
     study: ["Incarnation", "Veneration", "Prototype", "Nicaea II"],

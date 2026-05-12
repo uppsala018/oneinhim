@@ -96,11 +96,11 @@ export default function FathersMobileLibrary({ fathers }: { fathers: FatherProfi
           ‹
         </Link>
         <h1>Church Fathers</h1>
-        <span>â¦</span>
+        <span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
       </header>
 
       <label className="fathers-mobile__search">
-        <span>âŚ•</span>
+        <span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg></span>
         <input
           value={query}
           onChange={(event) => setQuery(event.target.value)}

@@ -637,7 +637,7 @@ export default function StudyWorkspace({
                       <button type="button"
                         className={`kjv-mobile-verse__quick-btn${bookmarkSet.has(verse.reference) ? " kjv-mobile-verse__quick-btn--saved" : ""}`}
                         onClick={() => toggleBookmark(verse.reference)}>
-                        {bookmarkSet.has(verse.reference) ? "â… Saved" : "â† Save"}
+                        {bookmarkSet.has(verse.reference) ? "✓ Saved" : "Save"}
                       </button>
                       <button type="button" className="kjv-mobile-verse__quick-btn"
                         onClick={() => void shareVerse(verse.reference, verse.text)}>
@@ -688,7 +688,7 @@ export default function StudyWorkspace({
                   {showStrongs && selectedVerseId === verse.id ? (
                     <div className="kjv-mobile-concordance">
                       <div className="kjv-mobile-concordance__header">
-                        <span>â–°âŚ•</span>
+                        <span aria-hidden="true">📖</span>
                         <strong>Strong&apos;s Concordance</strong>
                         <button
                           type="button"

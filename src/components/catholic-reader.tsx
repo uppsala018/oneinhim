@@ -436,7 +436,7 @@ export default function CatholicReader({
                   <div className="catholic-mobile-verse__actions">
                     <button type="button" onClick={() => toggleBookmark(verse.reference)}
                       className={bookmarkSet.has(verse.reference) ? "catholic-mobile-verse__actions-saved" : ""}>
-                      {bookmarkSet.has(verse.reference) ? "â… Saved" : "â† Save"}
+                      {bookmarkSet.has(verse.reference) ? "✓ Saved" : "Save"}
                     </button>
                     <button type="button" onClick={() => void shareVerse(verse.reference, verse.text)}>
                       Share
@@ -482,7 +482,7 @@ export default function CatholicReader({
           </section>
         ) : null}
 
-        <div className="catholic-mobile__divider">âśŁ</div>
+        <div className="catholic-mobile__divider">✝</div>
 
         {featuredStudy ? (
           <section className="catholic-mobile-catechism">

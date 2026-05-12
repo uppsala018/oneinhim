@@ -104,7 +104,7 @@ export default function NotesPage() {
                   <button type="button"
                     onClick={() => void copyBookmark(ref)}
                     style={{ border: "1px solid rgba(229,197,122,0.25)", borderRadius: 999, padding: "0.3rem 0.75rem", color: copied === ref ? "var(--color-highlight)" : "var(--color-soft)", fontSize: "0.76rem", cursor: "pointer" }}>
-                    {copied === ref ? "Copied âś“" : "Copy"}
+                    {copied === ref ? "Copied ✓" : "Copy"}
                   </button>
                   <button type="button"
                     onClick={() => removeBookmark(ref)}

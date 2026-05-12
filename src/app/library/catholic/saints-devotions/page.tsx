@@ -41,7 +41,7 @@ const saintGroups = [
 const devotionPaths = [
   {
     title: "Marian Devotion",
-    icon: "M",
+    icon: "✢",
     summary:
       "Catholic devotion to Mary is rooted in Christology: Mary is honored because of her role in the incarnation and her witness of obedient faith.",
     study: ["Annunciation", "Theotokos", "Magnificat", "Maternal intercession"],
@@ -49,7 +49,7 @@ const devotionPaths = [
   },
   {
     title: "Rosary",
-    icon: "âś˘",
+    icon: "✢",
     summary:
       "The rosary is a biblical and contemplative prayer centered on the mysteries of Christ's life, death, and resurrection.",
     study: ["Joyful mysteries", "Sorrowful mysteries", "Glorious mysteries", "Luminous mysteries"],

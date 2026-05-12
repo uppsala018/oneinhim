@@ -242,8 +242,7 @@ export default function LxxReader() {
           <h1>Orthodox LXX Reader</h1>
         </div>
         <Link href="/library/orthodox/orthodox-canon-notes" className="lxx-reader__icon">
-          â¦
-        </Link>
+          …</Link>
       </header>
 
       <section className="lxx-reader__controls">
@@ -404,7 +403,7 @@ export default function LxxReader() {
             <button type="button"
               className={`lxx-reader__action-btn${bookmarkSet.has(selectedVerse.reference ?? "") ? " lxx-reader__action-btn--active" : ""}`}
               onClick={() => toggleBookmark(selectedVerse.reference ?? "")}>
-              {bookmarkSet.has(selectedVerse.reference ?? "") ? "â… Saved" : "â† Save"}
+              {bookmarkSet.has(selectedVerse.reference ?? "") ? "✓ Saved" : "Save"}
             </button>
             <button type="button" className="lxx-reader__action-btn"
               onClick={() => void shareVerse(selectedVerse.reference ?? "", selectedVerse.text)}>
