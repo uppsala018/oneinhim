@@ -226,6 +226,30 @@ test('user-panel: page loads with header and navigation', async ({ page, browser
   await page.screenshot({ path: path.join(screenshotDir, `user-panel-${t}.png`), fullPage: false });
 });
 
+// ── /library/bibles: centered layout + gold H1 ──────────────────────────────
+
+test('/library/bibles: hero panel with gold H1, primary cards visible', async ({ page, browserName, viewport }) => {
+  await page.goto('/library/bibles', { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(800);
+
+  const t = tag(browserName, viewport);
+
+  // Gold H1
+  const h1 = page.locator('h1').filter({ hasText: 'Study the Bible' });
+  await expect(h1).toBeVisible();
+
+  // Hero panel present (rounded border section)
+  await expect(page.locator('text=Scripture').first()).toBeVisible();
+
+  // Primary bible cards
+  await expect(page.locator('text=KJV + Strong').first()).toBeVisible();
+
+  // No mobile-app-shell
+  await expect(page.locator('.mobile-app-shell')).toHaveCount(0);
+
+  await page.screenshot({ path: path.join(screenshotDir, `bibles-${t}.png`), fullPage: true });
+});
+
 // ── /library/councils: centered layout + hero panel ─────────────────────────
 
 test('/library/councils: centered layout, hero panel, council cards', async ({ page, browserName, viewport }) => {

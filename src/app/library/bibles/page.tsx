@@ -142,35 +142,30 @@ export default function BiblesPage() {
     <>
       <JsonLd data={BIBLES_SCHEMA} />
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
         <Breadcrumb items={[
           { label: "Home", href: "/" },
           { label: "Library", href: "/library" },
           { label: "Bibles" },
         ]} />
 
-        <div className="max-w-3xl">
-          <h1 className="font-[family-name:var(--font-display)] text-5xl text-[var(--color-ink)]">
-            Study the Bible
-          </h1>
-          <p className="mt-5 text-lg leading-8 text-[var(--color-muted)]">
-            Read Scripture in any translation. This library includes two full internal readers —
-            the King James Version with word-by-word Strong&apos;s concordance and the Catholic
-            Bible with Douay-Rheims and RSV-CE — plus the Brenton Septuagint, the Greek Old
-            Testament used by the early church and the Eastern Orthodox tradition. For modern
-            translations, clear curated links take you directly to the relevant passage in the
-            NIV, ESV, NKJV, Amplified, NASB, and Geneva Bible. Below those, a full directory of
-            over thirty-five translations covers every major English version in use today —
-            from literal formal-equivalence texts to dynamic idiomatic renderings, Catholic editions,
-            Jewish translations, public-domain Reformation-era Bibles, and contemporary paraphrases.
-            Whether you are doing word studies, comparing translations, reading devotionally, or
-            studying church history through the Bible versions the Reformers and Fathers used,
-            every major English translation is one click away.
+        {/* Hero panel */}
+        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+            Scripture
           </p>
-        </div>
+          <h1 className="site-page-title mt-3">Study the Bible</h1>
+          <p className="site-heading-lead mt-4 max-w-3xl">
+            Read Scripture in any translation. Two full internal readers — the King James Version
+            with word-by-word Strong&apos;s concordance and the Catholic Bible with Douay-Rheims
+            and RSV-CE — plus the Brenton Septuagint used by the early church. Curated links cover
+            the NIV, ESV, NKJV, Amplified, NASB, and Geneva Bible, and a full directory lists
+            35+ English versions from Reformation-era Bibles to contemporary paraphrases.
+          </p>
+        </section>
 
         {/* Primary readers — full-width gold cards */}
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           {primaryBibles.map((bible) => (
             <Link
               key={bible.id}
