@@ -14,7 +14,7 @@ export default function SiteFooter() {
           </div>
 
           <a
-            href="https://bible-study-virid.vercel.app"
+            href="https://www.oneinhimbiblestudy.com"
             className="web-footer__app-btn"
             target="_blank"
             rel="noopener noreferrer"

@@ -26,7 +26,7 @@ export function buildMeta({
   const full = `${title} | ${SITE}`;
   const ogImage = image ?? DEFAULT_OG_IMAGE;
   return {
-    title: full,
+    title: { absolute: full },
     description,
     ...(keywords ? { keywords } : {}),
     openGraph: {
