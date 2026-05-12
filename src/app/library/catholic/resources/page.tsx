@@ -2,8 +2,8 @@
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
-import SectionHeading from "@/components/section-heading";
 
 export const metadata: Metadata = buildMeta({
   title: "Catholic Study Resources",
@@ -352,10 +352,19 @@ export default function CatholicResourcesPage() {
       </main>
 
       <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <SectionHeading
-          title="Catholic study hub for Bible, catechesis, saints, liturgy, and tradition"
-          body="Catholic Resources now sits at the same depth as the Orthodox and Protestant tracks with numbered mobile sections and internal study pages."
-        />
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Traditions", href: "/library/traditions" }, { label: "Catholic Resources" }]} />
+
+        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+            Catholic
+          </p>
+          <h1 className="site-page-title mt-3">Catholic Resources</h1>
+          <p className="site-heading-lead mt-4 max-w-3xl">
+            Catholic study organized around Scripture, catechesis, saints, liturgy, sacraments,
+            and the shared Church Fathers — from the Douay-Rheims Bible and the Roman Catechism
+            of Trent through the ancient tradition.
+          </p>
+        </section>
 
         <section className="mt-12 grid gap-6 lg:grid-cols-2">
           {catholicSections.map((section) => (

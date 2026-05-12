@@ -2,6 +2,7 @@
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
+import Breadcrumb from "@/components/breadcrumb";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 
 export const metadata: Metadata = buildMeta({
@@ -424,16 +425,18 @@ export default function ProtestantResourcesPage() {
       </main>
 
       <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <section className="rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Traditions", href: "/library/traditions" }, { label: "Protestant Resources" }]} />
+
+        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
             Protestant Resources
           </p>
-          <h1 className="mt-4 font-[family-name:var(--font-display)] text-5xl text-[var(--color-ink)]">
-            Protestant study hub for Scripture, reformers, confessions, and history.
+          <h1 className="site-page-title mt-3">
+            Protestant study hub
           </h1>
-          <p className="mt-6 max-w-4xl text-base leading-8 text-[var(--color-muted)]">
-            This hub gives Protestant study the same navigable resource structure as the Orthodox
-            path: Bible tools, primary texts, confessions, movement history, and ancient sources.
+          <p className="site-heading-lead mt-4 max-w-3xl">
+            Scripture, reformers, confessions, history, and the shared ancient sources that shaped
+            Protestant theology — organized as one navigable study path.
           </p>
         </section>
 

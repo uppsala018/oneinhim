@@ -4,7 +4,6 @@ import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
-import SectionHeading from "@/components/section-heading";
 import { getFathersForTrack } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
@@ -248,12 +247,20 @@ export default function OrthodoxPage() {
       </main>
 
       <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Orthodox" }]} />
-        <h1 className="sr-only">Orthodox Bible Study &amp; Theology</h1>
-        <SectionHeading
-          title="Orthodox Scripture, liturgy, theology, and the Fathers."
-          body="Study the Septuagint alongside the Greek Fathers, enter the Divine Liturgy through annotated study guides, and follow Orthodox saints from the apostolic era to the present. Chrysostom, Basil, Gregory of Nazianzus, and Cyril of Jerusalem are here in full — read within the Eastern theological tradition."
-        />
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Traditions", href: "/library/traditions" }, { label: "Orthodox" }]} />
+
+        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+            Eastern Orthodox
+          </p>
+          <h1 className="site-page-title mt-3">Orthodox Study</h1>
+          <p className="site-heading-lead mt-4 max-w-3xl">
+            Study the Septuagint alongside the Greek Fathers, enter the Divine Liturgy through
+            annotated study guides, and follow Orthodox saints from the apostolic era to the
+            present. Chrysostom, Basil, Gregory of Nazianzus, and Cyril of Jerusalem are here in
+            full — read within the Eastern theological tradition.
+          </p>
+        </section>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.58fr_0.42fr]">
           <section className="space-y-6 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">

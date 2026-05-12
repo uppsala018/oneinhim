@@ -3,7 +3,7 @@ import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
-import SectionHeading from "@/components/section-heading";
+import MobileBottomNav from "@/components/mobile-bottom-nav";
 import {
   getFathersForTrack,
   protestantFigures,
@@ -25,12 +25,20 @@ export default function ProtestantPage() {
     <>
       <AppHeader />
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Protestant" }]} />
-        <h1 className="sr-only">Protestant Bible Study &amp; Theology</h1>
-        <SectionHeading
-          title="Protestant Scripture study, reformers, and theology."
-          body="Start with the KJV and Strong's concordance, follow the Reformation through Luther, Calvin, and Wesley, and read the major Protestant confessions — Augsburg, Heidelberg, Westminster, and the Thirty-Nine Articles. Shared early church fathers are included where they shaped Protestant reading and doctrine."
-        />
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Traditions", href: "/library/traditions" }, { label: "Protestant" }]} />
+
+        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+            Protestant
+          </p>
+          <h1 className="site-page-title mt-3">Protestant Study</h1>
+          <p className="site-heading-lead mt-4 max-w-3xl">
+            Start with the KJV and Strong&apos;s concordance, follow the Reformation through Luther,
+            Calvin, and Wesley, and read the major Protestant confessions — Augsburg, Heidelberg,
+            Westminster, and the Thirty-Nine Articles. Shared early church fathers are included
+            where they shaped Protestant reading and doctrine.
+          </p>
+        </section>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.52fr_0.48fr]">
           <section className="space-y-6">
@@ -214,6 +222,8 @@ export default function ProtestantPage() {
           </section>
         </div>
       </main>
+
+      <MobileBottomNav active="Home" />
     </>
   );
 }

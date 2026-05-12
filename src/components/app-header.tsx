@@ -12,7 +12,7 @@ const navLinks = [
   { label: "Bibles", href: "/library/bibles" },
   { label: "Fathers", href: "/library/fathers" },
   { label: "Councils", href: "/library/councils" },
-  { label: "Traditions", href: "/library" },
+  { label: "Traditions", href: "/library/traditions" },
   { label: "History", href: "/library/history" },
   { label: "Prayer Forum", href: "/library/prayer-forum" },
   { label: "Donate", href: "/donate" },
