@@ -226,6 +226,25 @@ test('user-panel: page loads with header and navigation', async ({ page, browser
   await page.screenshot({ path: path.join(screenshotDir, `user-panel-${t}.png`), fullPage: false });
 });
 
+// ── /library/history: centered layout + hero panel ──────────────────────────
+
+test('/library/history: hero panel, gold H1, hub cards visible', async ({ page, browserName, viewport }) => {
+  await page.goto('/library/history', { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(800);
+
+  const t = tag(browserName, viewport);
+
+  await expect(page.locator('h1').filter({ hasText: '2000 Years of Christianity' })).toBeVisible();
+  await expect(page.locator('text=Church History').first()).toBeVisible();
+
+  const hubLinks = page.locator('a[href*="/library/history/"]');
+  expect(await hubLinks.count()).toBeGreaterThan(4);
+
+  await expect(page.locator('.mobile-app-shell')).toHaveCount(0);
+
+  await page.screenshot({ path: path.join(screenshotDir, `history-${t}.png`), fullPage: true });
+});
+
 // ── /library/bibles: centered layout + gold H1 ──────────────────────────────
 
 test('/library/bibles: hero panel with gold H1, primary cards visible', async ({ page, browserName, viewport }) => {

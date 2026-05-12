@@ -1,8 +1,9 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
+import MobileBottomNav from "@/components/mobile-bottom-nav";
 import { historyLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
@@ -49,29 +50,38 @@ export default function HistoryHubPage() {
   return (
     <>
       <AppHeader />
-      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Church History" }]} />
-        <section className="rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
-          <h1 className="site-page-title">
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
+        <Breadcrumb items={[
+          { label: "Home", href: "/" },
+          { label: "Library", href: "/library" },
+          { label: "Church History" },
+        ]} />
+
+        {/* Hero panel */}
+        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+            Church History
+          </p>
+          <h1 className="site-page-title mt-3">2000 Years of Christianity</h1>
+          <p className="site-heading-lead mt-4 max-w-3xl">
             A study hub for splits, continuities, councils, and modern renewal movements.
-          </h1>
-          <p className="site-heading-lead mt-5 max-w-4xl">
             Start with the timeline, then move into the East-West Schism, Chalcedon, the
             Reformation, and the Charismatic movement as distinct study paths.
           </p>
         </section>
 
-        <section className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {/* Hub study-path cards */}
+        <section className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3" aria-label="History study paths">
           {hubCards.map((card) => (
             <Link
               key={card.href}
               href={card.href}
-              className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 transition hover:bg-[rgba(16,16,16,0.88)] md:p-6"
+              className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 transition hover:border-[var(--color-highlight)] md:p-6"
             >
-              <p className="site-heading-kicker">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
                 Church History
               </p>
-              <h2 className="site-card-title mt-3">
+              <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--color-ink)] leading-tight">
                 {card.title}
               </h2>
               <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
@@ -81,16 +91,17 @@ export default function HistoryHubPage() {
           ))}
         </section>
 
-        <section className="mt-8 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-5 md:p-6">
-          <p className="site-heading-kicker">
+        {/* All topics */}
+        <section className="mt-8 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
             Study Links
           </p>
-          <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {historyLibrary.map((topic) => (
               <Link
                 key={topic.slug}
                 href={`/library/history/${topic.slug}`}
-                className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
+                className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4 transition hover:border-[var(--color-highlight)]"
               >
                 <p className="font-semibold text-[var(--color-ink)]">{topic.title}</p>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
@@ -101,6 +112,8 @@ export default function HistoryHubPage() {
           </div>
         </section>
       </main>
+
+      <MobileBottomNav active="Home" />
     </>
   );
 }
