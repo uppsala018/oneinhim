@@ -226,6 +226,31 @@ test('user-panel: page loads with header and navigation', async ({ page, browser
   await page.screenshot({ path: path.join(screenshotDir, `user-panel-${t}.png`), fullPage: false });
 });
 
+// ── /library/councils: centered layout + hero panel ─────────────────────────
+
+test('/library/councils: centered layout, hero panel, council cards', async ({ page, browserName, viewport }) => {
+  await page.goto('/library/councils', { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(1000);
+
+  const t = tag(browserName, viewport);
+
+  // Hero H1 present
+  await expect(page.locator('h1').filter({ hasText: 'Ecumenical Councils' })).toBeVisible();
+
+  // Breadcrumb present
+  await expect(page.locator('text=Ecumenical Councils').first()).toBeVisible();
+
+  // Council cards present (7 councils)
+  const cards = page.locator('a[href*="/library/councils/"]');
+  const count = await cards.count();
+  expect(count).toBeGreaterThanOrEqual(7);
+
+  // No mobile-app-shell full-width wrapper
+  await expect(page.locator('.mobile-app-shell')).toHaveCount(0);
+
+  await page.screenshot({ path: path.join(screenshotDir, `councils-${t}.png`), fullPage: true });
+});
+
 // ── /library/fathers mobile: no garbled characters ──────────────────────────
 
 test('fathers page mobile: no garbled characters visible', async ({ page, browserName, viewport }) => {
