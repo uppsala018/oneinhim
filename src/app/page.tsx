@@ -44,21 +44,14 @@ const featureCards = [
     href: "/library/history",
     label: "Explore History",
   },
-  {
-    icon: "🙏",
-    title: "Prayer Forum",
-    desc: "Share prayer requests, give praise, and ask questions. A quiet, respectful space for the body of Christ.",
-    href: "/library/prayer-forum",
-    label: "Join Community",
-  },
 ];
 
 const scriptureCards = [
   {
-    icon: "☩",
-    title: "Catholic Bible",
-    desc: "The Douay-Rheims and RSV-CE Catholic editions with full deuterocanonical books.",
-    href: "/library/catholic",
+    icon: "✦",
+    title: "KJV + Concordance",
+    desc: "The King James Version with word-by-word Strong's concordance for Hebrew and Greek word studies.",
+    href: "/library/kjv",
   },
   {
     icon: "IC XC",
@@ -67,10 +60,43 @@ const scriptureCards = [
     href: "/library/orthodox/lxx",
   },
   {
+    icon: "☩",
+    title: "Catholic Bible",
+    desc: "The Douay-Rheims and RSV-CE Catholic editions with full deuterocanonical books.",
+    href: "/library/catholic",
+  },
+  {
     icon: "✠",
-    title: "Roman Catechism",
+    title: "Catholic Catechism",
     desc: "The Catechism of the Council of Trent — authoritative Catholic teaching in full.",
     href: "/library/catechism",
+  },
+];
+
+const communityCards = [
+  {
+    icon: "🙏",
+    title: "Community",
+    desc: "Introduce yourself, make friends, and join the general discussion.",
+    href: "/library/prayer-forum/category/community",
+  },
+  {
+    icon: "✝",
+    title: "Prayer",
+    desc: "Share prayer requests, give praise, and encourage one another in faith.",
+    href: "/library/prayer-forum/category/prayer",
+  },
+  {
+    icon: "✦",
+    title: "Bible Study",
+    desc: "Study Scripture together across Old and New Testament, Gospels, and more.",
+    href: "/library/prayer-forum/category/bible-study",
+  },
+  {
+    icon: "◉",
+    title: "Questions & Answers",
+    desc: "Ask theology, church tradition, and Scripture questions of any level.",
+    href: "/library/prayer-forum/category/questions-answers",
   },
 ];
 
@@ -164,7 +190,7 @@ export default function Home() {
               Explore the Library
             </h2>
             <p className="web-section__lead">
-              Five core study areas &mdash; scripture, history, tradition, community, and prayer.
+              Four core study areas &mdash; scripture, history, tradition, and community.
             </p>
 
             <div className="feature-grid">
@@ -197,47 +223,6 @@ export default function Home() {
                     <h3 className="web-card__title">{card.title}</h3>
                     <p className="web-card__desc">{card.desc}</p>
                     <span className="web-card__arrow">Read &rarr;</span>
-                  </Link>
-                </ScrollReveal>
-              ))}
-            </div>
-          </section>
-
-          {/* History */}
-          <section className="web-section" aria-labelledby="history-heading">
-            <p className="web-section__eyebrow">History</p>
-            <h2 className="web-section__title" id="history-heading">Understand the Church</h2>
-            <p className="web-section__lead">
-              Two thousand years of Christianity &mdash; the councils, the fathers,
-              the splits, the movements. Studied honestly and in depth.
-            </p>
-            <div className="web-card-grid">
-              {[
-                {
-                  icon: "✒",
-                  title: "Church Fathers",
-                  desc: "Apostolic, Ante-Nicene, and Nicene Fathers — the voices that shaped Christian theology.",
-                  href: "/library/fathers",
-                },
-                {
-                  icon: "◉",
-                  title: "Ecumenical Councils",
-                  desc: "From Nicaea to Vatican II — what was decided, why it mattered, and what it means today.",
-                  href: "/library/councils",
-                },
-                {
-                  icon: "✠",
-                  title: "Church History",
-                  desc: "The Great Schism, the Reformation, the Charismatic movement — the full sweep of Christian history.",
-                  href: "/library/history",
-                },
-              ].map((card, i) => (
-                <ScrollReveal key={card.href} delay={i * 80}>
-                  <Link href={card.href} className="web-card">
-                    <span className="web-card__icon" aria-hidden="true">{card.icon}</span>
-                    <h3 className="web-card__title">{card.title}</h3>
-                    <p className="web-card__desc">{card.desc}</p>
-                    <span className="web-card__arrow">Study &rarr;</span>
                   </Link>
                 </ScrollReveal>
               ))}
@@ -283,6 +268,18 @@ export default function Home() {
               <Link href="/library/notes" className="cta-secondary">
                 My Notes &amp; Bookmarks
               </Link>
+            </div>
+            <div className="web-card-grid" style={{ marginTop: "2.5rem" }}>
+              {communityCards.map((card, i) => (
+                <ScrollReveal key={card.href} delay={i * 80}>
+                  <Link href={card.href} className="web-card">
+                    <span className="web-card__icon" aria-hidden="true">{card.icon}</span>
+                    <h3 className="web-card__title">{card.title}</h3>
+                    <p className="web-card__desc">{card.desc}</p>
+                    <span className="web-card__arrow">Join &rarr;</span>
+                  </Link>
+                </ScrollReveal>
+              ))}
             </div>
           </section>
         </section>
