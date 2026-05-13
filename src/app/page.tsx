@@ -175,7 +175,13 @@ export default function Home() {
               <Link href="/library" className="cta-primary">
                 Explore the Library
               </Link>
-              <PwaInstallButton className="cta-secondary" />
+              <PwaInstallButton className="cta-primary" />
+              <Link href="/library/prayer-forum" className="cta-primary">
+                Open the Prayer Forum
+              </Link>
+              <Link href="/library/notes" className="cta-primary">
+                My Notes &amp; Bookmarks
+              </Link>
             </div>
           </div>
 
@@ -261,18 +267,10 @@ export default function Home() {
               Share prayer requests, give praise, and ask questions. A quiet
               space for the body of Christ.
             </p>
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              <Link href="/library/prayer-forum" className="cta-primary">
-                Open the Prayer Forum
-              </Link>
-              <Link href="/library/notes" className="cta-secondary">
-                My Notes &amp; Bookmarks
-              </Link>
-            </div>
-            <div className="web-card-grid" style={{ marginTop: "2.5rem" }}>
+            <div className="web-card-grid">
               {communityCards.map((card, i) => (
-                <ScrollReveal key={card.href} delay={i * 80}>
-                  <Link href={card.href} className="web-card">
+                <ScrollReveal key={card.href} delay={i * 80} className="h-full">
+                  <Link href={card.href} className="web-card" style={{ height: "100%" }}>
                     <span className="web-card__icon" aria-hidden="true">{card.icon}</span>
                     <h3 className="web-card__title">{card.title}</h3>
                     <p className="web-card__desc">{card.desc}</p>
