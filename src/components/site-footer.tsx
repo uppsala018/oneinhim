@@ -39,6 +39,7 @@ export default function SiteFooter() {
             <Link href="/library/history">History</Link>
             <Link href="/library/prayer-forum">Prayer Forum</Link>
             <Link href="/donate">Donate</Link>
+            <Link href="/library/prayer-forum/support">Contact</Link>
             <Link href="/privacy">Privacy</Link>
           </nav>
           <p className="web-footer__copy">

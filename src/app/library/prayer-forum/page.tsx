@@ -59,7 +59,7 @@ export default function PrayerForumPage() {
             href="/library/prayer-forum/support"
             className="text-[var(--color-highlight)] hover:underline"
           >
-            Visit the support page
+            Contact & Support
           </Link>
         </p>
       </main>

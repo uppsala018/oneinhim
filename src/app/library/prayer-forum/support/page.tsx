@@ -1,74 +1,106 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { buildMeta } from "@/lib/seo";
-import Link from "next/link";
+import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+import SiteHeroPanel from "@/components/site-hero-panel";
+import Breadcrumb from "@/components/breadcrumb";
 
 export const metadata: Metadata = buildMeta({
-  title: "Help & Support",
-  description: "Get help with One In Him Bible Study — contact support, report issues, or find answers to common questions about the app and website.",
+  title: "Contact",
+  description:
+    "Contact One In Him Bible Study — email us with questions, bug reports, feedback, or help with your account.",
   path: "/library/prayer-forum/support",
 });
 
-export default function SupportPage() {
+const topics = [
+  {
+    icon: "✦",
+    heading: "Questions about the site",
+    body: "General questions about the app, the library, or how things work.",
+  },
+  {
+    icon: "⚙",
+    heading: "Bug reports & technical issues",
+    body: "Something broken, pages not loading, or features not working as expected.",
+  },
+  {
+    icon: "✒",
+    heading: "Content feedback",
+    body: "Broken links, missing content, or a tradition or resource you would like to see added.",
+  },
+  {
+    icon: "◎",
+    heading: "Account & login help",
+    body: "Problems signing in, managing your profile, or accessing your account.",
+  },
+];
+
+export default function ContactPage() {
   return (
-    <main className="mobile-app-shell donate-page">
-      <header className="mobile-section-header">
-        <Link href="/library/prayer-forum" className="mobile-section-header__back" aria-label="Back">‹</Link>
-        <div>
-          <h1>Support</h1>
-          <span>Contact &amp; Help</span>
-        </div>
-        <span />
-      </header>
+    <>
+      <AppHeader />
+      <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Contact" },
+          ]}
+        />
 
-      <div className="donate-body">
+        <SiteHeroPanel
+          eyebrow="Contact"
+          title="Get in Touch"
+          lead="Have a question, found a bug, or want to share feedback? Send an email — every message is read."
+        />
 
-        <div className="donate-verse-card">
-          <p className="donate-verse-ref">Admin</p>
-          <p className="donate-verse-text" style={{ fontSize: "clamp(1.1rem, 4.5vw, 1.4rem)" }}>
-            RenĂ© M — Sweden
+        {/* Email CTA */}
+        <section className="mt-8 overflow-hidden rounded-[2.4rem] border border-[rgba(230,190,120,0.3)] bg-[linear-gradient(145deg,rgba(230,190,120,0.09),rgba(10,10,10,0.85)_48%,rgba(10,10,10,0.96))] p-6 md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+            Email
           </p>
-        </div>
-
-        <div className="donate-mission">
-          <h2 className="donate-mission__heading">Get in touch</h2>
-          <p className="donate-mission__body">
-            Found a bug, have a question, or want to suggest something?
-            You are welcome to reach out directly. I read every message.
+          <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+            Write to us
+          </h2>
+          <p className="mt-3 max-w-lg text-sm leading-7 text-[var(--color-muted)]">
+            This is a small project run by a single developer. Response time may
+            vary, but every message is read and appreciated.
           </p>
-          <p className="donate-mission__body">
-            This is a one-person project built out of a desire to see
-            Christians from every tradition come together. Feedback
-            helps make it better for everyone.
+          <a
+            href="mailto:info@oneinhimbiblestudy.com"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-[rgba(230,190,120,0.55)] bg-[rgba(230,190,120,0.12)] px-8 py-3 text-sm font-semibold text-[var(--color-highlight)] transition hover:bg-[rgba(230,190,120,0.22)]"
+          >
+            ✉&nbsp; info@oneinhimbiblestudy.com
+          </a>
+        </section>
+
+        {/* Topic cards */}
+        <section className="mt-8 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+            You can write about
           </p>
-        </div>
+          <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+            What to include
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {topics.map((t) => (
+              <div
+                key={t.heading}
+                className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
+              >
+                <p className="text-base text-[var(--color-highlight)]">{t.icon}</p>
+                <p className="mt-2 font-semibold text-[var(--color-ink)]">{t.heading}</p>
+                <p className="mt-1.5 text-sm leading-6 text-[var(--color-muted)]">{t.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <a
-          href="mailto:hyu.ai.app@gmail.com"
-          className="donate-button"
-        >
-          ✉ &nbsp;hyu.ai.app@gmail.com
-        </a>
-
-        <div className="support-topics">
-          <p className="support-topics__heading">You can write about</p>
-          <ul className="support-topics__list">
-            <li>Bug reports or something not working</li>
-            <li>Missing content or a tradition you'd like to see</li>
-            <li>Questions about the app or its purpose</li>
-            <li>Anything related to the prayer forum</li>
-          </ul>
-        </div>
-
-        <p className="donate-footer">
-          Response time may vary — this is a volunteer project.
-          Thank you for your patience and for using One In Him.
+        {/* Note */}
+        <p className="mt-6 text-center text-sm text-[var(--color-soft)]">
+          Response time may vary — this is a volunteer project. Thank you for your patience.
         </p>
-
-      </div>
-
+      </main>
       <MobileBottomNav />
-    </main>
+    </>
   );
 }
-
