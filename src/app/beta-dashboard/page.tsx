@@ -1,18 +1,40 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db, isFirebaseConfigured } from "../../lib/firebase-client";
-import AppHeader from "../../components/app-header";
+import {
+  addDoc,
+  collection,
+  serverTimestamp,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
+import { db, isFirebaseConfigured } from "@/lib/firebase-client";
+import Link from "next/link";
+import AppHeader from "@/components/app-header";
+import MobileBottomNav from "@/components/mobile-bottom-nav";
+import SiteHeroPanel from "@/components/site-hero-panel";
+import Breadcrumb from "@/components/breadcrumb";
+import { useAuth } from "@/lib/use-auth";
+import { toUserProfile, type UserProfile } from "@/lib/user-profile";
+
+const ADMIN_EMAIL = "mosegaard622@gmail.com";
+
+type AccessState = "loading" | "denied" | "granted";
 
 export default function BetaDashboardPage() {
+  const { user, loading } = useAuth();
+  const [accessState, setAccessState] = useState<AccessState>("loading");
+  const [profile, setProfile] = useState<Partial<UserProfile> | null>(null);
+
   const [formData, setFormData] = useState({
     type: "bug",
     title: "",
     description: "",
     pageUrl: "",
     deviceType: "",
-    userEmail: "",
   });
   const [browserInfo, setBrowserInfo] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -28,376 +50,302 @@ export default function BetaDashboardPage() {
     }
   }, []);
 
+  // Access check
+  useEffect(() => {
+    if (loading) return;
+
+    if (!user) {
+      setAccessState("denied");
+      return;
+    }
+
+    if (!isFirebaseConfigured || !db) {
+      setAccessState("denied");
+      return;
+    }
+
+    const checkAccess = async () => {
+      try {
+        // Admin always has access
+        if (user.email === ADMIN_EMAIL) {
+          setAccessState("granted");
+          return;
+        }
+
+        // Load user profile and check role
+        const snap = await getDoc(doc(db!, "users", user.uid));
+        const profileData = toUserProfile(snap.data());
+        setProfile(profileData);
+
+        if (profileData.role === "beta_tester" || profileData.role === "admin") {
+          setAccessState("granted");
+          return;
+        }
+
+        // Fallback: check beta_testers collection by email (role not yet synced)
+        const q = query(
+          collection(db!, "beta_testers"),
+          where("email", "==", user.email ?? ""),
+        );
+        const betaSnap = await getDocs(q);
+        setAccessState(betaSnap.empty ? "denied" : "granted");
+      } catch {
+        setAccessState("denied");
+      }
+    };
+
+    void checkAccess();
+  }, [user, loading]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setSuccess(false);
 
-    if (!formData.title.trim()) {
-      setError("Title is required.");
-      return;
-    }
-    if (!formData.description.trim()) {
-      setError("Description is required.");
-      return;
-    }
-
+    if (!formData.title.trim()) { setError("Title is required."); return; }
+    if (!formData.description.trim()) { setError("Description is required."); return; }
     if (!isFirebaseConfigured || !db) {
-      setError("Feedback submission is currently unavailable. Firebase is not configured.");
+      setError("Feedback submission is currently unavailable.");
       return;
     }
+    if (!user) { setError("You must be signed in to submit feedback."); return; }
 
     setSubmitting(true);
 
     try {
-      const feedbackData = {
+      await addDoc(collection(db, "beta_feedback"), {
         type: formData.type,
         title: formData.title.trim(),
         description: formData.description.trim(),
         pageUrl: formData.pageUrl.trim() || (typeof window !== "undefined" ? window.location.href : ""),
         deviceType: formData.deviceType.trim(),
-        userEmail: formData.userEmail.trim(),
+        uid: user.uid,
+        userEmail: user.email ?? "",
+        displayName: profile?.displayName ?? "",
         status: "new",
         browserInfo,
         createdAt: serverTimestamp(),
-      };
-
-      await addDoc(collection(db, "beta_feedback"), feedbackData);
+      });
 
       setSuccess(true);
-      setFormData({
+      setFormData((prev) => ({
+        ...prev,
         type: "bug",
         title: "",
         description: "",
-        pageUrl: typeof window !== "undefined" ? window.location.href : "",
         deviceType: "",
-        userEmail: "",
-      });
-    } catch (err: any) {
-      console.error("Error submitting feedback:", err);
-      if (err.code === "permission-denied") {
-        setError("Unfortunately, we cannot save your feedback right now. Permission denied. Try again later or contact support.");
+        pageUrl: typeof window !== "undefined" ? window.location.href : "",
+      }));
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Unknown error";
+      const code = (err as { code?: string })?.code;
+      if (code === "permission-denied") {
+        setError("Permission denied. Please try again later or contact support.");
       } else {
-        setError(`Could not submit feedback: ${err.message || "Unknown error"}`);
+        setError(`Could not submit feedback: ${msg}`);
       }
     } finally {
       setSubmitting(false);
     }
   };
 
+  const inputClass =
+    "w-full rounded-[0.75rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-3 text-[var(--color-ink)] outline-none focus:border-[var(--color-highlight)]";
+  const labelClass = "grid gap-2 text-sm text-[var(--color-ink)]";
+
   return (
     <>
       <AppHeader />
-      <main style={{ 
-        backgroundColor: "var(--color-bg)", 
-        color: "var(--color-ink)", 
-        minHeight: "100vh", 
-        padding: "calc(var(--header-height) + 2rem) 2rem 2rem",
-        maxWidth: "72rem",
-        margin: "0 auto",
-      }}>
-        <div style={{ maxWidth: "48rem", margin: "0 auto" }}>
-          <h1 style={{ 
-            color: "var(--color-highlight)", 
-            fontFamily: "var(--font-display)", 
-            fontSize: "clamp(2rem, 5vw, 2.5rem)", 
-            marginBottom: "1rem",
-            fontWeight: 600,
-            lineHeight: 1.1,
-          }}>
-            Beta Tester Dashboard
-          </h1>
-          <p style={{ 
-            color: "var(--color-muted)", 
-            fontSize: "1.1rem", 
-            marginBottom: "2rem",
-            lineHeight: 1.7,
-            fontFamily: "var(--font-body)",
-          }}>
-            Welcome to the beta tester dashboard! As a beta tester, you can report bugs, issues, ideas, and provide honest feedback to help us improve the platform.
-          </p>
+      <div className="pt-[var(--header-height,96px)]">
+        <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-24 pt-6 sm:px-6 lg:px-8 lg:pb-14">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "User Panel", href: "/user-panel" },
+              { label: "Beta Dashboard" },
+            ]}
+          />
 
-          <div style={{ marginBottom: "2rem" }}>
-            <h2 style={{ 
-              color: "var(--color-highlight)", 
-              fontFamily: "var(--font-display)", 
-              fontSize: "clamp(1.5rem, 3vw, 2rem)", 
-              marginBottom: "1rem",
-              fontWeight: 600,
-              lineHeight: 1.1,
-            }}>
-              How to Test
-            </h2>
-            <ul style={{ 
-              color: "var(--color-muted)", 
-              fontSize: "1.1rem", 
-              lineHeight: 1.7,
-              fontFamily: "var(--font-body)",
-              paddingLeft: "1.5rem",
-              margin: 0,
-            }}>
-              <li>Test the site on desktop, tablet, and mobile if possible.</li>
-              <li>Look for bugs, broken links, confusing pages, layout issues, spelling mistakes, login problems, and anything that feels unclear.</li>
-              <li>Be honest and specific.</li>
-              <li>Include the page URL when reporting an issue.</li>
-              <li>Ideas and suggestions are welcome, not only bugs.</li>
-              <li>Google Play beta testing will come later.</li>
-            </ul>
-          </div>
-
-          {success && (
-            <div style={{ 
-              backgroundColor: "var(--color-panel)", 
-              border: "1px solid var(--color-highlight)", 
-              padding: "1rem", 
-              marginBottom: "2rem", 
-              borderRadius: "1rem",
-              color: "var(--color-ink)",
-              fontFamily: "var(--font-body)",
-            }}>
-              Thank you for your feedback! Your submission has been received.
-            </div>
+          {/* Loading */}
+          {(loading || (!user && accessState === "loading") || (user && accessState === "loading")) && (
+            <p className="text-sm text-[var(--color-muted)]">Checking access…</p>
           )}
 
-          {error && (
-            <div style={{ 
-              backgroundColor: "var(--color-panel)", 
-              border: "1px solid #e6a5a5", 
-              padding: "1rem", 
-              marginBottom: "2rem", 
-              borderRadius: "1rem", 
-              color: "#e6a5a5",
-              fontFamily: "var(--font-body)",
-            }}>
-              {error}
-            </div>
-          )}
-
-          {!isFirebaseConfigured && (
-            <div style={{ 
-              backgroundColor: "var(--color-panel)", 
-              border: "1px solid #e6a5a5", 
-              padding: "1rem", 
-              marginBottom: "2rem", 
-              borderRadius: "1rem", 
-              color: "#e6a5a5",
-              fontFamily: "var(--font-body)",
-            }}>
-              Firebase is not configured. Feedback submission is unavailable.
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.5rem", fontFamily: "var(--font-body)" }}>
-            <div>
-              <label htmlFor="type" style={{ 
-                color: "var(--color-highlight)", 
-                display: "block", 
-                marginBottom: "0.5rem",
-                fontFamily: "var(--font-body)",
-                fontSize: "0.75rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-              }}>Feedback Type *</label>
-              <select
-                id="type"
-                value={formData.type}
-                onChange={(e) => setFormData((prev) => ({ ...prev, type: e.target.value }))}
-                style={{ 
-                  width: "100%",
-                  border: "1px solid rgba(229, 197, 122, 0.38)",
-                  borderRadius: "1rem",
-                  background: "rgba(10, 10, 10, 0.78)",
-                  color: "var(--color-ink)",
-                  padding: "0.85rem 1rem",
-                  outline: "none",
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.95rem",
-                }}
-                required
+          {/* Not signed in */}
+          {!loading && !user && accessState === "denied" && (
+            <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+                Beta Dashboard
+              </p>
+              <h1 className="site-page-title mt-3">Sign in required</h1>
+              <p className="site-heading-lead mt-4">
+                The Beta Dashboard is only available to registered beta testers. Sign in to continue.
+              </p>
+              <Link
+                href="/login?next=/beta-dashboard"
+                className="mt-6 inline-flex rounded-full bg-[var(--color-highlight)] px-6 py-2.5 text-sm font-semibold text-[#080808]"
               >
-                <option value="bug">Bug</option>
-                <option value="issue">Issue</option>
-                <option value="idea">Idea</option>
-                <option value="general_feedback">General Feedback</option>
-              </select>
-            </div>
+                Sign in
+              </Link>
+            </section>
+          )}
 
-            <div>
-              <label htmlFor="title" style={{ 
-                color: "var(--color-highlight)", 
-                display: "block", 
-                marginBottom: "0.5rem",
-                fontFamily: "var(--font-body)",
-                fontSize: "0.75rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-              }}>Title *</label>
-              <input
-                type="text"
-                id="title"
-                value={formData.title}
-                onChange={(e) => setFormData((prev) => ({ ...prev, title: e.target.value }))}
-                style={{ 
-                  width: "100%",
-                  border: "1px solid rgba(229, 197, 122, 0.38)",
-                  borderRadius: "1rem",
-                  background: "rgba(10, 10, 10, 0.78)",
-                  color: "var(--color-ink)",
-                  padding: "0.85rem 1rem",
-                  outline: "none",
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.95rem",
-                }}
-                required
+          {/* Signed in but access denied */}
+          {!loading && user && accessState === "denied" && (
+            <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+                Beta Dashboard
+              </p>
+              <h1 className="site-page-title mt-3">Access restricted</h1>
+              <p className="site-heading-lead mt-4">
+                This dashboard is for registered beta testers. If you&apos;d like to join the beta,
+                you can sign up below.
+              </p>
+              <Link
+                href="/beta-tester"
+                className="mt-6 inline-flex rounded-full bg-[var(--color-highlight)] px-6 py-2.5 text-sm font-semibold text-[#080808]"
+              >
+                Sign up as beta tester
+              </Link>
+            </section>
+          )}
+
+          {/* Access granted */}
+          {accessState === "granted" && (
+            <>
+              <SiteHeroPanel
+                eyebrow="Beta Tester"
+                title="Feedback Dashboard"
+                lead="Report bugs, share ideas, and help improve the platform. Your feedback directly shapes development priorities."
               />
-            </div>
 
-            <div>
-              <label htmlFor="description" style={{ 
-                color: "var(--color-highlight)", 
-                display: "block", 
-                marginBottom: "0.5rem",
-                fontFamily: "var(--font-body)",
-                fontSize: "0.75rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-              }}>Description *</label>
-              <textarea
-                id="description"
-                value={formData.description}
-                onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
-                rows={5}
-                style={{ 
-                  width: "100%",
-                  border: "1px solid rgba(229, 197, 122, 0.38)",
-                  borderRadius: "1rem",
-                  background: "rgba(10, 10, 10, 0.78)",
-                  color: "var(--color-ink)",
-                  padding: "0.85rem 1rem",
-                  outline: "none",
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.95rem",
-                  resize: "vertical",
-                }}
-                required
-              />
-            </div>
+              {/* How to test */}
+              <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+                  Guide
+                </p>
+                <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+                  How to test
+                </h2>
+                <ul className="mt-4 space-y-1.5 text-sm leading-7 text-[var(--color-muted)]">
+                  <li>Test on desktop, tablet, and mobile if possible.</li>
+                  <li>Look for bugs, broken links, layout issues, and confusing pages.</li>
+                  <li>Be specific — include the page URL when reporting an issue.</li>
+                  <li>Ideas and suggestions are welcome, not only bugs.</li>
+                  <li>Google Play beta testing will come in a later phase.</li>
+                </ul>
+              </section>
 
-            <div>
-              <label htmlFor="pageUrl" style={{ 
-                color: "var(--color-highlight)", 
-                display: "block", 
-                marginBottom: "0.5rem",
-                fontFamily: "var(--font-body)",
-                fontSize: "0.75rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-              }}>Page URL</label>
-              <input
-                type="text"
-                id="pageUrl"
-                value={formData.pageUrl}
-                onChange={(e) => setFormData((prev) => ({ ...prev, pageUrl: e.target.value }))}
-                style={{ 
-                  width: "100%",
-                  border: "1px solid rgba(229, 197, 122, 0.38)",
-                  borderRadius: "1rem",
-                  background: "rgba(10, 10, 10, 0.78)",
-                  color: "var(--color-ink)",
-                  padding: "0.85rem 1rem",
-                  outline: "none",
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.95rem",
-                }}
-                placeholder="e.g. https://oneinhimbiblestudy.com/library/kjv"
-              />
-            </div>
+              {/* Feedback form */}
+              <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+                  Submit
+                </p>
+                <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+                  Report feedback
+                </h2>
 
-            <div>
-              <label htmlFor="deviceType" style={{ 
-                color: "var(--color-highlight)", 
-                display: "block", 
-                marginBottom: "0.5rem",
-                fontFamily: "var(--font-body)",
-                fontSize: "0.75rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-              }}>Device Type</label>
-              <input
-                type="text"
-                id="deviceType"
-                value={formData.deviceType}
-                onChange={(e) => setFormData((prev) => ({ ...prev, deviceType: e.target.value }))}
-                style={{ 
-                  width: "100%",
-                  border: "1px solid rgba(229, 197, 122, 0.38)",
-                  borderRadius: "1rem",
-                  background: "rgba(10, 10, 10, 0.78)",
-                  color: "var(--color-ink)",
-                  padding: "0.85rem 1rem",
-                  outline: "none",
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.95rem",
-                }}
-                placeholder="e.g. Desktop, Mobile, Tablet"
-              />
-            </div>
+                {success && (
+                  <div className="mt-4 rounded-[1rem] border border-[rgba(230,190,120,0.35)] bg-[rgba(230,190,120,0.08)] px-4 py-3 text-sm text-[var(--color-highlight)]">
+                    Thank you — your feedback has been received.
+                  </div>
+                )}
 
-            <div>
-              <label htmlFor="userEmail" style={{ 
-                color: "var(--color-highlight)", 
-                display: "block", 
-                marginBottom: "0.5rem",
-                fontFamily: "var(--font-body)",
-                fontSize: "0.75rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-              }}>Email (optional)</label>
-              <input
-                type="email"
-                id="userEmail"
-                value={formData.userEmail}
-                onChange={(e) => setFormData((prev) => ({ ...prev, userEmail: e.target.value }))}
-                style={{ 
-                  width: "100%",
-                  border: "1px solid rgba(229, 197, 122, 0.38)",
-                  borderRadius: "1rem",
-                  background: "rgba(10, 10, 10, 0.78)",
-                  color: "var(--color-ink)",
-                  padding: "0.85rem 1rem",
-                  outline: "none",
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.95rem",
-                }}
-                placeholder="your.email@example.com"
-              />
-            </div>
+                {!isFirebaseConfigured && (
+                  <p className="mt-4 rounded-[1rem] border border-red-800 bg-red-950/30 px-4 py-3 text-sm text-red-300">
+                    Feedback submission is unavailable. Firebase is not configured.
+                  </p>
+                )}
 
-            <button
-              type="submit"
-              disabled={submitting || !isFirebaseConfigured}
-              style={{
-                background: "var(--color-highlight)",
-                color: "#080808",
-                padding: "0.9rem 1.4rem",
-                border: "none",
-                borderRadius: "999px",
-                cursor: submitting ? "not-allowed" : "pointer",
-                opacity: submitting ? 0.7 : 1,
-                fontSize: "1rem",
-                fontWeight: "bold",
-                alignSelf: "flex-start",
-                fontFamily: "var(--font-body)",
-                letterSpacing: "0.06em",
-                boxShadow: "0 8px 32px rgba(201, 168, 76, 0.22)",
-                transition: "transform 180ms ease, box-shadow 180ms ease",
-              }}
-            >
-              {submitting ? "Submitting..." : "Submit Feedback"}
-            </button>
-          </form>
-        </div>
-      </main>
+                <form onSubmit={handleSubmit} className="mt-5 grid gap-4">
+                  <label className={labelClass}>
+                    Feedback type *
+                    <select
+                      value={formData.type}
+                      onChange={(e) => setFormData((p) => ({ ...p, type: e.target.value }))}
+                      className="rounded-[0.75rem] border border-[var(--color-border)] bg-[#101010] px-4 py-3 text-[var(--color-ink)] outline-none focus:border-[var(--color-highlight)]"
+                      required
+                    >
+                      <option value="bug">Bug</option>
+                      <option value="issue">Issue</option>
+                      <option value="idea">Idea</option>
+                      <option value="general_feedback">General Feedback</option>
+                    </select>
+                  </label>
+
+                  <label className={labelClass}>
+                    Title *
+                    <input
+                      type="text"
+                      value={formData.title}
+                      onChange={(e) => setFormData((p) => ({ ...p, title: e.target.value }))}
+                      className={inputClass}
+                      placeholder="Short summary of your feedback"
+                      required
+                    />
+                  </label>
+
+                  <label className={labelClass}>
+                    Description *
+                    <textarea
+                      value={formData.description}
+                      onChange={(e) => setFormData((p) => ({ ...p, description: e.target.value }))}
+                      rows={5}
+                      className={inputClass + " resize-y"}
+                      placeholder="Describe the issue or idea in detail"
+                      required
+                    />
+                  </label>
+
+                  <label className={labelClass}>
+                    Page URL
+                    <input
+                      type="text"
+                      value={formData.pageUrl}
+                      onChange={(e) => setFormData((p) => ({ ...p, pageUrl: e.target.value }))}
+                      className={inputClass}
+                      placeholder="https://oneinhimbiblestudy.com/..."
+                    />
+                  </label>
+
+                  <label className={labelClass}>
+                    Device type
+                    <input
+                      type="text"
+                      value={formData.deviceType}
+                      onChange={(e) => setFormData((p) => ({ ...p, deviceType: e.target.value }))}
+                      className={inputClass}
+                      placeholder="Desktop, Mobile, Tablet…"
+                    />
+                  </label>
+
+                  {error && (
+                    <p className="text-sm text-red-300">{error}</p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={submitting || !isFirebaseConfigured}
+                    className="w-fit rounded-full bg-[var(--color-highlight)] px-6 py-3 text-sm font-semibold text-[#080808] disabled:opacity-60"
+                  >
+                    {submitting ? "Submitting…" : "Submit Feedback"}
+                  </button>
+                </form>
+              </section>
+
+              <div className="text-center">
+                <Link
+                  href="/user-panel"
+                  className="text-sm text-[var(--color-highlight)] hover:underline"
+                >
+                  ← Back to User Panel
+                </Link>
+              </div>
+            </>
+          )}
+        </main>
+      </div>
+      <MobileBottomNav />
     </>
   );
 }

@@ -1,70 +1,62 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { db, isFirebaseConfigured } from "@/lib/firebase-client";
-import { auth } from "@/lib/firebase-client";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { onAuthStateChanged, User } from "firebase/auth";
+import { addDoc, collection, serverTimestamp, doc, getDoc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
+import MobileBottomNav from "@/components/mobile-bottom-nav";
+import SiteHeroPanel from "@/components/site-hero-panel";
+import Breadcrumb from "@/components/breadcrumb";
+import { useAuth } from "@/lib/use-auth";
+
+const ADMIN_EMAIL = "mosegaard622@gmail.com";
 
 export default function BetaTesterPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    country: "",
-    interestedGooglePlay: false,
-  });
-  const [status, setStatus] = useState("idle");
+  const { user, loading } = useAuth();
+  const [form, setForm] = useState({ name: "", country: "", interestedGooglePlay: false });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
-  const [user, setUser] = useState<User | null>(null);
-  const [authLoading, setAuthLoading] = useState(true);
   const router = useRouter();
-
-  useEffect(() => {
-    if (!isFirebaseConfigured || !auth) {
-      setUser(null);
-      setAuthLoading(false);
-      return;
-    }
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setAuthLoading(false);
-    });
-    return unsubscribe;
-  }, []);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("submitting");
-    setErrorMsg("");
-
-    if (!isFirebaseConfigured || !db) {
+    if (!user || !isFirebaseConfigured || !db) {
       setStatus("error");
       setErrorMsg("Beta signup is temporarily unavailable. Please try again later.");
       return;
     }
 
+    setStatus("submitting");
+    setErrorMsg("");
+
     try {
+      // Write to beta_testers collection
       await addDoc(collection(db, "beta_testers"), {
-        Name: formData.name,
-        email: formData.email,
-        country: formData.country,
+        Name: form.name,
+        email: user.email ?? "",
+        uid: user.uid,
+        country: form.country,
+        interestedGooglePlay: form.interestedGooglePlay,
         createdAt: serverTimestamp(),
-        interestedGooglePlay: formData.interestedGooglePlay,
       });
+
+      // Write beta_tester role to user profile — do not overwrite admin
+      const userRef = doc(db, "users", user.uid);
+      const userSnap = await getDoc(userRef);
+      const currentRole = (userSnap.data() as { role?: string } | undefined)?.role;
+
+      if (currentRole !== "admin" && currentRole !== "beta_tester" && user.email !== ADMIN_EMAIL) {
+        await setDoc(
+          userRef,
+          { uid: user.uid, email: user.email ?? "", role: "beta_tester", updatedAt: serverTimestamp() },
+          { merge: true },
+        );
+      }
+
       setStatus("success");
       router.push("/beta-dashboard");
-      setFormData({ name: "", email: "", country: "", interestedGooglePlay: false });
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
@@ -73,141 +65,143 @@ export default function BetaTesterPage() {
 
   return (
     <>
-    <AppHeader />
-    <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
-      <div className="max-w-3xl">
-        {authLoading ? (
-          <div className="text-[var(--color-ink)]">Loading...</div>
-        ) : !user ? (
-          <div className="space-y-4 text-[var(--color-ink)]">
-            <h1 className="font-[family-name:var(--font-display)] text-5xl text-[var(--color-ink)] mb-6">
-              Become a Beta Tester
-            </h1>
-            <p>Please sign in before registering as a beta tester.</p>
-            <Link
-              href="/login?next=/beta-tester"
-              className="inline-flex rounded-full border border-[var(--color-border)] px-6 py-3 text-[var(--color-ink)] font-medium hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] hover:border-[var(--color-gold)] transition-colors"
-            >
-              Sign in to continue
-            </Link>
-          </div>
-        ) : (
-          <>
-            <h1 className="font-[family-name:var(--font-display)] text-5xl text-[var(--color-ink)] mb-6">
-              Become a Beta Tester
-            </h1>
+      <AppHeader />
+      <div className="pt-[var(--header-height,96px)]">
+        <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-24 pt-6 sm:px-6 lg:px-8 lg:pb-14">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Beta Tester" }]} />
 
-            <div className="space-y-4 text-[var(--color-ink)] mb-8">
-              <p>
-                One in Him Bible Study is a free, installable app for Bible study and church history.
+          {loading ? (
+            <p className="text-sm text-[var(--color-muted)]">Checking sign-in status…</p>
+          ) : !user ? (
+            <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+                Join the Beta
               </p>
-              <p>
-                Beta testers help us improve by reporting bugs, issues, sharing ideas, and providing feedback.
+              <h1 className="site-page-title mt-3">Become a Beta Tester</h1>
+              <p className="site-heading-lead mt-4">
+                Sign in first to register as a beta tester and gain access to the Beta Dashboard.
               </p>
-              <p>
-                Our goal is to gather 25 beta testers to shape the app&apos;s development.
+              <Link
+                href="/login?next=/beta-tester"
+                className="mt-6 inline-flex rounded-full bg-[var(--color-highlight)] px-6 py-2.5 text-sm font-semibold text-[#080808]"
+              >
+                Sign in to continue
+              </Link>
+            </section>
+          ) : status === "success" ? (
+            <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
+                Welcome
               </p>
-              <p>
-                Phase 2 of beta testing will focus on Google Play beta releases.
-              </p>
-              <p>
-                As a beta tester, you&apos;ll influence development priorities and hear updates before anyone else.
-              </p>
-            </div>
+              <h1 className="site-page-title mt-3">You&apos;re a Beta Tester</h1>
+              <p className="site-heading-lead mt-4">Redirecting to the Beta Dashboard…</p>
+            </section>
+          ) : (
+            <>
+              <SiteHeroPanel
+                eyebrow="Join the Beta"
+                title="Become a Beta Tester"
+                lead="One In Him Bible Study is a free, installable app for Scripture study and church history. Beta testers shape development by reporting bugs, sharing ideas, and providing honest feedback before each release."
+              />
 
-            {!isFirebaseConfigured && (
-              <div className="rounded-md border border-red-300 bg-red-50 p-6 text-red-700 mb-8">
-                Beta signup is temporarily unavailable. Please try again later.
-              </div>
-            )}
+              {/* What beta testers do */}
+              <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+                  What to expect
+                </p>
+                <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+                  Your role as a tester
+                </h2>
+                <ul className="mt-4 space-y-2 text-sm leading-7 text-[var(--color-muted)]">
+                  <li>Test the site on desktop, tablet, and mobile.</li>
+                  <li>Report bugs, broken links, and confusing pages with as much detail as possible.</li>
+                  <li>Ideas and suggestions are welcome — not just bug reports.</li>
+                  <li>Phase 2 will include Google Play beta releases.</li>
+                  <li>You&apos;ll hear updates before anyone else and influence development priorities.</li>
+                </ul>
+              </section>
 
-            {status === "success" ? (
-              <div className="text-[var(--color-ink)]">Redirecting to beta dashboard...</div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[var(--color-ink)] mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    disabled={!isFirebaseConfigured}
-                    className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-2 text-[var(--color-ink)] placeholder:text-[var(--color-ink)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)] disabled:opacity-50 disabled:cursor-not-allowed"
-                    placeholder="Your full name"
-                  />
-                </div>
+              {/* Sign-up form */}
+              <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+                  Sign up
+                </p>
+                <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+                  Register as a beta tester
+                </h2>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[var(--color-ink)] mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    disabled={!isFirebaseConfigured}
-                    className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-2 text-[var(--color-ink)] placeholder:text-[var(--color-ink)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)] disabled:opacity-50 disabled:cursor-not-allowed"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="country" className="block text-sm font-medium text-[var(--color-ink)] mb-2">
-                    Country *
-                  </label>
-                  <input
-                    type="text"
-                    id="country"
-                    name="country"
-                    value={formData.country}
-                    onChange={handleChange}
-                    required
-                    disabled={!isFirebaseConfigured}
-                    className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-paper)] px-4 py-2 text-[var(--color-ink)] placeholder:text-[var(--color-ink)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)] disabled:opacity-50 disabled:cursor-not-allowed"
-                    placeholder="Your country"
-                  />
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    id="interestedGooglePlay"
-                    name="interestedGooglePlay"
-                    checked={formData.interestedGooglePlay}
-                    onChange={handleChange}
-                    disabled={!isFirebaseConfigured}
-                    className="h-4 w-4 rounded border-[var(--color-border)] bg-[var(--color-paper)] text-[var(--color-gold)] focus:ring-[var(--color-gold)] disabled:opacity-50 disabled:cursor-not-allowed"
-                  />
-                  <label htmlFor="interestedGooglePlay" className="text-sm text-[var(--color-ink)]">
-                    I&apos;m interested in Google Play beta testing
-                  </label>
-                </div>
-
-                {status === "error" && (
-                  <div className="text-red-500 text-sm">{errorMsg}</div>
+                {!isFirebaseConfigured && (
+                  <p className="mt-4 rounded-[1rem] border border-red-800 bg-red-950/30 px-4 py-3 text-sm text-red-300">
+                    Beta signup is temporarily unavailable. Please try again later.
+                  </p>
                 )}
 
-                <button
-                  type="submit"
-                  disabled={status === "submitting" || !isFirebaseConfigured}
-                  className="inline-flex rounded-full border border-[var(--color-border)] px-6 py-3 text-[var(--color-ink)] font-medium hover:bg-[var(--color-gold)] hover:text-[var(--color-ink)] hover:border-[var(--color-gold)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {status === "submitting" ? "Signing up..." : "Sign Up as Beta Tester"}
-                </button>
-              </form>
-            )}
-          </>
-        )}
+                <form onSubmit={handleSubmit} className="mt-5 grid gap-4">
+                  {/* Email — read-only from auth */}
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-soft)] mb-2">
+                      Account email
+                    </p>
+                    <p className="rounded-[0.75rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.28)] px-4 py-3 text-sm text-[var(--color-muted)]">
+                      {user.email}
+                    </p>
+                  </div>
+
+                  <label className="grid gap-2 text-sm text-[var(--color-ink)]">
+                    Your name *
+                    <input
+                      type="text"
+                      value={form.name}
+                      onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                      required
+                      disabled={!isFirebaseConfigured}
+                      className="rounded-[0.75rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-3 text-[var(--color-ink)] outline-none focus:border-[var(--color-highlight)] disabled:opacity-50"
+                      placeholder="Your full name"
+                    />
+                  </label>
+
+                  <label className="grid gap-2 text-sm text-[var(--color-ink)]">
+                    Country *
+                    <input
+                      type="text"
+                      value={form.country}
+                      onChange={(e) => setForm((f) => ({ ...f, country: e.target.value }))}
+                      required
+                      disabled={!isFirebaseConfigured}
+                      className="rounded-[0.75rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-3 text-[var(--color-ink)] outline-none focus:border-[var(--color-highlight)] disabled:opacity-50"
+                      placeholder="Your country"
+                    />
+                  </label>
+
+                  <label className="flex items-center gap-3 text-sm text-[var(--color-ink)]">
+                    <input
+                      type="checkbox"
+                      checked={form.interestedGooglePlay}
+                      onChange={(e) => setForm((f) => ({ ...f, interestedGooglePlay: e.target.checked }))}
+                      disabled={!isFirebaseConfigured}
+                      className="h-4 w-4 rounded border-[var(--color-border)]"
+                    />
+                    I&apos;m interested in Google Play beta testing
+                  </label>
+
+                  {status === "error" && (
+                    <p className="text-sm text-red-300">{errorMsg}</p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === "submitting" || !isFirebaseConfigured}
+                    className="w-fit rounded-full bg-[var(--color-highlight)] px-6 py-3 text-sm font-semibold text-[#080808] disabled:opacity-60"
+                  >
+                    {status === "submitting" ? "Signing up…" : "Sign Up as Beta Tester"}
+                  </button>
+                </form>
+              </section>
+            </>
+          )}
+        </main>
       </div>
-    </main>
+      <MobileBottomNav />
     </>
   );
 }
