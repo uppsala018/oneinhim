@@ -34,6 +34,7 @@ export type UserProfile = UserProfileFormValues & {
   avatarStoragePath?: string;
   avatarApprovedURL?: string;
   role?: string;
+  betaSignedUp?: boolean;
   isBanned?: boolean;
   isRestricted?: boolean;
   createdAt?: Timestamp | FieldValue;
@@ -77,5 +78,10 @@ export function toUserProfile(data: Partial<UserProfile> | undefined): Partial<U
     avatarStatus: data?.avatarStatus ?? "none",
     avatarStoragePath: data?.avatarStoragePath ?? "",
     avatarApprovedURL: data?.avatarApprovedURL ?? "",
+    // Preserve access/moderation fields — previously dropped, causing silent auth failures
+    role: data?.role,
+    betaSignedUp: data?.betaSignedUp,
+    isBanned: data?.isBanned,
+    isRestricted: data?.isRestricted,
   };
 }

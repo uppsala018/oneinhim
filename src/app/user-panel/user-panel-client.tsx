@@ -124,7 +124,9 @@ export default function UserPanelClient() {
   const shouldShowApprovedAvatar =
     profile?.avatarStatus === "approved" && Boolean(profile.avatarApprovedURL);
   const isAdmin = profile?.role === "admin" || user.email === ADMIN_EMAIL;
-  const isBetaTester = profile?.role === "beta_tester";
+  const isBetaTester =
+    profile?.role === "beta_tester" ||
+    profile?.betaSignedUp === true;
 
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-24 pt-6 sm:px-6 lg:px-8 lg:pb-14">

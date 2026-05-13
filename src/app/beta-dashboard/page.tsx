@@ -69,17 +69,16 @@ export default function BetaDashboardPage() {
       }
 
       // Check 1: users/{uid} — role or betaSignedUp flag.
-      // We know users can read their own profile (User Panel uses the same read).
+      // User Panel reads this same document; if that works, this works too.
       try {
         const snap = await getDoc(doc(db!, "users", user.uid));
-        const raw = snap.data() as Record<string, unknown> | undefined;
-        const profileData = toUserProfile(raw);
+        const profileData = toUserProfile(snap.data());
         setProfile(profileData);
 
         if (
           profileData.role === "beta_tester" ||
           profileData.role === "admin" ||
-          raw?.betaSignedUp === true
+          profileData.betaSignedUp === true
         ) {
           setAccessState("granted");
           return;
@@ -341,14 +340,23 @@ export default function BetaDashboardPage() {
                 </form>
               </section>
 
-              <div className="text-center">
-                <Link
-                  href="/user-panel"
-                  className="text-sm text-[var(--color-highlight)] hover:underline"
-                >
-                  ← Back to User Panel
-                </Link>
-              </div>
+              <Link
+                href="/user-panel"
+                className="flex items-center justify-between rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-5 py-4 transition hover:border-[var(--color-highlight)]"
+              >
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+                    Account
+                  </p>
+                  <p className="mt-1 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--color-ink)]">
+                    User Panel
+                  </p>
+                  <p className="mt-1 text-sm text-[var(--color-muted)]">
+                    Profile, settings, and account options.
+                  </p>
+                </div>
+                <span className="text-[var(--color-highlight)]">→</span>
+              </Link>
             </>
           )}
         </main>

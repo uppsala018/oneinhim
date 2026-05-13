@@ -63,7 +63,7 @@ function LoginContent() {
       await syncUserToFirestore(user, 'email');
       setStatus('success');
       setMessage('Login successful! Redirecting...');
-      const redirectPath = user.email === ADMIN_EMAIL ? '/admin/beta' : (searchParams.get('next') || '/library/prayer-forum');
+      const redirectPath = searchParams.get('next') || '/user-panel';
       router.push(redirectPath);
     } catch (error: any) {
       setStatus('error');
@@ -141,7 +141,7 @@ function LoginContent() {
       await syncUserToFirestore(user, 'google');
       setStatus('success');
       setMessage('Login successful! Redirecting...');
-      const redirectPath = user.email === ADMIN_EMAIL ? '/admin/beta' : (searchParams.get('next') || '/library/prayer-forum');
+      const redirectPath = searchParams.get('next') || '/user-panel';
       router.push(redirectPath);
     } catch (error: any) {
       setStatus('error');
