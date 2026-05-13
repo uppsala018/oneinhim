@@ -47,11 +47,22 @@ export default function BetaTesterPage() {
         { merge: true },
       );
 
-      // Signup to beta_testers succeeded — mark success and redirect immediately.
-      // Role sync is best-effort: Firestore rules may block self-assigning role, so
-      // we isolate it so a rules failure never prevents the signup from completing.
+      // Signup to beta_testers succeeded.
       setStatus("success");
 
+      // Write betaSignedUp flag to users/{uid} — this field is not role-restricted
+      // and can be read by the dashboard to grant access reliably.
+      try {
+        await setDoc(
+          doc(db, "users", user.uid),
+          { uid: user.uid, email: user.email ?? "", betaSignedUp: true, updatedAt: serverTimestamp() },
+          { merge: true },
+        );
+      } catch {
+        // If this fails too, dashboard falls back to beta_testers direct read.
+      }
+
+      // Also try to sync role — blocked by Firestore rules in most setups, silent fallback.
       try {
         const userRef = doc(db, "users", user.uid);
         const userSnap = await getDoc(userRef);
@@ -64,7 +75,7 @@ export default function BetaTesterPage() {
           );
         }
       } catch {
-        // Role sync failed silently — access via beta_testers collection still works.
+        // Silent — betaSignedUp flag already written above.
       }
 
       router.push("/beta-dashboard");

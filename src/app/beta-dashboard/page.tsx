@@ -62,30 +62,45 @@ export default function BetaDashboardPage() {
     }
 
     const checkAccess = async () => {
-      try {
-        // Admin always has access
-        if (user.email === ADMIN_EMAIL) {
-          setAccessState("granted");
-          return;
-        }
+      // Admin shortcut — no Firestore read needed.
+      if (user.email === ADMIN_EMAIL) {
+        setAccessState("granted");
+        return;
+      }
 
-        // Load user profile and check role
+      // Check 1: users/{uid} — role or betaSignedUp flag.
+      // We know users can read their own profile (User Panel uses the same read).
+      try {
         const snap = await getDoc(doc(db!, "users", user.uid));
-        const profileData = toUserProfile(snap.data());
+        const raw = snap.data() as Record<string, unknown> | undefined;
+        const profileData = toUserProfile(raw);
         setProfile(profileData);
 
-        if (profileData.role === "beta_tester" || profileData.role === "admin") {
+        if (
+          profileData.role === "beta_tester" ||
+          profileData.role === "admin" ||
+          raw?.betaSignedUp === true
+        ) {
           setAccessState("granted");
           return;
         }
-
-        // Fallback: direct read by uid — signup now writes doc ID = user.uid,
-        // so this is a get (not a list/query) and works without broader rules.
-        const betaSnap = await getDoc(doc(db!, "beta_testers", user.uid));
-        setAccessState(betaSnap.exists() ? "granted" : "denied");
       } catch {
-        setAccessState("denied");
+        // users/{uid} read failed — try next check.
       }
+
+      // Check 2: beta_testers/{uid} direct read.
+      // Requires rules to allow get on own document; may fail if rules are restrictive.
+      try {
+        const betaSnap = await getDoc(doc(db!, "beta_testers", user.uid));
+        if (betaSnap.exists()) {
+          setAccessState("granted");
+          return;
+        }
+      } catch {
+        // beta_testers read failed — no more checks.
+      }
+
+      setAccessState("denied");
     };
 
     void checkAccess();
