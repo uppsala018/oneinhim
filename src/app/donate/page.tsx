@@ -9,7 +9,7 @@ import SiteHeroPanel from "@/components/site-hero-panel";
 export const metadata: Metadata = buildMeta({
   title: "Donate",
   description:
-    "Support One In Him Bible Study — a free, ad-free platform for Scripture, Church Fathers, Councils, and 2000 years of church history. Every gift helps keep the library free for every Christian tradition.",
+    "Support One In Him Bible Study, a free and ad-free Christian library for Scripture, Church Fathers, councils, and church history.",
   keywords:
     "donate, support bible study, one in him, free bible study, christian mission, ad-free",
   path: "/donate",

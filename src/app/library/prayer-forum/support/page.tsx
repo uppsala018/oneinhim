@@ -6,7 +6,7 @@ import SiteHeroPanel from "@/components/site-hero-panel";
 import Breadcrumb from "@/components/breadcrumb";
 
 export const metadata: Metadata = buildMeta({
-  title: "Contact",
+  title: "Contact & Support",
   description:
     "Contact One In Him Bible Study — email us with questions, bug reports, feedback, or help with your account.",
   path: "/library/prayer-forum/support",

@@ -5,32 +5,15 @@ import SiteFooter from "@/components/site-footer";
 import ScrollReveal from "@/components/scroll-reveal";
 import JsonLd from "@/components/json-ld";
 import PwaInstallButton from "@/components/pwa-install-button";
+import { buildMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "One In Him Bible Study | KJV, Church Fathers & Church History",
+export const metadata: Metadata = buildMeta({
+  title: "Bible Study & Church History",
   description:
-    "Free Bible study app with KJV + Strong's, Douay-Rheims, Church Fathers, Ecumenical Councils and complete Church History timeline.",
+    "Free Christian Bible study with KJV and Strong's, Douay-Rheims, Church Fathers, Ecumenical Councils, and church history resources.",
   keywords:
     "bible study, KJV bible, Strong's concordance, church fathers, church history, ecumenical councils, early church, catechism of trent, orthodox bible, protestant resources",
-  openGraph: {
-    title: "One In Him Bible Study | KJV, Church Fathers & Church History",
-    description:
-      "Free Bible study app with KJV + Strong's, Douay-Rheims, Church Fathers, Ecumenical Councils and complete Church History timeline.",
-    url: "https://www.oneinhimbiblestudy.com",
-    siteName: "One In Him Bible Study",
-    type: "website",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "One In Him Bible Study | KJV, Church Fathers & Church History",
-    description:
-      "Free Bible study app with KJV + Strong's, Douay-Rheims, Church Fathers, Ecumenical Councils and complete Church History timeline.",
-  },
-  alternates: {
-    canonical: "https://www.oneinhimbiblestudy.com",
-  },
-};
+});
 
 const featureCards = [
   {

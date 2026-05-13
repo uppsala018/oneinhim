@@ -10,7 +10,7 @@ import FirebaseForumCategories from "@/components/firebase-forum-categories";
 import SiteHeroPanel from "@/components/site-hero-panel";
 
 export const metadata: Metadata = buildMeta({
-  title: "Prayer Forum — One In Him Community",
+  title: "Prayer Forum",
   description:
     "Share prayer requests, give praise, and ask questions in the One In Him prayer forum. Anyone can read. Sign in to participate.",
   keywords:
