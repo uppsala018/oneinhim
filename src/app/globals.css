@@ -297,7 +297,7 @@ html[data-theme="light"] .mobile-app-shell {
   left: 0;
   z-index: 60;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   padding-bottom: env(safe-area-inset-bottom);
   border-top: 1px solid rgba(229, 197, 122, 0.14);
   background: rgba(10, 10, 10, 0.96);

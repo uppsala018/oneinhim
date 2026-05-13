@@ -92,9 +92,11 @@ export default function AppHeader() {
         </nav>
 
         <div className="web-header__actions">
-          <Link href="/beta-tester" className="hidden xl:block text-sm text-red-500 hover:text-red-600 ml-4">
-            Join Beta
-          </Link>
+          {!user && (
+            <Link href="/beta-tester" className="hidden xl:block text-sm text-red-500 hover:text-red-600 ml-4">
+              Join Beta
+            </Link>
+          )}
           {user ? (
             <Link
               href="/user-panel"
@@ -140,9 +142,11 @@ export default function AppHeader() {
             {link.label}
           </Link>
         ))}
-        <Link href="/beta-tester" onClick={() => setMobileOpen(false)}>
-          Join Beta
-        </Link>
+        {!user && (
+          <Link href="/beta-tester" onClick={() => setMobileOpen(false)}>
+            Join Beta
+          </Link>
+        )}
         {user ? (
           <>
             <Link href="/user-panel" onClick={() => setMobileOpen(false)}>

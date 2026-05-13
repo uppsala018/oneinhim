@@ -5,6 +5,7 @@ import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
 import JsonLd from "@/components/json-ld";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+import SiteHeroPanel from "@/components/site-hero-panel";
 
 export const metadata: Metadata = buildMeta({
   title: "Study the Bible — All Translations & Versions",
@@ -150,19 +151,11 @@ export default function BiblesPage() {
         ]} />
 
         {/* Hero panel */}
-        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
-            Scripture
-          </p>
-          <h1 className="site-page-title mt-3">Study the Bible</h1>
-          <p className="site-heading-lead mt-4 max-w-3xl">
-            Read Scripture in any translation. Two full internal readers — the King James Version
-            with word-by-word Strong&apos;s concordance and the Catholic Bible with Douay-Rheims
-            and RSV-CE — plus the Brenton Septuagint used by the early church. Curated links cover
-            the NIV, ESV, NKJV, Amplified, NASB, and Geneva Bible, and a full directory lists
-            35+ English versions from Reformation-era Bibles to contemporary paraphrases.
-          </p>
-        </section>
+        <SiteHeroPanel
+          eyebrow="Scripture"
+          title="Study the Bible"
+          lead="Read Scripture in any translation. Two full internal readers — the King James Version with word-by-word Strong's concordance and the Catholic Bible with Douay-Rheims and RSV-CE — plus the Brenton Septuagint used by the early church. Curated links cover the NIV, ESV, NKJV, Amplified, NASB, and Geneva Bible, and a full directory lists 35+ English versions from Reformation-era Bibles to contemporary paraphrases."
+        />
 
         {/* Primary readers — full-width gold cards */}
         <div className="mt-10 grid gap-6 md:grid-cols-2">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { type ChangeEvent, type FormEvent, useEffect, useState } from "react";
+import Breadcrumb from "@/components/breadcrumb";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { ref, uploadBytes } from "firebase/storage";
 import { db, storage } from "@/lib/firebase-client";
@@ -19,16 +20,10 @@ const allowedAvatarTypes = ["image/jpeg", "image/png", "image/webp"];
 const avatarSizeLimitBytes = 2 * 1024 * 1024;
 const pendingAvatarPath = (uid: string) => `profile_images_pending/${uid}/avatar`;
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/library/prayer-forum", label: "Prayer Forum" },
-  { href: "/user-panel", label: "Dashboard" },
-];
-
 function SignInPrompt() {
   return (
     <section className="mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 py-10">
-      <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+      <div className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
         <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">
           Profile
         </p>
@@ -263,29 +258,25 @@ export default function ProfileClient() {
   }
 
   return (
-    <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-28 pt-6 sm:px-6 lg:px-8">
-      <nav className="flex flex-wrap gap-3 text-sm text-[var(--color-muted)]">
-        {navLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="hover:text-[var(--color-highlight)]">
-            {link.label}
-          </Link>
-        ))}
-      </nav>
+    <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-24 pt-6 sm:px-6 lg:px-8 lg:pb-14">
+      <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "User Panel", href: "/user-panel" },
+        { label: "Edit Profile" },
+      ]} />
 
-      <section className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
-        <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
+      <section className="mt-2 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
           Profile
         </p>
-        <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)]">
-          Edit Profile
-        </h1>
+        <h1 className="site-page-title mt-3">Edit Profile</h1>
         <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
           Signed in as <span className="text-[var(--color-ink)]">{user.email ?? "your account"}</span>
         </p>
       </section>
 
-      <section className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
-        <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
+      <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
           Profile Image
         </p>
         <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl text-[var(--color-ink)]">
@@ -321,7 +312,7 @@ export default function ProfileClient() {
 
       <form
         onSubmit={handleSubmit}
-        className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6"
+        className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6"
       >
         {profileLoading ? (
           <p className="text-sm text-[var(--color-muted)]">Loading profile...</p>

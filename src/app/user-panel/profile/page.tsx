@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import AppHeader from "@/components/app-header";
+import MobileBottomNav from "@/components/mobile-bottom-nav";
 import ProfileClient from "./profile-client";
 
 export const metadata: Metadata = {
@@ -8,8 +10,12 @@ export const metadata: Metadata = {
 
 export default function UserPanelProfilePage() {
   return (
-    <section className="mobile-app-shell min-h-screen">
-      <ProfileClient />
-    </section>
+    <>
+      <AppHeader />
+      <div className="pt-[var(--header-height,96px)]">
+        <ProfileClient />
+      </div>
+      <MobileBottomNav />
+    </>
   );
 }

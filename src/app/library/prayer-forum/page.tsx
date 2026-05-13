@@ -7,6 +7,7 @@ import MobileBottomNav from "@/components/mobile-bottom-nav";
 import PrayerForumContent from "./prayer-forum-content";
 import FirebaseLatestDiscussions from "@/components/firebase-latest-discussions";
 import FirebaseForumCategories from "@/components/firebase-forum-categories";
+import SiteHeroPanel from "@/components/site-hero-panel";
 
 export const metadata: Metadata = buildMeta({
   title: "Prayer Forum — One In Him Community",
@@ -31,21 +32,15 @@ export default function PrayerForumPage() {
         />
 
         {/* Hero panel */}
-        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
-            Community
-          </p>
-          <h1 className="site-page-title mt-3">Prayer Forum</h1>
-          <p className="site-heading-lead mt-4 max-w-3xl">
-            Share prayer requests, give praise for answered prayer, and ask questions about faith
-            and Scripture. Anyone can read and browse — sign in only when you want to start a
-            discussion or reply. This is a place for the body of Christ to carry one another&apos;s
-            burdens across Catholic, Orthodox, and Protestant traditions.
-          </p>
+        <SiteHeroPanel
+          eyebrow="Community"
+          title="Prayer Forum"
+          lead="Share prayer requests, give praise for answered prayer, and ask questions about faith and Scripture. Anyone can read and browse — sign in only when you want to start a discussion or reply. This is a place for the body of Christ to carry one another's burdens across Catholic, Orthodox, and Protestant traditions."
+        >
           <div className="mt-6">
             <PrayerForumContent />
           </div>
-        </section>
+        </SiteHeroPanel>
 
         {/* Latest discussions */}
         <div className="mt-10">

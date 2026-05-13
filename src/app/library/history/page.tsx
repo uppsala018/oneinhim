@@ -4,6 +4,7 @@ import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+import SiteHeroPanel from "@/components/site-hero-panel";
 import { historyLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
@@ -58,17 +59,11 @@ export default function HistoryHubPage() {
         ]} />
 
         {/* Hero panel */}
-        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
-            Church History
-          </p>
-          <h1 className="site-page-title mt-3">2000 Years of Christianity</h1>
-          <p className="site-heading-lead mt-4 max-w-3xl">
-            A study hub for splits, continuities, councils, and modern renewal movements.
-            Start with the timeline, then move into the East-West Schism, Chalcedon, the
-            Reformation, and the Charismatic movement as distinct study paths.
-          </p>
-        </section>
+        <SiteHeroPanel
+          eyebrow="Church History"
+          title="2000 Years of Christianity"
+          lead="A study hub for splits, continuities, councils, and modern renewal movements. Start with the timeline, then move into the East-West Schism, Chalcedon, the Reformation, and the Charismatic movement as distinct study paths."
+        />
 
         {/* Hub study-path cards */}
         <section className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3" aria-label="History study paths">

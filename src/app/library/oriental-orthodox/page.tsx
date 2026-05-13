@@ -3,6 +3,7 @@ import { buildMeta } from "@/lib/seo";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+import SiteHeroPanel from "@/components/site-hero-panel";
 import Link from "next/link";
 import { orientalOrthodoxLibrary } from "@/lib/content";
 
@@ -41,18 +42,11 @@ export default function OrientalOrthodoxPage() {
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Traditions", href: "/library/traditions" }, { label: "Oriental Orthodox" }]} />
 
-        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
-            Oriental Orthodox
-          </p>
-          <h1 className="site-page-title mt-3">Coptic, Ethiopian, Armenian &amp; Syriac</h1>
-          <p className="site-heading-lead mt-4 max-w-3xl">
-            The Oriental Orthodox churches — the Coptic Church of Alexandria, the Ethiopian Orthodox
-            Tewahedo Church, the Armenian Apostolic Church, and the Syriac Orthodox Church — are
-            among the oldest Christian communities in the world. This section collects their primary
-            texts, theological traditions, and distinct liturgical heritage.
-          </p>
-        </section>
+        <SiteHeroPanel
+          eyebrow="Oriental Orthodox"
+          title="Coptic, Ethiopian, Armenian & Syriac"
+          lead="The Oriental Orthodox churches — the Coptic Church of Alexandria, the Ethiopian Orthodox Tewahedo Church, the Armenian Apostolic Church, and the Syriac Orthodox Church — are among the oldest Christian communities in the world. This section collects their primary texts, theological traditions, and distinct liturgical heritage."
+        />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[0.56fr_0.44fr]">
           <section className="space-y-6">

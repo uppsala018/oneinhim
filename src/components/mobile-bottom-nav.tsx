@@ -1,4 +1,7 @@
-﻿import Link from "next/link";
+"use client";
+
+import Link from "next/link";
+import { useAuth } from "@/lib/use-auth";
 
 function HomeIcon() {
   return (
@@ -43,7 +46,7 @@ function BetaIcon() {
   );
 }
 
-function LoginIcon() {
+function PersonIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -52,16 +55,27 @@ function LoginIcon() {
   );
 }
 
-const items = [
+const baseItems = [
   { href: "/", icon: HomeIcon, label: "Home" },
   { href: "/library", icon: SearchIcon, label: "Library" },
   { href: "/library/notes", icon: BookmarkIcon, label: "Bookmarks" },
   { href: "/library/settings", icon: SettingsIcon, label: "Settings" },
-  { href: "/login", icon: LoginIcon, label: "Login" },
+];
+
+const anonItems = [
+  { href: "/login", icon: PersonIcon, label: "Login" },
+  { href: "/beta-tester", icon: BetaIcon, label: "Beta" },
+];
+
+const authedItems = [
+  { href: "/user-panel", icon: PersonIcon, label: "Account" },
   { href: "/beta-tester", icon: BetaIcon, label: "Beta" },
 ];
 
 export default function MobileBottomNav({ active = "Home" }: { active?: string }) {
+  const { user } = useAuth();
+  const items = [...baseItems, ...(user ? authedItems : anonItems)];
+
   return (
     <nav className="mobile-bottom-nav">
       {items.map((item) => {

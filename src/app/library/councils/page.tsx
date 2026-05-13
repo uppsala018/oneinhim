@@ -5,6 +5,7 @@ import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import Breadcrumb from "@/components/breadcrumb";
 import JsonLd from "@/components/json-ld";
+import SiteHeroPanel from "@/components/site-hero-panel";
 import { councilsLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
@@ -80,20 +81,11 @@ export default function CouncilsPage() {
         />
 
         {/* Hero panel */}
-        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
-            Church History
-          </p>
-          <h1 className="site-page-title mt-3">Ecumenical Councils</h1>
-          <p className="site-heading-lead mt-4 max-w-3xl">
-            From 325 to 787 AD, the Church gathered seven times in formal council to define the
-            faith against serious theological errors. These councils settled the Church&apos;s
-            core teaching on the Trinity and the person of Christ. Catholic and Eastern Orthodox
-            churches accept all seven. Most Protestant traditions accept at least the first four.
-            Each council page gives the historical background, the theological controversy, key
-            figures, and what was decided.
-          </p>
-        </section>
+        <SiteHeroPanel
+          eyebrow="Church History"
+          title="Ecumenical Councils"
+          lead="From 325 to 787 AD, the Church gathered seven times in formal council to define the faith against serious theological errors. These councils settled the Church's core teaching on the Trinity and the person of Christ. Catholic and Eastern Orthodox churches accept all seven. Most Protestant traditions accept at least the first four. Each council page gives the historical background, the theological controversy, key figures, and what was decided."
+        />
 
         {/* Council cards */}
         <section

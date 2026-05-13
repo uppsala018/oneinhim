@@ -4,6 +4,7 @@ import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+import SiteHeroPanel from "@/components/site-hero-panel";
 
 export const metadata: Metadata = buildMeta({
   title: "Protestant Bible Study Resources",
@@ -427,18 +428,11 @@ export default function ProtestantResourcesPage() {
       <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Traditions", href: "/library/traditions" }, { label: "Protestant Resources" }]} />
 
-        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
-            Protestant Resources
-          </p>
-          <h1 className="site-page-title mt-3">
-            Protestant study hub
-          </h1>
-          <p className="site-heading-lead mt-4 max-w-3xl">
-            Scripture, reformers, confessions, history, and the shared ancient sources that shaped
-            Protestant theology — organized as one navigable study path.
-          </p>
-        </section>
+        <SiteHeroPanel
+          eyebrow="Protestant Resources"
+          title="Protestant study hub"
+          lead="Scripture, reformers, confessions, history, and the shared ancient sources that shaped Protestant theology — organized as one navigable study path."
+        />
 
         <section className="mt-10 grid gap-6 lg:grid-cols-2">
           {protestantSections.map((section) => (

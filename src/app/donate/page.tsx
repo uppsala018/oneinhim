@@ -4,6 +4,7 @@ import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
 import SiteFooter from "@/components/site-footer";
+import SiteHeroPanel from "@/components/site-hero-panel";
 
 export const metadata: Metadata = buildMeta({
   title: "Donate",
@@ -47,16 +48,11 @@ export default function DonatePage() {
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Donate" }]} />
 
         {/* Hero panel */}
-        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
-            Support the Mission
-          </p>
-          <h1 className="site-page-title mt-3">Keep the Library Free</h1>
-          <p className="site-heading-lead mt-4 max-w-3xl">
-            One In Him Bible Study is free to use, free of advertising, and open to every
-            Christian tradition. If it has served your study, please consider giving — every
-            gift, however small, helps keep the tools running and growing.
-          </p>
+        <SiteHeroPanel
+          eyebrow="Support the Mission"
+          title="Keep the Library Free"
+          lead="One In Him Bible Study is free to use, free of advertising, and open to every Christian tradition. If it has served your study, please consider giving — every gift, however small, helps keep the tools running and growing."
+        >
           <div className="mt-8">
             <a
               href={PAYPAL_HREF}
@@ -70,7 +66,7 @@ export default function DonatePage() {
               Secure payment through PayPal. No account required.
             </p>
           </div>
-        </section>
+        </SiteHeroPanel>
 
         {/* Scripture anchor */}
         <blockquote className="mt-8 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">

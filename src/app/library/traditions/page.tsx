@@ -4,6 +4,7 @@ import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+import SiteHeroPanel from "@/components/site-hero-panel";
 
 export const metadata: Metadata = buildMeta({
   title: "Christian Traditions — Catholic, Orthodox & Protestant",
@@ -80,17 +81,11 @@ export default function TraditionsPage() {
         />
 
         {/* Hero panel */}
-        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
-            Traditions
-          </p>
-          <h1 className="site-page-title mt-3">Every Branch of the Church</h1>
-          <p className="site-heading-lead mt-4 max-w-3xl">
-            Dedicated study hubs for every major Christian tradition — Catholic, Eastern Orthodox,
-            Oriental Orthodox, and Protestant — with Scripture tools, primary texts, catechesis,
-            theology, and the shared early Church that underlies them all.
-          </p>
-        </section>
+        <SiteHeroPanel
+          eyebrow="Traditions"
+          title="Every Branch of the Church"
+          lead="Dedicated study hubs for every major Christian tradition — Catholic, Eastern Orthodox, Oriental Orthodox, and Protestant — with Scripture tools, primary texts, catechesis, theology, and the shared early Church that underlies them all."
+        />
 
         {/* Primary tradition cards */}
         <section

@@ -8,16 +8,15 @@ import { signOut } from "firebase/auth";
 import { useAuth } from "@/lib/use-auth";
 import { useRouter } from "next/navigation";
 import { toUserProfile, type UserProfile } from "@/lib/user-profile";
+import Breadcrumb from "@/components/breadcrumb";
 
-const mainNavLinks = [
+const studyLinks = [
   { href: "/library/bibles", label: "Bibles" },
   { href: "/library/fathers", label: "Church Fathers" },
   { href: "/library/councils", label: "Councils" },
-  { href: "/library", label: "Library" },
+  { href: "/library/traditions", label: "Traditions" },
   { href: "/library/history", label: "History" },
   { href: "/library/prayer-forum", label: "Prayer Forum" },
-  { href: "/donate", label: "Donate" },
-  { href: "/", label: "Home" },
 ];
 
 const socialLinkLabels = {
@@ -32,25 +31,23 @@ const ADMIN_EMAIL = "mosegaard622@gmail.com";
 
 function SignInPrompt() {
   return (
-    <section className="mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 py-10">
-      <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
-        <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">
+    <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-24 pt-6 sm:px-6 lg:px-8 lg:pb-14">
+      <section className="mt-2 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
           User Panel
         </p>
-        <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)]">
-          Sign in required
-        </h1>
-        <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
-          Sign in to view and edit your user profile.
+        <h1 className="site-page-title mt-3">Sign in required</h1>
+        <p className="site-heading-lead mt-4">
+          Sign in to view and manage your profile.
         </p>
         <Link
           href="/login?next=/user-panel"
-          className="mt-5 inline-flex rounded-full bg-[var(--color-highlight)] px-5 py-2 text-sm font-semibold text-[#080808]"
+          className="mt-6 inline-flex rounded-full bg-[var(--color-highlight)] px-5 py-2 text-sm font-semibold text-[#080808]"
         >
           Sign in
         </Link>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }
 
@@ -130,16 +127,11 @@ export default function UserPanelClient() {
   const isBetaTester = profile?.role === "beta_tester";
 
   return (
-    <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-28 pt-6 sm:px-6 lg:px-8 lg:pb-14">
-      <nav className="flex flex-wrap gap-3 text-sm text-[var(--color-muted)]">
-        {mainNavLinks.map((link) => (
-          <Link key={link.href} href={link.href} className="hover:text-[var(--color-highlight)]">
-            {link.label}
-          </Link>
-        ))}
-      </nav>
+    <main className="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 pb-24 pt-6 sm:px-6 lg:px-8 lg:pb-14">
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "User Panel" }]} />
 
-      <section className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+      {/* Hero card */}
+      <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
           <div className="grid h-20 w-20 shrink-0 place-items-center overflow-hidden rounded-full border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] text-3xl text-[var(--color-highlight)]">
             {shouldShowApprovedAvatar ? (
@@ -154,14 +146,13 @@ export default function UserPanelClient() {
             )}
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-highlight)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
               Dashboard
             </p>
-            <h1 className="mt-3 font-[family-name:var(--font-display)] text-4xl text-[var(--color-ink)]">
-              User Panel
-            </h1>
+            <h1 className="site-page-title mt-3">User Panel</h1>
             <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
-              Signed in as <span className="text-[var(--color-ink)]">{user.email ?? "your account"}</span>
+              Signed in as{" "}
+              <span className="text-[var(--color-ink)]">{user.email ?? "your account"}</span>
             </p>
             {profile?.avatarStatus === "pending" && (
               <p className="mt-2 text-sm text-[var(--color-highlight)]">
@@ -175,8 +166,12 @@ export default function UserPanelClient() {
         </div>
       </section>
 
-      <section className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
-        <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--color-highlight)]">
+      {/* Profile Summary */}
+      <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+          Profile
+        </p>
+        <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
           Profile Summary
         </h2>
 
@@ -246,67 +241,93 @@ export default function UserPanelClient() {
         )}
       </section>
 
+      {/* Role cards — admin / beta tester */}
       {(isBetaTester || isAdmin) && (
         <section className="grid gap-3 sm:grid-cols-2">
           {isBetaTester && (
             <Link
               href="/beta-dashboard"
-              className="rounded-[1rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-4 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+              className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-5 py-5 transition hover:border-[var(--color-highlight)]"
             >
-              <span className="block font-[family-name:var(--font-display)] text-2xl text-[var(--color-highlight)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+                Beta Tester
+              </p>
+              <p className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
                 Beta Panel
-              </span>
-              <span className="mt-2 block leading-6 text-[var(--color-muted)]">
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
                 Report bugs, issues, and ideas from beta testing.
-              </span>
+              </p>
             </Link>
           )}
           {isAdmin && (
             <Link
               href="/admin/beta"
-              className="rounded-[1rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-4 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+              className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-5 py-5 transition hover:border-[var(--color-highlight)]"
             >
-              <span className="block font-[family-name:var(--font-display)] text-2xl text-[var(--color-highlight)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+                Admin
+              </p>
+              <p className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
                 Admin Panel
-              </span>
-              <span className="mt-2 block leading-6 text-[var(--color-muted)]">
-                Open the admin dashboard for moderation and beta management.
-              </span>
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
+                Moderation and beta management dashboard.
+              </p>
             </Link>
           )}
         </section>
       )}
 
-      {/* Full site navigation */}
-      <section className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--color-highlight)]">Navigate</h2>
-        <div className="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {mainNavLinks.map((link) => (
+      {/* Study links */}
+      <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+          Study Library
+        </p>
+        <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+          Quick Links
+        </h2>
+        <div className="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
+          {studyLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-3 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+              className="rounded-[1rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-3 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
             >
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/user-panel/profile"
-            className="rounded-xl border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-4 py-3 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
-          >
-            Edit Profile
-          </Link>
         </div>
       </section>
 
-      {/* Account actions */}
-      <section className="flex flex-wrap gap-3">
-        <button
-          onClick={handleSignOut}
-          className="rounded-full border border-[var(--color-border)] px-5 py-2 text-sm text-[var(--color-muted)] transition hover:border-red-400 hover:text-red-400"
-        >
-          Sign out
-        </button>
+      {/* Account section */}
+      <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+          Account
+        </p>
+        <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+          Settings
+        </h2>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <Link
+            href="/user-panel/profile"
+            className="inline-flex rounded-full border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-5 py-2 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+          >
+            Edit Profile
+          </Link>
+          <Link
+            href="/library/settings"
+            className="inline-flex rounded-full border border-[var(--color-border)] bg-[rgba(10,10,10,0.48)] px-5 py-2 text-sm text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)]"
+          >
+            Reader Settings
+          </Link>
+          <button
+            onClick={handleSignOut}
+            className="inline-flex rounded-full border border-[var(--color-border)] px-5 py-2 text-sm text-[var(--color-muted)] transition hover:border-red-400 hover:text-red-400"
+          >
+            Sign out
+          </button>
+        </div>
       </section>
     </main>
   );

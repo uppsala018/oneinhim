@@ -4,6 +4,7 @@ import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
+import SiteHeroPanel from "@/components/site-hero-panel";
 
 export const metadata: Metadata = buildMeta({
   title: "Catholic Study Resources",
@@ -354,17 +355,11 @@ export default function CatholicResourcesPage() {
       <main className="hidden lg:block mx-auto max-w-7xl px-6 pt-[96px] pb-14 sm:px-8 lg:px-12">
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Library", href: "/library" }, { label: "Traditions", href: "/library/traditions" }, { label: "Catholic Resources" }]} />
 
-        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
-            Catholic
-          </p>
-          <h1 className="site-page-title mt-3">Catholic Resources</h1>
-          <p className="site-heading-lead mt-4 max-w-3xl">
-            Catholic study organized around Scripture, catechesis, saints, liturgy, sacraments,
-            and the shared Church Fathers — from the Douay-Rheims Bible and the Roman Catechism
-            of Trent through the ancient tradition.
-          </p>
-        </section>
+        <SiteHeroPanel
+          eyebrow="Catholic"
+          title="Catholic Resources"
+          lead="Catholic study organized around Scripture, catechesis, saints, liturgy, sacraments, and the shared Church Fathers — from the Douay-Rheims Bible and the Roman Catechism of Trent through the ancient tradition."
+        />
 
         <section className="mt-12 grid gap-6 lg:grid-cols-2">
           {catholicSections.map((section) => (

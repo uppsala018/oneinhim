@@ -5,6 +5,7 @@ import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
 import JsonLd from "@/components/json-ld";
 import FathersMobileLibrary from "@/components/fathers-mobile-library";
+import SiteHeroPanel from "@/components/site-hero-panel";
 import { fathersLibrary } from "@/lib/content";
 
 export const metadata: Metadata = buildMeta({
@@ -96,18 +97,11 @@ export default function FathersPage() {
         ]} />
 
         {/* Hero panel */}
-        <section className="mt-6 rounded-[2.4rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
-            Patristics
-          </p>
-          <h1 className="site-page-title mt-3">Church Fathers</h1>
-          <p className="site-heading-lead mt-4 max-w-3xl">
-            The early church writers — Ignatius, Justin Martyr, Origen, Athanasius, Augustine,
-            Chrysostom, and more — available here as complete primary texts organized by author
-            and work. Browse father profiles, read the included writings, and follow suggested
-            reading orders tailored for Catholic, Orthodox, and Protestant study.
-          </p>
-        </section>
+        <SiteHeroPanel
+          eyebrow="Patristics"
+          title="Church Fathers"
+          lead="The early church writers — Ignatius, Justin Martyr, Origen, Athanasius, Augustine, Chrysostom, and more — available here as complete primary texts organized by author and work. Browse father profiles, read the included writings, and follow suggested reading orders tailored for Catholic, Orthodox, and Protestant study."
+        />
 
         {/* Father cards */}
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
