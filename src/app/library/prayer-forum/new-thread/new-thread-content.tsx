@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import {
   collection,
   doc,
+  getDoc,
   getDocs,
   orderBy,
   query,
@@ -35,6 +36,19 @@ export default function NewThreadContent({
   const [loadingCategories, setLoadingCategories] = useState(true);
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [profileDisplayName, setProfileDisplayName] = useState<string | null>(null);
+
+  // Load the display name from the user's Firestore profile so the forum
+  // uses the name they chose in the User Panel, not the Google account name.
+  useEffect(() => {
+    if (!user || !db) return;
+    getDoc(doc(db, "users", user.uid))
+      .then((snap) => {
+        const name = (snap.data() as { displayName?: string } | undefined)?.displayName?.trim();
+        if (name) setProfileDisplayName(name);
+      })
+      .catch(() => {/* silent — falls back to auth displayName */});
+  }, [user]);
 
   useEffect(() => {
     async function loadCategories() {
@@ -118,7 +132,10 @@ export default function NewThreadContent({
       const threadRef = doc(collection(db, "forum_threads"));
       const postRef = doc(collection(db, "forum_posts"));
       const batch = writeBatch(db);
-      const authorDisplayName = forumAuthorName(user.displayName, user.email);
+      const authorDisplayName = forumAuthorName(
+        profileDisplayName || user.displayName,
+        user.email,
+      );
 
       batch.set(threadRef, {
         title: title.trim(),

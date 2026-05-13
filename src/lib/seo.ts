@@ -47,3 +47,40 @@ export function buildMeta({
     alternates: { canonical: `${BASE}${path}` },
   };
 }
+
+export function buildCollectionPageSchema({
+  path,
+  name,
+  description,
+  about,
+  mainEntity,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  about?: string[];
+  mainEntity?: object;
+}) {
+  const normalizedPath = path === "/" ? "" : path;
+  const url = `${BASE}${normalizedPath}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${url}/#page`,
+    url,
+    name,
+    description,
+    isPartOf: { "@id": `${BASE}/#website` },
+    publisher: { "@id": `${BASE}/#organization` },
+    ...(about?.length
+      ? {
+          about: about.map((name) => ({
+            "@type": "Thing",
+            name,
+          })),
+        }
+      : {}),
+    ...(mainEntity ? { mainEntity } : {}),
+  };
+}

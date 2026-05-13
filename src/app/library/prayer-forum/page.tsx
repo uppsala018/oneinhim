@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { buildMeta } from "@/lib/seo";
+import { buildCollectionPageSchema, buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import PrayerForumContent from "./prayer-forum-content";
 import FirebaseLatestDiscussions from "@/components/firebase-latest-discussions";
@@ -18,9 +19,18 @@ export const metadata: Metadata = buildMeta({
   path: "/library/prayer-forum",
 });
 
+const PRAYER_FORUM_SCHEMA = buildCollectionPageSchema({
+  path: "/library/prayer-forum",
+  name: "Prayer Forum",
+  description:
+    "A public Christian community space for prayer requests, praise reports, faith questions, and Scripture discussions.",
+  about: ["Christian prayer", "Prayer requests", "Bible study community"],
+});
+
 export default function PrayerForumPage() {
   return (
     <>
+      <JsonLd data={PRAYER_FORUM_SCHEMA} />
       <AppHeader />
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
         <Breadcrumb

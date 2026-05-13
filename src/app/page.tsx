@@ -5,7 +5,7 @@ import SiteFooter from "@/components/site-footer";
 import ScrollReveal from "@/components/scroll-reveal";
 import JsonLd from "@/components/json-ld";
 import PwaInstallButton from "@/components/pwa-install-button";
-import { buildMeta } from "@/lib/seo";
+import { buildCollectionPageSchema, buildMeta } from "@/lib/seo";
 
 export const metadata: Metadata = buildMeta({
   title: "Bible Study & Church History",
@@ -101,17 +101,19 @@ const traditionCards = [
   },
 ];
 
-const HOME_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://www.oneinhimbiblestudy.com/#webpage",
-  url: "https://www.oneinhimbiblestudy.com",
-  name: "One In Him Bible Study | KJV, Church Fathers & Church History",
+const HOME_SCHEMA = buildCollectionPageSchema({
+  path: "/",
+  name: "One In Him Bible Study",
   description:
-    "Free Bible study with KJV + Strong's, Douay-Rheims, Church Fathers, Ecumenical Councils and complete Church History — all free.",
-  isPartOf: { "@id": "https://www.oneinhimbiblestudy.com/#website" },
-  about: { "@id": "https://www.oneinhimbiblestudy.com/#organization" },
-};
+    "Free Christian Bible study with Scripture readers, Church Fathers, Ecumenical Councils, Christian traditions, church history, and a prayer forum.",
+  about: [
+    "Bible study",
+    "Church history",
+    "Church Fathers",
+    "Ecumenical councils",
+    "Christian theology",
+  ],
+});
 
 export default function Home() {
   return (

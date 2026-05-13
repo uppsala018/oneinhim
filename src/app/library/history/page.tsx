@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { buildMeta } from "@/lib/seo";
+import { buildCollectionPageSchema, buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SiteHeroPanel from "@/components/site-hero-panel";
 import { historyLibrary } from "@/lib/content";
@@ -12,6 +13,14 @@ export const metadata: Metadata = buildMeta({
   description: "A complete church history timeline — from the apostolic era through the Great Schism, Reformation, and Charismatic movement to the present day.",
   keywords: "church history timeline, Christian history, early church history, reformation, Great Schism, church history",
   path: "/library/history",
+});
+
+const HISTORY_SCHEMA = buildCollectionPageSchema({
+  path: "/library/history",
+  name: "Church History Timeline — 2000 Years of Christianity",
+  description:
+    "A church history study hub covering the apostolic era, the East-West Schism, Chalcedon, the Reformation, and modern renewal movements.",
+  about: ["Church history", "Christian history", "Reformation", "Great Schism"],
 });
 
 const hubCards = [
@@ -50,6 +59,7 @@ const hubCards = [
 export default function HistoryHubPage() {
   return (
     <>
+      <JsonLd data={HISTORY_SCHEMA} />
       <AppHeader />
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
         <Breadcrumb items={[

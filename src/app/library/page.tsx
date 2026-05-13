@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildMeta } from "@/lib/seo";
+import { buildCollectionPageSchema, buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
@@ -13,15 +13,12 @@ export const metadata: Metadata = buildMeta({
   path: "/library",
 });
 
-const LIBRARY_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "@id": "https://www.oneinhimbiblestudy.com/library/#page",
-  url: "https://www.oneinhimbiblestudy.com/library",
+const LIBRARY_SCHEMA = buildCollectionPageSchema({
+  path: "/library",
   name: "Scripture & Study Library — One In Him Bible Study",
   description:
     "Free Bible study library covering KJV + Strong's, Church Fathers, Ecumenical Councils, Roman Catechism, and Christian tradition study hubs.",
-  isPartOf: { "@id": "https://www.oneinhimbiblestudy.com/#website" },
+  about: ["Bible study", "Church history", "Christian theology"],
   mainEntity: {
     "@type": "ItemList",
     itemListElement: [
@@ -36,7 +33,7 @@ const LIBRARY_SCHEMA = {
       { "@type": "ListItem", position: 9, name: "Church History Timeline", url: "https://www.oneinhimbiblestudy.com/library/history" },
     ],
   },
-};
+});
 
 type LibModule = { icon: string; title: string; href: string; summary: string };
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildMeta } from "@/lib/seo";
+import { buildCollectionPageSchema, buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
@@ -13,6 +13,14 @@ export const metadata: Metadata = buildMeta({
   description: "Read the early church fathers — Ignatius of Antioch, Justin Martyr, Origen, Augustine, Chrysostom and more. Free patristic writings from every era.",
   keywords: "church fathers, patristic writings, early church fathers, Augustine, Chrysostom, Ignatius of Antioch, christian history",
   path: "/library/fathers",
+});
+
+const FATHERS_SCHEMA = buildCollectionPageSchema({
+  path: "/library/fathers",
+  name: "Church Fathers — Patristic Writings Library",
+  description:
+    "A patristic writings library with Church Father profiles, complete primary texts, and study paths across Christian traditions.",
+  about: ["Church Fathers", "Patristics", "Early Christianity", "Christian theology"],
 });
 
 const FATHERS_FAQ = {
@@ -80,6 +88,7 @@ const fathersFaq = [
 export default function FathersPage() {
   return (
     <>
+      <JsonLd data={FATHERS_SCHEMA} />
       <JsonLd data={FATHERS_FAQ} />
 
       {/* Mobile / tablet: searchable list with custom topbar */}

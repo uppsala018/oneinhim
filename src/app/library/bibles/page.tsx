@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildMeta } from "@/lib/seo";
+import { buildCollectionPageSchema, buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
@@ -16,16 +16,13 @@ export const metadata: Metadata = buildMeta({
   path: "/library/bibles",
 });
 
-const BIBLES_SCHEMA = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "@id": "https://www.oneinhimbiblestudy.com/library/bibles/#page",
-  url: "https://www.oneinhimbiblestudy.com/library/bibles",
+const BIBLES_SCHEMA = buildCollectionPageSchema({
+  path: "/library/bibles",
   name: "Study the Bible — All Translations & Versions",
   description:
     "Bible study in every major translation — KJV + Strong's, Douay-Rheims, Septuagint, NIV, ESV, NKJV, Amplified, NASB, and 35+ more versions.",
-  isPartOf: { "@id": "https://www.oneinhimbiblestudy.com/#website" },
-};
+  about: ["Bible study", "Bible translations", "Scripture"],
+});
 
 const primaryBibles = [
   {

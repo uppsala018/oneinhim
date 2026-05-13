@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { buildMeta } from "@/lib/seo";
+import { buildCollectionPageSchema, buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import Breadcrumb from "@/components/breadcrumb";
+import JsonLd from "@/components/json-ld";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
 import SiteHeroPanel from "@/components/site-hero-panel";
 
@@ -13,6 +14,20 @@ export const metadata: Metadata = buildMeta({
   keywords:
     "Christian traditions, Catholic study, Orthodox Christianity, Protestant theology, oriental orthodox, church traditions",
   path: "/library/traditions",
+});
+
+const TRADITIONS_SCHEMA = buildCollectionPageSchema({
+  path: "/library/traditions",
+  name: "Christian Traditions — Catholic, Orthodox & Protestant",
+  description:
+    "A Christian traditions study hub for Catholic, Eastern Orthodox, Oriental Orthodox, and Protestant Scripture, theology, and history resources.",
+  about: [
+    "Christian traditions",
+    "Catholic theology",
+    "Orthodox Christianity",
+    "Protestant theology",
+    "Church history",
+  ],
 });
 
 const primaryTraditions = [
@@ -70,6 +85,7 @@ const protestantPaths = [
 export default function TraditionsPage() {
   return (
     <>
+      <JsonLd data={TRADITIONS_SCHEMA} />
       <AppHeader />
       <main className="mx-auto max-w-7xl px-6 pt-[96px] pb-24 sm:px-8 lg:pb-14 lg:px-12">
         <Breadcrumb

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildMeta } from "@/lib/seo";
+import { buildCollectionPageSchema, buildMeta } from "@/lib/seo";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
 import MobileBottomNav from "@/components/mobile-bottom-nav";
@@ -15,15 +15,13 @@ export const metadata: Metadata = buildMeta({
   path: "/library/councils",
 });
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.oneinhimbiblestudy.com" },
-    { "@type": "ListItem", position: 2, name: "Library", item: "https://www.oneinhimbiblestudy.com/library" },
-    { "@type": "ListItem", position: 3, name: "Ecumenical Councils", item: "https://www.oneinhimbiblestudy.com/library/councils" },
-  ],
-};
+const councilsSchema = buildCollectionPageSchema({
+  path: "/library/councils",
+  name: "Ecumenical Councils of the Church",
+  description:
+    "A church councils study hub covering the seven Ecumenical Councils, their historical background, theological controversies, key figures, and doctrinal decisions.",
+  about: ["Ecumenical councils", "Church history", "Christian doctrine"],
+});
 
 const councilsFaqSchema = {
   "@context": "https://schema.org",
@@ -67,7 +65,7 @@ const councilsFaqSchema = {
 export default function CouncilsPage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={councilsSchema} />
       <JsonLd data={councilsFaqSchema} />
       <AppHeader />
 

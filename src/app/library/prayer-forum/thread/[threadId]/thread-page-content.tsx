@@ -111,7 +111,20 @@ export default function ThreadPageContent({ threadId }: { threadId: string }) {
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [reportTarget, setReportTarget] = useState<string | null>(null);
+  const [profileDisplayName, setProfileDisplayName] = useState<string | null>(null);
   const admin = isForumAdmin(user?.email);
+
+  // Load display name from Firestore profile so replies use the chosen username,
+  // not the Google account name stored in Firebase Auth.
+  useEffect(() => {
+    if (!user || !db) return;
+    getDoc(doc(db, "users", user.uid))
+      .then((snap) => {
+        const name = (snap.data() as { displayName?: string } | undefined)?.displayName?.trim();
+        if (name) setProfileDisplayName(name);
+      })
+      .catch(() => {/* silent */});
+  }, [user]);
 
   const loadThread = useMemo(
     () => async () => {
@@ -183,7 +196,7 @@ export default function ThreadPageContent({ threadId }: { threadId: string }) {
         content: reply.trim(),
         authorUid: user.uid,
         authorEmail: user.email ?? "",
-        authorDisplayName: forumAuthorName(user.displayName, user.email),
+        authorDisplayName: forumAuthorName(profileDisplayName || user.displayName, user.email),
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
         isFirstPost: false,
