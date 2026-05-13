@@ -68,28 +68,34 @@ export default function FirebaseForumCategories() {
 
   if (loading) {
     return (
-      <section className="py-6">
-        <p className="text-sm text-[var(--color-muted)]">Loading forum categories...</p>
+      <section className="py-6" aria-labelledby="forum-categories-heading">
+        <h2 id="forum-categories-heading" className="sr-only">
+          Discussion categories
+        </h2>
+        <p className="text-sm text-[var(--color-muted)]" role="status">Loading forum categories...</p>
       </section>
     );
   }
 
   if (error) {
     return (
-      <section className="py-6">
+      <section className="py-6" aria-labelledby="forum-categories-heading">
+        <h2 id="forum-categories-heading" className="sr-only">
+          Discussion categories
+        </h2>
         <p className="text-sm text-red-500">{error}</p>
       </section>
     );
   }
 
   return (
-    <section className="py-6">
+    <section className="py-6" aria-labelledby="forum-categories-heading">
       <div className="mb-5 flex items-center justify-between gap-3">
         <div>
           <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">
             Forum
           </p>
-          <h2 className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
+          <h2 id="forum-categories-heading" className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
             Discussion Categories
           </h2>
         </div>

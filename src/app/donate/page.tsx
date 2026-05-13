@@ -58,6 +58,7 @@ export default function DonatePage() {
               href={PAYPAL_HREF}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Donate to One In Him Bible Study via PayPal"
               className="inline-flex items-center gap-3 rounded-full border border-[rgba(230,190,120,0.55)] bg-[rgba(230,190,120,0.12)] px-8 py-3.5 text-sm font-semibold text-[var(--color-highlight)] transition hover:bg-[rgba(230,190,120,0.22)]"
             >
               ☩&nbsp; Donate via PayPal
@@ -133,8 +134,8 @@ export default function DonatePage() {
                   key={item.title}
                   className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
                 >
-                  <p className="text-base text-[var(--color-highlight)]">{item.icon}</p>
-                  <p className="mt-2 font-semibold text-[var(--color-ink)]">{item.title}</p>
+                  <p className="text-base text-[var(--color-highlight)]" aria-hidden="true">{item.icon}</p>
+                  <h3 className="mt-2 font-semibold text-[var(--color-ink)]">{item.title}</h3>
                   <p className="mt-1.5 text-sm leading-6 text-[var(--color-muted)]">{item.detail}</p>
                 </div>
               ))}
@@ -159,6 +160,7 @@ export default function DonatePage() {
               href={PAYPAL_HREF}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Donate to One In Him Bible Study via PayPal"
               className="inline-flex items-center gap-3 rounded-full border border-[rgba(230,190,120,0.55)] bg-[rgba(230,190,120,0.14)] px-8 py-3.5 text-sm font-semibold text-[var(--color-highlight)] transition hover:bg-[rgba(230,190,120,0.26)]"
             >
               ☩&nbsp; Donate via PayPal
@@ -190,8 +192,8 @@ export default function DonatePage() {
               ],
             ].map(([icon, heading, text]) => (
               <div key={heading as string}>
-                <p className="text-base text-[var(--color-highlight)]">{icon}</p>
-                <p className="mt-2 font-semibold text-[var(--color-ink)]">{heading}</p>
+                <p className="text-base text-[var(--color-highlight)]" aria-hidden="true">{icon}</p>
+                <h3 className="mt-2 font-semibold text-[var(--color-ink)]">{heading}</h3>
                 <p className="mt-1.5 text-sm leading-6 text-[var(--color-muted)]">{text}</p>
               </div>
             ))}

@@ -106,8 +106,11 @@ export default function TraditionsPage() {
         {/* Primary tradition cards */}
         <section
           className="mt-10 grid gap-4 sm:grid-cols-2"
-          aria-label="Christian tradition study hubs"
+          aria-labelledby="tradition-study-hubs-heading"
         >
+          <h2 id="tradition-study-hubs-heading" className="sr-only">
+            Christian tradition study hubs
+          </h2>
           {primaryTraditions.map((tradition) => (
             <Link
               key={tradition.href}
@@ -117,9 +120,9 @@ export default function TraditionsPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
                 {tradition.eyebrow}
               </p>
-              <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--color-ink)] leading-tight">
+              <h3 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--color-ink)] leading-tight">
                 {tradition.title}
-              </h2>
+              </h3>
               <p className="mt-3 flex-1 text-sm leading-7 text-[var(--color-muted)]">
                 {tradition.summary}
               </p>
@@ -131,11 +134,14 @@ export default function TraditionsPage() {
         </section>
 
         {/* Protestant additional paths */}
-        <section className="mt-8 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
+        <section
+          className="mt-8 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8"
+          aria-labelledby="protestant-paths-heading"
+        >
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
             Protestant Study
           </p>
-          <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+          <h2 id="protestant-paths-heading" className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
             Additional Protestant paths
           </h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">

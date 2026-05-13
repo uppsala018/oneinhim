@@ -109,6 +109,7 @@ export default function FathersPage() {
         <SiteHeroPanel
           eyebrow="Patristics"
           title="Church Fathers"
+          headingLevel={2}
           lead="The early church writers — Ignatius, Justin Martyr, Origen, Athanasius, Augustine, Chrysostom, and more — available here as complete primary texts organized by author and work. Browse father profiles, read the included writings, and follow suggested reading orders tailored for Catholic, Orthodox, and Protestant study."
         />
 

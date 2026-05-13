@@ -76,7 +76,13 @@ export default function HistoryHubPage() {
         />
 
         {/* Hub study-path cards */}
-        <section className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3" aria-label="History study paths">
+        <section
+          className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+          aria-labelledby="history-study-paths-heading"
+        >
+          <h2 id="history-study-paths-heading" className="sr-only">
+            History study paths
+          </h2>
           {hubCards.map((card) => (
             <Link
               key={card.href}
@@ -86,9 +92,9 @@ export default function HistoryHubPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
                 Church History
               </p>
-              <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--color-ink)] leading-tight">
+              <h3 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--color-ink)] leading-tight">
                 {card.title}
-              </h2>
+              </h3>
               <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
                 {card.summary}
               </p>
@@ -97,10 +103,16 @@ export default function HistoryHubPage() {
         </section>
 
         {/* All topics */}
-        <section className="mt-8 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8">
+        <section
+          className="mt-8 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:p-8"
+          aria-labelledby="history-all-topics-heading"
+        >
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
             Study Links
           </p>
+          <h2 id="history-all-topics-heading" className="sr-only">
+            All church history topics
+          </h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {historyLibrary.map((topic) => (
               <Link

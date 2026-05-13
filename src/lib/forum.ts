@@ -1,5 +1,3 @@
-"use client";
-
 import type { Timestamp } from "firebase/firestore";
 
 export const FORUM_ADMIN_EMAIL = "mosegaard622@gmail.com";

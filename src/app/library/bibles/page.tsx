@@ -155,7 +155,13 @@ export default function BiblesPage() {
         />
 
         {/* Primary readers — full-width gold cards */}
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <section
+          className="mt-10 grid gap-6 md:grid-cols-2"
+          aria-labelledby="primary-bible-readers-heading"
+        >
+          <h2 id="primary-bible-readers-heading" className="sr-only">
+            Primary Bible readers
+          </h2>
           {primaryBibles.map((bible) => (
             <Link
               key={bible.id}
@@ -177,10 +183,16 @@ export default function BiblesPage() {
               </span>
             </Link>
           ))}
-        </div>
+        </section>
 
         {/* Secondary bibles — 3-col grid */}
-        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <section
+          className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          aria-labelledby="additional-bible-translations-heading"
+        >
+          <h2 id="additional-bible-translations-heading" className="sr-only">
+            Additional Bible translations
+          </h2>
           {standardBibles.map((bible) => {
             const Wrapper = bible.internal ? Link : "a";
             const extraProps = bible.internal
@@ -208,7 +220,7 @@ export default function BiblesPage() {
               </Wrapper>
             );
           })}
-        </div>
+        </section>
 
         {/* All versions — native details/summary */}
         <details className="group mt-8 overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)]">
@@ -224,7 +236,7 @@ export default function BiblesPage() {
                 35+ translations — click to expand
               </p>
             </div>
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] text-lg text-[var(--color-highlight)] transition-transform group-open:rotate-180">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] text-lg text-[var(--color-highlight)] transition-transform group-open:rotate-180" aria-hidden="true">
               ▼
             </span>
           </summary>

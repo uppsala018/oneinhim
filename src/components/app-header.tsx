@@ -38,8 +38,6 @@ export default function AppHeader() {
 
   useEffect(() => {
     if (!isFirebaseConfigured || !auth) {
-      setUser(null);
-      setProfile(null);
       return;
     }
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -121,10 +119,12 @@ export default function AppHeader() {
             </Link>
           )}
           <button
+            type="button"
             className={`web-header__mobile-toggle${mobileOpen ? " web-header__mobile-toggle--open" : ""}`}
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-primary-navigation"
           >
             <span />
             <span />
@@ -134,8 +134,10 @@ export default function AppHeader() {
       </div>
 
       <nav
+        id="mobile-primary-navigation"
         className={`web-header__mobile-nav${mobileOpen ? " web-header__mobile-nav--open" : ""}`}
         aria-label="Mobile navigation"
+        aria-hidden={!mobileOpen}
       >
         {navLinks.map((link) => (
           <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}>
@@ -153,6 +155,7 @@ export default function AppHeader() {
               User Panel
             </Link>
             <button
+              type="button"
               onClick={() => {
                 handleSignOut();
                 setMobileOpen(false);

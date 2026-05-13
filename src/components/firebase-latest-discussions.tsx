@@ -77,8 +77,11 @@ export default function FirebaseLatestDiscussions() {
 
   if (loading) {
     return (
-      <section className="py-6">
-        <p className="text-sm text-[var(--color-muted)]">
+      <section className="py-6" aria-labelledby="latest-discussions-heading">
+        <h2 id="latest-discussions-heading" className="sr-only">
+          Latest discussions
+        </h2>
+        <p className="text-sm text-[var(--color-muted)]" role="status">
           Loading latest discussions...
         </p>
       </section>
@@ -87,7 +90,10 @@ export default function FirebaseLatestDiscussions() {
 
   if (error) {
     return (
-      <section className="py-6">
+      <section className="py-6" aria-labelledby="latest-discussions-heading">
+        <h2 id="latest-discussions-heading" className="sr-only">
+          Latest discussions
+        </h2>
         <p className="text-sm text-red-500">{error}</p>
       </section>
     );
@@ -95,12 +101,12 @@ export default function FirebaseLatestDiscussions() {
 
   if (latestThreads.length === 0) {
     return (
-      <section className="py-6">
+      <section className="py-6" aria-labelledby="latest-discussions-heading">
         <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)] p-5">
           <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">
             Forum
           </p>
-          <h2 className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
+          <h2 id="latest-discussions-heading" className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
             Latest Discussions
           </h2>
           <p className="mt-3 text-sm text-[var(--color-muted)]">
@@ -112,12 +118,12 @@ export default function FirebaseLatestDiscussions() {
   }
 
   return (
-    <section className="py-6">
+    <section className="py-6" aria-labelledby="latest-discussions-heading">
       <div className="mb-5">
         <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-highlight)]">
           Forum
         </p>
-        <h2 className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
+        <h2 id="latest-discussions-heading" className="mt-2 text-xl font-semibold text-[var(--color-ink)]">
           Latest Discussions
         </h2>
       </div>

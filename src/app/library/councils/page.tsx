@@ -88,8 +88,11 @@ export default function CouncilsPage() {
         {/* Council cards */}
         <section
           className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
-          aria-label="Seven ecumenical councils"
+          aria-labelledby="seven-councils-heading"
         >
+          <h2 id="seven-councils-heading" className="sr-only">
+            Seven ecumenical councils
+          </h2>
           {councilsLibrary.map((council) => (
             <Link
               key={council.slug}
@@ -101,9 +104,9 @@ export default function CouncilsPage() {
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
                     {council.year} AD
                   </p>
-                  <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--color-ink)] leading-tight">
+                  <h3 className="mt-2 font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--color-ink)] leading-tight">
                     {council.title}
-                  </h2>
+                  </h3>
                 </div>
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[var(--color-border)] text-sm text-[var(--color-highlight)]">
                   {council.order}
@@ -122,13 +125,13 @@ export default function CouncilsPage() {
         </section>
 
         {/* Study flow guide */}
-        <section className="mt-8">
+        <section className="mt-8" aria-labelledby="council-study-flow-heading">
           <div className="grid gap-4 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6 md:grid-cols-3 md:p-8">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
                 Study Flow
               </p>
-              <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+              <h2 id="council-study-flow-heading" className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
                 Read in order
               </h2>
             </div>

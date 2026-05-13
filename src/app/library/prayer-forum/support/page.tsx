@@ -67,6 +67,7 @@ export default function ContactPage() {
           </p>
           <a
             href="mailto:info@oneinhimbiblestudy.com"
+            aria-label="Email One In Him Bible Study support at info@oneinhimbiblestudy.com"
             className="mt-6 inline-flex items-center gap-2 rounded-full border border-[rgba(230,190,120,0.55)] bg-[rgba(230,190,120,0.12)] px-8 py-3 text-sm font-semibold text-[var(--color-highlight)] transition hover:bg-[rgba(230,190,120,0.22)]"
           >
             ✉&nbsp; info@oneinhimbiblestudy.com
@@ -87,8 +88,8 @@ export default function ContactPage() {
                 key={t.heading}
                 className="rounded-[1.4rem] border border-[var(--color-border)] bg-[rgba(10,10,10,0.52)] p-4"
               >
-                <p className="text-base text-[var(--color-highlight)]">{t.icon}</p>
-                <p className="mt-2 font-semibold text-[var(--color-ink)]">{t.heading}</p>
+                <p className="text-base text-[var(--color-highlight)]" aria-hidden="true">{t.icon}</p>
+                <h3 className="mt-2 font-semibold text-[var(--color-ink)]">{t.heading}</h3>
                 <p className="mt-1.5 text-sm leading-6 text-[var(--color-muted)]">{t.body}</p>
               </div>
             ))}

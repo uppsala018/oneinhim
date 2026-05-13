@@ -4,7 +4,6 @@ import PwaBoot from "@/components/pwa-boot";
 import PreferencesBoot from "@/components/preferences-boot";
 import JsonLd from "@/components/json-ld";
 import "./globals.css";
-import "@/lib/firebase-client";
 
 const SITE_SCHEMA = {
   "@context": "https://schema.org",

@@ -77,7 +77,7 @@ export default function MobileBottomNav({ active = "Home" }: { active?: string }
   const items = [...baseItems, ...(user ? authedItems : anonItems)];
 
   return (
-    <nav className="mobile-bottom-nav">
+    <nav className="mobile-bottom-nav" aria-label="Mobile primary navigation">
       {items.map((item) => {
         const Icon = item.icon;
         const isActive = active === item.label;
@@ -86,6 +86,7 @@ export default function MobileBottomNav({ active = "Home" }: { active?: string }
             key={item.label}
             href={item.href}
             className={`mobile-bottom-nav__item${isActive ? " mobile-bottom-nav__item--active" : ""}`}
+            aria-current={isActive ? "page" : undefined}
           >
             <span className="mobile-bottom-nav__icon">
               <Icon />

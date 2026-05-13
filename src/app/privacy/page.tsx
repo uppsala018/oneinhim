@@ -169,19 +169,24 @@ export default function PrivacyPage() {
         <p className="mt-6 text-xs text-[var(--color-soft)]">Last updated: May 2026</p>
 
         <div className="mt-4 flex flex-col gap-5">
-          {sections.map((s) => (
+          {sections.map((s) => {
+            const sectionId = `privacy-${s.heading.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")}`;
+
+            return (
             <section
               key={s.heading}
               className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6"
+              aria-labelledby={sectionId}
             >
-              <h2 className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--color-ink)]">
+              <h2 id={sectionId} className="font-[family-name:var(--font-display)] text-xl font-semibold text-[var(--color-ink)]">
                 {s.heading}
               </h2>
               <div className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
                 {s.content}
               </div>
             </section>
-          ))}
+            );
+          })}
 
           {/* Contact section */}
           <section className="overflow-hidden rounded-[2.4rem] border border-[rgba(230,190,120,0.3)] bg-[linear-gradient(145deg,rgba(230,190,120,0.09),rgba(10,10,10,0.85)_48%,rgba(10,10,10,0.96))] p-6 md:p-10">
@@ -197,6 +202,7 @@ export default function PrivacyPage() {
             </p>
             <a
               href="mailto:info@oneinhimbiblestudy.com"
+              aria-label="Email One In Him Bible Study privacy support at info@oneinhimbiblestudy.com"
               className="mt-6 inline-flex items-center gap-2 rounded-full border border-[rgba(230,190,120,0.55)] bg-[rgba(230,190,120,0.12)] px-8 py-3 text-sm font-semibold text-[var(--color-highlight)] transition hover:bg-[rgba(230,190,120,0.22)]"
             >
               ✉&nbsp; info@oneinhimbiblestudy.com
