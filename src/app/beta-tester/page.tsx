@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { db, isFirebaseConfigured } from "@/lib/firebase-client";
-import { addDoc, collection, serverTimestamp, doc, getDoc, setDoc } from "firebase/firestore";
+import { serverTimestamp, doc, getDoc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import AppHeader from "@/components/app-header";
@@ -32,15 +32,20 @@ export default function BetaTesterPage() {
     setErrorMsg("");
 
     try {
-      // Write to beta_testers collection
-      await addDoc(collection(db, "beta_testers"), {
-        Name: form.name,
-        email: user.email ?? "",
-        uid: user.uid,
-        country: form.country,
-        interestedGooglePlay: form.interestedGooglePlay,
-        createdAt: serverTimestamp(),
-      });
+      // Write to beta_testers collection — use uid as document ID so the
+      // dashboard can do a direct getDoc(uid) read instead of a query.
+      await setDoc(
+        doc(db, "beta_testers", user.uid),
+        {
+          Name: form.name,
+          email: user.email ?? "",
+          uid: user.uid,
+          country: form.country,
+          interestedGooglePlay: form.interestedGooglePlay,
+          createdAt: serverTimestamp(),
+        },
+        { merge: true },
+      );
 
       // Signup to beta_testers succeeded — mark success and redirect immediately.
       // Role sync is best-effort: Firestore rules may block self-assigning role, so

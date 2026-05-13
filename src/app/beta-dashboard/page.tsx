@@ -7,9 +7,6 @@ import {
   serverTimestamp,
   doc,
   getDoc,
-  getDocs,
-  query,
-  where,
 } from "firebase/firestore";
 import { db, isFirebaseConfigured } from "@/lib/firebase-client";
 import Link from "next/link";
@@ -82,13 +79,10 @@ export default function BetaDashboardPage() {
           return;
         }
 
-        // Fallback: check beta_testers collection by email (role not yet synced)
-        const q = query(
-          collection(db!, "beta_testers"),
-          where("email", "==", user.email ?? ""),
-        );
-        const betaSnap = await getDocs(q);
-        setAccessState(betaSnap.empty ? "denied" : "granted");
+        // Fallback: direct read by uid — signup now writes doc ID = user.uid,
+        // so this is a get (not a list/query) and works without broader rules.
+        const betaSnap = await getDoc(doc(db!, "beta_testers", user.uid));
+        setAccessState(betaSnap.exists() ? "granted" : "denied");
       } catch {
         setAccessState("denied");
       }
@@ -196,16 +190,15 @@ export default function BetaDashboardPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-highlight)]">
                 Beta Dashboard
               </p>
-              <h1 className="site-page-title mt-3">Access restricted</h1>
+              <h1 className="site-page-title mt-3">Join the beta first</h1>
               <p className="site-heading-lead mt-4">
-                This dashboard is for registered beta testers. If you&apos;d like to join the beta,
-                you can sign up below.
+                You need to register as a beta tester before accessing this dashboard.
               </p>
               <Link
                 href="/beta-tester"
                 className="mt-6 inline-flex rounded-full bg-[var(--color-highlight)] px-6 py-2.5 text-sm font-semibold text-[#080808]"
               >
-                Sign up as beta tester
+                Register as beta tester →
               </Link>
             </section>
           )}
