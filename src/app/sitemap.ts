@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     url("/", 1.0, "weekly"),
     url("/library", 0.9, "weekly"),
+    url("/library/traditions", 0.8, "monthly"),
 
     // Bibles hub
     url("/library/bibles", 0.9, "weekly"),
@@ -92,7 +93,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Community
     url("/library/prayer-forum", 0.7, "daily"),
-    url("/library/notes", 0.5),
 
     // Other
     url("/donate", 0.5),

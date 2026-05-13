@@ -6,7 +6,17 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/library/settings", "/library/notes", "/api/"],
+        disallow: [
+          "/login",
+          "/user-panel",
+          "/beta-dashboard",
+          "/beta-tester",
+          "/admin/",
+          "/library/settings",
+          "/library/notes",
+          "/library/prayer-forum/new-thread",
+          "/api/",
+        ],
       },
     ],
     sitemap: "https://www.oneinhimbiblestudy.com/sitemap.xml",
