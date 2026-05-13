@@ -42,20 +42,26 @@ export default function BetaTesterPage() {
         createdAt: serverTimestamp(),
       });
 
-      // Write beta_tester role to user profile — do not overwrite admin
-      const userRef = doc(db, "users", user.uid);
-      const userSnap = await getDoc(userRef);
-      const currentRole = (userSnap.data() as { role?: string } | undefined)?.role;
+      // Signup to beta_testers succeeded — mark success and redirect immediately.
+      // Role sync is best-effort: Firestore rules may block self-assigning role, so
+      // we isolate it so a rules failure never prevents the signup from completing.
+      setStatus("success");
 
-      if (currentRole !== "admin" && currentRole !== "beta_tester" && user.email !== ADMIN_EMAIL) {
-        await setDoc(
-          userRef,
-          { uid: user.uid, email: user.email ?? "", role: "beta_tester", updatedAt: serverTimestamp() },
-          { merge: true },
-        );
+      try {
+        const userRef = doc(db, "users", user.uid);
+        const userSnap = await getDoc(userRef);
+        const currentRole = (userSnap.data() as { role?: string } | undefined)?.role;
+        if (currentRole !== "admin" && currentRole !== "beta_tester" && user.email !== ADMIN_EMAIL) {
+          await setDoc(
+            userRef,
+            { uid: user.uid, email: user.email ?? "", role: "beta_tester", updatedAt: serverTimestamp() },
+            { merge: true },
+          );
+        }
+      } catch {
+        // Role sync failed silently — access via beta_testers collection still works.
       }
 
-      setStatus("success");
       router.push("/beta-dashboard");
     } catch (err) {
       setStatus("error");

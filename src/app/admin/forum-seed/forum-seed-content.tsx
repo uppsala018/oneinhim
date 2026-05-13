@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { collection, doc, getDocs, serverTimestamp, setDoc } from "firebase/firestore";
-
 import { db } from "@/lib/firebase-client";
 import { useAuth } from "@/lib/use-auth";
-import { FORUM_ADMIN_EMAIL, isForumAdmin, slugify, type ForumCategory } from "@/lib/forum";
+import { slugify, type ForumCategory } from "@/lib/forum";
+import Breadcrumb from "@/components/breadcrumb";
+import SiteHeroPanel from "@/components/site-hero-panel";
 
 const CATEGORY_TREE = [
   ["Community", ["Introduce Yourself", "Make Friends", "General Discussion", "Site Feedback"]],
@@ -28,42 +28,16 @@ function categoryDescription(title: string, parent?: string) {
   return `${title} discussions for the One In Him community.`;
 }
 
-function AdminNav() {
-  return (
-    <nav aria-label="Admin navigation" className="flex flex-wrap gap-3">
-      <Link
-        href="/"
-        className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-ink)]"
-      >
-        Home
-      </Link>
-      <Link
-        href="/admin/beta"
-        className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-ink)]"
-      >
-        Admin dashboard
-      </Link>
-      <Link
-        href="/library/prayer-forum"
-        className="rounded-full border border-[var(--color-border)] px-4 py-2 text-sm text-[var(--color-ink)]"
-      >
-        Forum
-      </Link>
-    </nav>
-  );
-}
-
 export default function ForumSeedContent() {
-  const { user, loading } = useAuth();
+  const { user } = useAuth();
   const [status, setStatus] = useState("");
   const [running, setRunning] = useState(false);
-  const admin = isForumAdmin(user?.email);
 
   async function seedCategories() {
-    if (!db || !admin) return;
+    if (!db || !user) return;
 
     setRunning(true);
-    setStatus("Seeding categories...");
+    setStatus("Seeding categories…");
 
     try {
       const snapshot = await getDocs(collection(db, "forum_categories"));
@@ -94,7 +68,7 @@ export default function ForumSeedContent() {
             updatedAt: serverTimestamp(),
             createdAt: existingRoot ? existingRoot.createdAt ?? serverTimestamp() : serverTimestamp(),
           },
-          { merge: true }
+          { merge: true },
         );
         writes += 1;
 
@@ -108,8 +82,7 @@ export default function ForumSeedContent() {
             {
               title: childTitle,
               slug: childSlug,
-              description:
-                existingChild?.description || categoryDescription(childTitle, rootTitle),
+              description: existingChild?.description || categoryDescription(childTitle, rootTitle),
               parentId: rootId,
               level: 1,
               sortOrder: ((CATEGORY_TREE.findIndex(([title]) => title === rootTitle) + 1) * 100) + index + 1,
@@ -118,7 +91,7 @@ export default function ForumSeedContent() {
               updatedAt: serverTimestamp(),
               createdAt: existingChild ? existingChild.createdAt ?? serverTimestamp() : serverTimestamp(),
             },
-            { merge: true }
+            { merge: true },
           );
           writes += 1;
         }
@@ -127,62 +100,53 @@ export default function ForumSeedContent() {
       setStatus(`Seed complete. Upserted ${writes} category documents.`);
     } catch (err) {
       console.error(err);
-      setStatus("Seed failed. Check Firestore rules and admin account.");
+      setStatus("Seed failed. Check Firestore rules.");
     } finally {
       setRunning(false);
     }
   }
 
-  if (loading) {
-    return (
-      <main className="mobile-app-shell px-4 py-8">
-        <AdminNav />
-        <p className="text-sm text-[var(--color-muted)]">Checking admin access...</p>
-      </main>
-    );
-  }
-
-  if (!admin) {
-    return (
-      <main className="mobile-app-shell px-4 py-8">
-        <AdminNav />
-        <h1 className="text-2xl font-semibold text-[var(--color-ink)]">
-          Admin only
-        </h1>
-        <p className="mt-3 text-sm text-[var(--color-muted)]">
-          Sign in as {FORUM_ADMIN_EMAIL} to run the forum category seed.
-        </p>
-        <Link
-          href="/login?next=/admin/forum-seed"
-          className="mt-5 inline-flex rounded-full border border-[var(--color-border)] px-5 py-2 text-sm text-[var(--color-ink)]"
-        >
-          Sign in
-        </Link>
-      </main>
-    );
-  }
-
   return (
-    <main className="mobile-app-shell px-4 py-8">
-      <AdminNav />
-      <section className="mt-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-panel)] p-5">
-        <h1 className="text-2xl font-semibold text-[var(--color-ink)]">
-          Forum category seed
-        </h1>
+    <div className="flex flex-col gap-5 pt-5">
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "User Panel", href: "/user-panel" },
+          { label: "Forum Seed" },
+        ]}
+      />
+
+      <SiteHeroPanel
+        eyebrow="Admin Tool"
+        title="Forum Category Seed"
+        lead="Upserts missing root categories and subcategories with merge behavior. Does not delete existing categories."
+      />
+
+      <section className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-panel)] p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-highlight)]">
+          Run Seed
+        </p>
+        <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--color-ink)]">
+          Seed forum categories
+        </h2>
         <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
-          This upserts missing root categories and subcategories with merge behavior.
-          It does not delete existing categories.
+          This operation is safe to run multiple times — it uses merge behavior and will not
+          delete or overwrite custom descriptions on existing categories.
         </p>
         <button
           type="button"
-          onClick={seedCategories}
+          onClick={() => void seedCategories()}
           disabled={running}
-          className="mt-5 rounded-full border border-[var(--color-border)] px-5 py-2 text-sm font-medium text-[var(--color-ink)] disabled:opacity-50"
+          className="mt-5 rounded-full border border-[var(--color-border)] px-5 py-2.5 text-sm font-medium text-[var(--color-ink)] transition hover:border-[var(--color-highlight)] hover:text-[var(--color-highlight)] disabled:opacity-50"
         >
-          {running ? "Running..." : "Seed forum categories"}
+          {running ? "Running…" : "Seed Forum Categories"}
         </button>
-        {status ? <p className="mt-4 text-sm text-[var(--color-muted)]">{status}</p> : null}
+        {status && (
+          <p className={`mt-4 text-sm ${status.startsWith("Seed complete") ? "text-green-300" : "text-[var(--color-muted)]"}`}>
+            {status}
+          </p>
+        )}
       </section>
-    </main>
+    </div>
   );
 }
