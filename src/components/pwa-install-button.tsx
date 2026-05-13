@@ -3,6 +3,26 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+function InstallIcon() {
+  return (
+    <svg
+      width="13"
+      height="13"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+  );
+}
+
 export default function PwaInstallButton({ className }: { className?: string }) {
   const [prompt, setPrompt] = useState<Event | null>(null);
   const [installed, setInstalled] = useState(false);
@@ -30,10 +50,10 @@ export default function PwaInstallButton({ className }: { className?: string }) 
 
   if (installed) return null;
 
-  // If the browser supports the install prompt use it; otherwise fall back to the library
   if (prompt) {
     return (
       <button onClick={handleInstall} className={className}>
+        <InstallIcon />
         Install the App
       </button>
     );
@@ -41,7 +61,8 @@ export default function PwaInstallButton({ className }: { className?: string }) 
 
   return (
     <Link href="/library" className={className}>
-      Open the App
+      <InstallIcon />
+      Install the App
     </Link>
   );
 }

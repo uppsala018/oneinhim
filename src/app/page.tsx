@@ -172,15 +172,15 @@ export default function Home() {
             </p>
 
             <div className="web-hero__actions">
-              <Link href="/library" className="cta-primary">
-                Explore the Library
+              <Link href="/library" className="hero-cta">
+                Explore
               </Link>
-              <PwaInstallButton className="cta-primary" />
-              <Link href="/library/prayer-forum" className="cta-primary">
-                Open the Prayer Forum
+              <PwaInstallButton className="hero-cta" />
+              <Link href="/library/prayer-forum" className="hero-cta">
+                Community
               </Link>
-              <Link href="/library/notes" className="cta-primary">
-                My Notes &amp; Bookmarks
+              <Link href="/library/notes" className="hero-cta">
+                My Notes
               </Link>
             </div>
           </div>
