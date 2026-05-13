@@ -185,7 +185,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="web-hero__divider" aria-hidden="true">Scroll</div>
         </section>
 
         {/* Feature Cards */}
