@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { getLeaderboard } from "../services/firebaseGame";
 import type { CouncilScore } from "../services/firebaseGame";
-import { BYZ } from "./NicaeaGameShell";
+import { BYZ } from "../constants";
 
 // ─── Props ────────────────────────────────────────────────────────────────────
 

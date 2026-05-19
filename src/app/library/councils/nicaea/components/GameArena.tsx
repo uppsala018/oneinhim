@@ -7,7 +7,7 @@ import type { DebateResponse, ResponseStrength, GameState } from "../hooks/useNi
 import DebatePanel from "./DebatePanel";
 import VerdictScreen from "./VerdictScreen";
 import ScoreBoard from "./ScoreBoard";
-import { BYZ } from "./NicaeaGameShell";
+import { BYZ } from "../constants";
 
 // ─── Web Audio API sound utilities ───────────────────────────────────────────
 // All sounds generated programmatically — no audio file dependencies.
