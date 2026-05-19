@@ -1,0 +1,235 @@
+/*
+  Council of Nicaea — atmospheric CSS animations
+  All class names are prefixed `nicaea-` to prevent collisions with global styles.
+*/
+
+/* ── 1. CANDLELIGHT FLICKER ──────────────────────────────────────────────────
+   Non-mechanical 3s loop: opacity and text-shadow vary through 8 irregular
+   keyframe stops so the flicker never feels like a simple ease-in-out.        */
+
+@keyframes nicaeaCandle {
+  0%   { opacity: 1;    text-shadow: 0 0 18px rgba(201,168,76,.34), 0 0 40px rgba(201,168,76,.14); }
+  8%   { opacity: 0.93; text-shadow: 0 0 28px rgba(201,168,76,.55), 0 0 58px rgba(201,168,76,.24); }
+  17%  { opacity: 0.97; text-shadow: 0 0 14px rgba(201,168,76,.26), 0 0 30px rgba(201,168,76,.10); }
+  31%  { opacity: 1;    text-shadow: 0 0 32px rgba(201,168,76,.62), 0 0 66px rgba(201,168,76,.28); }
+  44%  { opacity: 0.91; text-shadow: 0 0 22px rgba(201,168,76,.44), 0 0 48px rgba(201,168,76,.18); }
+  58%  { opacity: 0.98; text-shadow: 0 0 36px rgba(201,168,76,.58), 0 0 72px rgba(201,168,76,.25); }
+  72%  { opacity: 0.94; text-shadow: 0 0 16px rgba(201,168,76,.30), 0 0 36px rgba(201,168,76,.12); }
+  86%  { opacity: 0.99; text-shadow: 0 0 24px rgba(201,168,76,.48), 0 0 54px rgba(201,168,76,.20); }
+  100% { opacity: 1;    text-shadow: 0 0 18px rgba(201,168,76,.34), 0 0 40px rgba(201,168,76,.14); }
+}
+
+.nicaea-candle-flicker {
+  animation: nicaeaCandle 3.1s ease-in-out infinite;
+  will-change: opacity, text-shadow;
+}
+
+/* ── 2. PARCHMENT GRAIN TEXTURE ──────────────────────────────────────────────
+   Pseudo-element overlays the shell root with a repeating radial-gradient
+   pattern that simulates aged paper fibres. Pointer-events:none ensures
+   clicks pass through to game content.                                        */
+
+.parchment-bg {
+  position: relative;
+}
+
+.parchment-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    /* Coarse horizontal fibres */
+    repeating-linear-gradient(
+      92deg,
+      transparent 0px,
+      rgba(245,230,200,0.022) 1px,
+      transparent 2px,
+      transparent 14px
+    ),
+    /* Fine vertical fibres */
+    repeating-linear-gradient(
+      2deg,
+      transparent 0px,
+      rgba(245,230,200,0.014) 1px,
+      transparent 2px,
+      transparent 22px
+    ),
+    /* Scattered grain dots */
+    radial-gradient(circle at 18% 40%, rgba(245,230,200,0.04) 1px, transparent 1px),
+    radial-gradient(circle at 73% 15%, rgba(245,230,200,0.04) 1px, transparent 1px),
+    radial-gradient(circle at 42% 78%, rgba(245,230,200,0.035) 1px, transparent 1px),
+    radial-gradient(circle at 88% 62%, rgba(245,230,200,0.03) 1px, transparent 1px);
+  background-size:
+    100% 14px,
+    22px 100%,
+    120px 120px,
+    180px 180px,
+    90px 90px,
+    150px 150px;
+}
+
+/* ── 3. SCROLL UNFURL ────────────────────────────────────────────────────────
+   Cards start slightly rolled (perspective + scaleY) and unfurl to flat.
+   Opacity is NOT animated here so JS can freely control it separately.        */
+
+@keyframes nicaeaUnfurl {
+  from {
+    transform: perspective(700px) rotateX(-10deg) scaleY(0.78);
+    transform-origin: top center;
+  }
+  to {
+    transform: perspective(700px) rotateX(0deg) scaleY(1);
+    transform-origin: top center;
+  }
+}
+
+.nicaea-scroll-unfurl {
+  animation: nicaeaUnfurl 0.4s ease-out forwards;
+  will-change: transform;
+}
+
+/* ── 4. GOLD SHIMMER ─────────────────────────────────────────────────────────
+   Slow background-clip gradient sweep for gold headings and labels.
+   text-fill-color overrides color on elements that use it.                    */
+
+@keyframes nicaeaShimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #8B6914 0%,
+    #C9A84C 20%,
+    #E8C96D 38%,
+    #F5E6C8 50%,
+    #E8C96D 62%,
+    #C9A84C 80%,
+    #8B6914 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: nicaeaShimmer 5s linear infinite;
+  will-change: background-position;
+}
+
+/* ── 5. TIMER PULSE ──────────────────────────────────────────────────────────
+   Rapid scale pulse + color shift for the under-10-second countdown.          */
+
+@keyframes nicaeaTimerPulse {
+  0%,100% { transform: scale(1);    color: #CC3333; }
+  50%     { transform: scale(1.06); color: #FF5555; }
+}
+
+.nicaea-timer-urgent {
+  display: inline-block;
+  animation: nicaeaTimerPulse 0.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ── 6. RESULT FLASH ─────────────────────────────────────────────────────────
+   Full-screen semi-transparent overlay that flashes on response selection.
+   Appears quickly at 15%, holds briefly, then fades. Duration: ~350ms.        */
+
+@keyframes nicaeaFlash {
+  0%   { opacity: 0; }
+  15%  { opacity: 1; }
+  65%  { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+
+.nicaea-result-flash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+  animation: nicaeaFlash 0.35s ease-out forwards;
+}
+
+.nicaea-result-flash--strong  { background: rgba(74,  155, 111, 0.22); }
+.nicaea-result-flash--partial { background: rgba(212, 136,  42, 0.20); }
+.nicaea-result-flash--weak    { background: rgba(139,  26,  26, 0.22); }
+
+/* ── 7. VERDICT ENTRANCE ─────────────────────────────────────────────────────
+   Each verdict-screen element gets its own animation-delay so they sequence
+   naturally without JavaScript. Elements start at opacity:0; `forwards` holds
+   the final state. Apply animation-delay via the class, not inline styles.    */
+
+@keyframes nicaeaFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nicaeaBannerReveal {
+  from { clip-path: inset(0 100% 0 0); opacity: 0; }
+  to   { clip-path: inset(0   0% 0 0); opacity: 1; }
+}
+
+/* The JS stage-gate system in VerdictScreen already controls visibility.
+   These classes are applied as a CSS-layer enhancement — the `forwards` fill
+   mode wins over any JS-driven opacity:0 initial state once the animation runs,
+   letting CSS own the entrance and JS own the count-up gate.                  */
+.nicaea-verdict-chiRho  { animation: nicaeaFadeUp        0.50s ease-out 0.0s  both; }
+.nicaea-verdict-heading { animation: nicaeaFadeUp        0.50s ease-out 0.8s  both; }
+.nicaea-verdict-banner  { animation: nicaeaBannerReveal  0.65s ease-out 1.2s  both; }
+.nicaea-verdict-score   { animation: nicaeaFadeUp        0.40s ease-out 1.5s  both; }
+.nicaea-verdict-history { animation: nicaeaFadeUp        0.45s ease-out 2.5s  both; }
+.nicaea-verdict-buttons { animation: nicaeaFadeUp        0.40s ease-out 3.0s  both; }
+
+/* ── 8. COUNCIL CHAMBER BACKGROUND ──────────────────────────────────────────
+   Pure-CSS arched window shapes on left and right edges of the debate arena.
+   Uses border-radius to simulate the curve of Romanesque arches, box-shadow
+   for a candlelit glow bleeding inward from the walls.                        */
+
+.nicaea-chamber-bg {
+  position: relative;
+}
+
+.nicaea-chamber-bg::before,
+.nicaea-chamber-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 52px;
+  pointer-events: none;
+  z-index: 0;
+  /* Arch curve at the bottom of each pillar */
+  border-bottom-left-radius: 50% 60px;
+  border-bottom-right-radius: 50% 60px;
+}
+
+/* Left arch column */
+.nicaea-chamber-bg::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(201,168,76,0.08) 0%,
+    rgba(201,168,76,0.03) 60%,
+    transparent 100%
+  );
+  border-right: 1px solid rgba(201,168,76,0.14);
+  box-shadow:
+    inset -6px 0 20px rgba(201,168,76,0.06),
+    4px 0 16px rgba(44,24,16,0.4);
+}
+
+/* Right arch column */
+.nicaea-chamber-bg::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(201,168,76,0.08) 0%,
+    rgba(201,168,76,0.03) 60%,
+    transparent 100%
+  );
+  border-left: 1px solid rgba(201,168,76,0.14);
+  box-shadow:
+    inset 6px 0 20px rgba(201,168,76,0.06),
+    -4px 0 16px rgba(44,24,16,0.4);
+}

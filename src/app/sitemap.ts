@@ -57,9 +57,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       f.works.map((w) => url(`/library/fathers/${f.slug}/${w.slug}`, 0.6)),
     ),
 
-    // Councils
+    // Councils hub + study pages
     url("/library/councils", 0.9),
     ...councilsLibrary.map((c) => url(`/library/councils/${c.slug}`, 0.7)),
+
+    // Council Chronicles interactive game series
+    // Nicaea is live; remaining council games will be added as they launch.
+    url("/library/councils/nicaea", 0.9, "weekly"),
 
     // History
     url("/library/history", 0.9),
